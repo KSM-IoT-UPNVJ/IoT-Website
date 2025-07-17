@@ -4,7 +4,8 @@ function App() {
 
   return (
     <>
-    <h1 className='text-amber-300'>udah jadi bang</h1>
+    <h1 className='bg-biru-sedang text-black'>blom jadi bang</h1>
+    <p className='font-optima font-[600]'>ini ditulis make font optima</p>
     </>
   )
 }
