@@ -1,12 +1,21 @@
-import { useState } from 'react'
+import React from 'react';
+import Navbar from './components/Navbar';
+import WhatIs from './components/WhatIs';
+import Slogan from './components/Slogan';
+import Goals from './components/Goals';
+import Footer from './components/Footer';
+import './style.css';
 
 function App() {
-
   return (
     <>
-    <h1 className='text-amber-300'>udah jadi bang</h1>
+      <Navbar />
+      <WhatIs />
+      <Slogan />
+      <Goals />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
