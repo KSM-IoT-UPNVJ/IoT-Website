@@ -4,7 +4,7 @@ import ProjectCarousel from "/components/ProjectCarousel";
 function Projects() {
   return (
     <>
-      <h1 className="flex items-center justify-center font-bold text-[50px] text-[var(--color-biru-tua)] my-5">
+      <h1 className="flex items-center justify-center font-bold text-[50px] text-[var(--color-biru-tua)] mt-15 mb-5">
         Our Projects
       </h1>
       <ProjectCarousel>
