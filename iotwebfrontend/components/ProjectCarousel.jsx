@@ -6,38 +6,38 @@ export default function ProjectCarousel({ children }) {
   const [showLeft, setShowLeft] = useState(false);
   const [showRight, setShowRight] = useState(false);
 
-  const checkScroll = () => {
-    const el = containerRef.current;
-    if (!el) return;
-    setShowLeft(el.scrollLeft > 0);
-    setShowRight(el.scrollLeft + el.offsetWidth < el.scrollWidth);
-  };
-
-  const scroll = (direction) => {
-    const el = containerRef.current;
-    if (!el) return;
-    const scrollAmount = el.offsetWidth;
-    el.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
-  };
-
   useEffect(() => {
-    checkScroll();
     const el = containerRef.current;
     if (!el) return;
+
+    const checkScroll = () => {
+      setShowLeft(el.scrollLeft > 10);
+      setShowRight(el.scrollLeft + el.offsetWidth < el.scrollWidth - 10);
+    };
+
+    checkScroll();
+
     el.addEventListener("scroll", checkScroll);
     window.addEventListener("resize", checkScroll);
+
     return () => {
       el.removeEventListener("scroll", checkScroll);
       window.removeEventListener("resize", checkScroll);
     };
   }, []);
 
+  const scroll = (direction) => {
+    const el = containerRef.current;
+    if (!el) return;
+    el.scrollBy({ left: direction * el.offsetWidth, behavior: "smooth" });
+  };
+
   return (
-    <div className="relative w-full px-6 py-8">
+    <div className="relative w-full">
       {showLeft && (
         <button
           onClick={() => scroll(-1)}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow-lg p-2 hover:bg-gray-200 transition"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[var(--color-abu-sedang)] rounded-full shadow-lg p-2 hover:bg-[var(--color-biru-tua)] hover:cursor-pointer transition"
         >
           <ChevronLeft size={24} />
         </button>
@@ -45,12 +45,13 @@ export default function ProjectCarousel({ children }) {
 
       <div
         ref={containerRef}
-        className="overflow-x-auto scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] 
-             [&::-webkit-scrollbar]:hidden"
+        className="overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
       >
-        <div className="flex gap-6 w-full transition-transform duration-500 ease-in-out px-4">
+        <div className="flex w-fit transition-transform duration-500 ease-in-out mx-6">
           {React.Children.map(children, (child, _) => (
-            <div className="w-full md:w-[32%] flex-shrink-0">{child}</div>
+            <div className="w-screen flex justify-center mx-8 md:w-[430px] flex-shrink-0 snap-center">
+              {child}
+            </div>
           ))}
         </div>
       </div>
@@ -58,7 +59,7 @@ export default function ProjectCarousel({ children }) {
       {showRight && (
         <button
           onClick={() => scroll(1)}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow-lg p-2 hover:bg-gray-200 transition"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[var(--color-abu-sedang)] rounded-full shadow-lg p-2 hover:bg-[var(--color-biru-tua)] hover:cursor-pointer transition"
         >
           <ChevronRight size={24} />
         </button>

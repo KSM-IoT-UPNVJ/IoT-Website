@@ -1,24 +1,32 @@
-function ProjectCard({ title, description, image }) {
+export default function ProjectCard({ title, description, image }) {
   return (
-    <div className="rounded-2xl shadow-xl border border-gray-200 overflow-hidden flex flex-col bg-white w-full">
-      <div className="bg-gray-100 flex items-center justify-center h-48">
+    <div className="rounded-xl shadow-[0_2px_10px_rgba(0,0,0,1)] overflow-hidden flex flex-col md:w-full w-[430px] h-[800px] my-2">
+      <div className="flex items-center justify-center w-full h-[340px]">
         {image ? (
-          <img src={image} alt={title} className="object-contain h-full" />
+          <img
+            src={image}
+            alt={title}
+            className="object-contain h-[100%] w-full text-[var(--color-biru-tua)]"
+          />
         ) : (
-          <h2 className="text-2xl font-extrabold text-gray-700">GAMBAR</h2>
+          <h2 className="text-5xl font-extrabold text-[var(--color-biru-tua)]">
+            GAMBAR
+          </h2>
         )}
       </div>
-      <div className="bg-sky-200 p-6 flex flex-col flex-grow justify-between">
+      <div className="bg-[var(--color-biru-muda)] p-6 flex flex-col flex-grow justify-between">
         <div className="h-42">
-          <h3 className="font-bold text-lg text-gray-800 mb-2">{title}</h3>
-          <p className="h-30 text-sm text-gray-800">
-            {description.length > 160
-              ? description.slice(0, 159).replace(/[\s.,:;!?]+$/, "") + "..."
+          <h3 className="font-bold text-2xl text-center text-[var(--color-biru-tua)] mb-2">
+            {title}
+          </h3>
+          <p className="h-30 text-xl text-center text-[var(--color-biru-tua)]">
+            {description.length > 340
+              ? description.slice(0, 340).replace(/[\s.,:;!?]+$/, "") + "..."
               : description}
           </p>
         </div>
-        <div className="mt-6">
-          <button className="bg-indigo-800 hover:bg-indigo-900 text-white py-2 px-4 rounded-full text-sm">
+        <div className="text-center">
+          <button className="bg-[var(--color-biru-sedang)] hover:bg-[var(--color-biru-tua)] hover:cursor-pointer text-white py-2 px-4 rounded-full text-xl">
             Learn More
           </button>
         </div>
@@ -26,5 +34,3 @@ function ProjectCard({ title, description, image }) {
     </div>
   );
 }
-
-export default ProjectCard;
