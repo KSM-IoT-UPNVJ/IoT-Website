@@ -4,7 +4,8 @@ import WhatIs from './components/WhatIs';
 import Slogan from './components/Slogan';
 import Goals from './components/Goals';
 import Footer from './components/Footer';
-import './style.css';
+
+import './index.css';
 
 function App() {
   return (
