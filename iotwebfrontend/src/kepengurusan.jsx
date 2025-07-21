@@ -4,8 +4,8 @@ import Footerkepengurusan from "./Footerkepengurusan"
 function Kepengurusan() {
     return (
         <div className='h-dvh justify-items-center '>
-            <p className='font-optima font-[600] 
-                            text-[50px]'>Our Team</p>
+            <p className='font-optima font-bold 
+                            text-[50px] m-[65px] text-biru-tua'>Our Team</p>
             <Anggotakepengurusan />
             <Footerkepengurusan />
         </div>
