@@ -37,7 +37,7 @@ export default function OurProjectsCarousel({ children }) {
       {showLeft && (
         <button
           onClick={() => scroll(-1)}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[var(--color-abu-sedang)] rounded-full shadow-lg p-2 hover:bg-[var(--color-biru-tua)] hover:cursor-pointer transition"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[var(--color-abu-sedang)] rounded-full shadow-lg p-2 hover:bg-[var(--color-kuning-tua)] hover:cursor-pointer transition"
         >
           <ChevronLeft size={24} />
         </button>
@@ -59,7 +59,7 @@ export default function OurProjectsCarousel({ children }) {
       {showRight && (
         <button
           onClick={() => scroll(1)}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[var(--color-abu-sedang)] rounded-full shadow-lg p-2 hover:bg-[var(--color-biru-tua)] hover:cursor-pointer transition"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[var(--color-abu-sedang)] rounded-full shadow-lg p-2 hover:bg-[var(--color-kuning-tua)] hover:cursor-pointer transition"
         >
           <ChevronRight size={24} />
         </button>
