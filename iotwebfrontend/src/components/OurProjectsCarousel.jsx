@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function OurProjectsCarousel({ children }) {
   const containerRef = useRef(null);
@@ -35,12 +34,11 @@ export default function OurProjectsCarousel({ children }) {
   return (
     <div className="relative w-full">
       {showLeft && (
-        <button
+        <img
+          src="/Chevron_left.png"
           onClick={() => scroll(-1)}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[var(--color-abu-sedang)] rounded-full shadow-lg p-2 hover:bg-[var(--color-kuning-tua)] hover:cursor-pointer transition"
-        >
-          <ChevronLeft size={24} />
-        </button>
+          className="absolute -left-2 hover:-left-1 top-1/2 z-10 hover:cursor-pointer scale-60 hover:scale-80 transition-all"
+        />
       )}
 
       <div
@@ -57,12 +55,11 @@ export default function OurProjectsCarousel({ children }) {
       </div>
 
       {showRight && (
-        <button
+        <img
+          src="/Chevron_right.png"
           onClick={() => scroll(1)}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[var(--color-abu-sedang)] rounded-full shadow-lg p-2 hover:bg-[var(--color-kuning-tua)] hover:cursor-pointer transition"
-        >
-          <ChevronRight size={24} />
-        </button>
+          className="absolute -right-2 hover:-right-1 top-1/2 z-10 hover:cursor-pointer scale-60 hover:scale-80 transition-all"
+        />
       )}
     </div>
   );

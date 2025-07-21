@@ -7,40 +7,41 @@ export default function IotInsightCarousel({ children }) {
     const container = containerRef.current;
     if (!container) return;
 
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+    let isDragging = false;
+    let startX = 0;
+    let scrollStart = 0;
 
-    const mouseDown = (e) => {
-      isDown = true;
+    const onPointerDown = (e) => {
+      isDragging = true;
+      startX = e.clientX || e.touches?.[0]?.clientX;
+      scrollStart = container.scrollLeft;
+      container.setPointerCapture(e.pointerId);
       container.classList.add("cursor-grabbing");
-      startX = e.pageX - container.offsetLeft;
-      scrollLeft = container.scrollLeft;
     };
 
-    const mouseLeaveOrUp = () => {
-      isDown = false;
+    const onPointerMove = (e) => {
+      if (!isDragging) return;
+      const x = e.clientX || e.touches?.[0]?.clientX;
+      const walk = x - startX;
+      container.scrollLeft = scrollStart - walk;
+    };
+
+    const onPointerUp = (e) => {
+      isDragging = false;
       container.classList.remove("cursor-grabbing");
+      container.releasePointerCapture(e.pointerId);
     };
 
-    const mouseMove = (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - container.offsetLeft;
-      const walk = (x - startX) * 1.5;
-      container.scrollLeft = scrollLeft - walk;
-    };
-
-    container.addEventListener("mousedown", mouseDown);
-    container.addEventListener("mouseleave", mouseLeaveOrUp);
-    container.addEventListener("mouseup", mouseLeaveOrUp);
-    container.addEventListener("mousemove", mouseMove);
+    container.addEventListener("pointerdown", onPointerDown);
+    container.addEventListener("pointermove", onPointerMove);
+    container.addEventListener("pointerup", onPointerUp);
+    container.addEventListener("pointerleave", onPointerUp);
 
     return () => {
-      container.removeEventListener("mousedown", mouseDown);
-      container.removeEventListener("mouseleave", mouseLeaveOrUp);
-      container.removeEventListener("mouseup", mouseLeaveOrUp);
-      container.removeEventListener("mousemove", mouseMove);
+      container.removeEventListener("pointerdown", onPointerDown);
+      container.removeEventListener("pointermove", onPointerMove);
+      container.removeEventListener("pointerup", onPointerUp);
+      container.removeEventListener("pointerleave", onPointerUp);
     };
   }, []);
 
@@ -49,8 +50,8 @@ export default function IotInsightCarousel({ children }) {
       ref={containerRef}
       className="overflow-x-auto cursor-grab scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
     >
-      <div className="flex w-fit transition-transform duration-500 ease-in-out gap-6 px-6">
-        {React.Children.map(children, (child, _) => (
+      <div className="flex w-fit gap-6 px-6">
+        {React.Children.map(children, (child) => (
           <div className="flex-shrink-0 snap-center">{child}</div>
         ))}
       </div>

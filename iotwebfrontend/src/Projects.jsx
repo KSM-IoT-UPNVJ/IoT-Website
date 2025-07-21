@@ -14,16 +14,16 @@ function Projects() {
         <OurProjectsCard
           title="KSM IoT UPNVJ Website Development"
           description="This project focuses on the development of an official website for KSM IoT UPNVJ, aiming to serve as an informative and interactive platform for students, members, and the public. The website includes features such as organizational profiles, division overviews, event updates, and contact information."
-          image="/src/assets/LOGO_IOT.png"
+          image="/template-foto-OurProjects.jpg"
         />
         <OurProjectsCard
-          title="Smart Home Monitoring"
-          description="Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos."
-          image="/images/smart-home.png"
+          title="Project Title"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum."
+          image=""
         />
         <OurProjectsCard
-          title="IoT Plant Watering System"
-          description="An automatic plant watering solution using soil moisture sensors and solenoid valve control to optimize irrigation."
+          title="Project Title"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum. "
           image=""
         />
         <OurProjectsCard
@@ -54,39 +54,34 @@ function Projects() {
 
       <IotInsightCarousel>
         <IotInsightCard
-          image="/src/assets/LOGO_IOT.png"
+          image="/IotInsight-Hardware1.png"
           vol={1}
-          title="Smart City Infrastructure Using LoRaWAN"
+          title="Imajinasi ke Dunia Nyata dengan Fusion 360 & Blender?"
         />
         <IotInsightCard
-          image="/src/assets/LOGO_IOT.png"
+          image="/IotInsight-Firmware1.png"
           vol={2}
-          title="Sensor-Based Health Monitoring System for Elderly"
+          title="ESP32 Otak Pintar di Balik Proyek IoT!"
         />
         <IotInsightCard
-          image="/images/insight-3.png"
+          image="/IotInsight-Software1.png"
           vol={3}
-          title="Automated Agricultural Monitoring and Analytics"
+          title="Apa Bahasa Pemrogramanmu?"
         />
         <IotInsightCard
-          image="/images/insight-4.png"
+          image="/IotInsight-Uiux1.png"
           vol={4}
-          title="IoT Security & Privacy Considerations"
+          title="Menyelami Dunia UI/UX!"
         />
         <IotInsightCard
-          image="/images/insight-5.png"
+          image="/IotInsight-Network1.png"
           vol={5}
-          title="IoT in Public Transport Optimization"
+          title="VPN, Apakah Aman?"
         />
         <IotInsightCard
-          image="/images/insight-5.png"
+          image="/IotInsight-Firmware2.png"
           vol={6}
-          title="IoT in Public Transport Optimization"
-        />
-        <IotInsightCard
-          image="/images/insight-5.png"
-          vol={7}
-          title="IoT in Public Transport Optimization"
+          title="Kenalan yuk sama PLC!"
         />
       </IotInsightCarousel>
     </>
