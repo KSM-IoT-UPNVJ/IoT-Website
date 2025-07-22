@@ -1,12 +1,37 @@
-export default function IotInsightCard({ image, vol, title }) {
+import React, { useRef } from "react";
+
+export default function IotInsightCard({ image, vol, title, link }) {
+  const startX = useRef(0);
+  const startY = useRef(0);
+  const threshold = 5;
+
+  function handleMouseDown(e) {
+    startX.current = e.clientX;
+    startY.current = e.clientY;
+  }
+
+  function handleMouseUp(e) {
+    const deltaX = Math.abs(e.clientX - startX.current);
+    const deltaY = Math.abs(e.clientY - startY.current);
+
+    if (deltaX < threshold && deltaY < threshold) {
+      window.open(link, "_blank");
+    }
+  }
+
   return (
-    <div className="rounded-4xl bg-[var(--color-biru-muda)] overflow-hidden group flex flex-col w-[345px] h-[432px] my-2 hover:cursor-pointer hover:shadow-[0_0_0_8px_var(--color-biru-tua)] transition-all duration-300 ease-in-out">
+    <div
+      className="rounded-4xl bg-[var(--color-biru-muda)] overflow-hidden group flex flex-col w-[345px] h-[432px] my-2 hover:cursor-pointer hover:shadow-[0_0_0_8px_var(--color-biru-tua)] transition-all duration-300 ease-in-out"
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+    >
       <div className="flex items-center justify-center min-h-full group-hover:min-h-[365px] group-hover:h-[365px] transition-all duration-300 ease-in-out">
         {image ? (
           <img
             src={image}
             alt={title}
-            className="object-contain text-[var(--color-biru-tua)] w-full group-hover:w-[271px] h-full group-hover:h-[339px] rounded-4xl bg-abu-sedang transition-all duration-300 ease-in-out"
+            className="object-contain text-[var(--color-biru-tua)] w-full group-hover:w-[271px] h-full group-hover:h-[339px] rounded-4xl transition-all duration-300 ease-in-out"
+            draggable="false"
           />
         ) : (
           <h2 className="text-5xl font-extrabold text-[var(--color-biru-tua)]">

@@ -6,29 +6,36 @@ export default function OurProjectsCarousel({ children }) {
   const [showRight, setShowRight] = useState(false);
 
   useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
+    const slider = containerRef.current;
+    if (!slider) return;
 
     const checkScroll = () => {
-      setShowLeft(el.scrollLeft > 10);
-      setShowRight(el.scrollLeft + el.offsetWidth < el.scrollWidth - 10);
+      setTimeout(() => {
+        setShowLeft(slider.scrollLeft > 10);
+        setShowRight(
+          slider.scrollLeft + slider.offsetWidth < slider.scrollWidth - 10
+        );
+      }, 400);
     };
 
     checkScroll();
 
-    el.addEventListener("scroll", checkScroll);
+    slider.addEventListener("scroll", checkScroll);
     window.addEventListener("resize", checkScroll);
 
     return () => {
-      el.removeEventListener("scroll", checkScroll);
+      slider.removeEventListener("scroll", checkScroll);
       window.removeEventListener("resize", checkScroll);
     };
   }, []);
 
   const scroll = (direction) => {
-    const el = containerRef.current;
-    if (!el) return;
-    el.scrollBy({ left: direction * el.offsetWidth, behavior: "smooth" });
+    const slider = containerRef.current;
+    if (!slider) return;
+    slider.scrollBy({
+      left: direction * slider.offsetWidth,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -43,11 +50,11 @@ export default function OurProjectsCarousel({ children }) {
 
       <div
         ref={containerRef}
-        className="overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        className="overflow-hidden scroll-smooth snap-x snap-mandatory"
       >
         <div className="flex w-fit transition-transform duration-500 ease-in-out mx-6">
           {React.Children.map(children, (child, _) => (
-            <div className="w-screen flex justify-center mx-8 md:w-[430px] flex-shrink-0 snap-center">
+            <div className="flex justify-center mx-8 md:w-[430px] flex-shrink-0 snap-center">
               {child}
             </div>
           ))}

@@ -1,58 +1,55 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
-export default function IotInsightCarousel({ children }) {
-  const containerRef = useRef(null);
+export default function IotInsightCarousel(props) {
+  const sliderRef = useRef(null);
+  let isDown = useRef(false);
+  let startX = useRef(null);
+  let scrollLeft = useRef(null);
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+    if (sliderRef && sliderRef.current) {
+      let slider = sliderRef.current;
+      slider.addEventListener("mousedown", handleMouseDown);
+      slider.addEventListener("mouseleave", handleMouseLeave);
+      slider.addEventListener("mouseup", handleMouseUp);
+      slider.addEventListener("mousemove", handleMouseMove);
 
-    let isDragging = false;
-    let startX = 0;
-    let scrollStart = 0;
-
-    const onPointerDown = (e) => {
-      isDragging = true;
-      startX = e.clientX || e.touches?.[0]?.clientX;
-      scrollStart = container.scrollLeft;
-      container.setPointerCapture(e.pointerId);
-      container.classList.add("cursor-grabbing");
-    };
-
-    const onPointerMove = (e) => {
-      if (!isDragging) return;
-      const x = e.clientX || e.touches?.[0]?.clientX;
-      const walk = x - startX;
-      container.scrollLeft = scrollStart - walk;
-    };
-
-    const onPointerUp = (e) => {
-      isDragging = false;
-      container.classList.remove("cursor-grabbing");
-      container.releasePointerCapture(e.pointerId);
-    };
-
-    container.addEventListener("pointerdown", onPointerDown);
-    container.addEventListener("pointermove", onPointerMove);
-    container.addEventListener("pointerup", onPointerUp);
-    container.addEventListener("pointerleave", onPointerUp);
-
-    return () => {
-      container.removeEventListener("pointerdown", onPointerDown);
-      container.removeEventListener("pointermove", onPointerMove);
-      container.removeEventListener("pointerup", onPointerUp);
-      container.removeEventListener("pointerleave", onPointerUp);
-    };
+      return () => {
+        slider.removeEventListener("mousedown", handleMouseDown);
+        slider.removeEventListener("mouseleave", handleMouseLeave);
+        slider.removeEventListener("mouseup", handleMouseUp);
+        slider.removeEventListener("mousemove", handleMouseMove);
+      };
+    }
   }, []);
 
+  function handleMouseDown(e) {
+    isDown.current = true;
+    startX.current = e.pageX - sliderRef.current.offsetLeft;
+    scrollLeft.current = sliderRef.current.scrollLeft;
+  }
+
+  function handleMouseLeave() {
+    isDown.current = false;
+  }
+
+  function handleMouseUp() {
+    isDown.current = false;
+  }
+
+  function handleMouseMove(e) {
+    if (!isDown.current) return;
+    e.preventDefault();
+    const x = e.pageX - sliderRef.current.offsetLeft;
+    const walk = x - startX.current;
+    sliderRef.current.scrollLeft = scrollLeft.current - walk;
+  }
+
   return (
-    <div
-      ref={containerRef}
-      className="overflow-x-auto cursor-grab scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-    >
-      <div className="flex w-fit gap-6 px-6">
-        {React.Children.map(children, (child) => (
-          <div className="flex-shrink-0 snap-center">{child}</div>
+    <div ref={sliderRef} className="overflow-hidden cursor-default select-none">
+      <div className="flex w-fit mx-15 transition-transform duration-300 ease-in-out">
+        {React.Children.map(props.children, (child) => (
+          <div className="w-fit mx-6">{child}</div>
         ))}
       </div>
     </div>

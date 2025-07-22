@@ -1,7 +1,7 @@
 export default function OurProjectsCard({ title, description, image }) {
   return (
     <div className="rounded-xl shadow-[0_2px_10px_rgba(0,0,0,1)] overflow-hidden flex flex-col md:w-full w-[430px] h-[800px] my-2">
-      <div className="flex items-center justify-center w-full h-[340px] bg-[var(--color-abu-muda)] hover:brightness-50 hover:cursor-pointer transition duration-300">
+      <div className="flex items-center justify-center w-full h-[340px] bg-[var(--color-abu-muda)] hover:brightness-50 hover:cursor-pointer duration-300">
         {image ? (
           <img
             src={image}

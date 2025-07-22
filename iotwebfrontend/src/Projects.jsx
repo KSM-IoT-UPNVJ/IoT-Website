@@ -57,31 +57,37 @@ function Projects() {
           image="/IotInsight-Hardware1.png"
           vol={1}
           title="Imajinasi ke Dunia Nyata dengan Fusion 360 & Blender?"
+          link="https://www.instagram.com/p/DHVhPUizghU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         />
         <IotInsightCard
           image="/IotInsight-Firmware1.png"
           vol={2}
           title="ESP32 Otak Pintar di Balik Proyek IoT!"
+          link="https://www.instagram.com/p/DHvDhJxRK1i/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         />
         <IotInsightCard
           image="/IotInsight-Software1.png"
           vol={3}
           title="Apa Bahasa Pemrogramanmu?"
+          link="https://www.instagram.com/p/DItBMJHx_FT/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         />
         <IotInsightCard
           image="/IotInsight-Uiux1.png"
           vol={4}
           title="Menyelami Dunia UI/UX!"
+          link="https://www.instagram.com/p/DJbaNkyR6rj/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         />
         <IotInsightCard
           image="/IotInsight-Network1.png"
           vol={5}
           title="VPN, Apakah Aman?"
+          link="https://www.instagram.com/p/DJ01PEBR7Ff/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         />
         <IotInsightCard
           image="/IotInsight-Firmware2.png"
           vol={6}
           title="Kenalan yuk sama PLC!"
+          link="https://www.instagram.com/p/DKRbFZ_xfTE/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         />
       </IotInsightCarousel>
     </>
