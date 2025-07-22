@@ -14,11 +14,19 @@ export default function IotInsightCarousel(props) {
       slider.addEventListener("mouseup", handleMouseUp);
       slider.addEventListener("mousemove", handleMouseMove);
 
+      slider.addEventListener("touchstart", handleTouchStart);
+      slider.addEventListener("touchmove", handleTouchMove);
+      slider.addEventListener("touchend", handleMouseUp);
+
       return () => {
         slider.removeEventListener("mousedown", handleMouseDown);
         slider.removeEventListener("mouseleave", handleMouseLeave);
         slider.removeEventListener("mouseup", handleMouseUp);
         slider.removeEventListener("mousemove", handleMouseMove);
+
+        slider.removeEventListener("touchstart", handleTouchStart);
+        slider.removeEventListener("touchmove", handleTouchMove);
+        slider.removeEventListener("touchend", handleMouseUp);
       };
     }
   }, []);
@@ -41,6 +49,19 @@ export default function IotInsightCarousel(props) {
     if (!isDown.current) return;
     e.preventDefault();
     const x = e.pageX - sliderRef.current.offsetLeft;
+    const walk = x - startX.current;
+    sliderRef.current.scrollLeft = scrollLeft.current - walk;
+  }
+
+  function handleTouchStart(e) {
+    isDown.current = true;
+    startX.current = e.touches[0].pageX - sliderRef.current.offsetLeft;
+    scrollLeft.current = sliderRef.current.scrollLeft;
+  }
+
+  function handleTouchMove(e) {
+    if (!isDown.current) return;
+    const x = e.touches[0].pageX - sliderRef.current.offsetLeft;
     const walk = x - startX.current;
     sliderRef.current.scrollLeft = scrollLeft.current - walk;
   }
