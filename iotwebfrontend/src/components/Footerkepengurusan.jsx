@@ -70,6 +70,22 @@ function Footerkepengurusan() {
             />
           </div>
           <div
+            onClick={() => window.open("https://github.com/IoTUPNVJ", "_blank")}
+            className="relative w-[57px] h-[57px] group hover:cursor-pointer"
+          >
+            <div className="w-full h-full rounded-[10px] bg-[var(--color-biru-tua))] group-hover:bg-white border-3 border-[var(--color-biru-tua))] transition-all duration-500 ease-in-out"></div>
+            <img
+              src="public/github_footer.png"
+              alt="linkedin"
+              className="w-[38px] h-[38px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group-hover:opacity-0 transition-all duration-500 ease-in-out invert"
+            />
+            <img
+              src="public/github_footer.png"
+              alt="linkedin"
+              className="w-[38px] h-[38px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out"
+            />
+          </div>
+          <div
             onClick={() =>
               window.open("https://www.instagram.com/iot.upnvj/", "_blank")
             }
