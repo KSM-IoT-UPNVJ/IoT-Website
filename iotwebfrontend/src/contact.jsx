@@ -1,9 +1,9 @@
-import { Phone, Mail, MapPinned } from 'lucide-react';
+import { Phone, Mail, Globe } from 'lucide-react';
 import Map from './components/map'
 
 export function Contact() {
     const imageSrc = "foto_upn.jpg"
-    
+    const cardImage = "relative h-21 rounded-2xl overflow-hidden group hover:-translate-y-1 hover:scale-105 duration-150"
     return(
         <div className="m-15">
             <div className="text-center my-10">
@@ -25,31 +25,31 @@ export function Contact() {
                         </form>
                     </div>
 
-                    <div className="flex flex-col gap-2 flex-2/5 p-10">
-                        <div className="relative h-24 rounded-2xl overflow-hidden">
+                    <div className="flex flex-col gap-4 flex-2/5 p-10">
+                        <a href="tel:+62 813-1522-6318" className={cardImage}>
                             <img
                             src={imageSrc}
                             alt="Top"
                             className="w-full h-full object-cover object-top"
                             />
-                            <div className="absolute inset-0 text-white backdrop-blur-[1px] bg-black/50 flex items-center px-4 gap-4">
-                                <div className="bg-biru-sedang p-2 rounded-full">
+                            <div className="absolute inset-0 text-white backdrop-blur-[5px] bg-black/25 flex items-center px-4 gap-4 group-hover:bg-black/50 duration-150">
+                                <div className="bg-biru-sedang p-2 rounded-full duration-150">
                                     <Phone />
                                 </div>
                                 <div>
-                                    <p className="font-bold">Phone</p>
-                                    <p className="text-sm">+62 813-1552-6318</p>
+                                    <p className="font-bold duration-150">Phone</p>
+                                    <p className="text-sm duration-150">+62 813-1552-6318</p>
                                 </div>
-                            </div>
-                        </div>
+                                </div>
+                        </a>
 
-                        <div className="relative h-24 rounded-2xl overflow-hidden">
+                        <a href='mailto: internetofthings.upnvj@gmail.com' className={cardImage}>
                             <img
                             src={imageSrc}
                             alt="Middle"
                             className="w-full h-full object-cover object-center"
                             />
-                            <div className="absolute inset-0 text-white bg-black/50 flex backdrop-blur-[1px] items-center px-4 gap-4">
+                            <div className="absolute inset-0 text-white bg-black/25 flex backdrop-blur-[5px] items-center px-4 gap-4 group-hover:bg-black/50 duration-150">
                                 <div className="bg-biru-sedang p-2 rounded-full">
                                     <Mail />
                                 </div>
@@ -59,24 +59,24 @@ export function Contact() {
                                 </div>
                             </div>
 
-                        </div>
+                        </a>
 
-                        <div className="relative h-24 rounded-2xl overflow-hidden">
+                        <a href='https://ksmiotupnvj.my.id/' className={cardImage}>
                             <img
                             src={imageSrc}
                             alt="Bottom"
                             className="w-full h-full object-cover object-bottom"
                             />
-                            <div className="absolute inset-0 text-white bg-black/50 backdrop-blur-[1px] flex items-center px-4 gap-4">
+                            <div className="absolute inset-0 text-white bg-black/25 backdrop-blur-[5px] flex items-center px-4 gap-4 group-hover:bg-black/50 duration-150">
                                 <div className='bg-biru-sedang p-2 rounded-full'>
-                                    <MapPinned />
+                                    <Globe />
                                 </div>
                                 <div>
-                                    <p className="font-bold">Address</p>
-                                    <p className="text-sm break-all">Jl. Raya Limo Kecamatan Limo Kota Depok 16515</p>
+                                    <p className="font-bold">Website</p>
+                                    <p className="text-sm break-all">ksmiotupnvj.my.id</p>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
