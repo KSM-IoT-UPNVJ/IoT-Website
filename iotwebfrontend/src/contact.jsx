@@ -1,8 +1,9 @@
-import { Phone, Mail } from 'lucide-react';
+import { Phone, Mail, MapPinned } from 'lucide-react';
+import Map from './components/map'
 
 export function Contact() {
     const imageSrc = "foto_upn.jpg"
-
+    
     return(
         <div className="m-15">
             <div className="text-center my-10">
@@ -21,7 +22,6 @@ export function Contact() {
                             </div>
                             <textarea name="message" placeholder="Message" className="block border-2 border-biru-sedang bg-biru-muda rounded-2xl py-[7px] px-[19px] w-full"></textarea>
                             <button type="submit" className="bg-biru-sedang w-[231px] h-12 rounded-xl text-white shadow-lg shadow-blue-500/50 ">Submit</button>
-
                         </form>
                     </div>
 
@@ -32,8 +32,8 @@ export function Contact() {
                             alt="Top"
                             className="w-full h-full object-cover object-top"
                             />
-                            <div className="absolute inset-0 text-white backdrop-blur-[1px] flex items-center px-4 gap-4">
-                                <div className="bg-sky-500 p-2 rounded-full">
+                            <div className="absolute inset-0 text-white backdrop-blur-[1px] bg-black/50 flex items-center px-4 gap-4">
+                                <div className="bg-biru-sedang p-2 rounded-full">
                                     <Phone />
                                 </div>
                                 <div>
@@ -49,8 +49,8 @@ export function Contact() {
                             alt="Middle"
                             className="w-full h-full object-cover object-center"
                             />
-                            <div className="absolute inset-0 text-white flex backdrop-blur-[1px] items-center px-4 gap-4">
-                                <div className="bg-sky-500 p-2 rounded-full">
+                            <div className="absolute inset-0 text-white bg-black/50 flex backdrop-blur-[1px] items-center px-4 gap-4">
+                                <div className="bg-biru-sedang p-2 rounded-full">
                                     <Mail />
                                 </div>
                                 <div>
@@ -67,14 +67,21 @@ export function Contact() {
                             alt="Bottom"
                             className="w-full h-full object-cover object-bottom"
                             />
-                            <div className="absolute inset-0 text-white backdrop-blur-[1px] flex items-center px-4 gap-4">
-
+                            <div className="absolute inset-0 text-white bg-black/50 backdrop-blur-[1px] flex items-center px-4 gap-4">
+                                <div className='bg-biru-sedang p-2 rounded-full'>
+                                    <MapPinned />
+                                </div>
+                                <div>
+                                    <p className="font-bold">Address</p>
+                                    <p className="text-sm break-all">Jl. Raya Limo Kecamatan Limo Kota Depok 16515</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <Map />
         </div>
     )
-
 }
