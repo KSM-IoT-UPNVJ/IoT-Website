@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from './components/nav';
 import { Contact } from './contact';
-import Footerkepengurusan from './Footerkepengurusan';
+import Footerkepengurusan from './components/Footerkepengurusan';
 
 function App() {
   return (
