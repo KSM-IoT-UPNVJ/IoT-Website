@@ -1,5 +1,5 @@
 import { Phone, Mail, Globe } from 'lucide-react';
-import Map from './components/map'
+import Map from './components/contact/map'
 
 export function Contact() {
     const imageSrc = "foto_upn.jpg"
