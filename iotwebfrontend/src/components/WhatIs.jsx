@@ -11,8 +11,8 @@ const WhatIs = () => {
       }}
     >
       <h2
-        className="text-center text-3xl font-semibold mb-16"
-        style={{ color: "var(--color-biru-tua)" }}
+        className="text-center text-5xl font-semibold mb-16"
+        style={{ color: "var(--color-biru-tua)",fontFamily: "'OptimaNova'"}}
       >
         What Is?
       </h2>

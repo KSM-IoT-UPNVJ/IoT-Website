@@ -12,7 +12,7 @@ const Slogan = () => {
 
         <div className="space-y-8">
           <div>
-            <h3 className="text-3xl font-bold mb-2" style={{ color: "var(--color-biru-tua)" }}>
+            <h3 className="text-4xl font-bold mb-2" style={{ color: "var(--color-biru-tua)" }}>
               Innovating Today
             </h3>
             <p className="text-base md:text-lg leading-relaxed">
@@ -22,7 +22,7 @@ const Slogan = () => {
           </div>
 
           <div>
-            <h3 className="text-3xl font-bold mb-2" style={{ color: "var(--color-biru-tua)" }}>
+            <h3 className="text-4xl font-bold mb-2" style={{ color: "var(--color-biru-tua)" }}>
               Champion Tomorrow
             </h3>
             <p className="text-base md:text-lg leading-relaxed">
