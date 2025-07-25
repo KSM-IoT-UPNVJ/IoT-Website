@@ -1,7 +1,7 @@
-import OurProjectsCard from "/src/components/OurProjectsCard.jsx";
-import OurProjectsCarousel from "/src/components/OurProjectsCarousel";
-import IotInsightCard from "/src/components/IotInsightCard";
-import IotInsightCarousel from "/src/components/IotInsightCarousel";
+import OurProjectsCard from "/src/components/projects/OurProjectsCard.jsx";
+import OurProjectsCarousel from "/src/components/projects/OurProjectsCarousel";
+import IotInsightCard from "/src/components/projects/IotInsightCard";
+import IotInsightCarousel from "/src/components/projects/IotInsightCarousel";
 
 function Projects() {
   return (
@@ -14,7 +14,7 @@ function Projects() {
         <OurProjectsCard
           title="KSM IoT UPNVJ Website Development"
           description="This project focuses on the development of an official website for KSM IoT UPNVJ, aiming to serve as an informative and interactive platform for students, members, and the public. The website includes features such as organizational profiles, division overviews, event updates, and contact information."
-          image="/template-foto-OurProjects.jpg"
+          image="/projects/template-foto-OurProjects.jpg"
         />
         <OurProjectsCard
           title="Project Title"
@@ -54,37 +54,37 @@ function Projects() {
 
       <IotInsightCarousel>
         <IotInsightCard
-          image="/IotInsight-Hardware1.png"
+          image="/projects/IotInsight-Hardware1.png"
           vol={1}
           title="Imajinasi ke Dunia Nyata dengan Fusion 360 & Blender?"
           link="https://www.instagram.com/p/DHVhPUizghU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         />
         <IotInsightCard
-          image="/IotInsight-Firmware1.png"
+          image="/projects/IotInsight-Firmware1.png"
           vol={2}
           title="ESP32 Otak Pintar di Balik Proyek IoT!"
           link="https://www.instagram.com/p/DHvDhJxRK1i/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         />
         <IotInsightCard
-          image="/IotInsight-Software1.png"
+          image="/projects/IotInsight-Software1.png"
           vol={3}
           title="Apa Bahasa Pemrogramanmu?"
           link="https://www.instagram.com/p/DItBMJHx_FT/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         />
         <IotInsightCard
-          image="/IotInsight-Uiux1.png"
+          image="/projects/IotInsight-Uiux1.png"
           vol={4}
           title="Menyelami Dunia UI/UX!"
           link="https://www.instagram.com/p/DJbaNkyR6rj/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         />
         <IotInsightCard
-          image="/IotInsight-Network1.png"
+          image="/projects/IotInsight-Network1.png"
           vol={5}
           title="VPN, Apakah Aman?"
           link="https://www.instagram.com/p/DJ01PEBR7Ff/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         />
         <IotInsightCard
-          image="/IotInsight-Firmware2.png"
+          image="/projects/IotInsight-Firmware2.png"
           vol={6}
           title="Kenalan yuk sama PLC!"
           link="https://www.instagram.com/p/DKRbFZ_xfTE/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="

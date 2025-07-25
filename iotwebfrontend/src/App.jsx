@@ -9,9 +9,7 @@ function App() {
 
       <Projects />
 
-      <div className="overflow-x-hidden mt-20">
-        <Footerkepengurusan />
-      </div>
+      <Footerkepengurusan />
     </>
   );
 }

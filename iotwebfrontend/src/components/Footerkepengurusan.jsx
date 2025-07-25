@@ -1,138 +1,105 @@
+import RotatingIcons from "/src/utils/RotatingIcons";
+
 function Footerkepengurusan() {
   return (
-    <div
-      className="flex w-full pl-[100px] pr-[100px] pt-[100px] h-[700px] bg-gradient-to-b from-white via-biru-footer-kepengurusan to-biru-muda
-                        justify-between"
-    >
+    <div className="flex w-full px-[100px] pt-[100px] h-[700px] bg-gradient-to-b from-white via-biru-footer-kepengurusan to-biru-muda justify-between">
       <div className="pt-[80px] flex flex-col gap-[10px] w-[300px] h-[300px] items-end ">
-        <a
-          href=""
-          className="z-10 font-optima font-[900] text-[35px] text-biru-tua"
-        >
+        <p className="z-10 font-optima font-[900] text-[35px] text-biru-tua">
           Contact Info
-        </a>
-        <a
-          href=""
-          className="z-10 font-optima font-[300] text-[20px] text-biru-tua"
-        >
-          contact info
-        </a>
-        <a
-          href=""
-          className="z-10 font-optima font-[300] text-[20px] text-biru-tua"
-        >
-          contact info
-        </a>
-        <a
-          href=""
-          className="z-10 font-optima font-[300] text-[20px] text-biru-tua"
-        >
-          contact info
-        </a>
+        </p>
+        <div>
+          <img src="" alt="" />
+          <a
+            href=""
+            className="z-10 font-optima font-[300] text-[20px] text-biru-tua hover:font-bold"
+          >
+            contact info
+          </a>
+        </div>
+        <div>
+          <img src="" alt="" />
+          <a
+            href=""
+            className="z-10 font-optima font-[300] text-[20px] text-biru-tua hover:font-bold"
+          >
+            contact info
+          </a>
+        </div>
+        <div>
+          <img src="" alt="" />
+          <a
+            href=""
+            className="z-10 font-optima font-[300] text-[20px] text-biru-tua hover:font-bold"
+          >
+            contact info
+          </a>
+        </div>
       </div>
       <div className="flex flex-col w-[400px] h-[400px] items-center">
         <img
-          src="public/Logo_IoT.png"
+          src="/Logo_IoT.png"
           alt="Logo_IoT"
-          className="w-[180px] h-[201px]"
+          className="w-[180px] h-[201px] mb-2"
         ></img>
         <p className="font-titillium text-[24px] font-[700]">
           KSM Internet Of Things
         </p>
-        <p className="font-titillium text-[16px] font-[400] mb-[10px]">
+        <p className="font-titillium text-[16px] font-[400] mb-5">
           UPN "Veteran" Jakarta
         </p>
         <img
-          src="public/slogan.png"
+          src="/slogan.png"
           alt="Slogan"
-          className="w-[368.5px] h-[77px]"
+          className="w-[368.5px] h-[77px] saturate-[450%] mb-3"
         ></img>
         <div className="flex w-[400px] h-[100px] justify-center gap-[40px]">
-          <div
-            onClick={() =>
-              window.open(
-                "https://www.linkedin.com/company/ksmiotupnvj/posts/?feedView=all",
-                "_blank"
-              )
-            }
-            className="relative w-[57px] h-[57px] group hover:cursor-pointer"
-          >
-            <div className="w-full h-full rounded-[10px] bg-[var(--color-biru-tua))] group-hover:bg-white border-3 border-[var(--color-biru-tua))] transition-all duration-500 ease-in-out group-hover:rotate-45"></div>
-            <img
-              src="public/linkedin_footer1.png"
-              alt="linkedin"
-              className="w-[38px] h-[38px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group-hover:opacity-0 transition-all duration-500 ease-in-out"
+          <div className="flex gap-8">
+            <RotatingIcons
+              link="https://www.instagram.com/iot.upnvj/"
+              icon1="/footer/ig_footer1.png"
+              icon2="/footer/ig_footer2.png"
+              alt="iot.upnvj"
             />
-            <img
-              src="public/linkedin_footer2.png"
-              alt="linkedin"
-              className="w-[38px] h-[38px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out"
+            <RotatingIcons
+              link="https://www.linkedin.com/company/ksmiotupnvj"
+              icon1="/footer/linkedin_footer1.png"
+              icon2="/footer/linkedin_footer2.png"
+              alt="ksmiotupnvj"
             />
-          </div>
-          <div
-            onClick={() => window.open("https://github.com/IoTUPNVJ", "_blank")}
-            className="relative w-[57px] h-[57px] group hover:cursor-pointer"
-          >
-            <div className="w-full h-full rounded-[10px] bg-[var(--color-biru-tua))] group-hover:bg-white border-3 border-[var(--color-biru-tua))] transition-all duration-500 ease-in-out"></div>
-            <img
-              src="public/github_footer.png"
-              alt="linkedin"
-              className="w-[38px] h-[38px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group-hover:opacity-0 transition-all duration-500 ease-in-out invert"
-            />
-            <img
-              src="public/github_footer.png"
-              alt="linkedin"
-              className="w-[38px] h-[38px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out"
-            />
-          </div>
-          <div
-            onClick={() =>
-              window.open("https://www.instagram.com/iot.upnvj/", "_blank")
-            }
-            className="relative w-[57px] h-[57px] group hover:cursor-pointer"
-          >
-            <div className="w-full h-full rounded-[10px] bg-[var(--color-biru-tua))] group-hover:bg-white border-3 border-[var(--color-biru-tua))] transition-all duration-500 ease-in-out group-hover:-rotate-45"></div>
-            <img
-              src="public/ig_footer1.png"
-              alt="linkedin"
-              className="w-[38px] h-[38px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group-hover:opacity-0 transition-all duration-500 ease-in-out"
-            />
-            <img
-              src="public/ig_footer2.png"
-              alt="linkedin"
-              className="w-[38px] h-[38px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out"
+            <RotatingIcons
+              link="https://github.com/IoTUPNVJ"
+              icon1="/footer/github_footer1.png"
+              icon2="/footer/github_footer2.png"
+              alt="IoTUPNVJ"
             />
           </div>
         </div>
       </div>
       <div className="pt-[80px] pr-[80px] flex flex-col gap-[10px] w-[300px] h-[300px] items-end">
-        <a
-          href=""
-          className="z-10 font-optima font-[900] text-[35px] text-biru-tua"
-        >
+        <p className="z-10 font-optima font-bold text-[35px] text-biru-tua">
           Quick Links
-        </a>
+        </p>
         <a
-          href=""
-          className="z-10 font-optima font-normal text-[20px] text-biru-tua"
+          href="#contact"
+          className="z-10 font-optima font-normal text-[20px] text-biru-tua hover:font-bold"
         >
           Contact Us
         </a>
         <a
-          href=""
-          className="z-10 font-optima font-[300] text-[20px] text-biru-tua"
+          href="#about-us"
+          className="z-10 font-optima font-[300] text-[20px] text-biru-tua hover:font-bold"
         >
           About Us
         </a>
         <a
-          href=""
-          className="z-10 font-optima font-[300] text-[20px] text-biru-tua"
+          href="#iot-insight"
+          className="z-10 font-optima font-[300] text-[20px] text-biru-tua hover:font-bold"
         >
           Iot Insight
         </a>
         <a
-          href=""
-          className="z-10 font-optima font-[300] text-[20px] text-biru-tua"
+          href="#article"
+          className="z-10 font-optima font-[300] text-[20px] text-biru-tua hover:font-bold"
         >
           Article
         </a>
