@@ -1,14 +1,12 @@
 import React from 'react';
 import Nav from './components/nav';
-import { Contact } from './contact';
-import Footerkepengurusan from './components/Footerkepengurusan';
+import Footer from './components/footer';
 
 function App() {
   return (
     <>
       <Nav />
-      <Contact />
-      <Footerkepengurusan />
+      <Footer />
     </>
   );
 }
