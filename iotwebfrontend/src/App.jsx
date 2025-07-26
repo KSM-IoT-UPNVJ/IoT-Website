@@ -2,11 +2,11 @@ import React from 'react';
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import Navbar from './components/Navbar';
-import WhatIs from './components/WhatIs';
-import Slogan from './components/Slogan';
-import Goals from './components/Goals';
+import WhatIs from './components/AboutUs/WhatIs';
+import Slogan from './components/AboutUs/Slogan';
+import Goals from './components/AboutUs/Goals';
+import TeamGallery from './components/AboutUs/TeamGallery';
 import Footerkepengurusan from './components/Footer';
-import TeamGallery from './components/TeamGallery';
 
 import './index.css';
 
