@@ -1,6 +1,6 @@
 import RotatingIcons from '/src/utils/RotatingIcons';
 
-function Footerkepengurusan() {
+function Footer() {
   return (
     <div>
       <div className="flex w-full px-[100px] pt-[100px] h-[700px] bg-gradient-to-b from-white via-biru-footer-kepengurusan to-biru-muda justify-between">
@@ -9,7 +9,6 @@ function Footerkepengurusan() {
             Contact Info
           </p>
           <div>
-            <img src="" alt="" />
             <a
               href=""
               className="z-10 font-optima font-[300] text-[20px] text-biru-tua hover:font-bold"
@@ -18,7 +17,6 @@ function Footerkepengurusan() {
             </a>
           </div>
           <div>
-            <img src="" alt="" />
             <a
               href=""
               className="z-10 font-optima font-[300] text-[20px] text-biru-tua hover:font-bold"
@@ -27,7 +25,6 @@ function Footerkepengurusan() {
             </a>
           </div>
           <div>
-            <img src="" alt="" />
             <a
               href=""
               className="z-10 font-optima font-[300] text-[20px] text-biru-tua hover:font-bold"
@@ -111,4 +108,4 @@ function Footerkepengurusan() {
   );
 }
 
-export default Footerkepengurusan;
+export default Footer;

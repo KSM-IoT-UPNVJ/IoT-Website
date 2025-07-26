@@ -1,5 +1,6 @@
 import 'leaflet/dist/leaflet.css';
 import RotatingIcons from '../../utils/RotatingIcons';
+
 export default function Map() {
   return (
     <div className="flex bg-biru-tua rounded-xl">
@@ -37,7 +38,7 @@ export default function Map() {
               icon1="/footer/ig_footer1.png"
               icon2="/footer/ig_footer2.png"
               alt="iot.upnvj"
-              className="bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045]"
+              className="bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045] hover:bg-none"
             />
             <RotatingIcons
               link="https://www.linkedin.com/company/ksmiotupnvj"
