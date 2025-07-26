@@ -26,3 +26,12 @@ body {
     font-size: var(--text-xl);
 }
 }
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-biru-muda) inset !important;
+  box-shadow: 0 0 0px 1000px var(--color-biru-muda) inset !important;
+  -webkit-text-fill-color: #000 !important; /* warna teks */
+  transition: background-color 5000s ease-in-out 0s;
+}
