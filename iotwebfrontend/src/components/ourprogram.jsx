@@ -54,7 +54,7 @@ const OurProgram = () => {
         {/* Chevron Kiri */}
         <button
           onClick={scrollLeft}
-          className="absolute left-[-1rem] top-1/2 -translate-y-1/2 z-20 p-2 bg-transparent hover:scale-110 transition"
+          className="absolute left-[-4.7rem] top-1/2 -translate-y-1/2 z-20 p-2 bg-transparent hover:scale-110 transition"
           style={{
             opacity: isFadingLeft ? 0.1 : canScrollLeft ? 0.4 : 0.2,
             pointerEvents: canScrollLeft ? 'auto' : 'none',
@@ -82,7 +82,7 @@ const OurProgram = () => {
         {/* Chevron Kanan */}
         <button
           onClick={scrollRight}
-          className="absolute right-[-1rem] top-1/2 -translate-y-1/2 z-20 p-2 bg-transparent hover:scale-110 transition"
+          className="absolute right-[-4.7rem] top-1/2 -translate-y-1/2 z-20 p-2 bg-transparent hover:scale-110 transition"
           style={{
             opacity: isFadingRight ? 0.1 : canScrollRight ? 0.4 : 0.2,
             pointerEvents: canScrollRight ? 'auto' : 'none',
