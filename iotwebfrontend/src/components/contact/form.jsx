@@ -52,7 +52,7 @@ export default function Form() {
     border-biru-sedang bg-biru-muda
     inset-shadow-sm inset-shadow-blue-500/50
     focus:outline focus:outline-biru-tua
-    rounded-2xl py-3 px-[19px] w-full
+    rounded-2xl py-3 px-[19px] w-full hover:scale-102 duration-150
   `;
   };
 
@@ -103,7 +103,7 @@ export default function Form() {
         ></textarea>
         <button
           type="submit"
-          className="bg-biru-sedang w-[231px] h-12 rounded-xl text-white shadow-lg shadow-blue-500/50"
+          className="bg-biru-sedang w-[231px] h-12 rounded-xl text-white shadow-lg shadow-blue-500/50 cursor-pointer hover:scale-105 duration-150"
         >
           Submit
         </button>
