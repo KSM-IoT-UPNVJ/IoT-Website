@@ -1,11 +1,11 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
+import { EffectCoverflow, Navigation} from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 import './kepengurusan.css';
+
 
 const images = [
   {
@@ -13,8 +13,16 @@ const images = [
     href: 'https://www.instagram.com/p/DMNGCGvx6oq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
   },
   {
-    src: 'src/public/academic advisor.webp',
-    href: 'https://www.instagram.com/p/DMNFxi8RXV2/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+    src: 'src/public/vice chairman.webp',
+    href: 'https://www.instagram.com/p/DMNFizGxH8n/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+  },
+  {
+    src: 'src/public/sekbend.webp',
+    href: 'https://www.instagram.com/p/DMNFS6TRCaG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+  },
+  {
+    src: 'src/public/chairman.webp',
+    href: 'https://www.instagram.com/p/DMNGCGvx6oq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
   },
   {
     src: 'src/public/vice chairman.webp',
@@ -30,7 +38,6 @@ const images = [
 const ImageSliderBPH = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-  const paginationRef = useRef(null);
   const swiperRef = useRef(null);
   const [imagesLoaded, setImagesLoaded] = useState(0);
 
@@ -53,14 +60,14 @@ const ImageSliderBPH = () => {
       <div className='w-[95%] '>
         {swiperReady && (
           <Swiper
-            modules={[EffectCoverflow, Pagination, Navigation]}
+            modules={[EffectCoverflow, Navigation]}
             spaceBetween={20}
             slidesPerView={3}
-            initialSlide={0}
-            speed={1250}
-            loop={false}
-            observer={true}
-            observeParents={true}
+            speed={800}
+            loop={true}
+            loopedSlides={images.length}
+            watchSlidesProgress={true}
+            watchSlidesVisibility={true}
             centeredSlides={true}
             effect="coverflow"
             coverflowEffect={{
@@ -70,17 +77,12 @@ const ImageSliderBPH = () => {
             modifier: 1,
             slideShadows: false
             }}
-            pagination={{
-              clickable: true}}
             navigation={{
               prevEl: prevRef.current,
               nextEl: nextRef.current
             }}
-            onBeforeInit={(swiper) => {
-              // Fix for Swiper 8+ requiring refs to be set early
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
-
+           onSwiper={(swiper) => {
+              swiperRef.current = swiper;
             }}
             breakpoints={{
               768: { slidesPerView: 2.2 },
@@ -102,12 +104,12 @@ const ImageSliderBPH = () => {
       </div>
       
 
-      <div className="absolute top-1/2 left-0 right-0 flex justify-between items-center px-[20px] transform -translate-y-1/2 z-0">
-        <button ref={prevRef} className=" hover:cursor-pointer"> 
-        <img src="src/public/Chevron/chevron-left.webp" alt='kiri'></img>
+      <div className="absolute px-[30px] top-1/2 left-0 right-0 flex justify-between items-center transform -translate-y-1/2 z-50 pointer-events-none">
+        <button ref={prevRef} className="relative hover:cursor-pointer h-[80px] w-[50px] pointer-events-auto"> 
         </button>
-        <button ref={nextRef} className=" hover:cursor-pointer ">
-        <img src="src/public/Chevron/chevron-right.webp" alt='kanan'></img>
+        <img src="src/public/Chevron/chevron-left.webp" alt='kiri' className="absolute left-5"></img>
+        <img src="src/public/Chevron/chevron-right.webp" alt='kanan' className="absolute right-5"></img>
+        <button ref={nextRef} className="relative hover:cursor-pointer h-[80px] w-[50px] pointer-events-auto">
         </button>
       </div>
     </div>

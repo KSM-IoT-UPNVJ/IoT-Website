@@ -1,44 +1,45 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
+import { EffectCoverflow, Navigation} from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 import './kepengurusan.css';
 
+
 const images = [
  {
-    src: 'src/public/engineer.webp',
-    href: 'https://www.instagram.com/p/DMNDqnqR9Ca/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+    src: 'src/public/hrd.webp',
+    href: 'https://www.instagram.com/p/DMNEqw_Rkwu/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
   },
   {
-    src: 'src/public/Firmware.webp',
-    href: 'https://www.instagram.com/p/DMNDGnBx7J8/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+    src: 'src/public/akademik.webp',
+    href: 'https://www.instagram.com/p/DMNEOzGxpno/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
   },
   {
-    src: 'src/public/hardware.webp',
-    href: 'https://www.instagram.com/p/DMND9y7xSG8/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+    src: 'src/public/academic advisor.webp',
+    href: 'https://www.instagram.com/p/DMNFxi8RXV2/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
   },
   {
-    src: 'src/public/network.webp',
-    href: 'https://www.instagram.com/p/DMNCVUMRsUZ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+    src: 'src/public/hrd.webp',
+    href: 'https://www.instagram.com/p/DMNEqw_Rkwu/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
   },
   {
-    src: 'src/public/Software.webp',
-    href: 'https://www.instagram.com/p/DMNDV7ZRhBy/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+    src: 'src/public/akademik.webp',
+    href: 'https://www.instagram.com/p/DMNEOzGxpno/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
   },
   {
-    src: 'src/public/UX.webp',
-    href: 'https://www.instagram.com/p/DMNCzpNxAZn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+    src: 'src/public/academic advisor.webp',
+    href: 'https://www.instagram.com/p/DMNFxi8RXV2/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
   },
 ];
 
 
-const ImageSlider = () => {
+const ImageSliderHRD = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-  const paginationRef = useRef(null);
+  const swiperRef = useRef(null);
+  const [imagesLoaded, setImagesLoaded] = useState(0);
 
   const [swiperReady, setSwiperReady] = useState(false); // add trigger
 
@@ -47,17 +48,26 @@ const ImageSlider = () => {
     setSwiperReady(true);
   }, []);
 
+  useEffect(() => {
+    // Paksa update swiper ketika semua gambar sudah dimuat
+    if (imagesLoaded === images.length && swiperRef.current) {
+      swiperRef.current.update();
+    }
+  }, [imagesLoaded]);
+
   return (
     <div className="w-full flex justify-center items-center overflow-hidden relative h-[655px]">
       <div className='w-[95%] '>
         {swiperReady && (
           <Swiper
-            modules={[EffectCoverflow, Pagination, Navigation]}
+            modules={[EffectCoverflow, Navigation]}
             spaceBetween={20}
             slidesPerView={3}
-            initialSlide={0}
             speed={800}
             loop={true}
+            loopedSlides={images.length}
+            watchSlidesProgress={true}
+            watchSlidesVisibility={true}
             centeredSlides={true}
             effect="coverflow"
             coverflowEffect={{
@@ -67,17 +77,12 @@ const ImageSlider = () => {
             modifier: 1,
             slideShadows: false
             }}
-            pagination={{
-              clickable: true}}
             navigation={{
               prevEl: prevRef.current,
               nextEl: nextRef.current
             }}
-            onBeforeInit={(swiper) => {
-              // Fix for Swiper 8+ requiring refs to be set early
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
-
+           onSwiper={(swiper) => {
+              swiperRef.current = swiper;
             }}
             breakpoints={{
               768: { slidesPerView: 2.2 },
@@ -89,7 +94,7 @@ const ImageSlider = () => {
               <SwiperSlide key={idx}>
                 <div className="w-[472px] h-[515px] bg-biru-muda rounded-[15px] overflow-hidden shadow-lg">
                   <a href={img.href} target="_blank" rel="noopener noreferrer">
-                    <img src={img.src} alt={`slide-${idx}`} className="w-full h-full object-fill" />
+                    <img src={img.src} alt={`slide-${idx}`} className="w-full h-full object-fill" onLoad={() => setImagesLoaded(prev => prev + 1)} />
                   </a>
                 </div>
               </SwiperSlide>
@@ -111,4 +116,4 @@ const ImageSlider = () => {
   );
 };
 
-export default ImageSlider;
+export default ImageSliderHRD;
