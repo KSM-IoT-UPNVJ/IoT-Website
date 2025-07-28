@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from './components/nav';
-import Kepengurusan from './kepengurusan.jsx';
+import Kepengurusan from './components/kepengurusan/kepengurusan';
 
 
 function App() {

@@ -1,4 +1,4 @@
-import Anggotakepengurusan from "./AnggotaKepengurusan"
+import Anggotakepengurusan from "./Anggotakepengurusan"
 import Footer from "./Footerkepengurusan"
 
 function Kepengurusan() {
