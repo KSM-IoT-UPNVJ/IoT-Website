@@ -1,4 +1,5 @@
 import RotatingIcons from '/src/utils/RotatingIcons';
+import FadeIn from '/src/utils/fadeIn';
 
 function Footer() {
   return (
