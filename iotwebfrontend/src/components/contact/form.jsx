@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import FadeIn from '../../utils/fadeIn';
 
 export default function Form() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -64,49 +65,58 @@ export default function Form() {
         noValidate
         className="flex flex-col w-full gap-2.5"
       >
-        <input
-          type="text"
-          name="name"
-          required
-          placeholder="Name"
-          value={formData.name}
-          onChange={handleChange}
-          className={getInputStyle('name')}
-        />
-        <div className="flex gap-2 justify-center">
-          <input
-            type="email"
-            name="email"
-            required
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            className={getInputStyle('email')}
-          />
+        <FadeIn delay={0.4} direction={'left'}>
           <input
             type="text"
-            name="phone"
+            name="name"
             required
-            placeholder="Phone"
-            value={formData.phone}
+            placeholder="Name"
+            value={formData.name}
             onChange={handleChange}
-            className={getInputStyle('phone')}
+            className={getInputStyle('name')}
           />
-        </div>
-        <textarea
-          name="message"
-          required
-          placeholder="Message"
-          value={formData.message}
-          onChange={handleChange}
-          className={getInputStyle('message')}
-        ></textarea>
-        <button
-          type="submit"
-          className="bg-biru-sedang w-[231px] h-12 rounded-xl text-white shadow-lg shadow-blue-500/50 cursor-pointer hover:scale-105 duration-150"
-        >
-          Submit
-        </button>
+        </FadeIn>
+
+        <FadeIn delay={0.6} direction={'left'}>
+          <div className="flex gap-2 justify-center">
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              className={getInputStyle('email')}
+            />
+            <input
+              type="text"
+              name="phone"
+              required
+              placeholder="Phone"
+              value={formData.phone}
+              onChange={handleChange}
+              className={getInputStyle('phone')}
+            />
+          </div>
+        </FadeIn>
+        <FadeIn delay={0.8} direction={'left'}>
+          <textarea
+            name="message"
+            required
+            placeholder="Message"
+            value={formData.message}
+            onChange={handleChange}
+            className={getInputStyle('message')}
+          ></textarea>
+        </FadeIn>
+        <FadeIn delay={1} direction={'left'}>
+          <button
+            type="submit"
+            className="bg-biru-sedang w-[231px] h-12 rounded-xl text-white shadow-lg shadow-blue-500/50 cursor-pointer hover:scale-105 duration-150"
+          >
+            Submit
+          </button>
+        </FadeIn>
       </form>
     </div>
   );
