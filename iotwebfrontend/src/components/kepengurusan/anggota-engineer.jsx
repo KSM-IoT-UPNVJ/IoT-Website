@@ -87,7 +87,7 @@ const ImageSlider = () => {
           >
             {images.map((img, idx) => (
               <SwiperSlide key={idx}>
-                <div className="w-[472px] h-[515px] bg-biru-muda rounded-[15px] overflow-hidden shadow-lg">
+                <div className="w-[472px] h-[515px] bg-biru-muda rounded-[15px] overflow-hidden shadow-lg hover:scale-[1.05]  duration-[0.2s]">
                   <a href={img.href} target="_blank" rel="noopener noreferrer">
                     <img src={img.src} alt={`slide-${idx}`} className="w-full h-full object-fill" />
                   </a>
