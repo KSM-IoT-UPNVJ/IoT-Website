@@ -22,7 +22,7 @@ export function Contact() {
       </div>
 
       <div>
-        <div className="flex justify-around">
+        <div className="flex flex-col md:flex-row justify-around">
           <Form />
           <MediaCard />
         </div>
