@@ -1,15 +1,15 @@
-import RotatingIcons from "/src/utils/RotatingIcons";
+import RotatingIcons from '/src/utils/RotatingIcons';
+import FadeIn from '/src/utils/fadeIn';
 
-function Footerkepengurusan() {
+function Footer() {
   return (
-    <div className="flex flex-col">
-      <div className="flex w-full px-[100px] pt-[100px] h-[700px] bg-gradient-to-b from-white via-biru-footer-kepengurusan to-biru-muda justify-between">
+    <div>
+      <div className="flex w-full px-[100px] pt-[100px] h-[700px] justify-between">
         <div className="pt-[80px] flex flex-col gap-[10px] w-[300px] h-[300px] items-end ">
           <p className="z-10 font-optima font-[900] text-[35px] text-biru-tua">
             Contact Info
           </p>
           <div>
-            <img src="" alt="" />
             <a
               href=""
               className="z-10 font-optima font-[300] text-[20px] text-biru-tua hover:font-bold"
@@ -18,7 +18,6 @@ function Footerkepengurusan() {
             </a>
           </div>
           <div>
-            <img src="" alt="" />
             <a
               href=""
               className="z-10 font-optima font-[300] text-[20px] text-biru-tua hover:font-bold"
@@ -27,7 +26,6 @@ function Footerkepengurusan() {
             </a>
           </div>
           <div>
-            <img src="" alt="" />
             <a
               href=""
               className="z-10 font-optima font-[300] text-[20px] text-biru-tua hover:font-bold"
@@ -106,11 +104,9 @@ function Footerkepengurusan() {
           </a>
         </div>
       </div>
-      <div className="text-center text-sm md:text-base font-medium bg-biru-tua text-white py-4">
-        <p>Copyright © 2025 – Kumkum, Fairly, And Azriel KSM IoT UPNVJ</p>
-      </div>
+      <div className='bg-biru-tua text-white text-center text-base p-2'>Copyright © 2025 - Zahid, Faiz, Goesny, Khalif, Dani, and UI/UX KSM IoT UPNVJ</div>
     </div>
   );
 }
 
-export default Footerkepengurusan;
+export default Footer;

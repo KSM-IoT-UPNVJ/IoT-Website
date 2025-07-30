@@ -1,22 +1,24 @@
 import React from "react";
+import FadeIn from '../../utils/fadeIn';
 
 const WhatIs = () => {
   return (
     <section
       className="py-16 px-4"
       style={{
-        background: "white",
         fontFamily: "var(--font-poppins)",
         color: "var(--color-biru-tua)",
       }}
     >
+      <FadeIn direction={'down'} delay={0.3}>
       <h2
         className="text-center text-5xl font-semibold mb-16"
         style={{ color: "var(--color-biru-tua)",fontFamily: "'OptimaNova'"}}
       >
         What Is?
       </h2>
-
+      </FadeIn>
+      <FadeIn direction={'right'} delay={0.6}>
       <div className="flex flex-col md:flex-row items-start justify-center gap-10 md:gap-20 px-4 md:px-20">
         {/* Gambar Placeholder */}
         <div
@@ -29,7 +31,6 @@ const WhatIs = () => {
         >
           gambar 1 kabinet
         </div>
-
         {/* Teks */}
         <div className="w-full md:max-w-[700px] text-justify">
           <h1
@@ -63,6 +64,7 @@ const WhatIs = () => {
           </p>
         </div>
       </div>
+      </FadeIn>
     </section>
   );
 };

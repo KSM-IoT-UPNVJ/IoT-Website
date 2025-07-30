@@ -1,14 +1,12 @@
-import React, { useRef } from "react";
+import React, { useRef } from 'react';
+import clsx from 'clsx';
 
-function RotatingIcons({ link, icon1, icon2, alt = "icon" }) {
+function RotatingIcons({ link, icon1, icon2, alt = 'icon', className }) {
   const containerRef = useRef(null);
   const rotatingRef = useRef(null);
 
   const handleMouseEnter = (e) => {
     const rect = containerRef.current.getBoundingClientRect();
-
-    const relativeX = e.clientX - rect.left;
-    const relativeY = e.clientY - rect.top;
 
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
@@ -20,38 +18,39 @@ function RotatingIcons({ link, icon1, icon2, alt = "icon" }) {
     const normalizedAngle = (angle + 360) % 360; // to get 0–360°
 
     if (normalizedAngle >= 0 && normalizedAngle < 45)
-      rotatingRef.current.classList.add("rotate-45");
+      rotatingRef.current.classList.add('rotate-45');
     else if (normalizedAngle >= 45 && normalizedAngle < 90)
-      rotatingRef.current.classList.add("-rotate-45");
+      rotatingRef.current.classList.add('-rotate-45');
     else if (normalizedAngle >= 90 && normalizedAngle < 135)
-      rotatingRef.current.classList.add("rotate-45");
+      rotatingRef.current.classList.add('rotate-45');
     else if (normalizedAngle >= 135 && normalizedAngle < 180)
-      rotatingRef.current.classList.add("-rotate-45");
+      rotatingRef.current.classList.add('-rotate-45');
     else if (normalizedAngle >= 180 && normalizedAngle < 225)
-      rotatingRef.current.classList.add("rotate-45");
+      rotatingRef.current.classList.add('rotate-45');
     else if (normalizedAngle >= 225 && normalizedAngle < 270)
-      rotatingRef.current.classList.add("-rotate-45");
+      rotatingRef.current.classList.add('-rotate-45');
     else if (normalizedAngle >= 270 && normalizedAngle < 315)
-      rotatingRef.current.classList.add("rotate-45");
+      rotatingRef.current.classList.add('rotate-45');
     else if (normalizedAngle >= 315 && normalizedAngle < 360)
-      rotatingRef.current.classList.add("-rotate-45");
+      rotatingRef.current.classList.add('-rotate-45');
   };
 
   const handleMouseLeave = () => {
-    rotatingRef.current.classList.remove("rotate-45", "-rotate-45");
+    rotatingRef.current.classList.remove('rotate-45', '-rotate-45');
   };
 
   return (
     <div
       ref={containerRef}
-      onClick={() => window.open(link, "_blank")}
+      onClick={() => window.open(link, '_blank')}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className="relative w-[57px] h-[57px] group hover:cursor-pointer"
     >
       <div
         ref={rotatingRef}
-        className="w-full h-full rounded-[10px] bg-[var(--color-biru-tua)] group-hover:bg-white border-3 border-[var(--color-biru-tua)] transition-all duration-500 ease-in-out"
+        className={clsx("w-full h-full rounded-[10px] bg-[var(--color-biru-tua)] group-hover:bg-white border-3 border-[var(--color-biru-tua)] transition-all duration-500 ease-in-out", className
+        )}
       ></div>
 
       <img
