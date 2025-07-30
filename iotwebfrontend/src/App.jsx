@@ -4,6 +4,7 @@ import Home from './components/welcome';
 import VisionMission from './components/visimisi';
 import OurProgram from './components/ourprogram';
 import OurAchievement from './components/ourachievement';
+import MoreInsight from './components/insight';
 import Footerkepengurusan from './components/Footer';
 
 
@@ -15,6 +16,7 @@ function App() {
       <VisionMission />
       <OurProgram />
       <OurAchievement />
+      <MoreInsight />
       <Footerkepengurusan />
     </>
   );
