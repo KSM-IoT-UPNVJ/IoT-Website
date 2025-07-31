@@ -55,7 +55,7 @@ function Nav() {
                     )}
                     </div>
                     <a href="#project" className={linkClass}>Projects</a>
-                    <a href="#contact" className={linkClass}>Contact</a>
+                    <a href="contact" className={linkClass}>Contact</a>
                 </div>
 
                 {/* slogan */}

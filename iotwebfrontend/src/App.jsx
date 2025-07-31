@@ -1,8 +1,11 @@
-import React from 'react';
 import Nav from './components/nav';
 import { Contact } from './contact';
 import Footer from './components/footer';
 import { useEffect } from 'react';
+
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 function App() {
   useEffect(() => {
     setTimeout(() => {
@@ -11,11 +14,13 @@ function App() {
   }, []);
 
   return (
-    <>
+    <Router>
       <Nav />
-      <Contact />
+      <Routes>
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
       <Footer />
-    </>
+    </Router>
   );
 }
 
