@@ -89,6 +89,36 @@ function Projects() {
           title="Kenalan yuk sama PLC!"
           link="https://www.instagram.com/p/DKRbFZ_xfTE/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         />
+        <IotInsightCard
+          image="/projects/IotInsight-Firmware2.png"
+          vol={6}
+          title="Kenalan yuk sama PLC!"
+          link="https://www.instagram.com/p/DKRbFZ_xfTE/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+        />
+        <IotInsightCard
+          image="/projects/IotInsight-Firmware2.png"
+          vol={6}
+          title="Kenalan yuk sama PLC!"
+          link="https://www.instagram.com/p/DKRbFZ_xfTE/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+        />
+        <IotInsightCard
+          image="/projects/IotInsight-Firmware2.png"
+          vol={6}
+          title="Kenalan yuk sama PLC!"
+          link="https://www.instagram.com/p/DKRbFZ_xfTE/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+        />
+        <IotInsightCard
+          image="/projects/IotInsight-Firmware2.png"
+          vol={6}
+          title="Kenalan yuk sama PLC!"
+          link="https://www.instagram.com/p/DKRbFZ_xfTE/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+        />
+        <IotInsightCard
+          image="/projects/IotInsight-Firmware2.png"
+          vol={6}
+          title="Kenalan yuk sama PLC!"
+          link="https://www.instagram.com/p/DKRbFZ_xfTE/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+        />
       </IotInsightCarousel>
     </>
   );

@@ -23,13 +23,13 @@ function Nav() {
     const linkClass = "flex text-md cursor-pointer justify-center font-medium items-center px-4 hover:-translate-y-0.5 transition transform duration-100 hover:text-biru-sedang";
     
     return(
-        <div className="sticky bg-gradient-to-r from-biru-muda to-white shadow-md py-6.5 px-7.5 w-full h-auto">
+        <div className="sticky bg-gradient-to-r from-biru-muda to-white shadow-md py-6.5 px-7.5 w-full h-auto overflow-hidden">
             <div className="flex justify-between items-center">
                 {/* logo */}
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 min-w-fit">
                     <img src="Logo_IoT.png" alt="logo" className="w-auto h-10"/>
                     <div>
-                    <p className="font-titillium font-semibold text-base ">KSM Internet Of Things</p>
+                    <p className="font-titillium font-semibold text-base">KSM Internet Of Things</p>
                     <p className="font-titillium font-normal text-sm">UPN "Veteran" Jakarta</p>
                     </div>
                 </div>

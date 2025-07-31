@@ -2,65 +2,65 @@ import React, { useEffect, useRef } from "react";
 
 export default function IotInsightCarousel({ children }) {
   const sliderRef = useRef(null);
-  let isDown = useRef(false);
-  let startX = useRef(null);
-  let scrollLeft = useRef(null);
 
   useEffect(() => {
-    if (sliderRef && sliderRef.current) {
-      let slider = sliderRef.current;
-      slider.addEventListener("mousedown", handleStart);
-      slider.addEventListener("mouseup", handleFinish);
-      slider.addEventListener("mouseleave", handleFinish);
-      slider.addEventListener("mousemove", handleMove);
+    const slider = sliderRef.current;
+    if (!slider) return;
 
-      slider.addEventListener("touchstart", handleStart);
-      slider.addEventListener("touchmove", handleMove);
-      slider.addEventListener("touchend", handleFinish);
+    let startX = 0;
+    let scrollLeft = 0;
+    let isDown = false;
 
-      return () => {
-        slider.removeEventListener("mousedown", handleStart);
-        slider.removeEventListener("mouseup", handleFinish);
-        slider.removeEventListener("mouseleave", handleFinish);
-        slider.removeEventListener("mousemove", handleMove);
+    const handleMouseDown = (e) => {
+      isDown = true;
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    };
 
-        slider.removeEventListener("touchstart", handleStart);
-        slider.removeEventListener("touchmove", handleMove);
-        slider.removeEventListener("touchend", handleFinish);
-      };
-    }
+    const handleMouseLeave = () => {
+      isDown = false;
+    };
+
+    const handleMouseUp = () => {
+      isDown = false;
+    };
+
+    const handleMouseMove = (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      slider.scrollLeft = scrollLeft - walk;
+    };
+
+    slider.addEventListener("mousedown", handleMouseDown);
+    slider.addEventListener("mouseleave", handleMouseLeave);
+    slider.addEventListener("mouseup", handleMouseUp);
+    slider.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      slider.removeEventListener("mousedown", handleMouseDown);
+      slider.removeEventListener("mouseleave", handleMouseLeave);
+      slider.removeEventListener("mouseup", handleMouseUp);
+      slider.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
-  function handleStart(e) {
-    isDown.current = true;
-
-    const pageX = e.type.includes("touch") ? e.touches[0].pageX : e.pageX;
-
-    startX.current = pageX - sliderRef.current.offsetLeft;
-    scrollLeft.current = sliderRef.current.scrollLeft;
-  }
-
-  function handleFinish() {
-    isDown.current = false;
-  }
-
-  function handleMove(e) {
-    if (!isDown.current) return;
-    e.preventDefault();
-
-    const pageX = e.type.includes("touch") ? e.touches[0].pageX : e.pageX;
-
-    const x = pageX - sliderRef.current.offsetLeft;
-    const walk = x - startX.current;
-    sliderRef.current.scrollLeft = scrollLeft.current - walk;
-  }
-
   return (
-    <div ref={sliderRef} className="overflow-hidden cursor-default select-none">
-      <div className="flex w-fit mx-15 transition-transform duration-300 ease-in-out">
-        {React.Children.map(children, (child) => (
-          <div className="w-fit mx-6">{child}</div>
-        ))}
+    <div
+      ref={sliderRef}
+      className="overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hide cursor-default select-none mx-4 snap-x snap-mandatory"
+    >
+      <div className="flex w-fit">
+        {React.Children.map(children, (child) => {
+          return (
+            <div
+              className={`w-fit snap-start px-18.5`}
+            >
+              {child}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
