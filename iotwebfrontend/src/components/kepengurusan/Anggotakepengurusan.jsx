@@ -7,16 +7,20 @@ function Anggotakepengurusan() {
 
     return(
         <>
-            <div className='flex w-full h-[655px] bg-gradient-to-b from-[rgba(0,0,0,0.3)] via-[rgba(0,0,0,0.1)] to-[rgba(0,0,0,0.3)] mb-[4rem] z-0 justify-between items-center overflow-hidden'>
+            <div className='relative flex w-full h-[655px] mb-[4rem] z-0 justify-center items-center'>
+                <div className='absolute w-[90%] h-full bg-[rgba(0,0,0,0.3)] rounded-[25px] left-1/2 -translate-x-1/2'></div>
                 <ImageSliderBPH />
             </div>
-            <div className='flex w-full h-[655px] bg-[rgba(0,0,0,0.3)] mb-[4rem] overflow-hidden items-center'>
+             <div className='relative flex w-full h-[655px] mb-[4rem] z-0 justify-center items-center'>
+                <div className='absolute w-[90%] h-full bg-[rgba(0,0,0,0.3)] rounded-[25px] left-1/2 -translate-x-1/2'></div>
                 <ImageSliderHRD />
             </div>
-            <div className='flex w-full h-[655px] bg-[rgba(0,0,0,0.3)] mb-[4rem] overflow-hidden items-center'>
+             <div className='relative flex w-full h-[655px] mb-[4rem] z-0 justify-center items-center'>
+                <div className='absolute w-[90%] h-full bg-[rgba(0,0,0,0.3)] rounded-[25px] left-1/2 -translate-x-1/2'></div>
                 <ImageSlider />
             </div>
-            <div className='flex w-full h-[655px] bg-[rgba(0,0,0,0.3)] mb-[4rem] overflow-hidden items-center'>
+             <div className='relative flex w-full h-[655px] mb-[4rem] z-0 justify-center items-center'>
+                <div className='absolute w-[90%] h-full bg-[rgba(0,0,0,0.3)] rounded-[25px] left-1/2 -translate-x-1/2'></div>
                 <ImageSliderMedfo />
             </div>
         </>

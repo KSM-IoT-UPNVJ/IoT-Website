@@ -99,13 +99,17 @@ const ImageSlider = () => {
       </div>
       
 
-      <div className="absolute px-[30px] top-1/2 left-0 right-0 flex justify-between items-center transform -translate-y-1/2 z-50 pointer-events-none">
-        <button ref={prevRef} className="relative hover:cursor-pointer h-[80px] w-[50px] pointer-events-auto"> 
-        </button>
-        <img src="src/public/Chevron/chevron-left.webp" alt='kiri' className="absolute left-5"></img>
-        <img src="src/public/Chevron/chevron-right.webp" alt='kanan' className="absolute right-5"></img>
-        <button ref={nextRef} className="relative hover:cursor-pointer h-[80px] w-[50px] pointer-events-auto">
-        </button>
+      <div className="absolute h-[50%] px-[30px] top-1/2 left-0 right-0 flex justify-between items-center transform -translate-y-1/2 z-50 pointer-events-none">
+        <div className='relative flex items-center justify-end h-full w-[200px] pointer-events-auto z-0 duration-[1s] translate-x-[-160px] group'>
+          <img src="src/public/Chevron/chevron-left.webp" alt='kiri' className="top-1/2 -translate-y-1/2 absolute translate-x-[-50px] w-auto h-auto group-hover:translate-x-[40px] duration-[1s]"></img>
+          <button ref={prevRef} className=" hover:cursor-pointer pointer-events-auto h-[80px] w-[50px] z-60"> 
+          </button>
+        </div>
+        <div className='relative flex items-center  h-full w-[200px] pointer-events-auto z-0 duration-[1s] translate-x-[160px] group'>
+          <img src="src/public/Chevron/chevron-right.webp" alt='kanan' className="top-1/2 -translate-y-1/2 absolute translate-x-[50px] w-auto h-auto group-hover:translate-x-[-40px] duration-[1s]"></img>
+          <button ref={nextRef} className="hover:cursor-pointer h-[80px] w-[50px] z-60 pointer-events-auto">
+          </button>
+        </div>
       </div>
     </div>
   );
