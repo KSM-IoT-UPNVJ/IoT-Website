@@ -19,7 +19,3 @@
 .animate-bgKepengurusan {
   animation: bgKepengurusan 40s ease infinite;
 }
-
-.hover-trigger:hover + .left-button-kepengurusan{
-  transform: translateX(100px);
-}
