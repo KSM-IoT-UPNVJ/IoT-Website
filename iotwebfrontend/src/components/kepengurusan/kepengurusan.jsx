@@ -1,11 +1,11 @@
 import Anggotakepengurusan from "./Anggotakepengurusan"
 import Footer from "./Footerkepengurusan"
-import BgKepengurusan from "../../utils/Bg"
+import Bg from "../../utils/Bg"
 
 function Kepengurusan() {
     return (
         <div className='relative overflow-x-hidden'>
-            <BgKepengurusan />
+            <Bg />
             <div className='relatve h-full w-full justify-items-center'>
                 <p className='font-optima font-bold 
                                 text-[50px] m-[65px] text-biru-tua'>Our Team</p>
