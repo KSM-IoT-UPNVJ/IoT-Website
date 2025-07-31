@@ -47,7 +47,7 @@ const OurProgram = () => {
   ];
 
   return (
-    <div className="bg-[#2f3e50] pt-10 pb-32 px-4 md:px-36 overflow-hidden">
+    <div className=" pt-10 pb-32 px-4 md:px-36 overflow-hidden">
       <h2 className="text-white text-[56px] font-extrabold text-center mb-14">Our Program</h2>
 
       <div className="relative">

@@ -27,7 +27,6 @@ body {
 }
 }
 
-<<<<<<< HEAD
 /* Menyembunyikan scrollbar Ourprogram Home */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
@@ -44,7 +43,6 @@ select:-webkit-autofill {
   box-shadow: 0 0 0px 1000px var(--color-biru-muda) inset !important;
   -webkit-text-fill-color: #000 !important; /* warna teks */
   transition: background-color 5000s ease-in-out 0s;
-=======
 .custom-dot {
   width: 12px;
   height: 12px;
@@ -57,5 +55,4 @@ select:-webkit-autofill {
 .custom-dot.swiper-pagination-bullet-active {
   background-color: black; /* blue-500 */
   transform: scale(1.3);
->>>>>>> origin/Kepengurusan
-}
+}}

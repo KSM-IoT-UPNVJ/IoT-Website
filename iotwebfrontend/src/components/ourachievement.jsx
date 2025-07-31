@@ -11,7 +11,7 @@ const OurAchievement = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-r from-white via-white to-blue-100 py-24 px-8 flex flex-col items-center justify-center">
+    <div className="py-24 px-8 flex flex-col items-center justify-center">
       <h2 className="text-[42px] font-bold text-center text-gray-800 mb-16 font-serif">
         Our Achievement
       </h2>

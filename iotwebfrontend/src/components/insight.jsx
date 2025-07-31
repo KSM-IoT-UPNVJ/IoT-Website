@@ -15,7 +15,7 @@ const MoreInsight = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <div className="w-full min-h-screen py-20 px-12 bg-gradient-to-b from-white to-blue-100 flex flex-col items-center">
+    <div className="w-full relative min-h-screen py-20 px-12 flex flex-col items-center">
       <h2 className="text-5xl font-bold text-center text-gray-800 mb-16">More Insight</h2>
       <div className="w-full flex justify-center items-center gap-6 flex-wrap md:flex-nowrap">
         {divisions.map((division, index) => {

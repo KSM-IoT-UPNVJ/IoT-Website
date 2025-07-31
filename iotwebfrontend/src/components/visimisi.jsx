@@ -2,7 +2,7 @@ import React from 'react';
 
 const VisionMission = () => {
   return (
-    <div className="w-full bg-gradient-to-r from-white to-blue-200 py-20 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
+    <div className="w-fullpy-20 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
       {/* Kiri: Visi & Misi */}
       <div className="md:w-1/2 text-left">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Our Vision</h2>

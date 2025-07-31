@@ -12,19 +12,11 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
     "clsx": "^2.1.1",
-<<<<<<< HEAD
-    "leaflet": "^1.9.4",
-=======
->>>>>>> origin/Kepengurusan
     "lucide-react": "^0.525.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
-<<<<<<< HEAD
-    "react-leaflet": "^5.0.0",
-=======
     "swiper": "^11.2.10",
->>>>>>> origin/Kepengurusan
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
