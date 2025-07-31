@@ -23,9 +23,13 @@
     "react-icons": "^5.5.0",
 <<<<<<< HEAD
     "react-leaflet": "^5.0.0",
+<<<<<<< Updated upstream
 =======
     "swiper": "^11.2.10",
 >>>>>>> Kepengurusan
+=======
+    "react-router-dom": "^7.7.1",
+>>>>>>> Stashed changes
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
