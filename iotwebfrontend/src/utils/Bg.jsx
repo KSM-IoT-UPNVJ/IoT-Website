@@ -1,4 +1,4 @@
-import './kepengurusan.css';
+import '../components/kepengurusan/kepengurusan.css';
 
 function BgKepengurusan () {
     return (
