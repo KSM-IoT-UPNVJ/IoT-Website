@@ -93,7 +93,7 @@ function Nav() {
         </div>
 
         <div>
-          <FadeIn delay={1.2} direction={'right'}>
+          <FadeIn delay={1.2} direction={'down'}>
             <img src="slogan.png" alt="slogan" className="w-auto h-10" />
           </FadeIn>
         </div>
