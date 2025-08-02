@@ -1,6 +1,6 @@
-import './kepengurusan.css';
+import './bg.css';
 
-function BgKepengurusan () {
+function Bg () {
     return (
         <div className='absolute h-full w-full flex flex-col items-center justify-evenly overflow-hidden z-[-2]'>
             <img src="src/public/BgKepengurusan.webp" alt="bg" className='w-full h-auto animate-bgKepengurusan'></img>
@@ -9,4 +9,4 @@ function BgKepengurusan () {
     )
 }
 
-export default BgKepengurusan;
+export default Bg ;

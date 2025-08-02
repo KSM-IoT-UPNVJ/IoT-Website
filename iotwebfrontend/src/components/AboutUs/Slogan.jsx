@@ -1,4 +1,3 @@
-import React from "react";
 import FadeIn from "../../utils/fadeIn";
 const Slogan = () => {
   return (
