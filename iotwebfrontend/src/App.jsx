@@ -2,10 +2,7 @@ import Nav from './components/nav';
 import { Contact } from './contact';
 import Footer from './components/footer';
 import { useEffect } from 'react';
-
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import Bg from './utils/Bg'
 function App() {
   useEffect(() => {
     setTimeout(() => {
@@ -14,13 +11,12 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <div className='relative'>
+      <Bg />
       <Nav />
-      <Routes>
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <Contact />
       <Footer />
-    </Router>
+    </div>
   );
 }
 
