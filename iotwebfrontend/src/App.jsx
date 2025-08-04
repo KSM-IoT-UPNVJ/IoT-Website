@@ -1,6 +1,6 @@
 import Nav from "./components/nav";
 import Projects from "/src/Projects.jsx";
-import Footerkepengurusan from "./components/Footerkepengurusan";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
 
       <Projects />
 
-      <Footerkepengurusan />
+      <Footer />
     </>
   );
 }

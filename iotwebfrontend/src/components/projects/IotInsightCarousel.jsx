@@ -40,7 +40,7 @@ export default function IotInsightCarousel({ children }) {
 
     const scrollOneCard = () => {
       const currentScroll = slider.scrollLeft;
-      const nearRightEdge = currentScroll >= maxScroll - cardWidth * 2;
+      const nearRightEdge = currentScroll >= maxScroll - cardWidth - 1;
 
       // Always scroll smoothly
       enableSmoothScroll(slider);
@@ -51,14 +51,14 @@ export default function IotInsightCarousel({ children }) {
 
         // Shorter timeout to quickly jump without visual glitch
         // disableSmoothScroll(slider);
-        const offsetFromEnd = slider.scrollLeft - maxScroll;
-        slider.scrollLeft = middleScroll + offsetFromEnd;
+        slider.scrollLeft = middleScroll + cardWidth * 3;
 
         // Adjust auto-scroll interval temporarily
+        disableSmoothScroll(slider);
         resetAutoScroll(0); // faster interval when near edge
       } else if (isNearEdge) {
         isNearEdge = false;
-        resetAutoScroll(0); // restore default interval
+        resetAutoScroll(3000); // restore default interval
       }
     };
 
@@ -69,7 +69,7 @@ export default function IotInsightCarousel({ children }) {
 
     const startAutoScroll = () => {
       if (!autoScrollInterval.current) {
-        autoScrollInterval.current = setInterval(scrollOneCard, 2000);
+        autoScrollInterval.current = setInterval(scrollOneCard, 3000);
       }
     };
 
@@ -86,9 +86,11 @@ export default function IotInsightCarousel({ children }) {
     let isDown = false;
 
     const handleMouseDown = (e) => {
+      enableSmoothScroll(slider);
       isDown = true;
       startX = e.pageX - slider.offsetLeft;
       scrollLeft = slider.scrollLeft;
+      disableSmoothScroll(slider);
     };
 
     const handleMouseLeave = () => {
@@ -96,24 +98,26 @@ export default function IotInsightCarousel({ children }) {
     };
 
     const handleMouseUp = () => {
+      disableSmoothScroll(slider);
       isDown = false;
     };
 
     const handleMouseMove = (e) => {
+      enableSmoothScroll(slider);
       if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - slider.offsetLeft;
       const walk = (x - startX) * 1.5;
       slider.scrollLeft = scrollLeft - walk;
+      disableSmoothScroll(slider);
     };
 
     // Handle manual infinite loop by jumping seamlessly
     const handleScroll = () => {
+      disableSmoothScroll(slider);
       if (slider.scrollLeft <= minScroll + 1) {
-        disableSmoothScroll(slider);
         slider.scrollLeft = middleScroll + cardWidth * 2; // +1 avoids stutter on edges
       } else if (slider.scrollLeft >= maxScroll - cardWidth - 1) {
-        disableSmoothScroll(slider);
         slider.scrollLeft = middleScroll + cardWidth * 3;
       }
     };
