@@ -73,7 +73,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="pt-[80px] bg-amber-500 md:w-[15vw] hidden md:flex flex-col gap-[10px] w-[300px] h-[300px] items-start">
+        <div className="pt-[80px] md:w-[15vw] hidden md:flex flex-col gap-[10px] w-[300px] h-[300px] items-start">
           <p className="z-10 font-optima font-bold text-[35px] text-biru-tua">
             Quick Links
           </p>
