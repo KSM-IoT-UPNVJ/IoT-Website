@@ -3,7 +3,7 @@ import RotatingIcons from '/src/utils/RotatingIcons';
 function Footer() {
   return (
     <div>
-      <div className="flex w-full px-[100px] pt-[100px] h-[700px] bg-gradient-to-b from-white via-biru-footer-kepengurusan to-biru-muda justify-between">
+      <div className="flex w-full px-[100px] pt-[100px] h-[700px] bg-gradient-to-b from-white via-biru-footer-kepengurusan to-biru-muda justify-between overflow-hidden">
         <div className="pt-[80px] flex flex-col gap-[10px] w-[300px] h-[300px] items-end ">
           <p className="z-10 font-optima font-[900] text-[35px] text-biru-tua">
             Contact Info
