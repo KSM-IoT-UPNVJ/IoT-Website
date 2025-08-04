@@ -1,17 +1,15 @@
-import Nav from "./components/nav";
-import Projects from "/src/Projects.jsx";
-import Footer from "./components/Footer";
+import React from 'react';
+import Nav from './components/nav';
+import Footer from './components/footer';
 
 function App() {
   return (
     <>
       <Nav />
-
-      <Projects />
-
       <Footer />
     </>
   );
 }
 
 export default App;
+
