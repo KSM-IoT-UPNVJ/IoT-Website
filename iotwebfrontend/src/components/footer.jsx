@@ -1,10 +1,10 @@
-import RotatingIcons from '/src/utils/RotatingIcons';
+import RotatingIcons from "/src/utils/RotatingIcons";
 
 function Footer() {
   return (
     <div>
-      <div className="flex w-full px-[100px] pt-[100px] h-[700px] bg-gradient-to-b from-white via-biru-footer-kepengurusan to-biru-muda justify-between overflow-hidden">
-        <div className="pt-[80px] flex flex-col gap-[10px] w-[300px] h-[300px] items-end ">
+      <div className="flex w-full px-[4vw] pt-[100px] h-[700px] bg-gradient-to-b from-white via-biru-footer-kepengurusan to-biru-muda justify-between overflow-hidden">
+        <div className="pt-[80px] md:w-[15vw] md:flex flex-col gap-[10px] hidden w-[300px] h-[300px] items-end ">
           <p className="z-10 font-optima font-[900] text-[35px] text-biru-tua">
             Contact Info
           </p>
@@ -33,7 +33,7 @@ function Footer() {
             </a>
           </div>
         </div>
-        <div className="flex flex-col w-[400px] h-[400px] items-center">
+        <div className="flex flex-col w-[96vw] md:w-[400px] h-[400px] items-center">
           <img
             src="/Logo_IoT.png"
             alt="Logo_IoT"
@@ -73,34 +73,42 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="pt-[80px] pr-[80px] flex flex-col gap-[10px] w-[300px] h-[300px] items-end">
+        <div className="pt-[80px] bg-amber-500 md:w-[15vw] hidden md:flex flex-col gap-[10px] w-[300px] h-[300px] items-start">
           <p className="z-10 font-optima font-bold text-[35px] text-biru-tua">
             Quick Links
           </p>
-          <a
-            href="#contact"
-            className="z-10 font-optima font-normal text-[20px] text-biru-tua hover:font-bold"
-          >
-            Contact Us
-          </a>
-          <a
-            href="#about-us"
-            className="z-10 font-optima font-[300] text-[20px] text-biru-tua hover:font-bold"
-          >
-            About Us
-          </a>
-          <a
-            href="#iot-insight"
-            className="z-10 font-optima font-[300] text-[20px] text-biru-tua hover:font-bold"
-          >
-            Iot Insight
-          </a>
-          <a
-            href="#article"
-            className="z-10 font-optima font-[300] text-[20px] text-biru-tua hover:font-bold"
-          >
-            Article
-          </a>
+          <div>
+            <a
+              href="#contact"
+              className="z-10 font-optima font-normal text-[20px] text-biru-tua hover:font-bold"
+            >
+              Contact Us
+            </a>
+          </div>
+          <div>
+            <a
+              href="#about-us"
+              className="z-10 font-optima font-[300] text-[20px] text-biru-tua hover:font-bold"
+            >
+              About Us
+            </a>
+          </div>
+          <div>
+            <a
+              href="#iot-insight"
+              className="z-10 font-optima font-[300] text-[20px] text-biru-tua hover:font-bold"
+            >
+              Iot Insight
+            </a>
+          </div>
+          <div>
+            <a
+              href="#article"
+              className="z-10 font-optima font-[300] text-[20px] text-biru-tua hover:font-bold"
+            >
+              Article
+            </a>
+          </div>
         </div>
       </div>
       <div className="bg-biru-tua text-white text-center text-base p-2">
