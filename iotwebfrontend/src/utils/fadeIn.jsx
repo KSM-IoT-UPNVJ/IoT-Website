@@ -48,7 +48,6 @@ function FadeIn({ children, delay = 0, direction }) {
       initial="hidden"
       animate={controls}
       variants={variants}
-      className="w-full h-full"
     >
       {children}
     </motion.div>
