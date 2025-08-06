@@ -3,7 +3,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import { useInView } from 'framer-motion';
 
-function FadeIn({ children, delay = 0, direction }) {
+function FadeIn({ children, delay = 0, direction, className = '' }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const controls = useAnimation();
@@ -48,6 +48,7 @@ function FadeIn({ children, delay = 0, direction }) {
       initial="hidden"
       animate={controls}
       variants={variants}
+      className={className}
     >
       {children}
     </motion.div>
