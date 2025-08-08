@@ -4,7 +4,7 @@ import FadeIn from "../utils/fadeIn";
 function Footer() {
   return (
     <div className="">
-      <div className="flex w-screen px-[4vw] pt-[100px] h-[700px] bg-gradient-to-b from-white to-biru-muda justify-between overflow-hidden">
+      <div className="flex w-full px-[4vw] pt-[100px] h-[700px] bg-gradient-to-b from-white to-biru-muda justify-between overflow-hidden">
         <FadeIn delay={0.8} direction={"left"}>
           <div className="pt-[80px] md:w-[15vw] md:flex flex-col gap-[10px] hidden w-[300px] h-[300px] items-end">
             <p className="z-10 font-optima font-[900] text-[35px] text-biru-tua text-end">

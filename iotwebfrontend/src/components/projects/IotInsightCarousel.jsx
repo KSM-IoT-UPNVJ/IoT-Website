@@ -22,7 +22,7 @@ export default function IotInsightCarousel({ children }) {
     const totalOriginalWidth = cardWidth * originalChildren.length;
 
     requestAnimationFrame(() => {
-      slider.scrollLeft = totalOriginalWidth + cardWidth * 2;
+      slider.scrollLeft = totalOriginalWidth + cardWidth * originalChildren.length / 3;
     });
 
     const enableSmoothScroll = (el) => {
@@ -51,7 +51,7 @@ export default function IotInsightCarousel({ children }) {
 
         // Shorter timeout to quickly jump without visual glitch
         // disableSmoothScroll(slider);
-        slider.scrollLeft = middleScroll + cardWidth * 3;
+        slider.scrollLeft = minScroll + cardWidth;
 
         // Adjust auto-scroll interval temporarily
         disableSmoothScroll(slider);
@@ -115,10 +115,10 @@ export default function IotInsightCarousel({ children }) {
     // Handle manual infinite loop by jumping seamlessly
     const handleScroll = () => {
       disableSmoothScroll(slider);
-      if (slider.scrollLeft <= minScroll + 1) {
-        slider.scrollLeft = middleScroll + cardWidth * 2; // +1 avoids stutter on edges
-      } else if (slider.scrollLeft >= maxScroll - cardWidth - 1) {
-        slider.scrollLeft = middleScroll + cardWidth * 3;
+      if (slider.scrollLeft < minScroll + 1) {
+        slider.scrollLeft = maxScroll - 2 * cardWidth - 1; // +1 avoids stutter on edges
+      } else if (slider.scrollLeft > maxScroll - cardWidth - 1) {
+        slider.scrollLeft = minScroll + cardWidth + 1;
       }
     };
 
@@ -154,7 +154,7 @@ export default function IotInsightCarousel({ children }) {
       >
         <div className="flex w-fit">
           {React.Children.map(fullChildren, (child) => {
-            return <div className={`w-fit snap-start px-18.5`}>{child}</div>;
+            return <div className={`w-fit snap-center md:snap-start mx-7.5 md:m-0 md:px-18.5`}>{child}</div>;
           })}
         </div>
       </div>
