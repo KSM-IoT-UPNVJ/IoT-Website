@@ -38,11 +38,11 @@ const MoreInsight = () => {
                 }}
               />
 
-              {/* Vertical Title */}
+              {/* Tittle masing-masing kotak */}
               <div
-                className={`absolute z-10 font-extrabold text-black transition-all duration-700 ease-in-out ${
+                className={`absolute z-30 font-extrabold text-black transition-all duration-700 ease-in-out ${
                   isActive
-                    ? "text-3xl bottom-[180px] left-6 scale-100 text-left rotate-0"
+                    ? "text-3xl bottom-[230px] left-6 scale-100 text-left rotate-0"
                     : "text-5xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90"
                 }`}
                 style={{
@@ -75,12 +75,17 @@ const MoreInsight = () => {
                 />
               )}
 
-              
-              {/* Description on Hover */}
+              {/* Tampilan setelah Hover */}
               {isActive && (
-                <div className="relative z-20 p-4 text-white text-sm font-medium mt-auto bg-black/10 backdrop-blur-sm rounded-t-2xl">
-                  <p className="mb-4">{lorem}</p>
-                  <button className="px-4 py-2 bg-white text-black rounded-lg text-sm font-semibold hover:bg-gray-200 transition">
+                <div
+                  className="absolute inset-0 left-0 w-full h-full z-20 bg-gradient-to-b from-black/80 via-transparent to-white/95 transition-opacity duration-700 ease-in-out"
+                />
+              )}
+
+              {isActive && (
+                <div className="relative z-30 p-6 text-black text-base font-bold leading-relaxed">
+                  <p className="mb-6">{lorem}</p>
+                  <button className="px-5 py-2 bg-white text-black rounded-lg text-sm font-semibold hover:bg-gray-200 transition">
                     Learn More
                   </button>
                 </div>
