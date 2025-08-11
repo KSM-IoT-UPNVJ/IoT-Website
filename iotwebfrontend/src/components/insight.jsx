@@ -27,7 +27,7 @@ const MoreInsight = () => {
               onMouseEnter={() => setActiveIndex(index)}
               onMouseLeave={() => setActiveIndex(null)}
               className={`relative flex flex-col justify-end rounded-2xl shadow-lg overflow-hidden transition-all duration-700 ease-in-out ${
-                isActive ? "w-[400px]" : "w-[200px]"
+                isActive ? "w-[530px]" : "w-[200px]"
               } h-[600px] group cursor-pointer`}
             >
               {/* Background image */}
@@ -42,7 +42,7 @@ const MoreInsight = () => {
               <div
                 className={`absolute z-30 font-extrabold text-black transition-all duration-700 ease-in-out ${
                   isActive
-                    ? "text-3xl bottom-[230px] left-6 scale-100 text-left rotate-0"
+                    ? "text-3xl bottom-[200px] left-6 scale-100 text-left rotate-0"
                     : "text-5xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90"
                 }`}
                 style={{
@@ -52,7 +52,7 @@ const MoreInsight = () => {
                   whiteSpace: "nowrap",
                 }}
               >
-                {division.name}
+                {`${division.name.replace(" Division", "")} Division`}
               </div>
 
               {!isActive && (
@@ -75,21 +75,27 @@ const MoreInsight = () => {
                 />
               )}
 
-              {/* Tampilan setelah Hover */}
+              {/* Hover overlay */}
               {isActive && (
-                <div
-                  className="absolute inset-0 left-0 w-full h-full z-20 bg-gradient-to-b from-black/80 via-transparent to-white/95 transition-opacity duration-700 ease-in-out"
-                />
+                <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 via-transparent to-white/97 transition-opacity duration-700 ease-in-out" />
               )}
 
-              {isActive && (
-                <div className="relative z-30 p-6 text-black text-base font-bold leading-relaxed">
-                  <p className="mb-6">{lorem}</p>
-                  <button className="px-5 py-2 bg-white text-black rounded-lg text-sm font-semibold hover:bg-gray-200 transition">
-                    Learn More
-                  </button>
-                </div>
-              )}
+              {/* Description - slide in from right */}
+              <div
+                className={`absolute bottom-0 left-0 w-full z-30 p-6 text-black text-base font-bold leading-relaxed transform transition-all duration-500 ease-in-out ${
+                  isActive
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-full opacity-0"
+                }`}
+                style={{
+                  pointerEvents: isActive ? "auto" : "none",
+                }}
+              >
+                <p className="mb-6">{lorem}</p>
+                <button className="px-5 py-2 bg-white text-black rounded-lg text-sm font-semibold hover:bg-gray-200 transition">
+                  Learn More
+                </button>
+              </div>
             </div>
           );
         })}
