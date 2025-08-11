@@ -16,7 +16,7 @@ const MoreInsight = () => {
 
   return (
     <div className="w-full relative min-h-screen py-20 px-12 flex flex-col items-center">
-      <h2 className="text-5xl font-bold text-center text-gray-800 mb-16">More Insight</h2>
+      <h2 className="text-5xl font-bold text-center text-gray-800 mb-16 font-serif">More Insight</h2>
       <div className="w-full flex justify-center items-center gap-6 flex-wrap md:flex-nowrap">
         {divisions.map((division, index) => {
           const isActive = activeIndex === index;
@@ -42,7 +42,7 @@ const MoreInsight = () => {
               <div
                 className={`absolute z-30 font-extrabold text-black transition-all duration-700 ease-in-out ${
                   isActive
-                    ? "text-3xl bottom-[200px] left-6 scale-100 text-left rotate-0"
+                    ? "text-4xl bottom-[200px] left-6 scale-100 text-left rotate-0"
                     : "text-5xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90"
                 }`}
                 style={{
@@ -77,22 +77,22 @@ const MoreInsight = () => {
 
               {/* Hover overlay */}
               {isActive && (
-                <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 via-transparent to-white/97 transition-opacity duration-700 ease-in-out" />
+                <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 via-transparent to-white/98 transition-opacity duration-700 ease-in-out" />
               )}
 
               {/* Description - slide in from right */}
               <div
                 className={`absolute bottom-0 left-0 w-full z-30 p-6 text-black text-base font-bold leading-relaxed transform transition-all duration-500 ease-in-out ${
                   isActive
-                    ? "translate-x-0 opacity-100"
-                    : "translate-x-full opacity-0"
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 translate-x-300"
                 }`}
                 style={{
                   pointerEvents: isActive ? "auto" : "none",
                 }}
               >
-                <p className="mb-6">{lorem}</p>
-                <button className="px-5 py-2 bg-white text-black rounded-lg text-sm font-semibold hover:bg-gray-200 transition">
+                <p className="mb-4">{lorem}</p>
+                <button className="bg-blue-800 hover:bg-yellow-400 text-white hover:text-black px-6 py-2 rounded-full transition-colors duration-300 text-sm">
                   Learn More
                 </button>
               </div>

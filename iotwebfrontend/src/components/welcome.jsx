@@ -21,10 +21,10 @@ const Home = () => {
           {/* Content */}
           <div className="absolute top-1/4 left-12 z-20 text-white max-w-2xl">
             <h1 className="text-4xl md:text-5xl font-light">Welcome To</h1>
-            <h2 className="text-5xl md:text-6xl font-bold mt-2">
+            <h2 className="text-4xl md:text-5xl font-bold mt-4">
               KSM Internet Of Things
             </h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-white mt-1">UPNVJ</h3>
+            <h3 className="text-4xl md:text-5xl font-bold text-white mt-4">UPNVJ</h3>
             <p className="mt-6 text-base md:text-lg leading-relaxed">
               KSM Internet of Things (IoT) UPN Veteran Jakarta adalah wadah bagi mahasiswa
               Fakultas Teknik yang berfokus mengembangkan teknologi IoT melalui riset,
