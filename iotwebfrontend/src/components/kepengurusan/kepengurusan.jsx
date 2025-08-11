@@ -1,6 +1,6 @@
 import Anggotakepengurusan from "./Anggotakepengurusan"
-import Footer from "./Footerkepengurusan"
 import Bg from "../../utils/Bg"
+import Footer from "../footer"
 
 function Kepengurusan() {
     return (
