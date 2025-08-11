@@ -1,5 +1,5 @@
 import RotatingIcons from '/src/utils/RotatingIcons';
-import FadeIn from '../utils/fadeIn'; // Import komponen FadeIn
+import FadeIn from '../utils/fadeIn';
 
 function Footer() {
   const linkClass =
