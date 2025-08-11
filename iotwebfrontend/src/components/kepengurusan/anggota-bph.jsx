@@ -56,23 +56,24 @@ const ImageSliderBPH = () => {
   }, [imagesLoaded]);
 
   return (
-    <div className="w-full flex justify-center items-center overflow-hidden relative h-[655px]">
-      <div className='w-[95%]'>
+    <div className="w-full flex overflow-hidden relative h-[655px]">
+      <div className='w-[95%] absolute top-1/2 translate-x-[-50%] left-1/2 translate-y-[-50%]'>
         {swiperReady && (
           <Swiper
             modules={[EffectCoverflow, Navigation]}
-            spaceBetween={20}
-            slidesPerView={3}
+            spaceBetween={0}
             speed={800}
             loop={true}
             centeredSlides={true}
+            initialSlide={0}
+            slidesPerView={3}
             loopedSlides={images.length}
             watchSlidesProgress={true}
             watchSlidesVisibility={true}
             effect="coverflow"
             coverflowEffect={{
-            rotate: 67.5,
-            stretch: -20,
+            rotate: 65,
+            stretch: -10,
             depth: 100,
             modifier: 1,
             slideShadows: false
@@ -85,14 +86,26 @@ const ImageSliderBPH = () => {
               swiperRef.current = swiper;
             }}
             breakpoints={{
-              768: { slidesPerView: 2.2 },
-              1024: { slidesPerView: 3 },
+              1024: { 
+                spaceBetween:55,
+                coverflowEffect: {
+                  stretch:-5,
+                  rotate:60
+                }
+               },
+               1280: { 
+                spaceBetween:110,
+                coverflowEffect: {
+                  stretch:0,
+                  rotate:55
+                }
+               },
             }}
             className="!overflow-visible pb-10"
           >
             {images.map((img, idx) => (
               <SwiperSlide key={idx}>
-                <div className="h-[515px] w-[472px] rounded-[15px] overflow-hidden hover:scale-[1.02]  duration-[0.2s] bg-abu-sedang transition-transform">
+                <div className="h-auto max-h-[515px] w-auto max-w-[412px] rounded-[15px] overflow-hidden hover:scale-[1.02]  duration-[0.2s]">
                   <a href={img.href} target="_blank" rel="noopener noreferrer">
                     <img src={img.src} alt={`slide-${idx}`} className="w-full h-full object-fill" onLoad={() => setImagesLoaded(prev => prev + 1)} />
                   </a>
@@ -104,14 +117,14 @@ const ImageSliderBPH = () => {
       </div>
       
 
-      <div className="absolute h-[50%] px-[30px] top-1/2 left-0 right-0 flex justify-between items-center transform -translate-y-1/2 z-50 pointer-events-none">
+      <div className="absolute h-[50%] px-[30px] top-1/2 left-0 right-0 xl:flex justify-between items-center transform -translate-y-1/2 z-50 pointer-events-none hidden">
         <div className='relative flex items-center justify-end h-full w-[200px] pointer-events-auto z-0 duration-[1s] translate-x-[-160px] group'>
-          <img src="src/public/Chevron/chevron-left.webp" alt='kiri' className="top-1/2 -translate-y-1/2 absolute translate-x-[-50px] w-auto h-auto group-hover:translate-x-[40px] duration-[1s]"></img>
+          <img src="src/public/Chevron/chevron-left.webp" alt='kiri' className="top-1/2 -translate-y-1/2 absolute translate-x-[-50px] w-auto h-auto group-hover:translate-x-[30px] duration-[1s]"></img>
           <button ref={prevRef} className=" hover:cursor-pointer pointer-events-auto h-[80px] w-[50px] z-60"> 
           </button>
         </div>
         <div className='relative flex items-center  h-full w-[200px] pointer-events-auto z-0 duration-[1s] translate-x-[160px] group'>
-          <img src="src/public/Chevron/chevron-right.webp" alt='kanan' className="top-1/2 -translate-y-1/2 absolute translate-x-[50px] w-auto h-auto group-hover:translate-x-[-40px] duration-[1s]"></img>
+          <img src="src/public/Chevron/chevron-right.webp" alt='kanan' className="top-1/2 -translate-y-1/2 absolute translate-x-[50px] w-auto h-auto group-hover:translate-x-[-30px] duration-[1s]"></img>
           <button ref={nextRef} className="hover:cursor-pointer h-[80px] w-[50px] z-60 pointer-events-auto">
           </button>
         </div>

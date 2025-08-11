@@ -8,7 +8,7 @@ function Kepengurusan() {
             <Bg />
             <div className='relatve h-full w-full justify-items-center'>
                 <p className='font-optima font-bold 
-                                text-[50px] m-[65px] text-biru-tua'>Our Team</p>
+                                text-[30px] m-[35px] md:m-[65px] md:text-[50px] duration-1000 transition-all text-biru-tua'>Our Team</p>
                 <Anggotakepengurusan />
                 <Footer />
             </div>
