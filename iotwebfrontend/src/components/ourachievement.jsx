@@ -12,7 +12,7 @@ const OurAchievement = () => {
 
   return (
     <div className="py-24 px-8 flex flex-col items-center justify-center">
-      <h2 className="text-[42px] font-bold text-center text-gray-800 mb-16 font-serif">
+      <h2 className="text-[56px] font-bold text-center text-gray-800 mb-16 font-optima">
         Our Achievement
       </h2>
 

@@ -16,7 +16,7 @@ const MoreInsight = () => {
 
   return (
     <div className="w-full relative min-h-screen py-20 px-12 flex flex-col items-center">
-      <h2 className="text-5xl font-bold text-center text-gray-800 mb-16 font-serif">More Insight</h2>
+      <h2 className="text-[56px] font-bold text-center text-gray-800 mb-16 font-optima">More Insight</h2>
       <div className="w-full flex justify-center items-center gap-6 flex-wrap md:flex-nowrap">
         {divisions.map((division, index) => {
           const isActive = activeIndex === index;
@@ -75,12 +75,12 @@ const MoreInsight = () => {
                 />
               )}
 
-              {/* Hover overlay */}
+              {/* Gradiensi ketika hover */}
               {isActive && (
                 <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 via-transparent to-white/98 transition-opacity duration-700 ease-in-out" />
               )}
 
-              {/* Description - slide in from right */}
+              {/* transisi ke kiri ketika hover */}
               <div
                 className={`absolute bottom-0 left-0 w-full z-30 p-6 text-black text-base font-bold leading-relaxed transform transition-all duration-500 ease-in-out ${
                   isActive

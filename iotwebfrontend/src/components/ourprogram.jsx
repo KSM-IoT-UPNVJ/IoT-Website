@@ -50,7 +50,7 @@ const OurProgram = () => {
 
   return (
     <div className=" pt-10 pb-32 px-4 md:px-36 overflow-hidden bg-[#2E3A4B]">
-      <h2 className="text-white text-[56px] font-extrabold text-center mb-14 font-serif">Our Program</h2>
+      <h2 className="text-white text-[56px] font-extrabold text-center mb-14 font-optima">Our Program</h2>
 
       <div className="relative">
         {/* Chevron Kiri */}
