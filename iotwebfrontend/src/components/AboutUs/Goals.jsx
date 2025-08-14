@@ -35,7 +35,7 @@ export default function VisiMisiSection() {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-center px-8 sm:px-6 md:px-10 py-28 xl:px-30">
+    <div className="mb-50-mt-40">
       {/* Judul */}
       <FadeIn direction={"left"} delay={1.2}>
         <h1
@@ -48,7 +48,7 @@ export default function VisiMisiSection() {
 
       {/* Grid Box */}
       <FadeIn direction={"up"} delay={1.6}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-x-26 xl:gap-y-24 w-full max-w-screen-xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-x-26 xl:gap-y-24 py-28 px-8 sm:px-6 md:px-10 xl:px-30 w-full max-w-screen-xl mx-auto">
           {boxes.map((box, index) => {
             const isActive = activeIndex === index;
 

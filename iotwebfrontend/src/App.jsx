@@ -1,25 +1,15 @@
 import Nav from "./components/nav";
 import AboutUs from "./components/AboutUs/AboutUs";
-import Footer from "./components/footer";
-import "./index.css";
-import { useEffect } from "react";
-import Bg from "./utils/Bg";
+import Footer from "./components/Footer";
+import Bg from './utils/Bg.jsx';
+
 function App() {
-  useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "instant" });
-    }, 300);
-  }, []);
-
     return (
-    <div className="relative min-h-screen overflow-hidden">
+      <div className="relative">
       <Bg />
-
-      <div className="relative z-10">
         <Nav />
         <AboutUs />
         <Footer />
-      </div>
     </div>
   );
 }

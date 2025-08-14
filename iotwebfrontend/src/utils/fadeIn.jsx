@@ -1,7 +1,7 @@
 // components/FadeInSection.jsx
-import { motion, useAnimation } from "framer-motion";
-import { useEffect, useRef } from "react";
-import { useInView } from "framer-motion";
+import { motion, useAnimation } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import { useInView } from 'framer-motion';
 
 function FadeIn({ children, delay = 0, direction }) {
   const ref = useRef(null);
@@ -10,19 +10,19 @@ function FadeIn({ children, delay = 0, direction }) {
 
   useEffect(() => {
     if (isInView) {
-      controls.start("visible");
+      controls.start('visible');
     }
   }, [isInView, controls]);
 
   const getInitial = () => {
     switch (direction) {
-      case "left":
+      case 'left':
         return { opacity: 0, x: -50 };
-      case "right":
+      case 'right':
         return { opacity: 0, x: 50 };
-      case "up":
+      case 'up':
         return { opacity: 0, y: 30 };
-      case "down":
+      case 'down':
         return { opacity: 0, y: -30 };
       default:
         return { opacity: 0, y: 0 };
@@ -48,7 +48,6 @@ function FadeIn({ children, delay = 0, direction }) {
       initial="hidden"
       animate={controls}
       variants={variants}
-      className="w-full h-full"
     >
       {children}
     </motion.div>
