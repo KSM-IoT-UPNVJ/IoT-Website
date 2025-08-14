@@ -1,24 +1,16 @@
 import React from 'react';
 import Nav from './components/nav';
 import Home from './components/welcome';
-import VisionMission from './components/visimisi';
-import OurProgram from './components/ourprogram';
-import OurAchievement from './components/ourachievement';
-import MoreInsight from './components/insight';
 import Footerkepengurusan from './components/Footer';
-
-
+import Bg from './utils/Bg.jsx';
 function App() {
   return (
-    <>
+    <div className="relative">
+    <Bg />
       <Nav/>
       <Home />
-      <VisionMission />
-      <OurProgram />
-      <OurAchievement />
-      <MoreInsight />
       <Footerkepengurusan />
-    </>
+    </div>
   );
 }
 
