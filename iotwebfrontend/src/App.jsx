@@ -1,6 +1,6 @@
 import Nav from './components/nav';
 import { Contact } from './contact';
-import Footer from './components/footer';
+import Footer from './components/Footer';
 import Bg from './utils/Bg';
 function App() {
   return (
