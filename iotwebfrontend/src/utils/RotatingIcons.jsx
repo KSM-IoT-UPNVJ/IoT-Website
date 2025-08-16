@@ -56,13 +56,13 @@ function RotatingIcons({ link, icon1, icon2, alt = 'icon', className }) {
       <img
         src={icon1}
         alt={alt}
-        className="w-[38px] h-[38px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group-hover:opacity-0 transition-all duration-500 ease-in-out text-xs"
+        className="w-[38px] h-[38px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group-hover:opacity-0 transition-all duration-500 ease-in-out text-xs pointer-events-none"
         draggable="false"
       />
       <img
         src={icon2}
         alt={alt}
-        className="w-[38px] h-[38px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out"
+        className="w-[38px] h-[38px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out pointer-events-none"
         draggable="false"
       />
     </div>
