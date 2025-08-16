@@ -28,11 +28,11 @@ export default function Map() {
               Our Location
             </FadeIn>
           </h3>
-          <p className="text-white text-base py-2">
-            <FadeIn direction={'right'} delay={0.3}>
+          <FadeIn direction={'right'} delay={0.3}>
+            <p className="text-white text-base py-2">
               Kampus FT UPNVJ, Jl. Limo Raya, Kota Depok, Jawa Barat, 16515
-            </FadeIn>
-          </p>
+            </p>
+          </FadeIn>
         </div>
         <div className="flex flex-col gap-1">
           <h3 className="font-optima font-extrabold text-white text-4xl">
