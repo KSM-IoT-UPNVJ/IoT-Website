@@ -35,11 +35,11 @@ export default function VisiMisiSection() {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-center px-8 sm:px-6 md:px-10 py-28 xl:px-30">
+    <div className="">
       {/* Judul */}
       <FadeIn direction={"left"} delay={1.2}>
         <h1
-          className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[#2C3E50] mb-16 text-center"
+          className="text-4xl md:text-5xl lg:text-6xl mt-30 font-semibold text-[#2C3E50] text-center"
           style={{ fontFamily: "'OptimaNova'" }}
         >
           Our Goals
@@ -48,7 +48,7 @@ export default function VisiMisiSection() {
 
       {/* Grid Box */}
       <FadeIn direction={"up"} delay={1.6}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-x-26 xl:gap-y-24 w-full max-w-screen-xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-x-26  xl:gap-y-24 py-28 px-8 sm:px-6 md:px-10 xl:px-30 w-full max-w-screen-xl mx-auto">
           {boxes.map((box, index) => {
             const isActive = activeIndex === index;
 
@@ -78,11 +78,11 @@ export default function VisiMisiSection() {
 
                 {/* Konten */}
                 <div
-                  className={`absolute inset-0 px-4 sm:px-6 pt-24 flex items-start justify-center text-center transition-opacity duration-500 z-10
+                  className={`absolute inset-0 px-4 sm:px-6 pt-26 flex items-start justify-center text-center transition-opacity duration-500 z-10
                     ${(isActive || window.innerWidth >= 1024) ? "opacity-100" : "opacity-0"} 
                     group-hover:opacity-100`}
                 >
-                  <p className="text-base sm:text-xl md:text-lg lg:text-xl lg:mt-4 leading-relaxed font-medium text-gray-700">
+                  <p className="text-base sm:text-xl md:text-lg lg:text-xl lg:mt-6 leading-relaxed font-medium text-gray-700">
                     {box.content}
                   </p>
                 </div>
