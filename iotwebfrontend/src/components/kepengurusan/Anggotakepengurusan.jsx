@@ -8,21 +8,27 @@ function Anggotakepengurusan() {
 
     return(
         <>
-            <div className='relative flex w-full h-auto max-h-[270px] sm:max-h-[340px] md:max-h-[450px] lg:max-h-[510px] xl:max-h-[665px] duration-500 transition-all md:mb-[4rem] mb-[2rem] z-0 justify-center items-center'>
-                <div className='absolute w-[90%] h-full bg-[rgba(0,0,0,0.3)] rounded-[25px] left-1/2 -translate-x-1/2'></div>
-                <ImageSliderBPH />                    
+            <div className='relative flex w-full h-auto max-h-[665px] duration-500 transition-all md:my-[4rem] my-[2rem] z-0 justify-center items-center'>
+                <div className=' w-[90%] h-full bg-[rgba(0,0,0,0.3)] rounded-[25px] overflow-visible'>
+                    <ImageSliderBPH />    
+                </div>
+                                
             </div>
-             <div className='relative flex w-full h-auto max-h-[270px] sm:max-h-[340px] md:max-h-[450px] lg:max-h-[510px] xl:max-h-[665px] duration-500 transition-all md:mb-[4rem] mb-[2rem] z-0 justify-center items-center'>
-                <div className='absolute w-[90%] h-full bg-[rgba(0,0,0,0.3)] rounded-[25px] left-1/2 -translate-x-1/2'></div>
-                <ImageSliderHRD />
+             <div className='relative flex w-full h-auto max-h-[665px] duration-500 transition-all md:mb-[4rem] mb-[2rem] z-0 justify-center items-center'>
+                <div className='w-[90%] h-full bg-[rgba(0,0,0,0.3)] rounded-[25px] overflow-visible'>
+                    <ImageSliderHRD />
+                </div>
             </div>
-             <div className='relative flex w-full h-auto max-h-[300px] sm:max-h-[370px] md:max-h-[450px] lg:max-h-[510px] xl:max-h-[665px] duration-500 transition-all md:mb-[4rem] mb-[2rem] z-0 justify-center items-center'>
-                <div className='absolute w-[90%] h-full bg-[rgba(0,0,0,0.3)] rounded-[25px] left-1/2 -translate-x-1/2'></div>
-                <ImageSlider />
+             <div className='relative flex w-full h-auto max-h-[665px] duration-500 transition-all md:mb-[4rem] mb-[2rem] z-0 justify-center items-center'>
+                <div className='w-[90%] h-full bg-[rgba(0,0,0,0.3)] rounded-[25px] overflow-visible'>
+                    <ImageSlider />
+                </div> 
             </div>
-             <div className='relative flex w-full h-auto max-h-[270px] sm:max-h-[340px] md:max-h-[450px] lg:max-h-[510px] xl:max-h-[665px] duration-500 transition-all md:mb-[4rem] mb-[2rem] z-0 justify-center items-center'>
-                <div className='absolute w-[90%] h-full bg-[rgba(0,0,0,0.3)] rounded-[25px] left-1/2 -translate-x-1/2'></div>
-                <ImageSliderMedfo />
+             <div className='relative flex w-full h-auto max-h-[665px] duration-500 transition-all md:mb-[4rem] mb-[2rem] z-0 justify-center items-center'>
+                <div className='w-[90%] h-full bg-[rgba(0,0,0,0.3)] rounded-[25px] overflow-visible'>
+                    <ImageSliderMedfo />
+                </div>
+                
             </div>
         </>
     )

@@ -1,8 +1,8 @@
 .swiper-pagination{
     display: flex;
-    transform: translateY(50px);
     border-radius: 12px;
     justify-content: center;
+    z-index: 100; 
 }
 
 .swiper-pagination-bullet {
@@ -28,8 +28,3 @@
     transform-style: preserve-3d;
 }
 
-@media (max-width:48rem) {
-    .swiper-pagination{
-    transform: translateY(30px);
-  }
-}
