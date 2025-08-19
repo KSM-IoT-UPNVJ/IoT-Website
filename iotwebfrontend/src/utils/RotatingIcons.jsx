@@ -49,7 +49,9 @@ function RotatingIcons({ link, icon1, icon2, alt = 'icon', className }) {
     >
       <div
         ref={rotatingRef}
-        className={clsx("w-full h-full rounded-[10px] bg-[var(--color-biru-tua)] group-hover:bg-white border-3 border-[var(--color-biru-tua)] transition-all duration-500 ease-in-out", className
+        className={clsx(
+          'w-full h-full rounded-[10px] bg-[var(--color-biru-tua)] group-hover:bg-white border-3 border-[var(--color-biru-tua)] transition-all duration-500 ease-in-out',
+          className,
         )}
       ></div>
 

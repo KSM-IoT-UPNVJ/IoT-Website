@@ -9,7 +9,7 @@ export default function MediaCard() {
   return (
     <div className="flex flex-col gap-4 flex-2/7 p-10">
       <a href="tel:+62 813-1522-6318" className={cardImage}>
-        <FadeIn delay={0.4} direction={'right'}>
+        <FadeIn delay={0.4} direction={'right'} className="w-full h-full">
           <img
             src={imageSrc}
             alt="Top"
@@ -28,7 +28,7 @@ export default function MediaCard() {
       </a>
 
       <a href="mailto: internetofthings.upnvj@gmail.com" className={cardImage}>
-        <FadeIn delay={0.7} direction={'right'}>
+        <FadeIn delay={0.7} direction={'right'} className="w-full h-full">
           <img
             src={imageSrc}
             alt="Middle"
@@ -49,7 +49,7 @@ export default function MediaCard() {
       </a>
 
       <a href="https://ksmiotupnvj.my.id/" className={cardImage}>
-        <FadeIn delay={1.0} direction={'right'}>
+        <FadeIn delay={1.0} direction={'right'} className="w-full h-full">
           <img
             src={imageSrc}
             alt="Bottom"
