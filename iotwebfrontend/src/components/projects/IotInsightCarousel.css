@@ -1,0 +1,36 @@
+.swiper {
+  width: 100%;
+  height: auto;
+  margin: 10px auto;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+  transform: scale(0.9) !important;
+  transition: all 0.3s ease;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  transform: scale(1) !important;
+}
+
+.custom-pagination {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 3px; /* spacing between bullets */
+  width: fit-content !important;
+  margin: 0 auto !important;
+  transform: translateX(-0) !important;
+}
+
+.custom-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: blue;
+}
+
+.swiper-slide-active
