@@ -1,0 +1,57 @@
+.iot-insight .swiper {
+  width: 100%;
+  height: auto;
+  margin: 10px auto;
+}
+
+.iot-insight .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+  transform: scale(0.9) !important;
+  transition: all 0.3s ease;
+}
+
+.iot-insight .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1) !important;
+}
+
+.iot-insight .custom-pagination {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 3px; /* spacing between bullets */
+  width: fit-content !important;
+  margin: 0 auto !important;
+  transform: translateX(-0) !important;
+}
+
+.iot-insight .custom-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: blue;
+}
+
+.our-projects .swiper {
+  width: 100%;
+  height: auto;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.our-projects .swiper-slide {
+  color: #000;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.our-projects .swiper-button-prev,
+.our-projects .swiper-button-next {
+  opacity: 30%;
+  transition: 0.3s ease-in-out;
+  color: red;
+  &:hover {
+    opacity: 100%;
+  }
+}

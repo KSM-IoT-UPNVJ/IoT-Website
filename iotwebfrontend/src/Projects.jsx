@@ -2,6 +2,9 @@ import OurProjectsCard from "/src/components/projects/OurProjectsCard.jsx";
 import OurProjectsCarousel from "/src/components/projects/OurProjectsCarousel";
 import IotInsightCard from "/src/components/projects/IotInsightCard";
 import IotInsightCarousel from "/src/components/projects/IotInsightCarousel";
+
+import "./components/projects/Projects.css";
+
 import FadeIn from "./utils/fadeIn";
 
 function Projects() {

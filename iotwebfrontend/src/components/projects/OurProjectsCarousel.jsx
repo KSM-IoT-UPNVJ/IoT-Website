@@ -1,73 +1,64 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
+import {
+  Navigation,
+  Mousewheel,
+  Autoplay,
+  Keyboard,
+  Parallax,
+} from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/navigation";
 
 export default function OurProjectsCarousel({ children }) {
-  const containerRef = useRef(null);
-  const [showLeft, setShowLeft] = useState(false);
-  const [showRight, setShowRight] = useState(false);
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
+  const swiperRef = useRef(null);
 
   useEffect(() => {
-    const slider = containerRef.current;
-    if (!slider) return;
-
-    const checkScroll = () => {
-      setTimeout(() => {
-        setShowLeft(slider.scrollLeft > 10);
-        setShowRight(
-          slider.scrollLeft + slider.offsetWidth < slider.scrollWidth - 10
-        );
-      }, 400);
-    };
-
-    checkScroll();
-
-    slider.addEventListener("scroll", checkScroll);
-    window.addEventListener("resize", checkScroll);
-
-    return () => {
-      slider.removeEventListener("scroll", checkScroll);
-      window.removeEventListener("resize", checkScroll);
-    };
+    if (swiperRef.current && prevRef.current && nextRef.current) {
+      const swiper = swiperRef.current.swiper;
+      swiper.params.navigation.prevEl = prevRef.current;
+      swiper.params.navigation.nextEl = nextRef.current;
+      swiper.navigation.init();
+      swiper.navigation.update();
+    }
   }, []);
 
-  const scroll = (direction) => {
-    const slider = containerRef.current;
-    if (!slider) return;
-    slider.scrollBy({
-      left: direction * slider.offsetWidth,
-      behavior: "smooth",
-    });
-  };
-
   return (
-    <div className="relative w-full">
-      {showLeft && (
-        <img
-          src="/Chevron_left.png"
-          onClick={() => scroll(-1)}
-          className="absolute -left-2 hover:-left-1 top-1/2 z-10 opacity-20 hover:opacity-100 hover:cursor-pointer scale-60 hover:scale-80 transition-all"
-        />
-      )}
-
-      <div
-        ref={containerRef}
-        className="overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hide snap-x snap-mandatory"
-      >
-        <div className="flex w-fit transition-transform duration-500 ease-in-out mx-6">
+    <div className="our-projects relative w-full">
+      <div className="m-10">
+        <Swiper
+          ref={swiperRef}
+          className="our-projects-swiper"
+          modules={[Navigation, Mousewheel, Autoplay, Keyboard, Parallax]}
+          slidesPerView={3}
+          threshold={5}
+          spaceBetween={50}
+          mousewheel={{ forceToAxis: true, releaseOnEdges: true }}
+          keyboard={{ enabled: true }}
+          parallax={true}
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
+          }}
+          onBeforeInit={(swiper) => {
+            swiper.params.navigation.prevEl = prevRef.current;
+            swiper.params.navigation.nextEl = nextRef.current;
+          }}
+        >
           {React.Children.map(children, (child, _) => (
-            <div className="flex justify-center mx-[20vw] md:mx-4 lg:mx-8 md:w-[430px] flex-shrink-0 snap-center">
-              {child}
-            </div>
+            <SwiperSlide>{child}</SwiperSlide>
           ))}
+        </Swiper>
+
+        <div className="flex justify-between mt-4">
+          <div ref={prevRef} className="swiper-button-prev"></div>
+          <div ref={nextRef} className="swiper-button-next"></div>
         </div>
       </div>
-
-      {showRight && (
-        <img
-          src="/Chevron_right.png"
-          onClick={() => scroll(1)}
-          className="absolute -right-2 hover:-right-1 top-1/2 z-10 opacity-20 hover:opacity-100 hover:cursor-pointer scale-60 hover:scale-80 transition-all"
-        />
-      )}
     </div>
   );
 }
