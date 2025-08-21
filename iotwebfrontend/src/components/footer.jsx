@@ -4,7 +4,7 @@ import FadeIn from '/src/utils/fadeIn';
 function Footer() {
   return (
     <div>
-      <div className="flex w-full px-[100px] pt-[100px] h-[700px] bg-gradient-to-b from-transparent via-biru-footer-kepengurusan to-biru-muda justify-between z-[-10]">
+      <div className="flex w-full px-[100px] pt-[100px] h-[700px] bg-gradient-to-b from-transparent via-biru-footer-kepengurusan to-biru-muda justify-between z-[-10] overflow-hidden">
         <div className="pt-[80px] flex flex-col gap-[10px] w-[300px] h-[300px] items-end ">
           <p className="z-10 font-optima font-[900] text-[35px] text-biru-tua">
             Contact Info

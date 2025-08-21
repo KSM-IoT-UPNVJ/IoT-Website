@@ -26,11 +26,21 @@ function Projects() {
           <OurProjectsCard
             title="Project Title"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum."
-            image=""
+            image="/projects/template-foto-OurProjects.jpg"
           />
           <OurProjectsCard
             title="Project Title"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum. "
+            image="/projects/template-foto-OurProjects.jpg"
+          />
+          <OurProjectsCard
+            title="IoT Plant Watering System"
+            description="An automatic plant watering solution using soil moisture sensors and solenoid valve control to optimize irrigation."
+            image="/projects/template-foto-OurProjects.jpg"
+          />
+          <OurProjectsCard
+            title="IoT Plant Watering System"
+            description="An automatic plant watering solution using soil moisture sensors and solenoid valve control to optimize irrigation."
             image=""
           />
           <OurProjectsCard
@@ -41,17 +51,7 @@ function Projects() {
           <OurProjectsCard
             title="IoT Plant Watering System"
             description="An automatic plant watering solution using soil moisture sensors and solenoid valve control to optimize irrigation."
-            image="/images/plant-watering.png"
-          />
-          <OurProjectsCard
-            title="IoT Plant Watering System"
-            description="An automatic plant watering solution using soil moisture sensors and solenoid valve control to optimize irrigation."
-            image="/images/plant-watering.png"
-          />
-          <OurProjectsCard
-            title="IoT Plant Watering System"
-            description="An automatic plant watering solution using soil moisture sensors and solenoid valve control to optimize irrigation."
-            image="/images/plant-watering.png"
+            image="/projects/template-foto-OurProjects.jpg"
           />
         </OurProjectsCarousel>
       </FadeIn>
