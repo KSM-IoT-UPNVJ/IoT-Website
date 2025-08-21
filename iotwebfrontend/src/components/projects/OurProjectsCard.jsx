@@ -5,7 +5,7 @@ export default function OurProjectsCard({ title, description, image }) {
 
   return (
     <div
-      className={`rounded-xl shadow-[0_2px_10px_rgba(0,0,0,1)] overflow-hidden flex flex-col md:w-full w-[430px] my-4 transition-all active:scale-90 duration-200 ease-in-out cursor-pointer ${
+      className={`rounded-xl shadow-[0_2px_10px_rgba(0,0,0,1)] overflow-hidden flex flex-col w-full my-4 transition-all active:scale-90 duration-200 ease-in-out cursor-pointer ${
         showDescription ? "h-[800px]" : "h-auto"
       }`}
       onClick={() => setShowDescription((prev) => !prev)}
@@ -18,7 +18,7 @@ export default function OurProjectsCard({ title, description, image }) {
           <img
             src={image}
             alt={title}
-            className="object-cover h-full w-full text-[var(--color-biru-tua)]"
+            className="object-cover h-full text-[var(--color-biru-tua)]"
           />
         ) : (
           <h2 className="text-5xl font-extrabold text-[var(--color-biru-tua)]">

@@ -53,12 +53,29 @@ export default function IotInsightCarousel({ children }) {
         }}
         loop={true}
         autoplay={{ delay: 3000, pauseOnMouseEnter: true }}
-        slideToClickedSlide={true}
+        breakpoints={{
+          // when window width is >= 1024px (desktop)
+          1200: {
+            slidesPerView: 3,
+            spaceBetween: -60,
+            centeredSlides: true,
+          },
+          // when window width is >= 768px (tablet)
+          768: {
+            slidesPerView: 2,
+            spaceBetween: -60,
+            centeredSlides: true,
+          },
+          // when window width is < 768px (mobile)
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            centeredSlides: false,
+          },
+        }}
       >
-        {React.Children.map(children, (child) => (
-          <SwiperSlide className="w-fit snap-center md:snap-start mx-7.5 md:m-0 md:px-18.5">
-            {child}
-          </SwiperSlide>
+        {React.Children.map(children, (child, index) => (
+          <SwiperSlide key={index}>{child}</SwiperSlide>
         ))}
       </Swiper>
       <div className="custom-pagination" />

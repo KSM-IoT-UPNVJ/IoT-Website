@@ -65,11 +65,26 @@ export default function OurProjectsCarousel({ children }) {
             setAtBeginning(false);
             setAtEnd(false);
           }}
+          breakpoints={{
+          // when window width is >= 1024px (desktop)
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+          // when window width is >= 768px (tablet)
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 25,
+          },
+          // when window width is < 768px (mobile)
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 25,
+          },
+        }}
         >
-          {React.Children.map(children, (child, _) => (
-            <div>
-              <SwiperSlide>{child}</SwiperSlide>
-            </div>
+          {React.Children.map(children, (child, index) => (
+              <SwiperSlide key={index}>{child}</SwiperSlide>
           ))}
         </Swiper>
 

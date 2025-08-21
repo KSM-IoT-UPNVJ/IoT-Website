@@ -8,9 +8,9 @@ export default function IotInsightCard({ image, vol, title, link }) {
   return (
     <div
       onClick={handleClick}
-      className="rounded-4xl bg-[var(--color-biru-muda)] overflow-hidden group flex flex-col w-[345px] h-[432px] my-2 hover:cursor-pointer hover:shadow-[0_0_0_8px_var(--color-biru-tua)] transition-all duration-300 ease-in-out"
+      className="rounded-4xl bg-[var(--color-biru-muda)] overflow-hidden group flex flex-col w-[345px] h-auto my-2 hover:cursor-pointer hover:shadow-[0_0_0_8px_var(--color-biru-tua)] transition-all duration-300 ease-in-out"
     >
-      <div className="flex items-center justify-center min-h-full group-hover:min-h-[365px] group-hover:h-[365px] transition-all duration-300 ease-in-out">
+      <div className="flex items-center justify-center min-h-full group-hover:min-h-[365px] transition-all duration-300 ease-in-out">
         {image ? (
           <img
             src={image}
@@ -25,7 +25,7 @@ export default function IotInsightCard({ image, vol, title, link }) {
         )}
       </div>
       <div
-        className="bg-white flex flex-col flex-grow w-[345px] h-0 group-hover:h-[67px] px-5 py-2 text-[var(--color-biru-tua)] pointer-events-none
+        className="bg-white flex flex-col flex-grow w-[345px] h-0 group-hover:h-[67px] px-5 group-hover:py-2 text-[var(--color-biru-tua)] pointer-events-none
            group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto
            transition-all duration-300 ease-in-out"
       >
