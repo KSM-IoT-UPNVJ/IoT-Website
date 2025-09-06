@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, EffectCards, Navigation, Pagination} from 'swiper/modules';
+import { EffectCoverflow, EffectCards, Navigation, Pagination, Mousewheel} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
@@ -65,7 +65,8 @@ const ImageSliderHRD = () => {
       <div className='w-full h-auto'>
         {swiperReady && (
           <Swiper
-            modules={isSmallScreen ? [EffectCards, Navigation, Pagination] : [EffectCoverflow,Navigation]}
+            modules={isSmallScreen ? [EffectCards, Navigation, Pagination, Mousewheel] : [EffectCoverflow,Navigation,Mousewheel]}
+            mousewheel={{forceToAxis :true}}
             spaceBetween={0}
             slidesPerView={isSmallScreen ? 1.9 : 3}
             speed={800}

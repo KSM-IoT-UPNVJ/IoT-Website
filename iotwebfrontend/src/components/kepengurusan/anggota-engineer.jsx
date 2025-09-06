@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, EffectCards, Navigation, Pagination } from 'swiper/modules';
+import { EffectCoverflow, EffectCards, Navigation, Pagination, Mousewheel } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -79,9 +79,10 @@ const ImageSlider = () => {
       <div className='w-full h-auto'>
         {swiperReady && (
           <Swiper
-            modules={isSmallScreen ? [EffectCards, Navigation, Pagination] : [EffectCoverflow,Navigation, Pagination]}
+            modules={isSmallScreen ? [EffectCards, Navigation, Pagination, Mousewheel] : [EffectCoverflow,Navigation, Pagination, Mousewheel]}
             spaceBetween={0}
             slidesPerView={isSmallScreen ? 1.9 : 3}
+            mousewheel={{forceToAxis :true}}
             initialSlide={0}
             speed={800}
             loop={isSmallScreen ? false : true}
