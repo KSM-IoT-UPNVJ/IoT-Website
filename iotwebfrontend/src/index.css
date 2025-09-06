@@ -4,9 +4,11 @@
     --color-biru-tua: #33455b;
     --color-biru-sedang: #1b96fc;
     --color-biru-muda: #8ccfe4;
+    --color-biru-footer-kepengurusan: #C5E7F1E5;
     --color-ungu-muda: #b0aaf0;
     --color-ungu-sedang: #ac7ce1;
     --color-abu-sedang: #7d91c8;
+    --color-abu-muda: #D9D9D9;
     --font-poppins: Poppins;
     --font-optima: OptimaNova;
 }
@@ -23,4 +25,13 @@ body {
     font-family: var(--font-poppins);
     font-size: var(--text-xl);
 }
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-biru-muda) inset !important;
+  box-shadow: 0 0 0px 1000px var(--color-biru-muda) inset !important;
+  -webkit-text-fill-color: #000 !important; /* warna teks */
+  transition: background-color 5000s ease-in-out 0s;
 }
