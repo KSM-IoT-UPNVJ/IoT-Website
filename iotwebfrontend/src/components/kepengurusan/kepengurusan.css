@@ -1,13 +1,14 @@
 .swiper-pagination{
     display: flex;
-    border-radius: 12px;
+    border-radius: 8px;
     justify-content: center;
-    z-index: 100; 
+    z-index: 100;
+    transform: translateY(-10px); 
 }
 
 .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   background-color: #33455b;
   opacity: 0.5;
   transition: all 1s ease;
@@ -16,8 +17,8 @@
 .swiper-pagination-bullet-active {
   background-color: #8ccfe4;
   opacity: 1;
-  width: 30px;
-  border-radius: 12px;
+  width: 16px;
+  border-radius: 8px;
 }
 
 .swiper {

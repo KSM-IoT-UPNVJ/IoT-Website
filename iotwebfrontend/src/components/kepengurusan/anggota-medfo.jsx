@@ -132,13 +132,13 @@ const ImageSliderMedfo = () => {
 
       <div className="absolute h-[30%] px-[30px] top-1/2 left-0 right-0 flex justify-between items-center transform -translate-y-1/2 z-50 pointer-events-none ">
         <div className='relative flex items-center justify-end h-full w-[200px] pointer-events-auto z-0 duration-[1s] translate-x-[-160px] group'>
-          <img src="src/public/Chevron/chevron-left.webp" alt='kiri' className="top-1/2 -translate-y-1/2 absolute lg:translate-x-[-120px] translate-x-[45px] w-auto h-auto lg:group-hover:translate-x-[-35px] duration-[1s] scale-[0.8] md:scale-[1]"></img>
-          <button ref={prevRef} className=" hover:cursor-pointer pointer-events-auto h-[80px] w-[50px] z-60 lg:translate-x-[-80px]"> 
+          <img src="src/public/Chevron/chevron-left.webp" alt='kiri' className="top-1/2 -translate-y-1/2 absolute translate-x-[70px] sm:translate-x-[45px] w-auto h-auto scale-[0.5] sm:scale-[0.8] md:scale-[1]"></img>
+          <button ref={prevRef} className="hover:cursor-pointer translate-x-[35px] sm:translate-x-[0] scale-[0.6] sm:scale-[1] h-[80px] w-[50px] z-60 pointer-events-auto"> 
           </button>
         </div>
         <div className='relative flex items-center  h-full w-[200px] pointer-events-auto z-0 duration-[1s] translate-x-[160px] group'>
-          <img src="src/public/Chevron/chevron-right.webp" alt='kanan' className="top-1/2 -translate-y-1/2 absolute lg:translate-x-[120px] translate-x-[-45px] w-auto h-auto lg:group-hover:translate-x-[35px] duration-[1s] scale-[0.8] md:scale-[1]"></img>
-          <button ref={nextRef} className="hover:cursor-pointer h-[80px] w-[50px] z-60 pointer-events-auto lg:translate-x-[80px]">
+          <img src="src/public/Chevron/chevron-right.webp" alt='kanan' className="top-1/2 -translate-y-1/2 absolute translate-x-[-70px] sm:translate-x-[-45px] w-auto h-auto scale-[0.5] sm:scale-[0.8] md:scale-[1]"></img>
+          <button ref={nextRef} className="hover:cursor-pointer translate-x-[35px] sm:translate-x-[0] scale-[0.6] sm:scale-[1] h-[80px] w-[50px] z-60 pointer-events-auto">
           </button>
         </div>
       </div>
