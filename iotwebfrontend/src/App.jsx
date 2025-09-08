@@ -1,6 +1,7 @@
 import Nav from './components/nav';
-import Projects from './Projects';
+import AboutUs from './components/AboutUs/AboutUs';
 import { Contact } from './contact';
+import Projects from './projects';
 import Footer from './components/footer';
 import { useEffect } from 'react';
 import Bg from './utils/Bg';
@@ -25,7 +26,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<div>Home Page</div>} />
           <Route path="/home" element={<div>Home Page</div>} />
-          <Route path="/aboutus" element={<div>About Us Page</div>} />
+          <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/kepengurusan" element={<div>Kepengurusan Page</div>} />
           <Route path="/project" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
