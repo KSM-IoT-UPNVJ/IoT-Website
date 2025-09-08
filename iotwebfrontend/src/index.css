@@ -2,13 +2,14 @@
 @import 'tailwindcss';
 @theme {
   --color-biru-tua: #33455b;
+  --color-biru-sedang2: #1e3a8a;
   --color-biru-sedang: #1b96fc;
   --color-biru-muda: #8ccfe4;
-  --color-biru-footer-kepengurusan: #c5e7f1e5;
   --color-ungu-muda: #b0aaf0;
   --color-ungu-sedang: #ac7ce1;
   --color-abu-sedang: #7d91c8;
-  --color-abu-muda: #d9d9d9;
+  --color-abu-muda: #d8d8d8;
+  --color-kuning-tua: #eab20b;
   --font-poppins: Poppins;
   --font-optima: OptimaNova;
 }
@@ -25,6 +26,15 @@
     font-family: var(--font-poppins);
     font-size: var(--text-xl);
   }
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
 input:-webkit-autofill,
