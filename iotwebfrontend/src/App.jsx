@@ -1,5 +1,6 @@
 import Nav from './components/nav';
 import AboutUs from './components/AboutUs/AboutUs';
+import Kepengurusan from './components/kepengurusan/kepengurusan';
 import { Contact } from './contact';
 import Projects from './projects';
 import Footer from './components/footer';
@@ -27,7 +28,7 @@ function App() {
           <Route path="/" element={<div>Home Page</div>} />
           <Route path="/home" element={<div>Home Page</div>} />
           <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/kepengurusan" element={<div>Kepengurusan Page</div>} />
+          <Route path="/kepengurusan" element={<Kepengurusan />} />
           <Route path="/project" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
