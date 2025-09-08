@@ -1,18 +1,22 @@
-import Nav from "./components/nav";
-import Projects from "/src/Projects.jsx";
-import Footerkepengurusan from "./components/Footerkepengurusan";
-
+import Nav from './components/nav';
+import Projects from './projects';
+import Footer from './components/footer';
+import { useEffect } from 'react';
+import Bg from './utils/Bg'
 function App() {
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }, 300);
+  }, []);
+
   return (
-    <>
+    <div className='relative'>
+      <Bg />
       <Nav />
-
       <Projects />
-
-      <div className="overflow-x-hidden mt-20">
-        <Footerkepengurusan />
-      </div>
-    </>
+      <Footer />
+    </div>
   );
 }
 
