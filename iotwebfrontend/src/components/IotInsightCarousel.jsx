@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from 'react';
 
 export default function IotInsightCarousel(props) {
   const sliderRef = useRef(null);
@@ -9,16 +9,16 @@ export default function IotInsightCarousel(props) {
   useEffect(() => {
     if (sliderRef && sliderRef.current) {
       let slider = sliderRef.current;
-      slider.addEventListener("mousedown", handleMouseDown);
-      slider.addEventListener("mouseleave", handleMouseLeave);
-      slider.addEventListener("mouseup", handleMouseUp);
-      slider.addEventListener("mousemove", handleMouseMove);
+      slider.addEventListener('mousedown', handleMouseDown);
+      slider.addEventListener('mouseleave', handleMouseLeave);
+      slider.addEventListener('mouseup', handleMouseUp);
+      slider.addEventListener('mousemove', handleMouseMove);
 
       return () => {
-        slider.removeEventListener("mousedown", handleMouseDown);
-        slider.removeEventListener("mouseleave", handleMouseLeave);
-        slider.removeEventListener("mouseup", handleMouseUp);
-        slider.removeEventListener("mousemove", handleMouseMove);
+        slider.removeEventListener('mousedown', handleMouseDown);
+        slider.removeEventListener('mouseleave', handleMouseLeave);
+        slider.removeEventListener('mouseup', handleMouseUp);
+        slider.removeEventListener('mousemove', handleMouseMove);
       };
     }
   }, []);
