@@ -1,6 +1,6 @@
 import Nav from './components/nav';
-import Projects from './Projects';
 import { Contact } from './contact';
+import Projects from './projects';
 import Footer from './components/footer';
 import { useEffect } from 'react';
 import Bg from './utils/Bg';
