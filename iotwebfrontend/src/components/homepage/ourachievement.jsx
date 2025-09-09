@@ -1,6 +1,7 @@
-import React from 'react';
-
+import { useState } from 'react';
 const OurAchievement = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
   const achievements = [
     'Achievement Name',
     'Achievement Name',
@@ -48,12 +49,49 @@ const OurAchievement = () => {
 
               {/* Transisi tombol Learn More */}
               <button
+                onClick={() => setShowPopup(true)}
                 className="mt-4 px-5 py-2 text-sm bg-blue-800 text-white rounded-full opacity-0 translate-y-8 
                         group-hover:opacity-100 group-hover:translate-y-0 
                         transition-all duration-500 ease-in-out hover:bg-yellow-400 active:bg-yellow-500"
               >
                 Learn More
               </button>
+
+              {showPopup && (
+                <div className="fixed inset-0 flex items-center justify-center bg-transparent z-50">
+                  <div className="bg-white w-[90%] h-[90%] rounded-2xl shadow-2xl p-6 relative overflow-y-auto">
+                    {/* Tombol Close */}
+                    <button
+                      onClick={() => setShowPopup(false)}
+                      className="absolute top-4 right-4 px-3 py-1 bg-red-500 text-white rounded-lg"
+                    >
+                      X
+                    </button>
+                    {/* Konten */}
+                    <h1 className="text-2xl font-bold mb-4">ANNOUNCEMENT</h1>
+                    <p className="mb-4">
+                      Ini contoh popup yang hampir memenuhi 1 layar penuh. Kamu
+                      bisa isi dengan teks panjang, gambar, atau konten lain
+                      sesuai kebutuhan.
+                    </p>
+
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="p-4 bg-blue-100 rounded-lg">
+                        Content 1
+                      </div>
+                      <div className="p-4 bg-green-100 rounded-lg">
+                        Content 2
+                      </div>
+                      <div className="p-4 bg-yellow-100 rounded-lg">
+                        Content 3
+                      </div>
+                      <div className="p-4 bg-purple-100 rounded-lg">
+                        Content 4
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         ))}
