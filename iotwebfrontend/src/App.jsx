@@ -1,4 +1,5 @@
 import Nav from './components/nav';
+import Welcome from './components/homepage/welcome';
 import AboutUs from './components/AboutUs/AboutUs';
 import Kepengurusan from './components/kepengurusan/kepengurusan';
 import { Contact } from './contact';
@@ -25,8 +26,8 @@ function App() {
       <Routes>
         {/* Grup rute yang menggunakan MainLayout */}
         <Route element={<MainLayout />}>
-          <Route path="/" element={<div>Home Page</div>} />
-          <Route path="/home" element={<div>Home Page</div>} />
+          <Route path="/" element={<Welcome />} />
+          <Route path="/home" element={<Welcome />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/kepengurusan" element={<Kepengurusan />} />
           <Route path="/project" element={<Projects />} />
