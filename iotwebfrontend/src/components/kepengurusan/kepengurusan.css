@@ -1,0 +1,31 @@
+.swiper-pagination{
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    z-index: 100;
+    transform: translateY(-10px); 
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: #33455b;
+  opacity: 0.5;
+  transition: all 1s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #8ccfe4;
+  opacity: 1;
+  width: 16px;
+  border-radius: 8px;
+}
+
+.swiper {
+  perspective: 1200px;
+}
+
+.swiper-slide {
+    transform-style: preserve-3d;
+}
+
