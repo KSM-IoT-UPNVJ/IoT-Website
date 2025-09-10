@@ -4,7 +4,7 @@ import AboutUs from './components/AboutUs/AboutUs';
 import Kepengurusan from './components/kepengurusan/kepengurusan';
 import Contact from './components/contact/contact';
 import Projects from './components/projects/Projects';
-import Footer from './components/footer';
+import Footer from './components/Footer';
 import { useEffect } from 'react';
 import Bg from './utils/Bg';
 import {
