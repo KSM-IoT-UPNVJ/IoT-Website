@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import FadeIn from '../../utils/fadeIn';
 
 const OurProgram = () => {
   const scrollRef = useRef(null);
@@ -50,7 +51,9 @@ const OurProgram = () => {
 
   return (
     <div className=" pt-10 pb-32 px-4 md:px-36 overflow-hidden bg-[#2E3A4B]">
+      <FadeIn direction={"up"} delay={0.3}>
       <h2 className="text-white text-[56px] font-extrabold text-center mb-14 font-optima">Our Program</h2>
+      </FadeIn>
 
       <div className="relative">
         {/* Chevron Kiri */}
@@ -67,6 +70,7 @@ const OurProgram = () => {
         </button>
 
         {/* Area Scroll kanan dan Kiri */}
+        <FadeIn direction={"up"} delay={0.6}>
         <div
           ref={scrollRef}
           className="flex space-x-14 overflow-x-auto scroll-smooth px-20 scrollbar-hide"
@@ -108,6 +112,7 @@ const OurProgram = () => {
             </div>
           ))}
         </div>
+        </FadeIn>
 
         {/* Chevron Kanan */}
         <button

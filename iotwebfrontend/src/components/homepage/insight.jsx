@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FadeIn from "../../utils/fadeIn";
 
 const divisions = [
   { name: "Firmware Division", image: "/firmware.png" },
@@ -16,12 +17,15 @@ const MoreInsight = () => {
 
   return (
     <div className="w-full relative min-h-screen py-20 px-12 flex flex-col items-center">
+      <FadeIn direction="up" delay={0.2}>
       <h2 className="text-[56px] font-bold text-center text-gray-800 mb-16 font-optima">More Insight</h2>
+      </FadeIn>
       <div className="w-full flex justify-center items-center gap-6 flex-wrap md:flex-nowrap">
         {divisions.map((division, index) => {
           const isActive = activeIndex === index;
 
           return (
+            <FadeIn key={index} direction="up" delay={0.3 + index * 0.2}>
             <div
               key={index}
               onMouseEnter={() => setActiveIndex(index)}
@@ -97,6 +101,7 @@ const MoreInsight = () => {
                 </button>
               </div>
             </div>
+            </FadeIn>
           );
         })}
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from './components/nav';
-import Home from './components/homepage/welcome.jsx';
+import Home from './components/homepage/homepage.jsx';
 import Footerkepengurusan from './components/Footer';
 import Bg from './utils/Bg.jsx';
 function App() {

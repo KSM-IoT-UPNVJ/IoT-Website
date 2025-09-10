@@ -1,4 +1,5 @@
 import React from "react";
+import FadeIn from "../../utils/fadeIn";
 
 const OurAchievement = () => {
   const achievements = [
@@ -12,12 +13,16 @@ const OurAchievement = () => {
 
   return (
     <div className="py-24 px-8 flex flex-col items-center justify-center">
-      <h2 className="text-[56px] font-bold text-center text-gray-800 mb-16 font-optima">
+      <FadeIn direction={"left"} delay={0.3}>
+       <h2 className="text-[56px] font-bold text-center text-gray-800 mb-16 font-optima">
         Our Achievement
-      </h2>
+        </h2>
+      </FadeIn>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 w-full max-w-[1300px]">
         {achievements.map((item, index) => (
+          <FadeIn key={index} direction={"right"} delay={0.6}>
+
           <div
             key={index}
             className="bg-gray-300 rounded-2xl h-[250px] relative shadow-lg overflow-hidden group"
@@ -54,6 +59,7 @@ const OurAchievement = () => {
             </button>
             </div>
           </div>
+          </FadeIn>
         ))}
       </div>
     </div>
