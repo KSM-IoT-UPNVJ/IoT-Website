@@ -1,6 +1,5 @@
 import Anggotakepengurusan from './Anggotakepengurusan';
 import Bg from '../../utils/Bg';
-import Footer from '../footer';
 import FadeIn from '../../utils/fadeIn';
 
 function Kepengurusan() {
