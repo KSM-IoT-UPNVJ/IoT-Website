@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { MoveLeft } from 'lucide-react';
+
 const OurAchievement = () => {
   const [showPopup, setShowPopup] = useState(false);
 
@@ -59,34 +61,32 @@ const OurAchievement = () => {
 
               {showPopup && (
                 <div className="fixed inset-0 flex items-center justify-center bg-transparent z-50">
-                  <div className="bg-white w-[90%] h-[90%] rounded-2xl shadow-2xl p-6 relative overflow-y-auto">
-                    {/* Tombol Close */}
-                    <button
-                      onClick={() => setShowPopup(false)}
-                      className="absolute top-4 right-4 px-3 py-1 bg-red-500 text-white rounded-lg"
-                    >
-                      X
-                    </button>
-                    {/* Konten */}
-                    <h1 className="text-2xl font-bold mb-4">ANNOUNCEMENT</h1>
-                    <p className="mb-4">
-                      Ini contoh popup yang hampir memenuhi 1 layar penuh. Kamu
-                      bisa isi dengan teks panjang, gambar, atau konten lain
-                      sesuai kebutuhan.
-                    </p>
+                  <div className="bg-white w-[90%] h-[90%] rounded-2xl shadow-2xl p-6 relative overflow-y-auto flex flex-row gap-12 ">
+                    {/* left image */}
+                    <div className="w-full h-full bg-abu-muda p-4"></div>
 
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="p-4 bg-blue-100 rounded-lg">
-                        Content 1
-                      </div>
-                      <div className="p-4 bg-green-100 rounded-lg">
-                        Content 2
-                      </div>
-                      <div className="p-4 bg-yellow-100 rounded-lg">
-                        Content 3
-                      </div>
-                      <div className="p-4 bg-purple-100 rounded-lg">
-                        Content 4
+                    {/* right content */}
+                    <div className="flex flex-col justify-between p-4">
+                      {/* back button */}
+                      <button onClick={() => setShowPopup(false)}>
+                        <MoveLeft size={48} />
+                      </button>
+                      <div className="text-justify">
+                        <h2 className="text-3xl font-bold mb-4">
+                          Achievement Title
+                        </h2>
+                        <h5 className="text-xl font-semibold mb-16">
+                          Penghargaan
+                        </h5>
+                        <p className="text-gray-700 mb-4">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Facere possimus quisquam ipsa obcaecati modi cum
+                          vitae voluptatibus, aspernatur, saepe eos laboriosam
+                          illo delectus culpa ducimus. Iure nihil voluptas minus
+                          deserunt dolore aliquid commodi quis dicta eligendi
+                          saepe, facere ut vero cumque quo officia aspernatur
+                          adipisci labore. Architecto cupiditate labore dolor!
+                        </p>
                       </div>
                     </div>
                   </div>
