@@ -1,10 +1,10 @@
 import Nav from './components/nav';
-import Welcome from './components/homepage/welcome';
+import HomePage from './components/homepage/homepage';
 import AboutUs from './components/AboutUs/AboutUs';
 import Kepengurusan from './components/kepengurusan/kepengurusan';
-import { Contact } from './contact';
-import Projects from './projects';
-import Footer from './components/footer';
+import Contact from './components/contact/contact';
+import Projects from './components/projects/Projects';
+import Footer from './components/Footer';
 import { useEffect } from 'react';
 import Bg from './utils/Bg';
 import {
@@ -26,8 +26,8 @@ function App() {
       <Routes>
         {/* Grup rute yang menggunakan MainLayout */}
         <Route element={<MainLayout />}>
-          <Route path="/" element={<Welcome />} />
-          <Route path="/home" element={<Welcome />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/kepengurusan" element={<Kepengurusan />} />
           <Route path="/project" element={<Projects />} />
