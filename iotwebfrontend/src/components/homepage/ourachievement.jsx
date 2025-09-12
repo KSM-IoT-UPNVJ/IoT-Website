@@ -3,7 +3,7 @@ import { MoveLeft } from 'lucide-react';
 import FadeIn from '../../utils/fadeIn';
 
 const OurAchievement = () => {
-  const [showPopup, setShowPopup] = useState(false);
+  const [selectedAchievement, setSelectedAchievement] = useState(null);
 
   const achievements = [
     'Achievement Name',
@@ -55,7 +55,7 @@ const OurAchievement = () => {
 
                 {/* Transisi tombol Learn More */}
                 <button
-                  onClick={() => setShowPopup(true)}
+                  onClick={() => setSelectedAchievement(item)}
                   className="mt-4 px-5 py-2 text-sm bg-blue-800 text-white rounded-full opacity-0 translate-y-8 
                         group-hover:opacity-100 group-hover:translate-y-0 
                         transition-all duration-500 ease-in-out hover:bg-yellow-400 active:bg-yellow-500"
@@ -63,35 +63,42 @@ const OurAchievement = () => {
                   Learn More
                 </button>
 
-                {showPopup && (
-                  <div className="fixed inset-0 flex items-center justify-center bg-transparent z-50">
-                    <div className="bg-white w-[90%] h-[90%] rounded-2xl shadow-2xl p-6 relative overflow-y-auto flex flex-row gap-12 ">
-                      {/* left image */}
-                      <div className="w-full h-full bg-abu-muda p-4"></div>
+                {selectedAchievement && (
+                  <div className="fixed inset-0 flex items-center justify-center bg-black/10 z-50">
+                    {/* Overlay transparan */}
+                    <div
+                      className="absolute inset-0"
+                      onClick={() => setSelectedAchievement(null)}
+                    />
+                    <div className="w-[90%] h-[80%] rounded-2xl shadow-2xl overflow-auto">
+                      <div className="bg-white/10 backdrop-filter backdrop-blur-[2px]"></div>
+                      <div className="relative flex flex-col lg:flex-row h-full gap-8 p-6">
+                        {/* Left image (placeholder) */}
+                        <div className="w-full lg:w-1/2 h-128 lg:h-auto bg-abu-muda rounded-xl border border-white/20"></div>
 
-                      {/* right content */}
-                      <div className="flex flex-col justify-between p-4">
-                        {/* back button */}
-                        <button onClick={() => setShowPopup(false)}>
-                          <MoveLeft size={48} />
-                        </button>
-                        <div className="text-justify">
-                          <h2 className="text-3xl font-bold mb-4">
-                            Achievement Title
-                          </h2>
-                          <h5 className="text-xl font-semibold mb-16">
-                            Penghargaan
-                          </h5>
-                          <p className="text-gray-700 mb-4">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Facere possimus quisquam ipsa obcaecati modi
-                            cum vitae voluptatibus, aspernatur, saepe eos
-                            laboriosam illo delectus culpa ducimus. Iure nihil
-                            voluptas minus deserunt dolore aliquid commodi quis
-                            dicta eligendi saepe, facere ut vero cumque quo
-                            officia aspernatur adipisci labore. Architecto
-                            cupiditate labore dolor!
-                          </p>
+                        {/* Right content */}
+                        <div className="flex-1 flex flex-col justify-between text-white">
+                          <button
+                            onClick={() => setSelectedAchievement(null)}
+                            className="self-start mb-4 hover:scale-110 transition"
+                          >
+                            <MoveLeft size={48} />
+                          </button>
+
+                          <div className="text-justify">
+                            <h2 className="text-3xl mb-4">
+                              {selectedAchievement}
+                            </h2>
+                            <h5 className="text-xl font-semibold mb-8">
+                              Penghargaan
+                            </h5>
+                            <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Facere possimus quisquam ipsa obcaecati modi
+                              cum vitae voluptatibus, aspernatur, saepe eos
+                              laboriosam illo delectus culpa ducimus.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
