@@ -1,4 +1,4 @@
-import './bg.css';
+import './Bg.css';
 
 function Bg() {
   return (
