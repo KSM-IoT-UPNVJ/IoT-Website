@@ -1,7 +1,7 @@
 import Nav from './components/nav';
 import Projects from './Projects';
 import { Contact } from './contact';
-import Footer from './components/footer';
+import Footer from './components/Footer';
 import { useEffect } from 'react';
 import Bg from './utils/Bg';
 import {
