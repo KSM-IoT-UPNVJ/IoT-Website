@@ -1,6 +1,6 @@
 import OurProjectsContainer from "/src/components/projects/OurProjectsContainer";
-import "./components/projects/Projects.css";
-import FadeIn from "./utils/fadeIn";
+import "./Projects.css";
+import FadeIn from "/src/utils/fadeIn";
 
 function Projects() {
   return (
