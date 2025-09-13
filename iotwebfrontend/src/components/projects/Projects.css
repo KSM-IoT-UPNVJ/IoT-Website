@@ -35,21 +35,3 @@
   height: 8px;
   background: var(--color-biru-sedang2);
 }
-
-.our-projects .swiper {
-  width: 100%;
-  height: auto;
-  margin: 10px auto;
-  padding: 10px;
-}
-
-.our-projects .swiper-slide {
-  transform: scale(0.85);
-  transition: all 0.3s ease-in-out;
-}
-
-.our-projects .swiper-button-prev,
-.our-projects .swiper-button-next {
-  transition: 0.3s ease-in-out;
-  color: var(--color-biru-sedang2);
-}
