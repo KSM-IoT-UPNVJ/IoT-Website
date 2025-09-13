@@ -4,6 +4,7 @@ import AboutUs from './components/AboutUs/AboutUs';
 import Kepengurusan from './components/kepengurusan/kepengurusan';
 import Contact from './components/contact/contact';
 import Projects from './components/projects/Projects';
+import Insight from './components/insight/IotInsight';
 import Footer from './components/Footer';
 import { useEffect } from 'react';
 import Bg from './utils/Bg';
@@ -32,6 +33,7 @@ function App() {
           <Route path="/kepengurusan" element={<Kepengurusan />} />
           <Route path="/project" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/insight" element={<Insight />} />
         </Route>
 
         {/* Rute 404 berada di luar MainLayout, sehingga tidak akan menampilkan Nav, Bg, dan Footer */}

@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 export default function IotInsightCard({ image, vol, title, link }) {
   function handleClick() {
-    window.open(link, "_blank");
+    window.open(link, '_blank');
   }
 
   return (
@@ -34,7 +34,7 @@ export default function IotInsightCard({ image, vol, title, link }) {
         </h3>
         <p className="text-xs text-[var(--color-biru-tua)]">
           {title.length > 45
-            ? title.slice(0, 45).replace(/[\s.,:;!?]+$/, "") + "..."
+            ? title.slice(0, 45).replace(/[\s.,:;!?]+$/, '') + '...'
             : title}
         </p>
       </div>
