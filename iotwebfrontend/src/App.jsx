@@ -13,6 +13,7 @@ import {
   Route,
   Outlet,
 } from 'react-router-dom';
+import { div } from 'framer-motion/client';
 
 function App() {
   useEffect(() => {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/kepengurusan" element={<Kepengurusan />} />
           <Route path="/project" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/insight" element={<div>ini adalahinsight</div>} />
         </Route>
 
         {/* Rute 404 berada di luar MainLayout, sehingga tidak akan menampilkan Nav, Bg, dan Footer */}
