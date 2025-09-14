@@ -1,0 +1,192 @@
+{
+  "firmware-slide": [
+    {
+      "image": "/projects/IotInsight-Firmware1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Firmware1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Firmware1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Firmware1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Firmware1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Firmware1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    }
+  ],
+  "hardware-slide": [
+    {
+      "image": "/projects/IotInsight-Hardware1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Hardware1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Hardware1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Hardware1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Hardware1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Hardware1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    }
+  ],
+  "network-slide": [
+    {
+      "image": "/projects/IotInsight-Network1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Network1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Network1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Network1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Network1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Network1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    }
+  ],
+  "software-slide": [
+    {
+      "image": "/projects/IotInsight-Software1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Software1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Software1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Software1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Software1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Software1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    }
+  ],
+  "ui/ux-slide": [
+    {
+      "image": "/projects/IotInsight-Uiux1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Uiux1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Uiux1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Uiux1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Uiux1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    },
+    {
+      "image": "/projects/IotInsight-Uiux1.png",
+      "vol": 1,
+      "title": "IotInsight-Network1",
+      "link": "https://swiperjs.com/swiper-api#param-reverseDirection"
+    }
+  ]
+}
