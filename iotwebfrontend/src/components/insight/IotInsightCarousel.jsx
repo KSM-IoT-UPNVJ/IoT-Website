@@ -1,69 +1,54 @@
-import React, { useRef } from "react";
-import {
-  Pagination,
-  Mousewheel,
-  Autoplay,
-  Keyboard,
-} from "swiper/modules";
+import React, { useState, useEffect } from "react";
+import { Mousewheel, Autoplay, Keyboard, EffectFlip } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
+import "swiper/css/effect-flip";
 
 export default function IotInsightCarousel({ children, reverse }) {
-  // const swiperRef = useRef(null);
- 
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => setIsSmallScreen(window.innerWidth < 1024); // 👈 Tailwind sm breakpoint
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
   return (
     <div className="iot-insight cursor-default select-none mx-4 h-full w-full">
       <Swiper
-        modules={[Pagination, Mousewheel, Autoplay, Keyboard]}
+        key={isSmallScreen ? "flip" : "slide"}
+        modules={[Mousewheel, Autoplay, Keyboard, EffectFlip]}
         {...(reverse && { initialSlide: React.Children.count(children) - 1 })}
-        // onSwiper={(swiper) => {
-        //   swiperRef.current = swiper;
-        //   if (swiper.autoplay) swiper.autoplay.stop();
-
-        //   const observer = new IntersectionObserver(
-        //     ([entry]) => {
-        //       if (entry.isIntersecting) {
-        //         if (swiper.autoplay) {
-        //           requestAnimationFrame(() => swiper.autoplay.start());
-        //         }
-        //         observer.disconnect(); // stop observing once started
-        //       }
-        //     },
-        //     { threshold: 0.2 }
-        //   );
-
-        //   if (swiper.el) {
-        //     observer.observe(swiper.el);
-        //   }
-        // }}
         slidesPerView={1}
         threshold={5}
         spaceBetween={20}
         mousewheel={{ forceToAxis: true }}
         keyboard={{ enabled: true }}
-        // pagination={{
-        //   el: "custom-pagination",
-        //   clickable: true,
-        //   dynamicBullets: true,
-        //   dynamicMainBullets: 2,
-        // }}
         loop={true}
         autoplay={{
           delay: 3000,
           pauseOnMouseEnter: true,
+          disableOnInteraction: false,
           reverseDirection: reverse,
         }}
-        breakpoints = {{
-          1024 : {
+        onTouchStart={(swiper) => swiper.autoplay.stop()}
+        onTouchEnd={(swiper) => swiper.autoplay.start()}
+        effect={isSmallScreen ? "flip" : "slide"}
+        flipEffect={{
+          slideShadows: !isSmallScreen, 
+        }}
+        breakpoints={{
+          1024: {
             slidesPerView: 2,
           },
-          2048 : {
+          2048: {
             slidesPerView: 3,
           },
-          3072 : {
+          3072: {
             slidesPerView: 5,
           },
         }}
@@ -78,7 +63,6 @@ export default function IotInsightCarousel({ children, reverse }) {
                 <SwiperSlide key={index}>{child}</SwiperSlide>
               ))}
       </Swiper>
-      {/* <div className="custom-pagination" /> */}
     </div>
   );
 }

@@ -10,7 +10,7 @@ export default function OurProjectsCard({
 
   return (
     <>
-      <div className={`w-[400px] h-[600px] overflow-hidden px-5 pb-4 {
+      <div className={`w-[400px] h-[600px] overflow-hidden px-5 pb-4 select-none {
             ${
             isPlaceholder && "max-[1280px]:hidden" }`}>
         <div
