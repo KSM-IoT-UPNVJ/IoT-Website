@@ -8,7 +8,7 @@ export default function IotInsightCard({ image, vol, title, link }) {
   return (
     <div
       onClick={handleClick}
-      className="rounded-4xl bg-[var(--color-biru-muda)] overflow-hidden group flex flex-col justify-center items-center w-full max-w-[345px] max-h-[431px] lg:h-[431px] mx-auto my-2 scale-92 active:scale-85 hover:cursor-pointer hover:shadow-[0_0_0_8px_var(--color-biru-tua)] transition-all duration-300 ease-in-out"
+      className="rounded-4xl bg-[var(--color-biru-muda)] overflow-hidden group flex flex-col justify-center items-center w-full max-w-[345px] max-h-[431px] xl:h-[431px] mx-auto my-2 scale-92 active:scale-85 hover:cursor-pointer hover:shadow-[0_0_0_8px_var(--color-biru-tua)] transition-all duration-300 ease-in-out"
     >
       <div className="flex items-center justify-center min-h-full group-hover:min-h-[365px] transition-all duration-300 ease-in-out">
         {image ? (
