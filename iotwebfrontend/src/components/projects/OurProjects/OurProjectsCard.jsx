@@ -14,11 +14,12 @@ export default function OurProjectsCard({
             ${
             isPlaceholder && "max-[1280px]:hidden" }`}>
         <div
-          className={`rounded-xl bg- shadow-[0_2px_10px_rgba(0,0,0,1)] overflow-hidden relative flex flex-col w-full h-full m-2 transition-all group duration-200 ease-in-out select-none ${
+          className={`rounded-xl shadow-[0_2px_10px_rgba(0,0,0,1)] overflow-hidden relative flex flex-col w-full h-full m-2 transition-all group duration-200 ease-in-out select-none ${
             !isPlaceholder && "active:scale-90 cursor-pointer"
           }`}
         >
-          <div className="absolute inset-0 bg-black bg-cover bg-center transition-all opacity-0 group-hover:opacity-10 z-1"></div>
+          {!isPlaceholder && (
+          <div className={`absolute inset-0 bg-black bg-cover bg-center transition-all opacity-0 group-hover:opacity-10 z-1`}></div> )}
 
           {!isPlaceholder && (
             <div className="flex items-center justify-center w-full h-full bg-[var(--color-abu-muda)] duration-300 overflow-hidden">

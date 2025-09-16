@@ -27,7 +27,7 @@ export default function IotInsightCarousel({ children, reverse }) {
         threshold={5}
         spaceBetween={20}
         mousewheel={{ forceToAxis: true }}
-        keyboard={{ enabled: true }}
+        keyboard={{ enabled: false }}
         loop={true}
         autoplay={{
           delay: 3000,
