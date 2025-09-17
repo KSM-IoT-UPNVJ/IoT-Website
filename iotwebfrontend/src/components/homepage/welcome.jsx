@@ -8,10 +8,10 @@ import 'swiper/css';
 
 const Home = () => {
   // Data untuk setiap baris
-  const row1 = ['public/foto_IoT1.webp', 'public/foto_IoT1.webp'];
-  const row2 = ['public/foto_IoT2.webp', 'public/foto_IoT2.webp'];
-  const row3 = ['public/foto_IoT3.webp', 'public/foto_IoT3.webp'];
-  const row4 = ['public/foto_IoT4.webp', 'public/foto_IoT4.webp'];
+  const row1 = ['foto_IoT1.webp', 'foto_IoT1.webp'];
+  const row2 = ['foto_IoT2.webp', 'foto_IoT2.webp'];
+  const row3 = ['foto_IoT3.webp', 'foto_IoT3.webp'];
+  const row4 = ['foto_IoT4.webp', 'foto_IoT4.webp'];
 
   // Komponen helper untuk bikin 1 baris slider
   const SliderRow = ({ images, reverse }) => (
