@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Welcome from './welcome';
+import Welcome from './welcome/welcome';
 import VisiMisi from './visimisi';
 import OurProgram from './ourprogram';
 import OurAchievement from './achievement/ourachievement';
