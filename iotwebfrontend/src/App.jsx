@@ -13,7 +13,6 @@ import {
   Route,
   Outlet,
 } from 'react-router-dom';
-import { div } from 'framer-motion/client';
 
 function App() {
   useEffect(() => {
