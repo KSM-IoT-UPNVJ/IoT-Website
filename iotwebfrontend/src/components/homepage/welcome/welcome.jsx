@@ -1,4 +1,3 @@
-import { animate } from 'framer-motion';
 import FadeIn from '../../../utils/fadeIn';
 import PhotoSlider from './photo_slider';
 import 'swiper/css';
@@ -34,11 +33,49 @@ const Home = () => {
   ];
 
   return (
-    <div className="flex flex-col w-full">
-      <PhotoSlider images={imagesRow1} direction="animate-scroll-right" />
-      <PhotoSlider images={imagesRow2} direction="animate-scroll-left" />
-      <PhotoSlider images={imagesRow3} direction="animate-scroll-right" />
-      <PhotoSlider images={imagesRow4} direction="animate-scroll-left" />
+    <div className="relative overflow-x-hidden">
+      <div className="min-h-screen flex flex-col text-optima">
+        <div className="relative w-full -z-10">
+          <PhotoSlider images={imagesRow1} direction="animate-scroll-right" />
+          <PhotoSlider images={imagesRow2} direction="animate-scroll-left" />
+          <PhotoSlider images={imagesRow3} direction="animate-scroll-right" />
+          <PhotoSlider images={imagesRow4} direction="animate-scroll-left" />
+          <div className="absolute inset-0 bg-black/60" />
+          {/* Konten teks */}
+          <div className="absolute top-1/4 left-12 z-20 text-white max-w-2xl">
+            <FadeIn direction="up" delay={0.2}>
+              <h1 className="text-4xl md:text-5xl font-light font-optima">
+                Welcome To
+              </h1>
+            </FadeIn>
+            <FadeIn direction="up" delay={0.4}>
+              <h2 className="text-4xl md:text-5xl font-bold mt-4 font-optima">
+                KSM Internet Of Things
+              </h2>
+            </FadeIn>
+            <FadeIn direction="up" delay={0.6}>
+              <h3 className="text-4xl md:text-5xl font-bold text-white mt-4">
+                UPNVJ
+              </h3>
+            </FadeIn>
+            <FadeIn direction="left" delay={1.0}>
+              <p className="mt-6 text-base md:text-lg leading-relaxed text-justify font-optima">
+                KSM Internet of Things (IoT) UPN Veteran Jakarta adalah wadah
+                bagi mahasiswa Fakultas Teknik yang berfokus mengembangkan
+                teknologi IoT melalui riset, implementasi, dan kompetisi
+                nasional maupun internasional. Bergabunglah untuk mengasah
+                kemampuan dan siap menghadapi revolusi industri 4.0 dengan
+                semangat
+              </p>
+            </FadeIn>
+            <FadeIn direction="up" delay={0.9}>
+              <p className="mt-1 text-xl font-bold font-optima">
+                "Innovating Today, Champion Tomorrow"!
+              </p>
+            </FadeIn>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
