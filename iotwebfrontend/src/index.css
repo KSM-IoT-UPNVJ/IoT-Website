@@ -12,6 +12,25 @@
   --color-kuning-tua: #eab20b;
   --font-poppins: Poppins;
   --font-optima: OptimaNova;
+  --animate-scroll-right: scrollRight 20s linear infinite;
+  --animate-scroll-left: scrollLeft 20s linear infinite;
+
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 @font-face {
