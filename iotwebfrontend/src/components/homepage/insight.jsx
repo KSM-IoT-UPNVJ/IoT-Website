@@ -110,7 +110,7 @@ const MoreInsight = () => {
                 >
                   <p className="mb-4">{lorem}</p>
                   <button
-                    onClick={() => navigate(`/insight#${division.name.replace(' Division', '').toLowerCase()}`)}
+                    onClick={() => navigate(`/insight/${division.name.replace(' Division', '').toLowerCase().replace('/', '-')}`)}
                     className="bg-blue-800 hover:bg-yellow-400 text-white hover:text-black px-6 py-2 rounded-full transition-colors duration-300 text-sm"
                   >
                     Learn More
