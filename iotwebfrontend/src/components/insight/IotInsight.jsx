@@ -1,7 +1,21 @@
 import FadeIn from "/src/utils/fadeIn";
 import IotInsightSection from "./IotInsightSection";
 
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+
 export default function Insight() {
+  const { division } = useParams();
+
+  useEffect(() => {
+    if (division) {
+      const el = document.getElementById(division);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [division]);
+
   return (
     <>
       <FadeIn delay={0.8} direction={"down"}>

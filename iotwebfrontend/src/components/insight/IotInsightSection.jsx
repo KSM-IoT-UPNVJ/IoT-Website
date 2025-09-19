@@ -9,7 +9,7 @@ export default function IotInsightSection({ division, carouselReverse }) {
   return (
     <>
       <div
-      id={division.toLowerCase()}
+      id={division.toLowerCase().replace('/', '-')}
         className={`flex flex-col-reverse mx-8 md:mx-15 py-5 my-10 bg-black/10 backdrop-blur-2xl shadow-lg rounded-4xl overflow-hidden select-none ${
           carouselReverse ? "md:flex-row-reverse" : "md:flex-row"
         }`}

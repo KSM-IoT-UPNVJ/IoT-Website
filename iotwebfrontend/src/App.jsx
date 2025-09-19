@@ -34,6 +34,7 @@ function App() {
           <Route path="/project" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/insight" element={<Insight />} />
+          <Route path="/insight/:division" element={<Insight />} />
         </Route>
 
         {/* Rute 404 berada di luar MainLayout, sehingga tidak akan menampilkan Nav, Bg, dan Footer */}
