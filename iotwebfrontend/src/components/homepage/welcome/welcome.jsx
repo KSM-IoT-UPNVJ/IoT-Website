@@ -35,7 +35,7 @@ const Home = () => {
   return (
     <div className="relative overflow-x-hidden">
       <div className="min-h-screen flex flex-col text-optima">
-        <div className="relative w-full -z-10">
+        <div className="relative w-full py-1.5 -z-10">
           <PhotoSlider images={imagesRow1} direction="animate-scroll-right" />
           <PhotoSlider images={imagesRow2} direction="animate-scroll-left" />
           <PhotoSlider images={imagesRow3} direction="animate-scroll-right" />
