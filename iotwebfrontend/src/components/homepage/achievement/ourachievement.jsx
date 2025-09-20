@@ -6,6 +6,7 @@ import AchievementPopup from './AchievementPopUp';
 
 const OurAchievement = () => {
   const [selectedAchievement, setSelectedAchievement] = useState(null);
+  const [clickedElementPosition, setClickedElementPosition] = useState(null);
 
   const achievements = [
     {
@@ -53,12 +54,14 @@ const OurAchievement = () => {
     },
   ];
 
-  const handleOpenPopup = (achievement) => {
+  const handleOpenPopup = (achievement, elementPosition) => {
     setSelectedAchievement(achievement);
+    setClickedElementPosition(elementPosition);
   };
 
   const handleClosePopup = () => {
     setSelectedAchievement(null);
+    setClickedElementPosition(null);
   };
 
   return (
@@ -81,7 +84,11 @@ const OurAchievement = () => {
       </div>
 
       {/* pop up component */}
-      <AchievementPopup item={selectedAchievement} onClose={handleClosePopup} />
+      <AchievementPopup
+        item={selectedAchievement}
+        onClose={handleClosePopup}
+        clickedElementPosition={clickedElementPosition}
+      />
     </div>
   );
 };

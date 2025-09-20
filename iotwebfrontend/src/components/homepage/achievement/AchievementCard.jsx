@@ -1,7 +1,16 @@
-import { motion } from 'framer-motion';
 import FadeIn from '../../../utils/fadeIn';
 
 export default function AchievementCard({ item, onSelect }) {
+  const handleClick = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const elementPosition = {
+      x: rect.left + rect.width / 2,
+      y: rect.top + rect.height / 2,
+      width: rect.width,
+      height: rect.height,
+    };
+    onSelect(item, elementPosition);
+  };
   return (
     <FadeIn direction={'right'} delay={0.6}>
       <div className="bg-gray-300 rounded-2xl h-[250px] relative shadow-lg overflow-hidden group">
@@ -29,7 +38,7 @@ export default function AchievementCard({ item, onSelect }) {
           </div>
           {/* Tombol Learn More */}
           <button
-            onClick={() => onSelect(item)}
+            onClick={handleClick}
             className="px-5 py-2 text-sm bg-blue-800 text-white rounded-full hover:bg-yellow-400 active:bg-yellow-500"
           >
             Learn More
