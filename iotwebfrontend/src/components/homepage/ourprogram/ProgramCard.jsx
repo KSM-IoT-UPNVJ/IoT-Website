@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const ProgramCard = ({
-  title = 'Program Name',
-  description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  buttonText = 'Learn More',
-  onButtonClick = () => {},
+  title = 'Comming Soon',
+  description = 'Comming Soon',
+  onButtonClick,
   className = '',
   index = 0,
 }) => {
@@ -27,8 +26,7 @@ const ProgramCard = ({
     <motion.div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative min-w-[420px] h-[300px] bg-gray-300 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-xl overflow-hidden ${className}`}
-      whileHover={{ scale: 1.02 }}
+      className={`relative w-[420px] h-[300px] p-4 bg-gray-300 rounded-2xl flex text-center items-center justify-center flex-shrink-0 shadow-xl overflow-hidden ${className}`}
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
     >
       {/* Title */}
@@ -38,29 +36,32 @@ const ProgramCard = ({
           fontSize: isHovered ? '28px' : '36px',
           y: isHovered ? -97 : 0,
         }}
-        transition={{ duration: 0.5, ease: 'easeInOut' }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
         {title}
       </motion.h3>
 
       {/* Description + Button */}
       <motion.div
-        className="absolute top-[77px] left-1/2 -translate-x-1/2 w-full px-9 text-center"
+        initial={{ y: 50, opacity: 0 }}
+        className="absolute top-0 left-1/2 w-full h-full -translate-x-1/2 px-9 flex flex-col justify-center items-center text-center"
         animate={{
           opacity: isHovered ? 1 : 0,
-          y: isHovered ? 0 : 16,
+          y: isHovered ? 0 : 50,
         }}
-        transition={{ duration: 0.5, ease: 'easeInOut' }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
-        <p className="text-gray-700 mb-4 text-sm mt-2">{description}</p>
+        <motion.p className="text-gray-700 mb-4 text-sm mt-2">
+          {description}
+        </motion.p>
         <motion.button
           onClick={handleButtonClick}
-          className="bg-blue-700 hover:bg-yellow-400 text-white hover:text-black px-6 py-2 rounded-full"
+          className="absolute bottom-5 bg-blue-700 hover:bg-yellow-400 text-white hover:text-black px-6 py-2 rounded-full cursor-pointer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ type: 'spring', stiffness: 400, damping: 17 }}
         >
-          {buttonText}
+          Learn More
         </motion.button>
       </motion.div>
     </motion.div>
