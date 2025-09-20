@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const ProgramCard = ({
+export default function Card({
   title = 'Comming Soon',
   description = 'Comming Soon',
   onButtonClick,
   className = '',
-  index = 0,
-}) => {
+}) {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -16,10 +15,6 @@ const ProgramCard = ({
 
   const handleMouseLeave = () => {
     setIsHovered(false);
-  };
-
-  const handleButtonClick = () => {
-    onButtonClick({ title, description, index });
   };
 
   return (
@@ -31,9 +26,9 @@ const ProgramCard = ({
     >
       {/* Title */}
       <motion.h3
-        className="font-black text-black z-10"
+        className="font-bold font-poppins text-black z-10"
         animate={{
-          fontSize: isHovered ? '28px' : '36px',
+          fontSize: isHovered ? '22px' : '30px',
           y: isHovered ? -97 : 0,
         }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
@@ -55,7 +50,7 @@ const ProgramCard = ({
           {description}
         </motion.p>
         <motion.button
-          onClick={handleButtonClick}
+          onClick={onButtonClick}
           className="absolute bottom-5 bg-blue-700 hover:bg-yellow-400 text-white hover:text-black px-6 py-2 rounded-full cursor-pointer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -66,6 +61,4 @@ const ProgramCard = ({
       </motion.div>
     </motion.div>
   );
-};
-
-export default ProgramCard;
+}
