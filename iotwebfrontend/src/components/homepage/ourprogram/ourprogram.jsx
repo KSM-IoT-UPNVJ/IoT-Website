@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import FadeIn from '../../../utils/fadeIn';
-import ProgramCard from './ProgramCard';
+import ProgramCard from '../Card';
 
 const OurProgram = () => {
   const scrollRef = useRef(null);
