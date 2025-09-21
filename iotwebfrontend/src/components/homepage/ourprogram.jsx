@@ -44,10 +44,10 @@ const OurProgram = () => {
 
   // Dummy program data
   const programs = [
-    { title: "Program Name 1", image: "/OurProgram.jpg" },
-    { title: "Program Name 2", image: "/OurProgram.jpg" },
-    { title: "Program Name 3", image: "/OurProgram.jpg" },
-    { title: "Program Name 4", image: "/OurProgram.jpg" },
+    { title: "STUDI BANDING", image: "/stuban.webp" },
+    { title: "YOUTH IOT 2025", image: "/OurProgram.jpg" },
+    { title: "SHARING WITH SENIOR", image: "/OurProgram.jpg" },
+    { title: "IOT CHECKPOINT", image: "/OurProgram.jpg" },
     { title: "Program Name 5", image: "/OurProgram.jpg" },
   ];
 
