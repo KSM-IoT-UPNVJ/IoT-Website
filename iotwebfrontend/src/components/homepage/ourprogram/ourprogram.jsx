@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import FadeIn from '../../../utils/fadeIn';
-import ProgramCard from '../Card';
+import Card from '../Card';
 
 const OurProgram = () => {
   const scrollRef = useRef(null);
@@ -81,9 +81,9 @@ const OurProgram = () => {
   };
 
   return (
-    <div className=" pt-10 pb-32 px-4 md:px-36 overflow-hidden bg-[#2E3A4B]">
+    <div className=" pt-10 pb-24 sm:pb-28 md:pb-32 px-4 sm:px-8 md:px-12 lg:px-36 overflow-hidden bg-[#2E3A4B]">
       <FadeIn direction={'up'} delay={0.3}>
-        <h2 className="text-white text-[56px] font-extrabold text-center mb-14 font-optima">
+        <h2 className="text-white text-3xl sm:text-4xl md:text-[56px] font-extrabold text-center mb-10 sm:mb-12 md:mb-14 font-optima">
           Our Program
         </h2>
       </FadeIn>
@@ -92,7 +92,7 @@ const OurProgram = () => {
         {/* Chevron Kiri */}
         <button
           onClick={scrollLeft}
-          className="absolute left-[-4.7rem] top-1/2 -translate-y-1/2 z-20 p-2 bg-transparent hover:scale-110 transition"
+          className="hidden md:block absolute left-[-4.7rem] top-1/2 -translate-y-1/2 z-20 p-2 bg-transparent hover:scale-110 transition"
           style={{
             opacity: isFadingLeft ? 0.1 : canScrollLeft ? 0.4 : 0.2,
             pointerEvents: canScrollLeft ? 'auto' : 'none',
@@ -106,10 +106,10 @@ const OurProgram = () => {
         <FadeIn direction={'up'} delay={0.6}>
           <div
             ref={scrollRef}
-            className="flex space-x-14 overflow-x-auto scroll-smooth px-20 scrollbar-hide"
+            className="flex space-x-5 sm:space-x-10 md:space-x-14 overflow-x-auto scroll-smooth px-4 sm:px-10 md:px-20 scrollbar-hide"
           >
             {programs.map((program, index) => (
-              <ProgramCard
+              <Card
                 key={program.id}
                 title={program.title}
                 description={program.description}
@@ -123,7 +123,7 @@ const OurProgram = () => {
         {/* Chevron Kanan */}
         <button
           onClick={scrollRight}
-          className="absolute right-[-4.7rem] top-1/2 -translate-y-1/2 z-20 p-2 bg-transparent hover:scale-110 transition"
+          className="hidden md:block absolute right-[-4.7rem] top-1/2 -translate-y-1/2 z-20 p-2 bg-transparent hover:scale-110 transition"
           style={{
             opacity: isFadingRight ? 0.1 : canScrollRight ? 0.4 : 0.2,
             pointerEvents: canScrollRight ? 'auto' : 'none',

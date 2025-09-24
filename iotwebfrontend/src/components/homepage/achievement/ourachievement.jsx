@@ -73,7 +73,7 @@ const OurAchievement = () => {
       </FadeIn>
 
       {/* card component */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 w-full max-w-[1300px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-full">
         {achievements.map((item) => (
           <AchievementCard
             key={item.id}

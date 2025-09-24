@@ -16,13 +16,13 @@ const MoreInsight = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <div className="w-full relative min-h-screen py-20 px-12 flex flex-col items-center">
+    <div className="w-full relative min-h-screen py-16 sm:py-20 px-4 sm:px-8 md:px-12 flex flex-col items-center">
       <FadeIn direction="up" delay={0.2}>
-        <h2 className="text-[56px] font-bold text-center text-gray-800 mb-16 font-optima">
+        <h2 className="text-3xl sm:text-4xl md:text-[56px] font-bold text-center text-gray-800 mb-10 sm:mb-14 md:mb-16 font-optima">
           More Insight
         </h2>
       </FadeIn>
-      <div className="w-full flex justify-center items-center gap-6 flex-wrap md:flex-nowrap">
+      <div className="w-full flex justify-center items-center gap-4 sm:gap-6 flex-wrap md:flex-nowrap">
         {divisions.map((division, index) => {
           const isActive = activeIndex === index;
 
@@ -33,8 +33,10 @@ const MoreInsight = () => {
                 onMouseEnter={() => setActiveIndex(index)}
                 onMouseLeave={() => setActiveIndex(null)}
                 className={`relative flex flex-col justify-end rounded-2xl shadow-lg overflow-hidden transition-all duration-700 ease-in-out ${
-                  isActive ? 'w-[530px]' : 'w-[200px]'
-                } h-[600px] group cursor-pointer`}
+                  isActive
+                    ? 'w-[80vw] sm:w-[420px] md:w-[530px]'
+                    : 'w-[44vw] sm:w-[180px] md:w-[200px]'
+                } h-[360px] sm:h-[480px] md:h-[600px] group cursor-pointer`}
               >
                 {/* Background image */}
                 <div
@@ -48,8 +50,8 @@ const MoreInsight = () => {
                 <div
                   className={`absolute z-30 font-extrabold text-black transition-all duration-700 ease-in-out ${
                     isActive
-                      ? 'text-4xl bottom-[200px] left-6 scale-100 text-left rotate-0'
-                      : 'text-5xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90'
+                      ? 'text-2xl sm:text-3xl md:text-4xl bottom-[120px] sm:bottom-[160px] md:bottom-[200px] left-4 sm:left-6 scale-100 text-left rotate-0'
+                      : 'text-3xl sm:text-4xl md:text-5xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90'
                   }`}
                   style={{
                     writingMode: isActive ? 'horizontal-tb' : 'horizontal-tb',
@@ -106,8 +108,8 @@ const MoreInsight = () => {
                     pointerEvents: isActive ? 'auto' : 'none',
                   }}
                 >
-                  <p className="mb-4">{lorem}</p>
-                  <button className="bg-blue-800 hover:bg-yellow-400 text-white hover:text-black px-6 py-2 rounded-full transition-colors duration-300 text-sm">
+                  <p className="mb-4 text-sm md:text-base">{lorem}</p>
+                  <button className="bg-blue-800 hover:bg-yellow-400 text-white hover:text-black px-5 md:px-6 py-2 rounded-full transition-colors duration-300 text-sm">
                     Learn More
                   </button>
                 </div>
