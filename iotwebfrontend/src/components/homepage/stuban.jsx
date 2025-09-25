@@ -1,12 +1,10 @@
-// src/components/homepage/testimoni.jsx
 import React, { useEffect } from "react";
 
-const Testimoni = () => {
+const StudiBanding = () => {
   // Data penulis
   const author = {
     nama: "Naufalis Febrian",
     jabatan: "Kadept Engineer",
-    foto: "/profile1.jpg",
   };
 
   // Saat di klik our program, halaman akan muncul dari atas
@@ -31,8 +29,8 @@ const Testimoni = () => {
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-4 border-white shadow">
                 <img
-                  src={author.foto}
-                  alt={author.nama}
+                  src="/aboutUs/bangFalis.webp"
+                  alt="Naufalis Febrian"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -83,6 +81,26 @@ const Testimoni = () => {
                 Kegiatan ini menjadi wujud nyata dari semangat KSM IoT untuk terus berkembang, terbuka terhadap perubahan, dan siap berkolaborasi dengan berbagai pihak guna menciptakan komunitas mahasiswa yang tidak hanya unggul dalam bidang akademik dan teknologi, tetapi juga adaptif, kreatif, dan inovatif dalam menghadapi tantangan masa depan.
               </p>
 
+              <div className="flex flex-col md:flex-row items-start mt-8">
+              {/* Teks Review */}
+                <div className="md:w-2/3 w-full pr-6">
+                  <p className="text-base md:text-lg leading-relaxed text-gray-800">
+                    “Gw sangat bahagia dan merasa terhormat atas kunjungan studi banding dari KSM loT UPNVJ. Kehadiran teman-teman membawa semangat baru dan menciptakan suasana hangat yang penuh kolaborasi serta diskusi bermanfaat. 
+                    Pertukaran ide dan pengalaman sangat memperkaya wawasan kami. Semoga studi banding ini menjadi awal dari hubungan yang lebih erat dan kolaborasi jangka panjang. Kami berharap apa yang didapat bisa menjadi referensi 
+                    positif bagi masing-masing organisasi. Mohon maaf bila ada kekurangan dalam penyambutan, dan sampai jumpa di kesempatan berikutnya. Semoga silaturahmi ini terus terjaga.”
+                  </p>
+                </div>
+
+                {/* Foto di kanan */}
+                <div className="md:w-1/3 w-full flex justify-center mt-6 md:mt-0">
+                  <img
+                    src="/OurProgram.jpg"
+                    alt="Review Foto"
+                    className="rounded-lg shadow-lg w-64 h-48 object-cover"
+                  />
+                </div>
+              </div>
+
               {/* Footer Author */}
               <div className="mt-10 flex items-center gap-4">
                 <div className="w-14 h-14 rounded-full overflow-hidden border-4 border-white shadow">
@@ -110,4 +128,4 @@ const Testimoni = () => {
   );
 };
 
-export default Testimoni;
+export default StudiBanding;
