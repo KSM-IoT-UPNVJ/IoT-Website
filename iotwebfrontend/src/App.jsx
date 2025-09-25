@@ -1,24 +1,25 @@
-import Nav from './components/nav';
-import HomePage from './components/homepage/homepage';
-import AboutUs from './components/AboutUs/AboutUs';
-import Kepengurusan from './components/kepengurusan/kepengurusan';
-import Contact from './components/contact/contact';
-import Projects from './components/projects/Projects';
-import Insight from './components/insight/IotInsight';
-import Footer from './components/Footer';
-import { useEffect } from 'react';
-import Bg from './utils/Bg';
+import Nav from "./components/nav";
+import HomePage from "./components/homepage/homepage";
+import AboutUs from "./components/AboutUs/AboutUs";
+import Kepengurusan from "./components/kepengurusan/kepengurusan";
+import Contact from "./components/contact/contact";
+import Projects from "./components/projects/Projects";
+import ProjectsDesc from "./components/projects/ProjectsDesc";
+import Insight from "./components/insight/IotInsight";
+import Footer from "./components/Footer";
+import { useEffect } from "react";
+import Bg from "./utils/Bg";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Outlet,
-} from 'react-router-dom';
+} from "react-router-dom";
 
 function App() {
   useEffect(() => {
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      window.scrollTo({ top: 0, behavior: "instant" });
     }, 300);
   }, []);
 
@@ -35,6 +36,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/insight" element={<Insight />} />
           <Route path="/insight/:division" element={<Insight />} />
+          <Route path="/project/projectdesc" element={<ProjectsDesc />} />
+          <Route path="/project/projectdesc/:i" element={<ProjectsDesc />} />
         </Route>
 
         {/* Rute 404 berada di luar MainLayout, sehingga tidak akan menampilkan Nav, Bg, dan Footer */}
