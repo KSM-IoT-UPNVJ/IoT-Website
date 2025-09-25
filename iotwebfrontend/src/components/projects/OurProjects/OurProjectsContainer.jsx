@@ -1,7 +1,11 @@
 import OurProjectsCard from "./OurProjectsCard.jsx";
 import OurProjectsData from "./ourProjectsData";
 
+import { useNavigate } from "react-router-dom";
+
 export default function OurProjectsContainer() {
+  const navigate = useNavigate();
+
   const realCards = OurProjectsData.map((card) => ({
     ...card,
     isPlaceholder: false,
@@ -20,8 +24,16 @@ export default function OurProjectsContainer() {
 
   return (
     <div className={`flex flex-wrap justify-center gap-8 px-2`}>
-      {displayCards.map((card, i) => (
-        <OurProjectsCard key={i} {...card} />
+      {realCards.map((card, i) => (
+        <button
+          className="h-min w-min"
+          onClick={() => navigate(`/project/projectdesc/${i + 1}`)}
+        >
+          <OurProjectsCard key={i} {...card} />
+        </button>
+      ))}
+      {fillerCards.map((card, i) => (
+         <OurProjectsCard key={i} {...card} />
       ))}
     </div>
   );
