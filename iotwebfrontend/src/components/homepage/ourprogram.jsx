@@ -120,7 +120,7 @@ const OurProgram = () => {
                     tempor incididunt ut labore et dolore magna aliqua.
                   </p>
                   <Link
-                    to="/testimoni"
+                    to="/stuban"
                     className="bg-blue-700 hover:bg-yellow-400 text-white hover:text-black px-6 py-2 rounded-full transition-colors duration-300 inline-block"
                   >
                     Learn More
