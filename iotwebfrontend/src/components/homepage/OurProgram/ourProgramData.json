@@ -1,0 +1,74 @@
+{
+  "studi-banding": {
+    "data": {
+      "image": "/projects/IotInsight-Firmware1.png",
+      "foto2": "/aboutUs/bangFalis.webp",
+      "foto3": "/aboutUs/bangFalis.webp",
+      "foto4": "/aboutUs/bangFalis.webp",
+      "deskripsi1": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos nobis omnis libero perspiciatis, deleniti rem in vitae ratione! Nihil, molestias?",
+      "deskripsi2": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos nobis omnis libero perspiciatis, deleniti rem in vitae ratione! Nihil, molestias?",
+      "deskripsi3": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos nobis omnis libero perspiciatis, deleniti rem in vitae ratione! Nihil, molestias?",
+      "title": "Studi Banding"
+    },
+    "author": {
+      "namaHeader": "Naufalis Febrian",
+      "jabatanHeader": "Kadept Engineer",
+      "namaFooter": "Derry Ariadi",
+      "jabatanFooter": "PO from URC"
+    }
+  },
+  "youthiot": {
+    "data": {
+      "image": "/projects/IotInsight-Firmware1.png",
+      "foto2": "/aboutUs/bangZahid.webp",
+      "foto3": "/aboutUs/bangZahid.webp",
+      "foto4": "/aboutUs/bangZahid.webp",
+      "deskripsi1": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos nobis omnis libero perspiciatis, deleniti rem in vitae ratione! Nihil, molestias?",
+      "deskripsi2": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos nobis omnis libero perspiciatis, deleniti rem in vitae ratione! Nihil, molestias?",
+      "deskripsi3": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos nobis omnis libero perspiciatis, deleniti rem in vitae ratione! Nihil, molestias?",
+      "title": "Youth IoT"
+    },
+    "author": {
+      "namaHeader": "Naufalis Febrian",
+      "jabatanHeader": "Kadept Engineer",
+      "namaFooter": "Derry Ariadi",
+      "jabatanFooter": "PO from URC"
+    }
+  },
+  "iotcheckpoint": {
+    "data": {
+      "image": "/projects/IotInsight-Firmware1.png",
+      "foto2": "/aboutUs/bangZahid.webp",
+      "foto3": "/aboutUs/bangZahid.webp",
+      "foto4": "/aboutUs/bangZahid.webp",
+      "deskripsi1": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos nobis omnis libero perspiciatis, deleniti rem in vitae ratione! Nihil, molestias?",
+      "deskripsi2": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos nobis omnis libero perspiciatis, deleniti rem in vitae ratione! Nihil, molestias?",
+      "deskripsi3": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos nobis omnis libero perspiciatis, deleniti rem in vitae ratione! Nihil, molestias?",
+      "title": "Youth IoT"
+    },
+    "author": {
+      "namaHeader": "Naufalis Febrian",
+      "jabatanHeader": "Kadept Engineer",
+      "namaFooter": "Derry Ariadi",
+      "jabatanFooter": "PO from URC"
+    }
+  },
+  "sharing-with-sensor": {
+    "data": {
+      "image": "/projects/IotInsight-Firmware1.png",
+      "foto2": "/aboutUs/bangZahid.webp",
+      "foto3": "/aboutUs/bangZahid.webp",
+      "foto4": "/aboutUs/bangZahid.webp",
+      "deskripsi1": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos nobis omnis libero perspiciatis, deleniti rem in vitae ratione! Nihil, molestias?",
+      "deskripsi2": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos nobis omnis libero perspiciatis, deleniti rem in vitae ratione! Nihil, molestias?",
+      "deskripsi3": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos nobis omnis libero perspiciatis, deleniti rem in vitae ratione! Nihil, molestias?",
+      "title": "Youth IoT"
+    },
+    "author": {
+      "namaHeader": "Naufalis Febrian",
+      "jabatanHeader": "Kadept Engineer",
+      "namaFooter": "Derry Ariadi",
+      "jabatanFooter": "PO from URC"
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import FadeIn from '../../utils/fadeIn';
+import FadeIn from '../../../utils/fadeIn';
 import { Link } from 'react-router-dom';
 
 const OurProgram = () => {
@@ -44,11 +44,11 @@ const OurProgram = () => {
 
   // Dummy program data
   const programs = [
-    { title: "STUDI BANDING", image: "/stuban.webp", link: "/stuban" },
-    { title: "YOUTH IOT 2025", image: "/OurProgram.jpg", link: "/youthiot" },
-    { title: "SHARING WITH SENIOR", image: "/OurProgram.jpg", link: "/sensor" },
-    { title: "IOT CHECKPOINT", image: "/OurProgram.jpg", link: "/checkpoint" },
-    { title: "Program Name 5", image: "/OurProgram.jpg" },
+    { id: "studi-banding", title: "STUDI BANDING", image: "/stuban.webp", link: "/stuban" },
+    { id: "youthiot",title: "YOUTH IOT 2025", image: "/OurProgram.jpg", link: "/youthiot" },
+    { id: "sharing-with-sensor",title: "SHARING WITH SENIOR", image: "/OurProgram.jpg", link: "/sensor" },
+    { id: "iotcheckpoint",title: "IOT CHECKPOINT", image: "/OurProgram.jpg", link: "/checkpoint" },
+    { id: "program-name-5",title: "Program Name 5", image: "/OurProgram.jpg" },
   ];
 
   return (
@@ -120,7 +120,7 @@ const OurProgram = () => {
                     tempor incididunt ut labore et dolore magna aliqua.
                   </p>
                   <Link
-                    to={program.link}
+                    to={`/program/${program.id}`}
                     className="bg-blue-700 hover:bg-yellow-400 text-white hover:text-black px-6 py-2 rounded-full transition-colors duration-300 inline-block"
                   >
                     Learn More
