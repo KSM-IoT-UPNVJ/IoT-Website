@@ -1,15 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import FadeIn from "../../utils/fadeIn";
 
 const StudiBanding = () => {
   // Data penulis
   const author = {
-    nama: "Naufalis Febrian",
-    jabatan: "Kadept Engineer",
+    namaHeader: "Naufalis Febrian",
+    jabatanHeader: "Kadept Engineer",
+    namaFooter: "Derry Ariadi",
+    jabatanFooter: "PO from URC",
   };
 
   // Saat di klik our program, halaman akan muncul dari atas
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  // ✅ State & logic untuk slider foto
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const sliderImages = [
+    "/OurProgram.jpg",
+    "/aboutUs/bangFalis.webp",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) =>
+        prev === sliderImages.length - 1 ? 0 : prev + 1
+      );
+    }, 3000); // ganti foto tiap 3 detik
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -38,10 +57,10 @@ const StudiBanding = () => {
                 <p className="text-sm text-gray-600">
                   Written by{" "}
                   <span className="font-extrabold text-gray-900">
-                    {author.nama}
+                    {author.namaHeader}
                   </span>
                 </p>
-                <p className="text-xs text-gray-500">{author.jabatan}</p>
+                <p className="text-xs text-gray-500">{author.jabatanHeader}</p>
               </div>
             </div>
 
@@ -82,7 +101,7 @@ const StudiBanding = () => {
               </p>
 
               <div className="flex flex-col md:flex-row items-start mt-8">
-              {/* Teks Review */}
+                {/* Teks Review */}
                 <div className="md:w-2/3 w-full pr-6">
                   <p className="text-base md:text-lg leading-relaxed text-gray-800">
                     “Gw sangat bahagia dan merasa terhormat atas kunjungan studi banding dari KSM loT UPNVJ. Kehadiran teman-teman membawa semangat baru dan menciptakan suasana hangat yang penuh kolaborasi serta diskusi bermanfaat. 
@@ -102,21 +121,42 @@ const StudiBanding = () => {
               </div>
 
               {/* Footer Author */}
-              <div className="mt-10 flex items-center gap-4">
+              <div className="mt-5 flex items-center gap-4">
                 <div className="w-14 h-14 rounded-full overflow-hidden border-4 border-white shadow">
                   <img
-                    src={author.foto}
-                    alt={author.nama}
+                    src="/aboutUs/bangFalis.webp"
+                    alt={author.namaFooter}
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900 text-lg">
-                    {author.nama}
+                    {author.namaFooter}
                   </p>
-                  <p className="text-sm text-gray-500">{author.jabatan}</p>
+                  <p className="text-sm text-gray-500">{author.jabatanFooter}</p>
                 </div>
               </div>
+
+              {/* ✅ Slider Foto Otomatis */}
+              <div className="relative w-full h-[350px] md:h-[670px] mt-8 overflow-hidden rounded-xl">
+                <div
+                  className="flex transition-transform duration-700 ease-in-out"
+                  style={{
+                    transform: `translateX(-${currentIndex * 100}%)`,
+                    width: `${sliderImages.length * 100}%`,
+                  }}
+                >
+                  {sliderImages.map((src, i) => (
+                    <img
+                      key={i}
+                      src={src}
+                      alt={`Slide ${i}`}
+                      className="w-full h-[350px] md:h-[670px] object-cover flex-shrink-0"
+                    />
+                  ))}
+                </div>
+              </div>
+
             </div>
           </div>
         </article>
