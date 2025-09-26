@@ -90,7 +90,7 @@ export default function VisiMisiSection() {
                   className={`absolute left-4 right-4 mx-auto text-center font-extrabold transition-transform duration-500 z-20 select-none
     ${
       isActive
-        ? "-translate-y-31 sm:-translate-y-53 text-sm sm:text-2xl md:text-2xl lg:text-2xl"
+        ? "-translate-y-34 sm:-translate-y-53 text-sm sm:text-2xl md:text-2xl lg:text-2xl"
         : "translate-y-0 text-sm sm:text-2xl md:text-2xl lg:text-4xl"
     }
     group-hover:-translate-y-53
@@ -104,7 +104,7 @@ export default function VisiMisiSection() {
 
                 {/* Konten teks */}
                 <div
-                  className={`absolute inset-0 px-2 sm:px-6 lg:px-7 pt-18 sm:pt-30 flex items-start justify-center text-center transition-all duration-500 z-10
+                  className={`absolute inset-0 px-2 sm:px-6 lg:px-7 pt-13 sm:pt-30 flex items-start justify-center text-center transition-all duration-500 z-10
                     ${
                       isActive
                         ? "opacity-100 pointer-events-auto"
