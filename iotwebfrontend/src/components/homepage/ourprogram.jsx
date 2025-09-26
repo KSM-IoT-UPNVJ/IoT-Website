@@ -44,10 +44,10 @@ const OurProgram = () => {
 
   // Dummy program data
   const programs = [
-    { title: "STUDI BANDING", image: "/stuban.webp" },
-    { title: "YOUTH IOT 2025", image: "/OurProgram.jpg" },
-    { title: "SHARING WITH SENIOR", image: "/OurProgram.jpg" },
-    { title: "IOT CHECKPOINT", image: "/OurProgram.jpg" },
+    { title: "STUDI BANDING", image: "/stuban.webp", link: "/stuban" },
+    { title: "YOUTH IOT 2025", image: "/OurProgram.jpg", link: "/youthiot" },
+    { title: "SHARING WITH SENIOR", image: "/OurProgram.jpg", link: "/sensor" },
+    { title: "IOT CHECKPOINT", image: "/OurProgram.jpg", link: "/checkpoint" },
     { title: "Program Name 5", image: "/OurProgram.jpg" },
   ];
 
@@ -120,7 +120,7 @@ const OurProgram = () => {
                     tempor incididunt ut labore et dolore magna aliqua.
                   </p>
                   <Link
-                    to="/stuban"
+                    to={program.link}
                     className="bg-blue-700 hover:bg-yellow-400 text-white hover:text-black px-6 py-2 rounded-full transition-colors duration-300 inline-block"
                   >
                     Learn More

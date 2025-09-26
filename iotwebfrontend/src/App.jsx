@@ -6,6 +6,9 @@ import Contact from './components/contact/contact';
 import Projects from './components/projects/Projects';
 import Footer from './components/Footer';
 import StudiBanding from './components/homepage/stuban';
+import YouthIoT from './components/homepage/youthiot';
+import Sensor from './components/homepage/sensor';
+import Checkpoint from './components/homepage/checkpoint';
 import { useEffect } from 'react';
 import Bg from './utils/Bg';
 import {
@@ -34,6 +37,9 @@ function App() {
           <Route path="/project" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/stuban" element={<StudiBanding />} />
+          <Route path="/youthiot" element={<YouthIoT />} />
+          <Route path="/sensor" element={<Sensor />} />
+          <Route path="/checkpoint" element={<Checkpoint />} />
         </Route>
 
         {/* Rute 404 berada di luar MainLayout, sehingga tidak akan menampilkan Nav, Bg, dan Footer */}
