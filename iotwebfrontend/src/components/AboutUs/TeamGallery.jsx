@@ -282,7 +282,7 @@ export default function TeamGallery() {
             : "w-full h-[180px]"
         }
       `}
-                          style={{ pointerEvents: "none" }}
+      loading="lazy"
                         />
                       </FadeIn>
                     ))}
