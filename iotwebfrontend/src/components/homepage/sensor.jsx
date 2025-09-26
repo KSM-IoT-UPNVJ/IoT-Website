@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import FadeIn from "../../utils/fadeIn";
 
-const StudiBanding = () => {
+const Sensor = () => {
   // Data penulis
   const author = {
     namaHeader: "Naufalis Febrian",
@@ -38,7 +38,7 @@ const StudiBanding = () => {
         {/* Judul Halaman */}
         <FadeIn direction={"left"} delay={0.5}>
         <h2 className="text-[60px] font-bold text-center text-gray-800 mb-8 font-optima">
-          Studi <br /> Banding
+          Sharing With <br/> Senior
         </h2>
         </FadeIn>
 
@@ -185,4 +185,4 @@ const StudiBanding = () => {
   );
 };
 
-export default StudiBanding;
+export default Sensor;
