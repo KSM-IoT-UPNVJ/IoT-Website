@@ -34,7 +34,7 @@ const Home = () => {
 
   return (
     <div className="relative overflow-x-hidden">
-      <div className="min-h-screen flex flex-col text-optima">
+      <div className="max-h-screen flex flex-col text-optima">
         <div className="relative w-full py-1.5 h-[75vh] sm:h-[80vh] md:h-[90vh] -z-10">
           <PhotoSlider images={imagesRow1} direction="animate-scroll-right" />
           <PhotoSlider images={imagesRow2} direction="animate-scroll-left" />
@@ -54,7 +54,7 @@ const Home = () => {
               </h2>
             </FadeIn>
             <FadeIn direction="up" delay={0.6}>
-              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-4">
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-4 font-optima">
                 UPNVJ
               </h3>
             </FadeIn>
