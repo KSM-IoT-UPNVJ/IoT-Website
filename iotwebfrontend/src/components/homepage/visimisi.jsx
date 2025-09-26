@@ -3,7 +3,7 @@ import FadeIn from '../../utils/fadeIn';
 
 const VisionMission = () => {
   return (
-    <div className="w-full min-h-screen px-4 sm:px-8 md:px-20 py-12 sm:py-16 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10">
+    <div className="w-full max-h-screen px-4 sm:px-8 md:px-20 py-12 sm:py-16 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10">
       {/* Kiri: Visi & Misi */}
       <div className="md:w-1/2 text-left">
         <FadeIn direction="up" delay={0.4}>
