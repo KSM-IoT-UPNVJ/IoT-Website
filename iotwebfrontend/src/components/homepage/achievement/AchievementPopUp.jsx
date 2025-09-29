@@ -1,12 +1,40 @@
 import { MoveLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+const InfoRow = ({ label, value }) => {
+  const isArray = Array.isArray(value);
+  return (
+    <div className="flex flex-col gap-1 rounded-lg bg-white/10 px-4 py-3 text-left sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex gap-8 justify-between w-full">
+        <div className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-200 sm:text-sm">
+          {label}
+        </div>
+        {isArray ? (
+          <ul className="text-sm text-gray-100 sm:text-base text-end">
+            {value.map((val, index) => (
+              <li key={index}>{val}</li>
+            ))}
+          </ul>
+        ) : (
+          <div className="text-sm text-gray-100 sm:text-base text-end">
+            {value}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
 export default function AchievementPopup({
   item,
   onClose,
   clickedElementPosition,
 }) {
   if (!item) return null; // Jangan render apapun jika tidak ada item yang dipilih
+
+  const showExtraInfo = Boolean(
+    item.time || item.organizer || item.contributors,
+  );
 
   // Calculate initial position for animation
   const getInitialPosition = () => {
@@ -74,13 +102,14 @@ export default function AchievementPopup({
 
             {/* Bagian Kanan (Konten Teks) */}
             <motion.div
-              className="w-full md:w-1/2 flex flex-col justify-between p-2 sm:p-4 text-white"
+              className="w-full md:w-1/2 flex flex-col justify-between p-2 sm:p-4 text-white overflow-y-scroll"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
             >
               <div className="self-start">
                 <motion.button
+                  className="cursor-pointer"
                   onClick={onClose}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -105,6 +134,17 @@ export default function AchievementPopup({
                 <p className="text-sm sm:text-base md:text-lg text-gray-200 mb-2 sm:mb-4">
                   {item.description}
                 </p>
+                {showExtraInfo && (
+                  <div className="mt-4 w-full max-w-xl space-y-3 text-left md:mx-auto">
+                    {item.time && <InfoRow label="Waktu" value={item.time} />}
+                    {item.organizer && (
+                      <InfoRow label="Penyelenggara" value={item.organizer} />
+                    )}
+                    {item.contributors && (
+                      <InfoRow label="Tim" value={item.contributors} />
+                    )}
+                  </div>
+                )}
               </motion.div>
             </motion.div>
           </div>

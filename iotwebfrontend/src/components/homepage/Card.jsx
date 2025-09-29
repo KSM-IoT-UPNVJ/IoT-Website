@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function Card({
@@ -8,11 +8,25 @@ export default function Card({
   className = '',
 }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return window.innerWidth < 640;
+  });
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
-
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
@@ -28,8 +42,14 @@ export default function Card({
       <motion.h3
         className="font-bold font-poppins text-black z-10"
         animate={{
-          fontSize: isHovered ? '22px' : '30px',
-          y: isHovered ? -97 : 0,
+          fontSize: isHovered
+            ? isMobile
+              ? '20px'
+              : '22px'
+            : isMobile
+            ? '26px'
+            : '30px',
+          y: isHovered ? (isMobile ? -60 : -97) : 0,
         }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
@@ -47,7 +67,7 @@ export default function Card({
         transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
         <motion.p className="text-gray-700 mb-4 text-xs sm:text-sm mt-2">
-          {description}
+          {`${description.substring(0, 100)}....`}
         </motion.p>
         <motion.button
           onClick={onButtonClick}
