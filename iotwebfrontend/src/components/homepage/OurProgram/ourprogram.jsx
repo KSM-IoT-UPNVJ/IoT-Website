@@ -45,7 +45,7 @@ const OurProgram = () => {
   // Dummy program data
   const programs = [
     { id: "studi-banding", title: "STUDI BANDING", image: "/stuban.webp", link: "/stuban" },
-    { id: "youthiot",title: "YOUTH IOT 2025", image: "/OurProgram.jpg", link: "/youthiot" },
+    { id: "youthiot",title: "YOUTH IOT 2025", image: "/public/foto_youthiot1", link: "/youthiot" },
     { id: "sharing-with-sensor",title: "SHARING WITH SENIOR", image: "/OurProgram.jpg", link: "/sensor" },
     { id: "iotcheckpoint",title: "IOT CHECKPOINT", image: "/OurProgram.jpg", link: "/checkpoint" },
     { id: "program-name-5",title: "Program Name 5", image: "/OurProgram.jpg" },
