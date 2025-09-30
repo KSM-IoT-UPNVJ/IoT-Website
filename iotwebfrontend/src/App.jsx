@@ -32,7 +32,7 @@ function App() {
           <Route path="/kepengurusan" element={<Kepengurusan />} />
           <Route path="/project" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/insight" element={<div>ini adalahinsight</div>} />
+          <Route path="/insight" element={<div>ini adalah insight</div>} />
         </Route>
 
         {/* Rute 404 berada di luar MainLayout, sehingga tidak akan menampilkan Nav, Bg, dan Footer */}

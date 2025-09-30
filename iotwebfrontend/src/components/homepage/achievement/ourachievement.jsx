@@ -36,7 +36,12 @@ const OurAchievement = () => {
       image: '/path/to/your/image2.jpg',
       time: '28 Mei - 5 Juni 2023',
       organizer: 'BPTI Puspresnas Kemdikbudristek',
-      contributors: ['Jati Kinsela Brajamusti'],
+      contributors: [
+        'Ahmad Sarifpudin',
+        'Cantika Aryanti',
+        'Daffa Yusril Ihya',
+        'Jati Kinsela Brajamusti',
+      ],
     },
     {
       id: 3,
