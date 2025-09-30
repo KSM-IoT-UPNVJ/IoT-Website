@@ -89,27 +89,21 @@ const LayoutProgram = ({program}) => {
                 {program.data.deskripsi3}
               </p>
               </FadeIn>
-              
-              <FadeIn direction={"right"} delay={0.8}>
-              <p className="mb-8 text-base md:text-lg leading-relaxed">
-                 {program.data.deskripsi3}
-              </p>
-              </FadeIn>
 
               <FadeIn direction={"left"} delay={0.9}>
               <div className="flex flex-col md:flex-row items-start mt-8">
                 {/* Teks Review */}
                 <div className="md:w-2/3 w-full pr-6">
                   <p className="text-base md:text-lg leading-relaxed text-gray-800">
-                    {program.data.deskripsi3}
+                    {program.data.testimoni}
                   </p>
                 </div>
 
                 {/* Foto di kanan */}
                 <div className="md:w-1/3 w-full flex justify-center mt-6 md:mt-0">
                   <img
-                    src="/OurProgram.jpg"
-                    alt="Review Foto"
+                    src="/kolase.jpg"
+                    alt="Foto Kolase"
                     className="rounded-lg shadow-lg w-64 h-48 object-cover"
                   />
                 </div>
@@ -134,7 +128,7 @@ const LayoutProgram = ({program}) => {
                 </div>
               </div>
               </FadeIn>
-            </div> {/* ⬅️ tutup div max-w-5xl */}
+            </div> {/* tutup div max-w-5xl */}
 
             {/* ✅ Slider Foto Otomatis (sekarang keluar dari max-w-5xl) */}
             <div className="relative w-[calc(100%+5rem)] -ml-10 h-[350px] md:h-[670px] overflow-hidden -mb-10 rounded-b-none">
