@@ -69,7 +69,7 @@ function Nav() {
               </FadeIn>
             </button>
             {open && (
-              <div className="absolute mt-3 shadow-xs rounded-xl border-2 border-biru-muda bg-transparent backdrop-blur-[10px] text-xs animate-fade-in duration-200">
+              <div className="absolute mt-3 shadow-xs rounded-xl border-2 border-biru-muda bg-transparent backdrop-blur-[10px] text-xs animate-fade-in duration-200 z-30">
                 <DropdownAnimate show={open}>
                   <a
                     href="aboutus"

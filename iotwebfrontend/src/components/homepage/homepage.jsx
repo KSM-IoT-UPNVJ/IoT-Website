@@ -3,7 +3,7 @@ import Welcome from './welcome/welcome';
 import VisiMisi from './visimisi';
 import OurProgram from './ourprogram/ourprogram';
 import OurAchievement from './achievement/ourachievement';
-import MoreInsight from './insight';
+import MoreInsight from './Insight/Insight';
 
 function Homepage() {
   useEffect(() => {

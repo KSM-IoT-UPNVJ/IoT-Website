@@ -33,8 +33,8 @@ const Home = () => {
   ];
 
   return (
-    <div className="relative overflow-x-hidden">
-      <div className="max-h-screen flex flex-col text-optima">
+    <div className="relative overflow-x-hidden -z-10">
+      <div className="max-h-screen flex flex-col text-optima -z-10">
         <div className="relative w-full py-1.5 h-[75vh] sm:h-[80vh] md:h-[90vh] -z-10">
           <PhotoSlider images={imagesRow1} direction="animate-scroll-right" />
           <PhotoSlider images={imagesRow2} direction="animate-scroll-left" />
