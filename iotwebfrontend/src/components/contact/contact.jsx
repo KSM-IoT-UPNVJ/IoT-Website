@@ -1,4 +1,4 @@
-import Form from './form';
+import Form from './form/ContactForm';
 import Map from './map';
 import FadeIn from '../../utils/fadeIn';
 import MediaCard from './mediaCard';

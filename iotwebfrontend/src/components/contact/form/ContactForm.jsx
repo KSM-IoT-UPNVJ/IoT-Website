@@ -1,61 +1,9 @@
-import { useState } from 'react';
-import FadeIn from '../../utils/fadeIn';
+import FadeIn from '../../../utils/fadeIn';
+import { useContactForm } from './useContactForm';
 
-export default function Form() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  });
-
-  const [inputValidity, setInputValidity] = useState({
-    name: true,
-    email: true,
-    phone: true,
-    message: true,
-  });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = e.target;
-
-    const newValidity = {
-      name: form.name.validity.valid,
-      email: form.email.validity.valid,
-      phone: form.phone.validity.valid,
-      message: form.message.validity.valid,
-    };
-
-    setInputValidity(newValidity);
-    setFormSubmitted(true);
-
-    const allValid = Object.values(newValidity).every(Boolean);
-    if (!allValid) return;
-
-    // form valid
-    alert('Form submitted!');
-  };
-
-  const handleChange = (e) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
-  const getInputStyle = (field) => {
-    const isInvalid = formSubmitted && !inputValidity[field];
-    return `
-    border-2
-    ${isInvalid ? 'border-red-500' : 'border-biru-sedang'}
-    border-biru-sedang bg-biru-muda
-    inset-shadow-sm inset-shadow-blue-500/50
-    focus:outline focus:outline-biru-tua
-    rounded-2xl py-3 px-[19px] w-full hover:scale-102 duration-150
-  `;
-  };
+export default function ContactForm() {
+  const { formData, handleChange, handleSubmit, getInputStyle } =
+    useContactForm();
 
   return (
     <div className="flex-1 lg:flex-3/5 p-4 sm:p-6 md:p-8 lg:p-10">
@@ -99,6 +47,7 @@ export default function Form() {
             />
           </div>
         </FadeIn>
+
         <FadeIn delay={0.8} direction={'left'}>
           <textarea
             name="message"
@@ -110,6 +59,7 @@ export default function Form() {
             className={`${getInputStyle('message')} resize-none`}
           ></textarea>
         </FadeIn>
+
         <FadeIn delay={1} direction={'left'}>
           <button
             type="submit"
