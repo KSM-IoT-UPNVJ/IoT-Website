@@ -45,10 +45,11 @@ const OurProgram = () => {
   // Dummy program data
   const programs = [
     { id: "studi-banding", title: "STUDI BANDING", image: "/stuban.webp", link: "/stuban" },
-    { id: "youthiot",title: "YOUTH IOT 2025", image: "/public/foto_youthiot1", link: "/youthiot" },
-    { id: "sharing-with-sensor",title: "SHARING WITH SENIOR", image: "/OurProgram.jpg", link: "/sensor" },
-    { id: "iotcheckpoint",title: "IOT CHECKPOINT", image: "/OurProgram.jpg", link: "/checkpoint" },
-    { id: "program-name-5",title: "Program Name 5", image: "/OurProgram.jpg" },
+    { id: "youthiot",title: "YOUTH IOT 2025", image: "/OurProgram/foto_youthiot1.webp", link: "/youthiot" },
+    { id: "iotcheckpoint",title: "IOT CHECKPOINT", image: "/OurProgram/foto_checkpoint.webp", link: "/checkpoint" },
+    { id: "sharing-with-sensor",title: "SHARING WITH SENIOR", image: "/OurProgram/foto_sensor.webp", link: "/sensor" },
+    { id: "pengabdian-masyarakat1",title: "PENGABDIAN MASYARAKAT 1", image: "/OurProgram/foto_pengmas1.webp", link: "/pengabdian1" },
+    { id: "pengabdian-masyarakat2",title: "PENGABDIAN MASYARAKAT 2", image: "/OurProgram/foto_internship.webp", link: "/pengabdian2" },
   ];
 
   return (

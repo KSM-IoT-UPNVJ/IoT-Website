@@ -9,10 +9,7 @@ const LayoutProgram = ({program}) => {
 
   // untuk slider foto
   const [currentIndex, setCurrentIndex] = useState(0);
-  const sliderImages = [
-    "/OurProgram.jpg",
-    "/aboutUs/bangFalis.webp",
-  ];
+  const sliderImages = program.data.fotoSlider || [];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -43,8 +40,8 @@ const LayoutProgram = ({program}) => {
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-4 border-white shadow">
                 <img
-                  src={program.data.foto2}
-                  alt="Naufalis Febrian"
+                  src={program.data.headerAuthor}
+                  alt="Nama Header Author"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -63,7 +60,11 @@ const LayoutProgram = ({program}) => {
             {/* Kotak Foto Besar */}
             <FadeIn direction={"right"} delay={0.5}>
             <div className="w-full rounded-md overflow-hidden mb-8">
-              <div className="w-full h-[350px] md:h-[670px] bg-gray-200 border border-white/20 shadow-inner" />
+              <img
+                src={program.data.fotoHeader}
+                alt="Foto Besar"
+                className="w-full h-[350px] md:h-[670px] object-cover"
+              />
             </div>
             </FadeIn>
 
@@ -95,16 +96,16 @@ const LayoutProgram = ({program}) => {
                 {/* Teks Review */}
                 <div className="md:w-2/3 w-full pr-6">
                   <p className="text-base md:text-lg leading-relaxed text-gray-800">
-                    {program.data.testimoni}
+                    &quot;{program.data.testimoni}&quot;
                   </p>
                 </div>
 
                 {/* Foto di kanan */}
-                <div className="md:w-1/3 w-full flex justify-center mt-6 md:mt-0">
+                <div className="md:w-1/2 w-full flex items-center justify-center mt-6 md:mt-0">
                   <img
-                    src="/kolase.jpg"
+                    src={program.data.fotoKolase}
                     alt="Foto Kolase"
-                    className="rounded-lg shadow-lg w-64 h-48 object-cover"
+                    className="rounded-md w-full h-auto max-h-[367px] object-contain"
                   />
                 </div>
               </div>
@@ -115,8 +116,8 @@ const LayoutProgram = ({program}) => {
               <div className="mt-5 mb-6 flex items-center gap-4">
                 <div className="w-14 h-14 rounded-full overflow-hidden border-4 border-white shadow">
                   <img
-                    src="/aboutUs/bangFalis.webp"
-                    alt={program.author.namaFooter}
+                    src={program.data.footerAuthor}
+                    alt= "Nama Footer Author"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -130,8 +131,8 @@ const LayoutProgram = ({program}) => {
               </FadeIn>
             </div> {/* tutup div max-w-5xl */}
 
-            {/* ✅ Slider Foto Otomatis (sekarang keluar dari max-w-5xl) */}
-            <div className="relative w-[calc(100%+5rem)] -ml-10 h-[350px] md:h-[670px] overflow-hidden -mb-10 rounded-b-none">
+            {/* Slider Foto Otomatis */}
+            <div className="relative w-[calc(100%+5rem)] -ml-10 overflow-hidden -mb-10 rounded-b-none flex justify-center items-center">
               <div
                 className="flex transition-transform duration-700 ease-in-out"
                 style={{
@@ -144,7 +145,7 @@ const LayoutProgram = ({program}) => {
                     key={i}
                     src={src}
                     alt={`Slide ${i}`}
-                    className="w-full h-[350px] md:h-[670px] object-cover flex-shrink-0"
+                    className="max-w-full max-h-full object-contain flex-shrink-0"
                   />
                 ))}
               </div>
