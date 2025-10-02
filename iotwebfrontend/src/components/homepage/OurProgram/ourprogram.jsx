@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import FadeIn from '../../../utils/fadeIn';
+import ourProgramData from "./ourProgramData.json";
 import { Link } from 'react-router-dom';
 
 const OurProgram = () => {
@@ -49,7 +50,7 @@ const OurProgram = () => {
     { id: "iotcheckpoint",title: "IOT CHECKPOINT", image: "/OurProgram/foto_checkpoint.webp", link: "/checkpoint" },
     { id: "sharing-with-sensor",title: "SHARING WITH SENIOR", image: "/OurProgram/foto_sensor.webp", link: "/sensor" },
     { id: "pengabdian-masyarakat1",title: "PENGABDIAN MASYARAKAT 1", image: "/OurProgram/foto_pengmas1.webp", link: "/pengabdian1" },
-    { id: "pengabdian-masyarakat2",title: "PENGABDIAN MASYARAKAT 2", image: "/OurProgram/foto_internship.webp", link: "/pengabdian2" },
+    { id: "pengabdian-masyarakat2",title: "PENGABDIAN MASYARAKAT 2", image: "/OurProgram/foto_pengmas2.webp", link: "/pengabdian2" },
   ];
 
   return (
@@ -99,10 +100,10 @@ const OurProgram = () => {
 
                 {/* Title */}
                 <h3
-                  className={`font-black text-white transition-all duration-500 z-10 ${
+                  className={`font-black text-white text-center leading-tight break-words whitespace-normal max-w-[90%] mx-auto transition-transform duration-500 ease-in-out z-10 ${
                     hovered === index
-                      ? "text-[28px] translate-y-[-97px]"
-                      : "text-[36px] translate-y-0"
+                      ? "text-[24px] translate-y-[-97px]"
+                      : "text-[27px] translate-y-0"
                   }`}
                 >
                   {program.title}
@@ -110,15 +111,15 @@ const OurProgram = () => {
 
                 {/* Description + Button */}
                 <div
-                  className={`absolute top-[77px] left-1/2 -translate-x-1/2 w-full px-9 text-center transition-all duration-500 z-10 ${
+                  className={`absolute top-[57px] left-1/2 -translate-x-1/2 w-full px-6 text-center transition-all duration-500 z-10 ${
                     hovered === index
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-4"
                   }`}
                 >
-                  <p className="text-gray-200 mb-4 text-m mt-2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.
+                <div className="flex flex-col items-center gap-y-3 px-2">
+                  <p className="text-gray-200 text-sm md:text-base leading-snug break-words whitespace-normal max-w-[90%] mx-auto mt-4">
+                    {ourProgramData[program.id]?.data?.frontText || ""}
                   </p>
                   <Link
                     to={`/program/${program.id}`}
@@ -126,6 +127,7 @@ const OurProgram = () => {
                   >
                     Learn More
                   </Link>
+                </div>
                 </div>
               </div>
             ))}
