@@ -3,7 +3,7 @@
     border-radius: 8px;
     justify-content: center;
     z-index: 100;
-    transform: translateY(-10px); 
+    transform: translateY(-10px) !important; 
 }
 
 .swiper-pagination-bullet {
@@ -15,7 +15,7 @@
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #8ccfe4;
+  background-color: black;
   opacity: 1;
   width: 16px;
   border-radius: 8px;
@@ -29,3 +29,26 @@
     transform-style: preserve-3d;
 }
 
+@media (max-width: 450px) {
+  .chevron-left {
+    transform: translateX(60px) !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .chevron-left {
+    transform: translateX(90px) !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .chevron-right {
+    transform: translateX(-60px) !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .chevron-right {
+    transform: translateX(-90px) !important;
+  }
+}

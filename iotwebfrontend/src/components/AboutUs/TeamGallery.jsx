@@ -211,7 +211,7 @@ export default function TeamGallery() {
       <FadeIn direction="down" delay={0.8}>
         <div className="w-full h-120px flex flex-col items-center justify-center px-3 py-3">
           <h1
-            className="text-4xl md:text-5xl font-semibold text-[#2C3E50] mb-30 text-center"
+            className="text-4xl md:text-5xl font-semibold text-[#2C3E50] mb-30 text-center select-none"
             style={{ fontFamily: "'OptimaNova'" }}
           >
             Our Team
@@ -262,12 +262,14 @@ export default function TeamGallery() {
                     transform: isVisible ? 'scale(1)' : 'scale(0.92)',
                   }}
                 >
-                  <div className={`flex flex-col gap-5 ${column.className}`}>
+                  <div
+                    className={`flex flex-col gap-5 select-none ${column.className}`}
+                  >
                     {column.images.map((img, imgIndex) => (
                       <FadeIn
                         key={imgIndex}
                         direction="up"
-                        delay={imgIndex * 2} // delay berurutan 0s, 0.6s, 1.2s, dst.
+                        delay={imgIndex * 0.1} // delay berurutan 0s, 0.6s, 1.2s, dst.
                       >
                         <img
                           src={img.src}
@@ -282,7 +284,7 @@ export default function TeamGallery() {
             : 'w-full h-[180px]'
         }
       `}
-                          style={{ pointerEvents: 'none' }}
+                          loading="lazy"
                         />
                       </FadeIn>
                     ))}
