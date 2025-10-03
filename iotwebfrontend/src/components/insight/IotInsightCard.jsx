@@ -33,8 +33,8 @@ export default function IotInsightCard({ image, vol, title, link }) {
           IoT Insight Vol. {vol} :
         </h3>
         <p className="text-xs text-[var(--color-biru-tua)]">
-          {title.length > 45
-            ? title.slice(0, 45).replace(/[\s.,:;!?]+$/, '') + '...'
+          {title.length > 40
+            ? title.slice(0, 40).replace(/[\s.,:;!?]+$/, '') + '...'
             : title}
         </p>
       </div>

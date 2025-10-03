@@ -45,7 +45,7 @@ export default function ProjectDescContainer({
               draggable="false"
             />
           )}
-          <div className="text-biru-tua text-base text-justify py-2 w-full">
+          <div className="text-biru-tua text-base text-justify py-2 w-full whitespace-pre-line">
             <p>{description}</p>
           </div>
         </div>
