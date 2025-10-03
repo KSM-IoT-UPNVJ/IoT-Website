@@ -1,3 +1,4 @@
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { MoveLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -35,6 +36,76 @@ export default function AchievementPopup({
   const showExtraInfo = Boolean(
     item.time || item.organizer || item.contributors,
   );
+  const mediaSources = useMemo(() => {
+    if (!item) return [];
+
+    const addSource = (source) => {
+      if (!source) return undefined;
+
+      if (typeof source === 'string') {
+        const trimmed = source.trim();
+        if (!trimmed) return undefined;
+        const extension = trimmed.split('?')[0].split('.').pop()?.toLowerCase();
+        const isVideo = extension && ['mp4', 'webm', 'ogg'].includes(extension);
+        return { src: trimmed, type: isVideo ? 'video' : 'image' };
+      }
+
+      if (typeof source === 'object' && source.src) {
+        const trimmed = source.src.trim();
+        if (!trimmed) return undefined;
+        const extension = trimmed.split('?')[0].split('.').pop()?.toLowerCase();
+        const inferredVideo =
+          extension && ['mp4', 'webm', 'ogg'].includes(extension);
+        return {
+          src: trimmed,
+          type: source.type ?? (inferredVideo ? 'video' : 'image'),
+        };
+      }
+
+      return undefined;
+    };
+
+    const collected = [];
+    if (Array.isArray(item.images) && item.images.length > 0) {
+      item.images.forEach((media) => {
+        const parsed = addSource(media);
+        if (parsed) collected.push(parsed);
+      });
+    } else {
+      const parsed = addSource(item.image);
+      if (parsed) collected.push(parsed);
+    }
+
+    return collected;
+  }, [item]);
+  const mediaCount = mediaSources.length;
+  const hasMedia = mediaCount > 0;
+  const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
+
+  useEffect(() => {
+    setCurrentMediaIndex(0);
+  }, [mediaSources]);
+
+  const advanceMedia = useCallback(() => {
+    if (mediaCount <= 1) return;
+    setCurrentMediaIndex((prev) => {
+      const nextIndex = (prev + 1) % mediaCount;
+      return nextIndex;
+    });
+  }, [mediaCount]);
+
+  const currentMedia = hasMedia
+    ? mediaSources[currentMediaIndex] ?? mediaSources[0]
+    : null;
+
+  useEffect(() => {
+    if (!currentMedia || currentMedia.type === 'video' || mediaCount <= 1) {
+      return undefined;
+    }
+
+    const timeoutId = setTimeout(advanceMedia, 3000);
+    return () => clearTimeout(timeoutId);
+  }, [advanceMedia, currentMedia, mediaCount]);
 
   // Calculate initial position for animation
   const getInitialPosition = () => {
@@ -91,13 +162,42 @@ export default function AchievementPopup({
           <div className="relative z-10 w-full h-full flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8">
             {/* Bagian Kiri (Gambar) */}
             <motion.div
-              className="w-full md:w-1/2 h-1/2 md:h-full bg-abu-muda rounded-lg"
+              className="relative w-full md:w-1/2 h-1/2 md:h-full rounded-lg overflow-hidden"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
+              transition={{ delay: 0.3, duration: 1 }}
             >
-              {/* Ganti dengan gambar jika ada */}
-              {/* <img src={item.image} alt={item.title} className="w-full h-full object-cover rounded-lg"/> */}
+              {hasMedia && currentMedia && (
+                <AnimatePresence mode="wait">
+                  {currentMedia.type === 'video' ? (
+                    <motion.video
+                      key={currentMedia.src}
+                      src={currentMedia.src}
+                      className="w-full h-full object-cover"
+                      autoPlay
+                      loop={mediaCount <= 1}
+                      muted
+                      playsInline
+                      onEnded={advanceMedia}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.6 }}
+                    />
+                  ) : (
+                    <motion.img
+                      key={currentMedia.src}
+                      src={currentMedia.src}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.6 }}
+                    />
+                  )}
+                </AnimatePresence>
+              )}
             </motion.div>
 
             {/* Bagian Kanan (Konten Teks) */}

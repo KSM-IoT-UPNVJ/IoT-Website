@@ -1,17 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
+// Card component with hover effects and responsive design
+
 export default function Card({
   title = 'Comming Soon',
   description = 'Comming Soon',
   onButtonClick,
   className = '',
+  backgroundImage = '',
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(() => {
     if (typeof window === 'undefined') return false;
     return window.innerWidth < 640;
   });
+
+  const hasBackgroundImage = Boolean(backgroundImage);
+  const safeDescription = description ?? '';
+  const truncatedDescription =
+    safeDescription.length > 250
+      ? safeDescription.substring(0, 250) + '...'
+      : safeDescription;
+  const titleColorClass = hasBackgroundImage ? 'text-white' : 'text-black';
+  const descriptionColorClass = hasBackgroundImage
+    ? 'text-gray-200'
+    : 'text-gray-700';
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -36,11 +50,23 @@ export default function Card({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={`relative w-full max-w-[320px] sm:max-w-[380px] md:max-w-[420px] h-[220px] sm:h-[260px] md:h-[300px] p-3 sm:p-4 bg-gray-300 rounded-2xl flex text-center items-center justify-center flex-shrink-0 shadow-xl overflow-hidden ${className}`}
+      style={
+        hasBackgroundImage
+          ? {
+              backgroundImage: 'url(' + backgroundImage + ')',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }
+          : undefined
+      }
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
     >
+      {hasBackgroundImage && (
+        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
+      )}
       {/* Title */}
       <motion.h3
-        className="font-bold font-poppins text-black z-10"
+        className={'font-bold font-poppins ' + titleColorClass + ' z-10'}
         animate={{
           fontSize: isHovered
             ? isMobile
@@ -66,8 +92,10 @@ export default function Card({
         }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
-        <motion.p className="text-gray-700 mb-4 text-xs sm:text-sm mt-2">
-          {`${description.substring(0, 100)}....`}
+        <motion.p
+          className={'mb-4 text-xs sm:text-sm mt-2 ' + descriptionColorClass}
+        >
+          {truncatedDescription}
         </motion.p>
         <motion.button
           onClick={onButtonClick}
