@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import FadeIn from '../../utils/fadeIn';
+import { useNavigate } from 'react-router-dom';
 
 const divisions = [
   { name: 'Firmware Division', image: '/firmware.png' },
@@ -13,6 +14,7 @@ const lorem =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.';
 
 const MoreInsight = () => {
+  const navigate = useNavigate();
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
@@ -107,7 +109,10 @@ const MoreInsight = () => {
                   }}
                 >
                   <p className="mb-4">{lorem}</p>
-                  <button className="bg-blue-800 hover:bg-yellow-400 text-white hover:text-black px-6 py-2 rounded-full transition-colors duration-300 text-sm">
+                  <button
+                    onClick={() => navigate(`/insight/${division.name.replace(' Division', '').toLowerCase().replace('/', '-')}`)}
+                    className="bg-blue-800 hover:bg-yellow-400 text-white hover:text-black px-6 py-2 rounded-full transition-colors duration-300 text-sm"
+                  >
                     Learn More
                   </button>
                 </div>
