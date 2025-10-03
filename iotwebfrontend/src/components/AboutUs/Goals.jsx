@@ -9,46 +9,48 @@ export default function VisiMisiSection() {
       title: "Pengembangan Anggota",
       content:
         "Mengembangkan potensi anggota dalam bidang Internet of Things melalui edukasi soft skill dan hard skill, serta menyediakan platform untuk mewujudkan ide-ide inovatif.",
+      icon: "/aboutUs/strategy_1167089.webp",
     },
     {
       title: "Prestasi dan Kompetisi",
       content:
         "Mendorong partisipasi aktif dan meraih prestasi di berbagai kompetisi IoT tingkat regional, nasional, dan internasional, termasuk GEMASTIK, dan Kontes Kapal Indonesia (KKI).",
+      icon: "/aboutUs/prize.png",
     },
     {
       title: "Kontribusi bagi Universitas",
       content:
-        "Memberikan kontribusi nyata bagi universitas dengan meningkatkan akreditasi melalui prestasi, menjadi daya tarik bagi calon mahasiswa, dan mendukung proyek pengembangan loT internal.",
+        "Memberikan kontribusi nyata bagi universitas dengan meningkatkan akreditasi melalui prestasi, menjadi daya tarik bagi calon mahasiswa, dan mendukung proyek pengembangan IoT internal.",
+      icon: "/aboutUs/globe.png",
     },
     {
       title: "Kolaborasi dan Relasi",
       content:
         "Membangun kolaborasi strategis dengan organisasi lain dan industri untuk mengharumkan nama universitas melalui prestasi dan proyek lintas disiplin ilmu.",
+      icon: "/aboutUs/mortarboard_1940611.webp",
     },
   ];
 
   const handleClick = (index) => {
+    // Toggle hanya pada layar kecil/tablet (agar perilaku tetap hover pada desktop)
     if (window.innerWidth < 1025) {
-      // Hanya aktif di tablet & HP
-      setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+      setActiveIndex((prev) => (prev === index ? null : index));
     }
   };
 
   return (
-    <div className="">
-      {/* Judul */}
+    <div>
       <FadeIn direction={"left"} delay={1.2}>
         <h1
-          className="text-4xl md:text-5xl lg:text-6xl mt-30 font-semibold text-[#2C3E50] text-center"
+          className="text-4xl md:text-5xl lg:text-6xl mt-20 font-semibold text-[#2C3E50] text-center select-none"
           style={{ fontFamily: "'OptimaNova'" }}
         >
           Our Goals
         </h1>
       </FadeIn>
 
-      {/* Grid Box */}
       <FadeIn direction={"up"} delay={1.6}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-x-26  xl:gap-y-24 py-28 px-8 sm:px-6 md:px-10 xl:px-30 w-full max-w-screen-xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-2 sm:gap-8 xl:gap-30 py-12 px-2 sm:px-11 xl:px-18 max-w-screen-xl mx-auto">
           {boxes.map((box, index) => {
             const isActive = activeIndex === index;
 
@@ -56,33 +58,61 @@ export default function VisiMisiSection() {
               <div
                 key={index}
                 onClick={() => handleClick(index)}
-                className={`group relative bg-[#2C3E50] text-white rounded-2xl p-6 sm:p-8 lg:p-10 h-[340px] sm:h-[360px] lg:h-[380px] overflow-hidden transition-all duration-500 ease-in-out
-                  ${isActive ? "bg-gray-200 text-black border-8 border-[#2C3E50]" : ""}
-                  hover:bg-gray-200 hover:text-black hover:border-8 hover:border-[#2C3E50]`}
+                /* Card: default glass; on hover/active still glass but slightly stronger blur */
+                className={`group relative rounded-2xl p-6 sm:p-12 h-[230px] sm:h-[360px] lg:h-[380px] overflow-hidden cursor-pointer transition-all duration-500 
+                  bg-black/30 backdrop-blur-md border border-white/10 shadow-sm
+                  hover:bg-black/40 hover:backdrop-blur-lg`}
               >
-                {/* Judul */}
+                {/* Decorative soft highlight (ke kiri/kanan) */}
                 <div
-                  className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ease-in-out z-20 
-                    ${isActive ? "-translate-y-28" : ""}
-                    group-hover:-translate-y-28`}
-                >
-                  <h2
-                    className={`text-4xl sm:text-4xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-center leading-tight transition-all duration-500 
-                      ${isActive ? "text-2xl lg:text-3xl text-black" : "group-hover:text-xl lg:group-hover:text-4xl group-hover:text-black"}`}
-                  >
-                    {box.title.split(" ").slice(0, 2).join(" ")}
-                    <br />
-                    {box.title.split(" ").slice(2).join(" ")}
-                  </h2>
-                </div>
+                  aria-hidden
+                  className="absolute -inset-4 rounded-2xl pointer-events-none opacity-30"
+                  style={{
+                    background:
+                      "radial-gradient(600px 200px at 10% 20%, rgba(59,130,246,0.10), transparent 20%), radial-gradient(500px 180px at 90% 80%, rgba(96,165,250,0.06), transparent 20%)",
+                    mixBlendMode: "screen",
+                  }}
+                />
 
-                {/* Konten */}
-                <div
-                  className={`absolute inset-0 px-4 sm:px-6 pt-26 flex items-start justify-center text-center transition-opacity duration-500 z-10
-                    ${(isActive || window.innerWidth >= 1024) ? "opacity-100" : "opacity-0"} 
-                    group-hover:opacity-100`}
+                {/* ICON tetap ada, cuma dikasih fade, tapi tidak hidden */}
+                <img
+                  src={box.icon}
+                  className={`w-30 h-30 sm:w-54 sm:h-45 mx-auto mb-3 sm:mb-4 transition-all duration-400 z-10 select-none
+    ${
+      isActive
+        ? "opacity-0 scale-90"
+        : "opacity-100 scale-100 group-hover:opacity-0 group-hover:scale-90"
+    }`}
+                />
+
+                {/* Judul: transform hanya naik saat hover/aktif */}
+                <h2
+                  className={`absolute left-4 right-4 mx-auto text-center font-extrabold transition-transform duration-500 z-20 select-none
+    ${
+      isActive
+        ? "-translate-y-34 sm:-translate-y-53 text-sm sm:text-2xl md:text-2xl lg:text-2xl"
+        : "translate-y-0 text-sm sm:text-2xl md:text-2xl lg:text-4xl"
+    }
+    group-hover:-translate-y-53
+  `}
+                  style={{ lineHeight: "1.05" }}
                 >
-                  <p className="text-base sm:text-xl md:text-lg lg:text-xl lg:mt-6 leading-relaxed font-medium text-gray-700">
+                  {box.title.split(" ")[0]}
+                  <br />
+                  {box.title.split(" ").slice(1).join(" ")}
+                </h2>
+
+                {/* Konten teks */}
+                <div
+                  className={`absolute inset-0 px-2 sm:px-6 lg:px-7 pt-13 sm:pt-30 flex items-start justify-center text-center transition-all duration-500 z-10
+                    ${
+                      isActive
+                        ? "opacity-100 pointer-events-auto"
+                        : "opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto"
+                    }
+                  `}
+                >
+                  <p className="text-xs sm:text-sm lg:text-xl leading-relaxed text-[#1f2937] select-none">
                     {box.content}
                   </p>
                 </div>
