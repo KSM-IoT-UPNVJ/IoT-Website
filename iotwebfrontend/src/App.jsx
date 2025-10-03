@@ -1,20 +1,22 @@
-import Nav from "./components/nav";
-import HomePage from "./components/homepage/homepage";
-import AboutUs from "./components/AboutUs/AboutUs";
-import Kepengurusan from "./components/kepengurusan/kepengurusan";
-import Contact from "./components/contact/contact";
-import Projects from "./components/projects/Projects";
-import ProjectsDesc from "./components/projects/ProjectsDesc";
-import Insight from "./components/insight/IotInsight";
-import Footer from "./components/Footer";
-import { useEffect } from "react";
-import Bg from "./utils/Bg";
+import Nav from './components/nav';
+import HomePage from './components/homepage/homepage';
+import AboutUs from './components/AboutUs/AboutUs';
+import Kepengurusan from './components/kepengurusan/kepengurusan';
+import Contact from './components/contact/contact';
+import Projects from './components/projects/Projects';
+import ProjectsDesc from './components/projects/ProjectsDesc';
+import Insight from './components/insight/IotInsight';
+import Footer from './components/Footer';
+import ProgramPage from './components/homepage/OurProgram/programPage';
+import { useEffect } from 'react';
+import Bg from './utils/Bg';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Outlet,
-} from "react-router-dom";
+} from 'react-router-dom';
+import LayoutProgram from './components/homepage/OurProgram/layoutProgram';
 
 function App() {
   useEffect(() => {
@@ -38,6 +40,7 @@ function App() {
           <Route path="/insight/:division" element={<Insight />} />
           <Route path="/project/projectdesc" element={<ProjectsDesc />} />
           <Route path="/project/projectdesc/:i" element={<ProjectsDesc />} />
+          <Route path="/program/:programId" element={<ProgramPage />} />
         </Route>
 
         {/* Rute 404 berada di luar MainLayout, sehingga tidak akan menampilkan Nav, Bg, dan Footer */}

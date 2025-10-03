@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Welcome from "./welcome";
 import VisiMisi from "./visimisi";
-import OurProgram from "./ourprogram";
+import OurProgram from "./OurProgram/ourprogram";
 import OurAchievement from "./ourachievement";
 import MoreInsight from "./insight";
 

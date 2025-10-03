@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { ChevronLeft,ChevronRight } from 'lucide-react';
 import { EffectCoverflow, EffectCards, Navigation, Pagination, Mousewheel} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -11,11 +12,11 @@ import './kepengurusan.css';
 
 const baseImages = [
  {
-    src: 'src/public/hrd.webp',
+    src: '/kepengurusan/hrd.webp',
     href: 'https://www.instagram.com/p/DMNEqw_Rkwu/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
   },
   {
-    src: 'src/public/akademik.webp',
+    src: '/kepengurusan/akademik.webp',
     href: 'https://www.instagram.com/p/DMNEOzGxpno/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
   },
 ];
@@ -128,13 +129,13 @@ const ImageSliderHRD = () => {
 
       <div className="absolute h-[30%] px-[30px] top-1/2 left-0 right-0 flex justify-between items-center transform -translate-y-1/2 z-50 pointer-events-none ">
         <div className='relative flex items-center justify-end h-full w-[200px] pointer-events-auto z-0 duration-[1s] translate-x-[-160px] group'>
-          <img src="src/public/Chevron/chevron-left.webp" alt='kiri' className="top-1/2 -translate-y-1/2 absolute translate-x-[70px] sm:translate-x-[45px] w-auto h-auto scale-[0.5] sm:scale-[0.8] md:scale-[1]"></img>
-          <button ref={prevRef} className="hover:cursor-pointer translate-x-[35px] sm:translate-x-[0] scale-[0.6] sm:scale-[1] h-[80px] w-[50px] z-60 pointer-events-auto"> 
+          <ChevronLeft size={128} className='chevron-left top-1/2 -translate-y-1/2 absolute translate-x-[45px] w-auto h-auto scale-[0.5] sm:scale-[0.8] md:scale-[1]'/>
+          <button ref={prevRef} className="chevron-left hover:cursor-pointer translate-x-[5px] scale-[0.6] sm:scale-[1] h-[80px] w-[50px] z-60 pointer-events-auto"> 
           </button>
         </div>
         <div className='relative flex items-center  h-full w-[200px] pointer-events-auto z-0 duration-[1s] translate-x-[160px] group'>
-          <img src="src/public/Chevron/chevron-right.webp" alt='kanan' className="top-1/2 -translate-y-1/2 absolute translate-x-[-70px] sm:translate-x-[-45px] w-auto h-auto scale-[0.5] sm:scale-[0.8] md:scale-[1]"></img>
-          <button ref={nextRef} className="hover:cursor-pointer translate-x-[35px] sm:translate-x-[0] scale-[0.6] sm:scale-[1] h-[80px] w-[50px] z-60 pointer-events-auto">
+          <ChevronRight size={128} className='chevron-right top-1/2 -translate-y-1/2 absolute translate-x-[-45px] w-auto h-auto scale-[0.5] sm:scale-[0.8] md:scale-[1]'/>
+          <button ref={nextRef} className="chevron-right hover:cursor-pointer translate-x-[-5px] scale-[0.6] sm:scale-[1] h-[80px] w-[50px] z-60 pointer-events-auto">
           </button>
         </div>
       </div>
