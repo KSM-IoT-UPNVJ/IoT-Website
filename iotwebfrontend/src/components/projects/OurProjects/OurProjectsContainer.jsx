@@ -11,7 +11,7 @@ export default function OurProjectsContainer() {
     isPlaceholder: false,
   }));
   const remainder = realCards.length % 3;
-  const fillers = remainder === 0 ? 0 : 3 - remainder;
+const fillers = remainder === 0 ? 3 : 3 - remainder;
 
   const fillerCards = Array.from({ length: fillers }, (_, i) => ({
     title: "Coming Soon",
