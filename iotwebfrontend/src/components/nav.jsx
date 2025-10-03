@@ -2,8 +2,10 @@ import { useState, useEffect, useRef } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import FadeIn from '../utils/fadeIn';
 import DropdownAnimate from '../utils/dropdownAnimate';
+import { useNavigate } from 'react-router-dom';
 
 function Nav() {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -54,11 +56,16 @@ function Nav() {
 
         {/* Navigation list */}
         <div className="hidden md:flex justify-center items-center space-x-2">
-          <a href="home" className={linkClass}>
+          <button
+            onClick={() => {
+              navigate(`/home`);
+            }}
+            className={linkClass}
+          >
             <FadeIn delay={0.3} direction={'down'}>
               Home
             </FadeIn>
-          </a>
+          </button>
           <div ref={dropdownRef}>
             <button onClick={handleToggle} className={linkClass}>
               <FadeIn delay={0.4} direction={'down'}>
@@ -71,32 +78,34 @@ function Nav() {
             {open && (
               <div className="absolute mt-3 shadow-xs rounded-xl border-2 border-biru-muda bg-transparent backdrop-blur-[10px] text-xs animate-fade-in duration-200">
                 <DropdownAnimate show={open}>
-                  <a
-                    href="aboutus"
+                  <button
+                    onClick={() => navigate(`/aboutus`)}
                     className="block rounded-xl text-center text-md px-2 py-2 hover:-translate-y-0.5 transition transform duration-100 hover:bg-abu-sedang"
                   >
                     About Us
-                  </a>
-                  <a
-                    href="kepengurusan"
+                  </button>
+                  <button
+                    onClick={() => {
+                      navigate(`/kepengurusan`);
+                    }}
                     className="block text-md text-center rounded-xl px-2 py-2 hover:-translate-y-0.5 transition transform duration-100 hover:bg-abu-sedang"
                   >
                     Kepengurusan
-                  </a>
+                  </button>
                 </DropdownAnimate>
               </div>
             )}
           </div>
-          <a href="project" className={linkClass}>
+          <button onClick={() => navigate(`/project`)} className={linkClass}>
             <FadeIn delay={0.8} direction={'down'}>
               Projects
             </FadeIn>
-          </a>
-          <a href="contact" className={linkClass}>
+          </button>
+          <button onClick={() => navigate(`/contact`)} className={linkClass}>
             <FadeIn delay={1.0} direction={'down'}>
               Contact
             </FadeIn>
-          </a>
+          </button>
         </div>
 
         <div className="md:hidden">
@@ -113,13 +122,13 @@ function Nav() {
       </div>
       {isMobileMenuOpen && (
         <div className="mt-4 md:hidden bg-white p-4 rounded-xl shadow border border-biru-muda space-y-2 animate-fade-in">
-          <a
+          <button
+            onClick={() => navigate(`/home`)}
             href="home"
             className={mobileLinkClass}
-            onClick={handleToggleMobileMenu}
           >
             Home
-          </a>
+          </button>
           <div ref={dropdownRef}>
             <button
               onClick={handleToggle}
@@ -130,38 +139,45 @@ function Nav() {
             {open && (
               <DropdownAnimate show={open} className="mt-2 space-y-1">
                 <div className="px-5 border-1 border-biru-muda bg-white rounded-xl">
-                  <a
-                    href="aboutus"
+                  <button
+                    onClick={() => {
+                      navigate(`/aboutus`);
+                    }}
                     className={mobileLinkClass}
-                    onClick={handleToggleMobileMenu}
                   >
                     About Us
-                  </a>
-                  <a
+                  </button>
+                  <button
+                    onClick={() => {
+                      navigate(`/kepengurusan`);
+                    }}
                     href="kepengurusan"
                     className={mobileLinkClass}
-                    onClick={handleToggleMobileMenu}
                   >
                     Kepengurusan
-                  </a>
+                  </button>
                 </div>
               </DropdownAnimate>
             )}
           </div>
-          <a
-            href="project"
+          <button
+            onClick={() => {
+              navigate(`/project`);
+              handleToggleMobileMenu();
+            }}
             className={mobileLinkClass}
-            onClick={handleToggleMobileMenu}
           >
             Projects
-          </a>
-          <a
-            href="contact"
+          </button>
+          <button
+            onClick={() => {
+              navigate(`/contact`);
+              handleToggleMobileMenu();
+            }}
             className={mobileLinkClass}
-            onClick={handleToggleMobileMenu}
           >
             Contact
-          </a>
+          </button>
         </div>
       )}
     </div>
