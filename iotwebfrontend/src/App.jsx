@@ -14,7 +14,6 @@ import {
   Route,
   Outlet,
 } from 'react-router-dom';
-import LayoutProgram from './components/homepage/OurProgram/layoutProgram';
 
 function App() {
   useEffect(() => {

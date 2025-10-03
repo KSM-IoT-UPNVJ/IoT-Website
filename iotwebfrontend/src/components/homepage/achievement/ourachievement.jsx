@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { MoveLeft } from 'lucide-react';
 import FadeIn from '../../../utils/fadeIn';
 import AchievementCard from './AchievementCard';
 import AchievementPopup from './AchievementPopUp';
@@ -15,7 +14,15 @@ const OurAchievement = () => {
       award: 'Finalis',
       description:
         'Pelaksanaan KKI merupakan agenda kemahasiswaan penting yang diselenggarakan oleh Balai Pengembangan Talenta Indonesia di bawah Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi. Kegiatan ini bertujuan untuk mengembangkan inovasi teknologi kemaritiman digital dan mendukung kemandirian teknologi nasional dengan melibatkan mahasiswa serta dosen dari bidang ilmu terkait. Para peserta diharapkan dapat memberikan sumbangsih pemikiran di bidang kelautan dari perspektif teknologi kemaritiman dan perkapalan. Pada tahun 2024, kompetisi ini terbagi menjadi dua kategori, yaitu Lomba Desain Kapal serta Lomba Pembuatan dan Performa Prototipe.',
-      image: '/path/to/your/image1.jpg',
+      image: '/homepage/achievement/kki2024/kki1.jpg',
+      images: [
+        '/homepage/achievement/kki2024/kki1.jpg',
+        '/homepage/achievement/kki2024/kki2.png',
+        '/homepage/achievement/kki2024/kki3.webp',
+        '/homepage/achievement/kki2024/kki4.webp',
+        '/homepage/achievement/kki2024/kki5.mp4',
+        '/homepage/achievement/kki2024/kki6.png',
+      ],
       time: '23/09/2024',
       organizer: 'BPTI Puspresnas Kemdikbudristek',
       contributors: [
@@ -29,11 +36,34 @@ const OurAchievement = () => {
     },
     {
       id: 2,
+      title: 'KRI 2024 cabang KRSTI',
+      award: 'Peringkat 13 Nasional Wilayah 1',
+      description:
+        'Robot Indonesia (KRI) adalah kegiatan kompetisi tahunan mahasiswa dalam bidang rancang bangun dan rekayasa robotika yang dapat diikuti oleh seluruh mahasiswa pada perguruan tinggi di  wilayah Republik Indonesia, dari berbagai K/L atau kedinasan, yang tercatat pada Pangkalan Data Pendidikan TInggi. KRI 2024 diselenggarakan oleh Balai Pengembangan Talenta Indonesia (BPTI) Pusat Prestasi Nasional Puspresnas) Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi (Kemendikbudristek) Republik Indonesia. KRI  pertama kali diselenggarakan pada tahun 2003 di bawah Direktorat Jenderal Pendidikan Tinggi, Departemen Pendidikan dan Kebudayaan pada saat itu. Kontes Robot Indonesia tahun 2024 mempertandingkan 7 (tujuh) divisi sebagai berikut: Kontes Robot ABU Indonesia (KRAI); Kontes Robot SAR Indonesia (KRSRI); Kontes Robot Sepak Bola Indonesia (KRSBI) Beroda; Kontes Robot Sepak Bola Indonesia(KRSBI) Humanoid; Kontes Robot Seni Tari Indonesia (KRSTI); Kontes Robot Tematik Indonesia (KRTMI); Kontes Robot Bawah Air Indonesia (KRBAI).',
+      image: '/homepage/achievement/krsti2024/krsti2024_1.jpg',
+      images: [
+        '/homepage/achievement/krsti2024/krsti2024_1.jpg',
+        '/homepage/achievement/krsti2024/krsti2024_2.jpg',
+        '/homepage/achievement/krsti2024/krsti2024_3.jpg',
+        '/homepage/achievement/krsti2024/krsti2024_4.jpg',
+      ],
+      time: '27 Mei - 1 Juni 2024',
+      organizer: 'BPTI Puspresnas Kemdikbudristek',
+      contributors: ['Daniel Putra'],
+    },
+    {
+      id: 3,
       title: 'KRI 2023 cabang KRSTI',
       award: 'Peringkat 12 Nasional Wilayah 1',
       description:
-        'Berhasil masuk final KKI dengan inovasi Automatic Surface Vehicle.',
-      image: '/path/to/your/image2.jpg',
+        'Robot Indonesia (KRI) adalah kegiatan kompetisi tahunan mahasiswa dalam bidang rancang bangun dan rekayasa robotika yang dapat diikuti oleh seluruh mahasiswa pada perguruan tinggi di  wilayah Republik Indonesia, dari berbagai K/L atau kedinasan, yang tercatat pada Pangkalan Data Pendidikan TInggi. KRI 2023 diselenggarakan oleh Balai Pengembangan Talenta Indonesia (BPTI) Pusat Prestasi Nasional (Puspresnas) Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi (Kemendikbudristek) Republik Indonesia. KRI  pertama kali diselenggarakan pada tahun 2003 di bawah Direktorat Jenderal Pendidikan Tinggi. Kontes Robot Indonesia tahun 2023 mempertandingkan 7 (tujuh) divisi, yaitu Kontes Robot ABU Indonesia (KRAI); Kontes Robot SAR Indonesia (KRSRI); Kontes Robot Sepak Bola Indonesia (KRSBI) Beroda; Kontes Robot Sepak Bola Indonesia (KRSBI) Humanoid; Kontes Robot Seni Tari Indonesia (KRSTI); Kontes Robot Tematik Indonesia (KRTMI); Kontes Robot Bawah Air Indonesia (KRBAI).',
+      image: '/homepage/achievement/krsti2023/krsti_2023_1.jpg',
+      images: [
+        '/homepage/achievement/krsti2023/krsti_2023_1.jpg',
+        '/homepage/achievement/krsti2023/krsti_2023_2.jpg',
+        '/homepage/achievement/krsti2023/krsti_2023_3.jpg',
+        '/homepage/achievement/krsti2023/krsti_2023_4.jpg',
+      ],
       time: '28 Mei - 5 Juni 2023',
       organizer: 'BPTI Puspresnas Kemdikbudristek',
       contributors: [
@@ -44,42 +74,41 @@ const OurAchievement = () => {
       ],
     },
     {
-      id: 3,
-      title: 'KRI 2024 cabang KRSTI',
-      award: 'Peringkat 13 Nasional Wilayah 1',
-      description: 'Deskripsi untuk achievement 3.',
-      image: '/path/to/your/image3.jpg',
-      time: '27 Mei - 1 Juni 2024',
-      organizer: 'BPTI Puspresnas Kemdikbudristek',
-      contributors: ['Daniel Putra'],
-    },
-    {
       id: 4,
       title: 'Poster Design Competition I-Nanotech 2024',
       award: 'Peringkat II',
       description:
         'I-Nanotech (International Competition on Engineering dan Creativity) 2024',
-      image: '/path/to/your/image4.jpg',
+      image: '/homepage/achievement/posterdesign/posterdesign.png',
+      images: ['/homepage/achievement/posterdesign/posterdesign.png'],
       time: '17/08/2024',
       organizer: 'Fakultas Teknik Universitas Muhammadiyah Mataram',
       contributors: ['Jati Kinsela'],
     },
     {
       id: 5,
-      title: 'Achievement Name 5',
-      award: 'Penghargaan 5',
-      description: 'Deskripsi untuk achievement 5.',
-      image: '/path/to/your/image5.jpg',
-      time: '2020',
-      organizer: 'Penyelenggara 5',
-      contributors: ['Tim Penelitian'],
+      title: 'Sumo Bot FIK Fair',
+      award: '4th Place',
+      description:
+        'Kompetisi Robot Sumo FIK FAIR 2025 dengan tema "Synergetic Motion: Robotics for a Smarter Tomorrow" adalah kompetisi tahunan yang diselenggarakan oleh BEMF-IK UPN VETERAN JAKARTA yang bertujuan untuk mengukur kompetensi, kreativitas dan inovasi di bidang perancangan robot. Lomba robot sumo yang diadakan oleh FIK FAIR 2025 merupakan pertandingan robot yang bertujuan mengalahkan lawan menggunakan kekuatan dan strategi untuk saling mendorong robot keluar dari arena pertandingan. Robot yang digunakan adalah robot yang dikendalikan menggunakan remote control.',
+      image: '/homepage/achievement/sumobot/sumobot1.jpg',
+      images: [
+        '/homepage/achievement/sumobot/sumobot1.jpg',
+        '/homepage/achievement/sumobot/sumobot2.jpg',
+        '/homepage/achievement/sumobot/sumobot3.jpg',
+        '/homepage/achievement/sumobot/sumobot4.jpg',
+      ],
+      time: '27/09/2025',
+      organizer: 'BEMF-IK Universitas Pembangunan Nasional Veteran Jakarta',
+      contributors: ['Muhamad Nabhan Azmi'],
     },
     {
       id: 6,
       title: 'Achievement Name 6',
       award: 'Penghargaan 6',
       description: 'Deskripsi untuk achievement 6.',
-      image: '/path/to/your/image6.jpg',
+      image: null,
+      images: [],
       time: '2019',
       organizer: 'Penyelenggara 6',
       contributors: ['Delegasi IOT 2019'],
