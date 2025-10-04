@@ -65,7 +65,7 @@ export default function MediaCard() {
             </div>
             <div>
               <p className="font-bold text-sm sm:text-base">Website</p>
-              <p className="text-xs sm:text-sm break-all">ksmiotupnvj.my.id</p>
+              <p className="text-xs sm:text-sm break-all">ksmiotupnvj.com</p>
             </div>
           </div>
         </FadeIn>

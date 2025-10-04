@@ -4,6 +4,8 @@ import AboutUs from './components/AboutUs/AboutUs';
 import Kepengurusan from './components/kepengurusan/kepengurusan';
 import Contact from './components/contact/contact';
 import Projects from './components/projects/Projects';
+import ProjectsDesc from './components/projects/ProjectsDesc';
+import Insight from './components/insight/IotInsight';
 import Footer from './components/Footer';
 import ProgramPage from './components/homepage/OurProgram/programPage';
 import { useEffect } from 'react';
@@ -18,7 +20,7 @@ import {
 function App() {
   useEffect(() => {
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      window.scrollTo({ top: 0, behavior: "instant" });
     }, 300);
   }, []);
 
@@ -33,6 +35,10 @@ function App() {
           <Route path="/kepengurusan" element={<Kepengurusan />} />
           <Route path="/project" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/insight" element={<Insight />} />
+          <Route path="/insight/:division" element={<Insight />} />
+          <Route path="/project/projectdesc" element={<ProjectsDesc />} />
+          <Route path="/project/projectdesc/:i" element={<ProjectsDesc />} />
           <Route path="/program/:programId" element={<ProgramPage />} />
         </Route>
 

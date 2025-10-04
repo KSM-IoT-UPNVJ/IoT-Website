@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-
+import { useNavigate } from 'react-router-dom';
 const panelVariants = {
   inactive: { opacity: 0, x: 32, y: 24 },
   active: { opacity: 1, x: 0, y: 0 },
@@ -21,6 +21,7 @@ export default function MobileInsightCard({
   isActive,
   onSelect,
 }) {
+  const navigate = useNavigate();
   const handleToggle = () => {
     onSelect(isActive ? null : index);
   };
@@ -80,6 +81,14 @@ export default function MobileInsightCard({
           </h3>
           <motion.button
             type="button"
+            onClick={() =>
+              navigate(
+                `/insight/${division.name
+                  .replace(' Division', '')
+                  .toLowerCase()
+                  .replace('/', '-')}`,
+              )
+            }
             className="rounded-full bg-blue-700 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white transition-colors duration-300 hover:bg-yellow-400 hover:text-black"
             variants={contentVariants}
             animate={isActive ? 'active' : 'inactive'}

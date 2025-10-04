@@ -2,6 +2,7 @@
 @import 'tailwindcss';
 @theme {
   --color-biru-tua: #33455b;
+  --color-biru-tua2: #01234D;
   --color-biru-sedang2: #1e3a8a;
   --color-biru-sedang: #1b96fc;
   --color-biru-muda: #8ccfe4;
