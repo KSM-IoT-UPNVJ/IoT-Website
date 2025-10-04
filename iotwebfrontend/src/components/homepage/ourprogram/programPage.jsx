@@ -1,7 +1,7 @@
-import { useParams } from "react-router-dom";
-import ourProgramData from "./ourProgramData.json";
-import LayoutProgram from "./layoutProgram.jsx";
-import FadeIn from "/src/utils/fadeIn";
+import { useParams } from 'react-router-dom';
+import LayoutProgram from './layoutProgram.jsx';
+import FadeIn from '/src/utils/fadeIn';
+import ourProgramData from './ourProgramData.json'; // adjust path and extension as needed
 
 export default function ProgramPage() {
   const { programId } = useParams(); // ambil id dari URL
@@ -12,7 +12,7 @@ export default function ProgramPage() {
   }
 
   return (
-    <FadeIn delay={0.8} direction={"down"}>
+    <FadeIn delay={0.8} direction={'down'}>
       <LayoutProgram program={program} />
     </FadeIn>
   );

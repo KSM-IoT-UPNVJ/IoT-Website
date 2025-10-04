@@ -1,159 +1,159 @@
-import { useEffect, useRef, useState } from "react";
-import { Autoplay } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import FadeIn from "../../utils/fadeIn";
+import { useEffect, useRef, useState } from 'react';
+import { Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import FadeIn from '../../utils/fadeIn';
 
 export default function TeamGallery() {
   const swiperRef = useRef(null);
   const containerRef = useRef(null);
-  const [direction, setDirection] = useState("right");
+  const [direction, setDirection] = useState('right');
   const [visibleSlides, setVisibleSlides] = useState({});
 
   // Data untuk 12 kolom (pastikan lengkap)
   const columns = [
     // Kolom 1
     {
-      type: "tall",
+      type: 'tall',
       images: [
-        { src: "/aboutUs/bangRifqi.webp" },
-        { src: "/aboutUs/bangDimas.webp" },
+        { src: '/aboutUs/bangRifqi.webp' },
+        { src: '/aboutUs/bangDimas.webp' },
       ],
-      className: "",
+      className: '',
     },
     {
-      type: "medium",
+      type: 'medium',
       images: [
-        { src: "/aboutUs/kakBella.webp" },
-        { src: "/aboutUs/kakNaira.webp" },
+        { src: '/aboutUs/kakBella.webp' },
+        { src: '/aboutUs/kakNaira.webp' },
       ],
-      className: "pt-10",
+      className: 'pt-10',
     },
     {
-      type: "short",
+      type: 'short',
       images: [
-        { src: "/aboutUs/bangFalis.webp" },
-        { src: "/aboutUs/bangOctogius.webp" },
-        { src: "/aboutUs/bangNaufal.webp" },
+        { src: '/aboutUs/bangFalis.webp' },
+        { src: '/aboutUs/bangOctogius.webp' },
+        { src: '/aboutUs/bangNaufal.webp' },
       ],
-      className: "",
+      className: '',
     },
     {
-      type: "tall",
+      type: 'tall',
       images: [
-        { src: "/aboutUs/bangKumkum.webp" },
-        { src: "/aboutUs/bangRifat.webp" },
+        { src: '/aboutUs/bangKumkum.webp' },
+        { src: '/aboutUs/bangRifat.webp' },
       ],
-      className: "",
+      className: '',
     },
     {
-      type: "medium",
+      type: 'medium',
       images: [
-        { src: "/aboutUs/bangZahid.webp" },
-        { src: "/aboutUs/bangRakka.webp" },
+        { src: '/aboutUs/bangZahid.webp' },
+        { src: '/aboutUs/bangRakka.webp' },
       ],
-      className: "pt-10",
+      className: 'pt-10',
     },
     {
-      type: "short",
+      type: 'short',
       images: [
-        { src: "/aboutUs/bangReby.webp" },
-        { src: "/aboutUs/bangMusfa.webp" },
-        { src: "/aboutUs/bangFaiq.webp" },
+        { src: '/aboutUs/bangReby.webp' },
+        { src: '/aboutUs/bangMusfa.webp' },
+        { src: '/aboutUs/bangFaiq.webp' },
       ],
-      className: "",
+      className: '',
     },
     {
-      type: "tall",
+      type: 'tall',
       images: [
-        { src: "/aboutUs/bangLucky.webp" },
-        { src: "/aboutUs/Shauqi.webp" },
+        { src: '/aboutUs/bangLucky.webp' },
+        { src: '/aboutUs/Shauqi.webp' },
       ],
-      className: "",
+      className: '',
     },
     {
-      type: "medium",
+      type: 'medium',
       images: [
-        { src: "/aboutUs/bangRiza.webp" },
-        { src: "/aboutUs/kakAmelia.webp" },
+        { src: '/aboutUs/bangRiza.webp' },
+        { src: '/aboutUs/kakAmelia.webp' },
       ],
-      className: "pt-10",
+      className: 'pt-10',
     },
     {
-      type: "short",
+      type: 'short',
       images: [
-        { src: "/aboutUs/bangMauli.webp" },
-        { src: "/aboutUs/bangRakka2.webp" },
-        { src: "/aboutUs/azam.webp" },
+        { src: '/aboutUs/bangMauli.webp' },
+        { src: '/aboutUs/bangRakka2.webp' },
+        { src: '/aboutUs/azam.webp' },
       ],
-      className: "",
+      className: '',
     },
     {
-      type: "tall",
+      type: 'tall',
       images: [
-        { src: "/aboutUs/bangRafif.webp" },
-        { src: "/aboutUs/nada.webp" },
+        { src: '/aboutUs/bangRafif.webp' },
+        { src: '/aboutUs/nada.webp' },
       ],
-      className: "",
+      className: '',
     },
     {
-      type: "medium",
+      type: 'medium',
       images: [
-        { src: "/aboutUs/ilham.webp" },
-        { src: "/aboutUs/bangDhoni.webp" },
+        { src: '/aboutUs/ilham.webp' },
+        { src: '/aboutUs/bangDhoni.webp' },
       ],
-      className: "pt-10",
+      className: 'pt-10',
     },
     {
-      type: "short",
+      type: 'short',
       images: [
-        { src: "/aboutUs/bangJohn.webp" },
-        { src: "/aboutUs/bangMarsel.webp" },
-        { src: "/aboutUs/bangIrfan.webp" },
+        { src: '/aboutUs/bangJohn.webp' },
+        { src: '/aboutUs/bangMarsel.webp' },
+        { src: '/aboutUs/bangIrfan.webp' },
       ],
-      className: "",
+      className: '',
     },
     {
-      type: "tall",
+      type: 'tall',
       images: [
-        { src: "/aboutUs/bangNico.webp" },
-        { src: "/aboutUs/bangGerard.webp" },
+        { src: '/aboutUs/bangNico.webp' },
+        { src: '/aboutUs/bangGerard.webp' },
       ],
-      className: "",
+      className: '',
     },
     {
-      type: "medium",
+      type: 'medium',
       images: [
-        { src: "/aboutUs/bangFairly.webp" },
-        { src: "/aboutUs/bangAzriel.webp" },
+        { src: '/aboutUs/bangFairly.webp' },
+        { src: '/aboutUs/bangAzriel.webp' },
       ],
-      className: "pt-10",
+      className: 'pt-10',
     },
     {
-      type: "short",
+      type: 'short',
       images: [
-        { src: "/aboutUs/bangFarhan.webp" },
-        { src: "/aboutUs/nabhan.webp" },
-        { src: "/aboutUs/bangSaddam.webp" },
+        { src: '/aboutUs/bangFarhan.webp' },
+        { src: '/aboutUs/nabhan.webp' },
+        { src: '/aboutUs/bangSaddam.webp' },
       ],
-      className: "",
+      className: '',
     },
     {
-      type: "medium",
+      type: 'medium',
       images: [
-        { src: "/aboutUs/bangImmanuel.webp" },
-        { src: "/aboutUs/bangGoesny.webp" },
+        { src: '/aboutUs/bangImmanuel.webp' },
+        { src: '/aboutUs/bangGoesny.webp' },
       ],
-      className: "pt-10",
+      className: 'pt-10',
     },
     {
-      type: "short",
+      type: 'short',
       images: [
-        { src: "/aboutUs/bangFaiz.webp" },
-        { src: "/aboutUs/dhani.webp" },
-        { src: "/aboutUs/khalif.webp" },
+        { src: '/aboutUs/bangFaiz.webp' },
+        { src: '/aboutUs/dhani.webp' },
+        { src: '/aboutUs/khalif.webp' },
       ],
-      className: "",
+      className: '',
     },
   ];
 
@@ -162,21 +162,21 @@ export default function TeamGallery() {
     const swiper = swiperRef.current.swiper;
 
     const handleReachEnd = () => {
-      setDirection("left");
+      setDirection('left');
       swiper.autoplay.start();
     };
 
     const handleReachBeginning = () => {
-      setDirection("right");
+      setDirection('right');
       swiper.autoplay.start();
     };
 
-    swiper.on("reachEnd", handleReachEnd);
-    swiper.on("reachBeginning", handleReachBeginning);
+    swiper.on('reachEnd', handleReachEnd);
+    swiper.on('reachBeginning', handleReachBeginning);
 
     return () => {
-      swiper.off("reachEnd", handleReachEnd);
-      swiper.off("reachBeginning", handleReachBeginning);
+      swiper.off('reachEnd', handleReachEnd);
+      swiper.off('reachBeginning', handleReachBeginning);
     };
   }, []);
 
@@ -187,7 +187,7 @@ export default function TeamGallery() {
       if (!container) return;
 
       const containerRect = container.getBoundingClientRect();
-      const slides = container.querySelectorAll(".swiper-slide");
+      const slides = container.querySelectorAll('.swiper-slide');
 
       const newVisibility = {};
       slides.forEach((slide, idx) => {
@@ -234,7 +234,7 @@ export default function TeamGallery() {
               delay: 4000,
               disableOnInteraction: true,
               waitForTransition: false,
-              reverseDirection: direction === "left",
+              reverseDirection: direction === 'left',
             }}
             speed={9000}
             allowTouchMove={false}
@@ -254,15 +254,17 @@ export default function TeamGallery() {
                   key={index}
                   className="swiper-slide"
                   style={{
-                    width: "240px",
-                    marginRight: "0px",
-                    pointerEvents: "none",
-                    transition: "opacity 0.6s ease, transform 0.6s ease",
+                    width: '240px',
+                    marginRight: '0px',
+                    pointerEvents: 'none',
+                    transition: 'opacity 0.6s ease, transform 0.6s ease',
                     opacity: isVisible ? 1 : 0,
-                    transform: isVisible ? "scale(1)" : "scale(0.92)",
+                    transform: isVisible ? 'scale(1)' : 'scale(0.92)',
                   }}
                 >
-                  <div className={`flex flex-col gap-5 select-none ${column.className}`}>
+                  <div
+                    className={`flex flex-col gap-5 select-none ${column.className}`}
+                  >
                     {column.images.map((img, imgIndex) => (
                       <FadeIn
                         key={imgIndex}
@@ -275,14 +277,14 @@ export default function TeamGallery() {
                           className={`
         rounded-lg object-cover
         ${
-          column.type === "tall"
-            ? "w-full h-[280px]"
-            : column.type === "medium"
-            ? "w-full h-[240px]"
-            : "w-full h-[180px]"
+          column.type === 'tall'
+            ? 'w-full h-[280px]'
+            : column.type === 'medium'
+            ? 'w-full h-[240px]'
+            : 'w-full h-[180px]'
         }
       `}
-      loading="lazy"
+                          loading="lazy"
                         />
                       </FadeIn>
                     ))}

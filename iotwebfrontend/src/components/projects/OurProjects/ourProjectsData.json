@@ -6,13 +6,13 @@
       "image": "/projects/template-foto-OurProjects.jpg"
     },
     {
-      "title": "Project Title",
+      "title": "Smart Home",
       "description":
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+        "Project ini merupakan prototype Smart Home yang dirancang untuk menghadirkan kenyamanan & efisiensi di lingkungan rumah melalui pemanfaatan teknologi IoT (Internet of Things). Dalam prototype ini, beberapa perangkat rumah dapat dikendalikan secara otomatis maupun manual melalui aplikasi berbasis web/mobile. Sistem dilengkapi dengan sensor (misalnya sensor gerak, suhu, dan cahaya) yang memungkinkan perangkat bekerja secara adaptif sesuai kondisi lingkungan.",
       "image": "/projects/smart-home.jpg"
     },
     {
-      "title": "Project Title",
+      "title": "Sicegah",
       "description":
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum. ",
       "image": "/projects/template-foto-OurProjects.jpg"
