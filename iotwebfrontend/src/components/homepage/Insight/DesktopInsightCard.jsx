@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 const DesktopInsightCard = ({
   division,
   description,
@@ -9,6 +9,7 @@ const DesktopInsightCard = ({
   onSelect,
   onClear,
 }) => {
+  const navigate = useNavigate();
   const handleMouseEnter = () => {
     if (typeof onSelect === 'function') {
       onSelect(index);
@@ -79,7 +80,17 @@ const DesktopInsightCard = ({
         }}
       >
         <p className="mb-4">{description}</p>
-        <button className="bg-blue-800 hover:bg-yellow-400 text-white hover:text-black px-6 py-2 rounded-full transition-colors duration-300 text-sm">
+        <button
+          className="bg-blue-800 hover:bg-yellow-400 text-white hover:text-black px-6 py-2 rounded-full transition-colors duration-300 text-sm"
+          onClick={() =>
+            navigate(
+              `/insight/${division.name
+                .replace(' Division', '')
+                .toLowerCase()
+                .replace('/', '-')}`,
+            )
+          }
+        >
           Learn More
         </button>
       </div>

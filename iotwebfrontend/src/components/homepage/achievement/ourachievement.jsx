@@ -49,7 +49,12 @@ const OurAchievement = () => {
       ],
       time: '27 Mei - 1 Juni 2024',
       organizer: 'BPTI Puspresnas Kemdikbudristek',
-      contributors: ['Daniel Putra'],
+      contributors: [
+        'Daniel Putra',
+        'Mutiara Putri Rafhsanjani Darmawan',
+        'Rizal Restu Ramadhan',
+        'Aryaguna Abi Rafdi Yasa',
+      ],
     },
     {
       id: 3,
@@ -100,18 +105,22 @@ const OurAchievement = () => {
       ],
       time: '27/09/2025',
       organizer: 'BEMF-IK Universitas Pembangunan Nasional Veteran Jakarta',
-      contributors: ['Muhamad Nabhan Azmi'],
+      contributors: [
+        'Muhamad Nabhan Azmi',
+        'Khalif Farel Fauzan',
+        'Ramadhani Putra Yuditama',
+      ],
     },
     {
       id: 6,
-      title: 'Achievement Name 6',
-      award: 'Penghargaan 6',
-      description: 'Deskripsi untuk achievement 6.',
+      title: 'TO BE ACHIEVED...',
+      award: 'TO BE ACHIEVED',
+      description: 'TO BE ACHIEVED...',
       image: null,
       images: [],
-      time: '2019',
-      organizer: 'Penyelenggara 6',
-      contributors: ['Delegasi IOT 2019'],
+      time: '2025',
+      organizer: 'TO BE ACHIEVED',
+      contributors: [''],
     },
   ];
 
