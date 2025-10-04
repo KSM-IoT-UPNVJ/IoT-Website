@@ -76,14 +76,14 @@ function Nav() {
               </FadeIn>
             </button>
             {open && (
-              <div className="absolute mt-3 shadow-xs rounded-xl border-2 border-biru-muda bg-transparent backdrop-blur-[10px] text-xs animate-fade-in duration-200">
+              <div className="absolute mt-3 shadow-xs rounded-xl border-2 border-biru-muda bg-transparent backdrop-blur-[10px] text-xs animate-fade-in duration-200 z-30">
                 <DropdownAnimate show={open}>
-                  <button
+                  <a
                     onClick={() => navigate(`/aboutus`)}
                     className="block rounded-xl text-center text-md px-2 py-2 hover:-translate-y-0.5 transition transform duration-100 hover:bg-abu-sedang"
                   >
                     About Us
-                  </button>
+                  </a>
                   <button
                     onClick={() => {
                       navigate(`/kepengurusan`);
