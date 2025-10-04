@@ -8,8 +8,11 @@ import ProjectsDesc from './components/projects/ProjectsDesc';
 import Insight from './components/insight/IotInsight';
 import Footer from './components/Footer';
 import ProgramPage from './components/homepage/OurProgram/programPage';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Bg from './utils/Bg';
+import FadeIn from './utils/fadeIn';
+import { motion } from 'framer-motion';
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -18,11 +21,32 @@ import {
 } from 'react-router-dom';
 
 function App() {
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "instant" });
+    const timer = setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      setLoading(false);
     }, 300);
+    return () => clearTimeout(timer);
   }, []);
+  if (loading) {
+    return (
+      <motion.div
+        key="loading-screen"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 flex items-center justify-center bg-white z-50"
+      >
+        {/* Animasi spinner */}
+        <motion.div
+          className="w-16 h-16 border-4 border-gray-300 border-t-blue-500 rounded-full"
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}
+        />
+      </motion.div>
+    );
+  }
 
   return (
     <Router>
