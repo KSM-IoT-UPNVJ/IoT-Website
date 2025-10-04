@@ -19,8 +19,8 @@ export default function Card({
   const hasBackgroundImage = Boolean(backgroundImage);
   const safeDescription = description ?? '';
   const truncatedDescription =
-    safeDescription.length > 250
-      ? safeDescription.substring(0, 250) + '...'
+    safeDescription.length > 200
+      ? safeDescription.substring(0, 200) + '...'
       : safeDescription;
   const titleColorClass = hasBackgroundImage ? 'text-white' : 'text-black';
   const descriptionColorClass = hasBackgroundImage
