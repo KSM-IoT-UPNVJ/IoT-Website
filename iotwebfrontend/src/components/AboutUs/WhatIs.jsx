@@ -1,43 +1,43 @@
-import FadeIn from "../../utils/fadeIn";
+import FadeIn from '../../utils/fadeIn';
 
 const WhatIs = () => {
   return (
     <section
       className="py-16 px-4"
       style={{
-        fontFamily: "var(--font-poppins)",
-        color: "var(--color-biru-tua)",
+        fontFamily: 'var(--font-poppins)',
+        color: 'var(--color-biru-tua)',
       }}
     >
-      <FadeIn direction={"down"} delay={0.4}>
+      <FadeIn direction={'down'} delay={0.4}>
         <h2
           className="text-center text-5xl font-semibold mb-16 mt-3 select-none"
-          style={{ color: "var(--color-biru-tua)", fontFamily: "'OptimaNova'" }}
+          style={{ color: 'var(--color-biru-tua)', fontFamily: "'OptimaNova'" }}
         >
           What Is?
         </h2>
       </FadeIn>
-      <FadeIn direction={"right"} delay={0.8}>
+      <FadeIn direction={'right'} delay={0.8}>
         <div className="flex flex-col xl:flex-row items-start justify-center gap-10 md:gap-20 px-4 md:px-20">
           {/* Gambar Placeholder */}
-          <div className="w-full xl:w-1/2 my-auto flex justify-center select-none">
+          <div className="w-full xl:w-1/2 mt-10 flex justify-center select-none">
             <img
               src="/aboutUs/whatis-iot.webp"
               alt="Foto kabinet IoT"
-              className="rounded-2xl object-cover w-full h-auto max-w-[450px]"
+              className="rounded-2xl object-cover w-full h-auto max-w-[600px] -translate-y-10"
             />
           </div>
           {/* Teks */}
           <div className="w-full xl:max-w-[700px] text-justify">
             <h1
               className="text-[21px] md:text-[42px] xl:text-[50px] xl:leading-[68px] select-none"
-              style={{ fontFamily: "var(--font-poppins)" }}
+              style={{ fontFamily: 'var(--font-poppins)' }}
             >
               <span
                 className="font-bold text-[39px] md:text-[72px] xl:text-[80px]"
-                style={{ color: "var(--color-biru-tua)" }}
+                style={{ color: 'var(--color-biru-tua)' }}
               >
-                KSM{" "}
+                KSM{' '}
               </span>
               <span className="font-normal">Internet Of Things</span>
             </h1>

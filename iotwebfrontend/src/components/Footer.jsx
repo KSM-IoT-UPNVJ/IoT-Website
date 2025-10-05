@@ -16,18 +16,21 @@ function Footer() {
               Contact Info
             </p>
             <div>
-              <a href="" className={linkClass}>
-                contact info
+              <a
+                href="mailto:internetofthings.upnvj@gmail.com"
+                className={linkClass}
+              >
+                humas@ksmiotupnvj.com
               </a>
             </div>
             <div>
-              <a href="" className={linkClass}>
-                contact info
+              <a href="tel:+62 831-4043-4826" className={linkClass}>
+                +62 831-4043-4826
               </a>
             </div>
             <div>
-              <a href="" className={linkClass}>
-                contact info
+              <a href="ksmiotupnvj.com" className={linkClass}>
+                www.ksmiotupnvj.com
               </a>
             </div>
           </div>
