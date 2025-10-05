@@ -1,9 +1,12 @@
-import RotatingIcons from '/src/utils/RotatingIcons';
-import FadeIn from '../utils/fadeIn'; // Import komponen FadeIn
+import RotatingIcons from "/src/utils/RotatingIcons";
+import FadeIn from "../utils/fadeIn";
+import { useNavigate } from "react-router-dom";
 
 function Footer() {
   const linkClass =
-    'inline-block font-optima font-[300] text-[20px] text-biru-tua hover:-translate-y-0.5 transition transform duration-100 hover:text-biru-sedang';
+    "inline-block font-optima font-[300] text-[20px] text-biru-tua hover:-translate-y-0.5 transition transform duration-100 hover:text-biru-sedang";
+
+  const navigate = useNavigate();
   return (
     <div>
       <div className="flex px-[4vw] pt-[100px] h-[700px] bg-gradient-to-b from-transparent via-biru-footer-kepengurusan to-biru-muda justify-between overflow-hidden z-[-10]">
@@ -31,11 +34,12 @@ function Footer() {
         </FadeIn>
 
         <FadeIn direction="up" delay={0.4}>
-          <div className="flex flex-col w-[96vw] md:w-[400px] h-[400px] items-center">
+          <div className="flex flex-col w-[96vw] md:w-[400px] h-[400px] items-center select-none">
             <img
               src="/Logo_IoT.png"
               alt="Logo_IoT"
               className="w-[180px] h-[201px] mb-2"
+              draggable="false"
             />
             <p className="font-titillium text-[24px] font-[700]">
               KSM Internet Of Things
@@ -47,25 +51,26 @@ function Footer() {
               src="/slogan.png"
               alt="Slogan"
               className="w-[368.5px] h-[77px] saturate-[450%] mb-3"
+              draggable="false"
             />
             <div className="flex w-[400px] h-[100px] justify-center gap-[40px]">
               <div className="flex gap-8">
                 <RotatingIcons
                   link="https://www.instagram.com/iot.upnvj/"
-                  icon1="/footer/ig_footer1.png"
-                  icon2="/footer/ig_footer2.png"
+                  icon1="/footer/ig_footer1.webp"
+                  icon2="/footer/ig_footer2.webp"
                   alt="iot.upnvj"
                 />
                 <RotatingIcons
                   link="https://www.linkedin.com/company/ksmiotupnvj"
-                  icon1="/footer/linkedin_footer1.png"
-                  icon2="/footer/linkedin_footer2.png"
+                  icon1="/footer/linkedin_footer1.webp"
+                  icon2="/footer/linkedin_footer2.webp"
                   alt="ksmiotupnvj"
                 />
                 <RotatingIcons
                   link="https://github.com/IoTUPNVJ"
-                  icon1="/footer/github_footer1.png"
-                  icon2="/footer/github_footer2.png"
+                  icon1="/footer/github_footer1.webp"
+                  icon2="/footer/github_footer2.webp"
                   alt="IoTUPNVJ"
                 />
               </div>

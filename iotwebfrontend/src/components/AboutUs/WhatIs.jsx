@@ -20,13 +20,13 @@ const WhatIs = () => {
       <FadeIn direction={"right"} delay={0.8}>
         <div className="flex flex-col xl:flex-row items-start justify-center gap-10 md:gap-20 px-4 md:px-20">
           {/* Gambar Placeholder */}
-<div className="w-full xl:w-1/2 mt-10 flex justify-center select-none">
-  <img
-    src="/aboutUs/Group 1042.webp"
-    alt="Foto kabinet IoT"
-    className="rounded-2xl object-cover w-full h-auto max-w-[450px]"
-  />
-</div>
+          <div className="w-full xl:w-1/2 my-auto flex justify-center select-none">
+            <img
+              src="/aboutUs/whatis-iot.webp"
+              alt="Foto kabinet IoT"
+              className="rounded-2xl object-cover w-full h-auto max-w-[450px]"
+            />
+          </div>
           {/* Teks */}
           <div className="w-full xl:max-w-[700px] text-justify">
             <h1
