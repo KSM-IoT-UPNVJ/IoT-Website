@@ -6,11 +6,12 @@ import Goals from "./Goals";
 import TeamGallery from "./TeamGallery";
 import "../../index.css";
 import { useEffect } from "react";
+
 function AboutUs() {
   useEffect(() => {
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "instant" });
-    }, 300);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
   }, []);
 
   return (

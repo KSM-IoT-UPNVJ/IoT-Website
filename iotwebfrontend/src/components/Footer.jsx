@@ -7,6 +7,7 @@ function Footer() {
     "inline-block font-optima font-[300] text-[20px] text-biru-tua hover:-translate-y-0.5 transition transform duration-100 hover:text-biru-sedang";
 
   const navigate = useNavigate();
+
   return (
     <div>
       <div className="flex px-[4vw] pt-[100px] h-[700px] bg-gradient-to-b from-transparent via-biru-footer-kepengurusan to-biru-muda justify-between overflow-hidden z-[-10]">
@@ -87,24 +88,44 @@ function Footer() {
               Quick Links
             </p>
             <div>
-              <a href="#contact" className={linkClass}>
-                Contact Us
-              </a>
+              <button
+                onClick={() => {
+                  navigate(`/home`);
+                }}
+                className={`${linkClass} hover:cursor-pointer`}
+              >
+                Home
+              </button>
             </div>
             <div>
-              <a href="#about-us" className={linkClass}>
+              <button
+                onClick={() => {
+                  navigate(`/aboutus`);
+                }}
+                className={`${linkClass} hover:cursor-pointer`}
+              >
                 About Us
-              </a>
+              </button>
             </div>
             <div>
-              <a href="#iot-insight" className={linkClass}>
+              <button
+                onClick={() => {
+                  navigate(`/insight`);
+                }}
+                className={`${linkClass} hover:cursor-pointer`}
+              >
                 Iot Insight
-              </a>
+              </button>
             </div>
             <div>
-              <a href="#article" className={linkClass}>
-                Article
-              </a>
+              <button
+                onClick={() => {
+                  navigate(`/contact`);
+                }}
+                className={`${linkClass} hover:cursor-pointer`}
+              >
+                Contact Us
+              </button>
             </div>
           </div>
         </FadeIn>

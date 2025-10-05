@@ -8,6 +8,12 @@ export default function Insight() {
   const { division } = useParams();
 
   useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
+  }, []);
+
+  useEffect(() => {
     if (division) {
       const el = document.getElementById(division);
       if (el) {

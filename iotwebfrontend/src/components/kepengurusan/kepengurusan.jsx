@@ -2,6 +2,12 @@ import Anggotakepengurusan from './Anggotakepengurusan';
 import FadeIn from '../../utils/fadeIn';
 
 function Kepengurusan() {
+    useEffect(() => {
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 100);
+      }, []);
+      
   return (
     <div className="relative overflow-x-hidden">
       <div className="relatve h-full w-full justify-items-center">
