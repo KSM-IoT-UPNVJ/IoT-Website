@@ -77,7 +77,7 @@ export default function VisiMisiSection() {
                 {/* ICON tetap ada, cuma dikasih fade, tapi tidak hidden */}
                 <img
                   src={box.icon}
-                  className={`w-30 h-30 sm:w-54 sm:h-45 mx-auto mb-3 sm:mb-4 transition-all duration-400 z-10 select-none
+                  className={`w-23 h-24 sm:w-44 sm:h-45 mx-auto mb-3 sm:mb-4 transition-all duration-400 z-10 select-none
     ${
       isActive
         ? "opacity-0 scale-90"
@@ -90,7 +90,7 @@ export default function VisiMisiSection() {
                   className={`absolute left-4 right-4 mx-auto text-center font-extrabold transition-transform duration-500 z-20 select-none
     ${
       isActive
-        ? "-translate-y-34 sm:-translate-y-53 text-sm sm:text-2xl md:text-2xl lg:text-2xl"
+        ? "-translate-y-29 sm:-translate-y-53 text-sm sm:text-2xl md:text-2xl lg:text-2xl"
         : "translate-y-0 text-sm sm:text-2xl md:text-2xl lg:text-4xl"
     }
     group-hover:-translate-y-53
