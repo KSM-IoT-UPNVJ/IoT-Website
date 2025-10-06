@@ -1,23 +1,52 @@
+import { useEffect, useRef, useState } from 'react';
 import RotatingIcons from '../../utils/RotatingIcons';
 import FadeIn from '../../utils/fadeIn';
 
 export default function Map() {
+  const [shouldLoadMap, setShouldLoadMap] = useState(false);
+  const mapContainerRef = useRef(null);
+
+  useEffect(() => {
+    const node = mapContainerRef.current;
+    if (!node || shouldLoadMap) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry?.isIntersecting) {
+          setShouldLoadMap(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [shouldLoadMap]);
+
   return (
     <div className="flex flex-col lg:flex-row bg-biru-tua rounded-xl overflow-hidden">
-      <div className="aspect-video w-full flex-1 lg:flex-1/2 p-4 sm:p-6 md:p-8 lg:p-10">
+      <div ref={mapContainerRef} className="aspect-video w-full flex-1 lg:flex-1/2 p-4 sm:p-6 md:p-8 lg:p-10">
         <FadeIn direction={'left'} delay={0.2} className="w-full h-full">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.304762157166!2d106.77209311381209!3d-6.3545800954015315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69eee3bada9ad3%3A0xa4d4dfc5da2d388!2sFakultas%20Teknik%20UPNVJ%20Limo!5e0!3m2!1sen!2sid!4v1611216657850!5m2!1sen!2sid"
-            width="100%"
-            height="100%"
-            frameBorder="0"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            aria-hidden="false"
-            tabIndex="0"
-            loading="lazy"
-            className="rounded-xl"
-          ></iframe>
+          {shouldLoadMap ? (
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.304762157166!2d106.77209311381209!3d-6.3545800954015315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69eee3bada9ad3%3A0xa4d4dfc5da2d388!2sFakultas%20Teknik%20UPNVJ%20Limo!5e0!3m2!1sen!2sid!4v1611216657850!5m2!1sen!2sid"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              aria-hidden="false"
+              tabIndex="0"
+              loading="lazy"
+              className="rounded-xl"
+            ></iframe>
+          ) : (
+            <div className="flex h-full w-full items-center justify-center rounded-xl bg-black/30 text-white">
+              <span className="text-sm font-medium">Map preview loads on scroll</span>
+            </div>
+          )}
         </FadeIn>
       </div>
 

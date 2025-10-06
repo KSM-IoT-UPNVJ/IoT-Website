@@ -11,18 +11,17 @@ export default function OurProjectsCard({
   return (
     <>
       <div
-        className={`w-[400px] h-[600px] overflow-hidden px-5 pb-4 select-none {
-            ${isPlaceholder && 'max-[1280px]:hidden'}`}
+        className={`w-[400px] h-[600px] overflow-hidden px-5 pb-4 select-none ${
+          isPlaceholder ? 'max-[1280px]:hidden' : ''
+        }`}
       >
         <div
           className={`rounded-xl shadow-[0_2px_10px_rgba(0,0,0,1)] overflow-hidden relative flex flex-col w-full h-full m-2 transition-all group duration-200 ease-in-out select-none ${
-            !isPlaceholder && 'active:scale-90 cursor-pointer'
+            !isPlaceholder ? 'active:scale-90 cursor-pointer bg-abu-muda' : ''
           }`}
         >
           {!isPlaceholder && (
-            <div
-              className={`absolute inset-0 bg-black bg-cover bg-center transition-all opacity-0 group-hover:opacity-10 z-1`}
-            ></div>
+            <div className="pointer-events-none absolute inset-0 bg-black/10 opacity-0 transition-opacity duration-200 group-hover:opacity-20" />
           )}
 
           {!isPlaceholder && (
@@ -31,6 +30,7 @@ export default function OurProjectsCard({
                 <img
                   src={image}
                   alt={title}
+                  loading="lazy"
                   className="object-cover w-full h-full text-[var(--color-biru-tua)] group-hover:scale-110 duration-300"
                   onError={() => {
                     setImgError(true);
@@ -46,8 +46,8 @@ export default function OurProjectsCard({
 
           <div
             className={`p-3 mb-3 text-center ${
-              isPlaceholder && 'justify-center'
-            } overflow-hidden flex flex-col h-full transition-all duration-200 z-2 group-hover:brightness-50 group-hover:scale-102`}
+              isPlaceholder ? 'justify-center' : ''
+            } overflow-hidden flex flex-col h-full transition-all duration-200 z-2 group-hover:brightness-95 group-hover:scale-102 bg-white/90 backdrop-blur-sm`}
           >
             {isPlaceholder && (
               <p className="font-bold text-[10rem]  text-[var(--color-biru-tua)] leading-tight duration-300">
@@ -66,12 +66,6 @@ export default function OurProjectsCard({
             </p>
           </div>
 
-          <div
-            className="absolute bg-abu-muda/95 bg-cover bg-center bg-blend-screen inset-0 h-full w-full -z-1"
-            style={{
-              backgroundImage: `url(${image})`,
-            }}
-          ></div>
         </div>
       </div>
     </>

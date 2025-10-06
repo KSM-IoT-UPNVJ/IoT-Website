@@ -8,11 +8,6 @@ function Bg() {
         alt="bg"
         className="w-full h-auto mix-blend-multiply animate-bgKepengurusan"
       ></img>
-      <img
-        src="/kepengurusan/BgKepengurusan.webp"
-        alt="bg"
-        className="w-full h-auto mix-blend-multiply animate-bgKepengurusan"
-      ></img>
     </div>
   );
 }
