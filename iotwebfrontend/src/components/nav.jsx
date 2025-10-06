@@ -36,7 +36,10 @@ function Nav() {
     <div className="sticky bg-gradient-to-r from-biru-muda to-white shadow-md py-6.5 px-7.5 w-full h-auto">
       <div className="flex justify-between items-center">
         {/* logo */}
-        <div className="flex items-center space-x-2">
+        <button onClick={() => {
+              navigate(`/home`);
+            }} 
+            className="flex items-center space-x-2">
           <div>
             <FadeIn delay={1.2} direction={'left'}>
               <img src="Logo_IoT.png" alt="logo" className="w-auto h-10" />
@@ -52,7 +55,7 @@ function Nav() {
               </p>
             </FadeIn>
           </div>
-        </div>
+        </button>
 
         {/* Navigation list */}
         <div className="hidden md:flex justify-center items-center space-x-2">
