@@ -50,6 +50,12 @@
   animation: bgKepengurusan 40s ease infinite;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animate-bgKepengurusan {
+    animation: none;
+  }
+}
+
 .hover-trigger:hover + .left-button-kepengurusan {
   transform: translateX(100px);
 }

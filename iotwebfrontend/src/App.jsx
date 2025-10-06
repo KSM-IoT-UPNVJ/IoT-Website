@@ -1,17 +1,17 @@
-import Nav from './components/nav';
-import HomePage from './components/homepage/homepage';
-import AboutUs from './components/AboutUs/AboutUs';
-import Kepengurusan from './components/kepengurusan/kepengurusan';
-import Contact from './components/contact/contact';
-import Projects from './components/projects/Projects';
-import ProjectsDesc from './components/projects/ProjectsDesc';
-import Insight from './components/insight/IotInsight';
-import Footer from './components/Footer';
-import ProgramPage from './components/homepage/OurProgram/programPage';
-import { useEffect, useState } from 'react';
-import Bg from './utils/Bg';
-import FadeIn from './utils/fadeIn';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+
+const Nav = lazy(() => import('./components/nav'));
+const HomePage = lazy(() => import('./components/homepage/homepage'));
+const AboutUs = lazy(() => import('./components/AboutUs/AboutUs'));
+const Kepengurusan = lazy(() => import('./components/kepengurusan/kepengurusan'));
+const Contact = lazy(() => import('./components/contact/contact'));
+const Projects = lazy(() => import('./components/projects/Projects'));
+const ProjectsDesc = lazy(() => import('./components/projects/ProjectsDesc'));
+const Insight = lazy(() => import('./components/insight/IotInsight'));
+const Footer = lazy(() => import('./components/Footer'));
+const ProgramPage = lazy(() => import('./components/homepage/OurProgram/programPage'));
+const Bg = lazy(() => import('./utils/Bg'));
 
 import {
   BrowserRouter as Router,
@@ -50,25 +50,27 @@ function App() {
 
   return (
     <Router>
-      <Routes>
-        {/* Grup rute yang menggunakan MainLayout */}
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/kepengurusan" element={<Kepengurusan />} />
-          <Route path="/project" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/insight" element={<Insight />} />
-          <Route path="/insight/:division" element={<Insight />} />
-          <Route path="/project/projectdesc" element={<ProjectsDesc />} />
-          <Route path="/project/projectdesc/:i" element={<ProjectsDesc />} />
-          <Route path="/program/:programId" element={<ProgramPage />} />
-        </Route>
+      <Suspense fallback={<PageFallback />}>
+        <Routes>
+          {/* Grup rute yang menggunakan MainLayout */}
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/kepengurusan" element={<Kepengurusan />} />
+            <Route path="/project" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/insight" element={<Insight />} />
+            <Route path="/insight/:division" element={<Insight />} />
+            <Route path="/project/projectdesc" element={<ProjectsDesc />} />
+            <Route path="/project/projectdesc/:i" element={<ProjectsDesc />} />
+            <Route path="/program/:programId" element={<ProgramPage />} />
+          </Route>
 
-        {/* Rute 404 berada di luar MainLayout, sehingga tidak akan menampilkan Nav, Bg, dan Footer */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+          {/* Rute 404 berada di luar MainLayout, sehingga tidak akan menampilkan Nav, Bg, dan Footer */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </Router>
   );
 }
@@ -76,13 +78,27 @@ function App() {
 function MainLayout() {
   return (
     <div className="relative min-h-screen flex flex-col">
-      <Bg />
-      <Nav />
+      <Suspense fallback={null}>
+        <Bg />
+      </Suspense>
+      <Suspense fallback={<nav className="h-20" />}>
+        <Nav />
+      </Suspense>
       <main className="flex-grow">
         {/* Outlet akan merender komponen anak (halaman) */}
         <Outlet />
       </main>
-      <Footer />
+      <Suspense fallback={<div className="h-24" />}>
+        <Footer />
+      </Suspense>
+    </div>
+  );
+}
+
+function PageFallback() {
+  return (
+    <div className="flex h-screen w-full items-center justify-center bg-white text-biru-tua">
+      <span className="animate-pulse text-lg font-semibold">Loading…</span>
     </div>
   );
 }
