@@ -17,16 +17,23 @@ const WhatIs = () => {
           What Is?
         </h2>
       </FadeIn>
+
       <FadeIn direction={'right'} delay={0.8}>
-        <div className="flex flex-col xl:flex-row items-start justify-center gap-10 md:gap-20 px-4 md:px-20">
-          {/* Gambar Placeholder */}
-          <div className="w-full xl:w-1/2 mt-10 flex justify-center select-none">
-            <img
-              src="/aboutUs/whatis-iot.webp"
-              alt="Foto kabinet IoT"
-              className="rounded-2xl object-cover w-full h-auto max-w-[600px] -translate-y-10"
-            />
+        <div className="flex flex-col xl:flex-row items-start justify-center gap-10 md:gap-20 px-4 md:px-10">
+          {/* Embed YouTube Video */}
+          <div className="w-full xl:w-1/3 mt-10 flex justify-center select-none">
+            <div className="w-full max-w-[600px] aspect-video rounded-2xl overflow-hidden shadow-lg">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/mGKpeLC5oSk?si=6X69cpgPUfhUXgE4"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
+
           {/* Teks */}
           <div className="w-full xl:max-w-[700px] text-justify">
             <h1
