@@ -1,8 +1,15 @@
 import OurProjectsContainer from "./OurProjects/OurProjectsContainer";
-import ProjectDescPage from "./ProjectsDesc/ProjectDescPage";
 import FadeIn from "/src/utils/fadeIn";
 
+import { useEffect } from "react";
+
 function Projects() {
+  useEffect(() => {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
+    }, []);
+
   return (
     <>
       <FadeIn delay={0.8} direction={"down"}>

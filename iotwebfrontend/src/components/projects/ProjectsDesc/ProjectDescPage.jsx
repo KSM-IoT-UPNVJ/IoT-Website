@@ -7,11 +7,18 @@ export default function ProjectDescPage() {
   const { i } = useParams();
   const index = i ? parseInt(i, 10) - 1 : null;
 
-  // Refs for each project
   const projectRefs = useRef([]);
 
   useEffect(() => {
-    if (index !== null && projectRefs.current[index]) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+  useEffect(() => {
+    if (
+      typeof index === "number" &&
+      !isNaN(index) &&
+      projectRefs.current[index]
+    ) {
       projectRefs.current[index].scrollIntoView({
         behavior: "smooth",
         block: "center",

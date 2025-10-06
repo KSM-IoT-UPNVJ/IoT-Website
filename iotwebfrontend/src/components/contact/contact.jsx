@@ -3,7 +3,15 @@ import Map from './map';
 import FadeIn from '../../utils/fadeIn';
 import MediaCard from './mediaCard';
 
+import { useEffect } from "react";
+
 export default function Contact() {
+  useEffect(() => {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
+    }, []);
+
   return (
     <div className="mx-4 sm:mx-6 md:mx-8 lg:mx-15">
       <div className="text-center my-6 sm:my-8 md:my-10">
