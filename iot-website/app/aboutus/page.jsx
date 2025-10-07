@@ -1,9 +1,9 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import WhatIs from "./WhatIs";
-import Slogan from "./Slogan";
-import Goals from "./Goals";
-import TeamGallery from "./TeamGallery";
+import WhatIs from "../../../iotwebfrontend/src/components/AboutUs/WhatIs";
+import Slogan from "../../../iotwebfrontend/src/components/AboutUs/Slogan";
+import Goals from "../../../iotwebfrontend/src/components/AboutUs/Goals";
+import TeamGallery from "../../../iotwebfrontend/src/components/AboutUs/TeamGallery";
 import "../../index.css";
 import { useEffect } from "react";
 function AboutUs() {

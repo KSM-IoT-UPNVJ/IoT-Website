@@ -1,0 +1,26 @@
+[
+  {
+    "title": "KSM IoT UPNVJ Website Development",
+    "description": "This project focuses on the development of an official website for KSM IoT UPNVJ, designed to function as both an informative and interactive platform. The website will provide comprehensive information about the organization, including its vision, mission, history, and achievements. By offering clear insights into the organizational structure and division overviews, it will help students and prospective members understand the scope of activities within KSM IoT. Furthermore, the platform will serve as a digital hub that highlights upcoming events, ongoing projects, and community initiatives, ensuring that information is easily accessible to both internal and external audiences. \n \n In addition to its informative role, the website is intended to enhance engagement and communication. Interactive features such as contact forms, event registration, and inquiry channels will allow visitors to connect directly with the organization. This ensures that students, members, and the public can participate more actively in events and collaborations. With a modern design and user-friendly navigation, the website aims not only to represent the identity of KSM IoT UPNVJ but also to strengthen its visibility and impact as a student organization in the field of Internet of Things.",
+    "division": "Software Division x UI/UX Division",
+    "date": "XX XX 2025 - XX XX 2025",
+    "divisionImage": "/",
+    "image": "/projects/template-foto-OurProjects.jpg"
+  },
+  {
+    "title": "Smart Home Prototype",
+    "description": "The Smart Home Prototype is an IoT-based system designed to enhance comfort, efficiency, and sustainability in everyday living. It utilizes sensors to detect occupancy within a home and automatically adjusts the fan speed according to the number of people present. This adaptive approach ensures that energy is used more effectively, reducing unnecessary power consumption while maintaining a pleasant indoor environment. By integrating automation with real-time data, the system demonstrates how technology can transform traditional households into intelligent living spaces. \n \n Beyond occupancy detection, the prototype also incorporates environmental monitoring through temperature and humidity sensors. These sensors control the automatic opening and closing of windows, ensuring optimal airflow and indoor air quality. As a result, the system not only improves comfort but also contributes to healthier living conditions. With its combination of smart energy management and environmental responsiveness, this prototype represents an innovative step toward creating homes that are both user-friendly and eco-friendly.",
+    "division": "Gemastik Smart City Team",
+    "date": "XX XX 2025 - XX XX 2025",
+    "divisionImage": "/",
+    "image": "/projects/smart-home.jpg"
+  },
+  {
+    "title": "SiCegah",
+    "description": "Sicegah is a smart health application developed to support early detection and prevention of infectious diseases. By integrating Internet of Things (IoT), Artificial Intelligence (AI), and geospatial mapping technologies, the application provides real-time monitoring of outbreaks and helps users stay informed about potential health risks in their area. Its AI-powered symptom detection allows individuals to assess their health conditions quickly, while the system simultaneously collects and analyzes data to provide more accurate insights into disease patterns.\n \n In addition to monitoring and detection, Sicegah also focuses on accessibility and user engagement. Through its interactive chatbot, users can easily access health services, make reservations, and receive relevant health recommendations. This feature simplifies communication between the public and healthcare providers, ensuring faster responses and better prevention strategies. With its holistic design, Sicegah not only empowers individuals to manage their health proactively but also supports policymakers in improving public health management through reliable, data-driven insights.",
+    "division": "Gemastik Smart City Team",
+    "date": "XX XX 2025 - XX XX 2025",
+    "divisionImage": "/",
+    "image": "/projects/gemastik-smart-city.jpg"
+  }
+]
