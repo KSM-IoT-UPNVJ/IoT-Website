@@ -1,19 +1,19 @@
 {
   "firmware-slide": [
     {
-      "image": "/projects/IotInsight-Firmware1.png",
+      "image": "/projects/cover-firmware1.webp",
       "vol": 1,
       "title": "Apa Sih ESP32 itu?",
       "link": "https://www.instagram.com/p/DHvDhJxRK1i"
     },
     {
-      "image": "/projects/IotInsight-Firmware1.png",
+      "image": "/projects/cover-firmware2.webp",
       "vol": 2,
       "title": " Mengenal Ladder Diagram : Bahasa pemrograman yang berupa visual dan grafis",
       "link": "https://www.instagram.com/p/DLSHq0cxnlt"
     },
     {
-      "image": "/projects/IotInsight-Firmware1.png",
+      "image": "/projects/cover-firmware3.webp",
       "vol": 3,
       "title": "Rahasia Firmware Hemat Daya!",
       "link": "https://www.instagram.com/p/DOanAP4gGEE"
@@ -21,47 +21,33 @@
   ],
   "hardware-slide": [
     {
-      "image": "/projects/IotInsight-Hardware1.png",
+      "image": "/projects/cover-hardware1.webp",
       "vol": 1,
       "title": "Fusion 360 vs Blender",
       "link": "https://www.instagram.com/p/DHVhPUizghU"
     },
     {
-      "image": "/projects/IotInsight-Hardware1.png",
+      "image": "/projects/cover-hardware2.webp",
       "vol": 2,
       "title": "Apa Itu PLC?",
       "link": "https://www.instagram.com/p/DKRbFZ_xfTE"
     },
     {
-      "image": "/projects/IotInsight-Hardware1.png",
+      "image": "/projects/cover-hardware3.webp",
       "vol": 3,
       "title": "PCB: Rumah Elektronika Perangkat IoT",
       "link": "https://www.instagram.com/p/DNxHyO7QNyv"
     }
   ],
-  "network-slide": [
-    {
-      "image": "/projects/IotInsight-Network1.png",
-      "vol": 1,
-      "title": "VPN lebih dari sekedar nembus blokir",
-      "link": "https://www.instagram.com/p/DJ01PEBR7Ff"
-    },
-    {
-      "image": "/projects/IotInsight-Network1.png",
-      "vol": 2,
-      "title": "SSH: Cara Aman Akses Perangkat Jaringan Dari Mana Saja",
-      "link": "https://www.instagram.com/p/DNhmWKxR3UT"
-    }
-  ],
   "software-slide": [
     {
-      "image": "/projects/IotInsight-Software1.png",
+      "image": "/projects/cover-software1.webp",
       "vol": 1,
       "title": "Apa bahasa pemrograman mu?",
       "link": "https://www.instagram.com/p/DItBMJHx_FT"
     },
     {
-      "image": "/projects/IotInsight-Software1.png",
+      "image": "/projects/cover-software2.webp",
       "vol": 2,
       "title": "AI di Balik Web: Bagaimana Tools Seperti Summarizer & Chatbot Bekerja? ",
       "link": "https://www.instagram.com/p/DLhKDk-RdsS"
@@ -69,16 +55,30 @@
   ],
   "ui/ux-slide": [
     {
-      "image": "/projects/IotInsight-Uiux1.png",
+      "image": "/projects/cover-uiux1.webp",
       "vol": 1,
       "title": "Apa sih Desain UI/UX?",
       "link": "https://www.instagram.com/p/DJbaNkyR6rj"
     },
     {
-      "image": "/projects/IotInsight-Uiux1.png",
+      "image": "/projects/cover-uiux2.webp",
       "vol": 2,
       "title": "5 Tahap Utama Dalam Proses Desain UI/UX",
       "link": "hhttps://www.instagram.com/p/DNNY4jIR1k_"
+    }
+  ],
+   "network-slide": [
+    {
+      "image": "/projects/cover-network1.webp",
+      "vol": 1,
+      "title": "VPN lebih dari sekedar nembus blokir",
+      "link": "https://www.instagram.com/p/DJ01PEBR7Ff"
+    },
+    {
+      "image": "/projects/cover-network2.webp",
+      "vol": 2,
+      "title": "SSH: Cara Aman Akses Perangkat Jaringan Dari Mana Saja",
+      "link": "https://www.instagram.com/p/DNhmWKxR3UT"
     }
   ]
 }

@@ -10,6 +10,9 @@ import "swiper/css/effect-flip";
 export default function IotInsightCarousel({ children, reverse }) {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
+  const childCount = React.Children.count(children);
+  const shouldAutoplay = childCount > 2; 
+
   useEffect(() => {
     const checkScreen = () => setIsSmallScreen(window.innerWidth < 1024); // 👈 Tailwind sm breakpoint
     checkScreen();
@@ -29,12 +32,16 @@ export default function IotInsightCarousel({ children, reverse }) {
         mousewheel={{ forceToAxis: true }}
         keyboard={{ enabled: false }}
         loop={true}
-        autoplay={{
-          delay: 3000,
-          pauseOnMouseEnter: true,
-          disableOnInteraction: false,
-          reverseDirection: reverse,
-        }}
+        autoplay={
+          shouldAutoplay
+            ? {
+                delay: 3000,
+                pauseOnMouseEnter: true,
+                disableOnInteraction: false,
+                reverseDirection: reverse,
+              }
+            : false
+        }
         onTouchStart={(swiper) => swiper.autoplay.stop()}
         onTouchEnd={(swiper) => swiper.autoplay.start()}
         effect={isSmallScreen ? "flip" : "slide"}

@@ -1,10 +1,17 @@
+import { useEffect } from "react";
+
 import OurProjectsContainer from "./OurProjects/OurProjectsContainer";
-import ProjectDescPage from "./ProjectsDesc/ProjectDescPage";
 import FadeIn from "/src/utils/fadeIn";
 
 import HakMilik from "/src/utils/hakMilik";
 
 function Projects() {
+  useEffect(() => {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
+    }, []);
+
   const HMWeb = [
     {
       name: "NAUFALIS FEBRIAN WIBOWO",
