@@ -1,7 +1,7 @@
-import OurProjectsCard from "./OurProjectsCard.jsx";
-import projectsDescData from "../projectsDescData.json";
+import OurProjectsCard from './OurProjectsCard.jsx';
+import projectsDescData from '../projectsDescData.json';
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 export default function OurProjectsContainer() {
   const navigate = useNavigate();
@@ -11,12 +11,12 @@ export default function OurProjectsContainer() {
     isPlaceholder: false,
   }));
   const remainder = realCards.length % 3;
-const fillers = remainder === 0 ? 3 : 3 - remainder;
+  const fillers = remainder === 0 ? 3 : 3 - remainder;
 
   const fillerCards = Array.from({ length: fillers }, (_, i) => ({
-    title: "Coming Soon",
-    description: "Stay tuned for more projects!",
-    image: "/projects/placeholder.jpg",
+    title: 'Coming Soon',
+    description: 'Stay tuned for more projects!',
+    image: '/projects/placeholder.jpg',
     isPlaceholder: true,
   }));
 
@@ -24,14 +24,15 @@ const fillers = remainder === 0 ? 3 : 3 - remainder;
     <div className={`flex flex-wrap justify-center gap-8 px-2`}>
       {realCards.map((card, i) => (
         <button
+          key={`project-${i}-${card.title ?? 'untitled'}`}
           className="h-min w-min"
           onClick={() => navigate(`/project/projectdesc/${i + 1}`)}
         >
-          <OurProjectsCard key={i} {...card} />
+          <OurProjectsCard {...card} />
         </button>
       ))}
       {fillerCards.map((card, i) => (
-         <OurProjectsCard key={i} {...card} />
+        <OurProjectsCard key={`placeholder-${i}`} {...card} />
       ))}
     </div>
   );
