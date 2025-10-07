@@ -1,12 +1,19 @@
+import { useEffect } from "react";
+import { useNavigationType } from "react-router-dom";
+
 import OurProjectsContainer from "./OurProjects/OurProjectsContainer";
 import FadeIn from "/src/utils/fadeIn";
 
 function Projects() {
+  const navigationType = useNavigationType();
+  
   useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 100);
-  }, []);
+    if (navigationType !== "POP") {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
+    }
+  }, [navigationType]);
 
   return (
     <>

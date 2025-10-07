@@ -1,13 +1,18 @@
 import Anggotakepengurusan from './Anggotakepengurusan';
 import FadeIn from '../../utils/fadeIn';
 import { useEffect } from 'react';
+import { useNavigationType } from 'react-router-dom';
 
 function Kepengurusan() {
+  const navigationType = useNavigationType();
+  
   useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 100);
-  }, []);
+    if (navigationType !== "POP") {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
+    }
+  }, [navigationType]);
 
   return (
     <div className="relative overflow-x-hidden">

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import ProjectDescContainer from "./ProjectDescContainer";
-import projectsDescData from "../projectsDescData.json";
+import projectsDescData from "../projectsDescData";
 
 export default function ProjectDescPage() {
   const { i } = useParams();
@@ -21,10 +21,14 @@ export default function ProjectDescPage() {
     ) {
       projectRefs.current[index].scrollIntoView({
         behavior: "smooth",
-        block: "center",
+        block: "start",
       });
     }
   }, [index]);
+
+   if (isNaN(index) || index < 0 || index >= projectsDescData.length) {
+    return <Navigate to="/notfound" replace />;
+  }
 
   return (
     <div className="flex flex-wrap justify-center gap-8 px-2">
