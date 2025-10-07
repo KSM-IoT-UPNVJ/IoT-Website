@@ -4,6 +4,9 @@ import FadeIn from '../utils/fadeIn';
 import DropdownAnimate from '../utils/dropdownAnimate';
 import { useNavigate } from 'react-router-dom';
 
+import logo from "/Logo_IoT.png";
+import slogan from "/slogan.png";
+
 function Nav() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
@@ -33,18 +36,18 @@ function Nav() {
   const mobileLinkClass =
     'block text-md px-4 py-2 hover:bg-abu-sedang rounded-xl transition';
   return (
-    <div className="sticky bg-gradient-to-r from-biru-muda to-white shadow-md py-6.5 px-7.5 w-full h-auto">
+    <div className="sticky top-0 z-10 bg-gradient-to-r from-biru-muda to-white shadow-md py-6.5 px-7.5 w-full h-auto">
       <div className="flex justify-between items-center">
         {/* logo */}
         <button
           onClick={() => {
             navigate(`/home`);
           }}
-          className="flex items-center space-x-2"
+          className="flex items-center space-x-2 cursor-pointer"
         >
           <div>
             <FadeIn delay={1.2} direction={'left'}>
-              <img src="Logo_IoT.png" alt="logo" className="w-auto h-10" />
+              <img src={logo} alt="logo" className="w-auto h-10" />
             </FadeIn>
           </div>
           <div>
@@ -121,7 +124,7 @@ function Nav() {
 
         <div className="hidden md:block">
           <FadeIn delay={1.2} direction={'down'}>
-            <img src="slogan.png" alt="slogan" className="w-auto h-10" />
+            <img src={slogan} alt="slogan" className="w-auto h-10" />
           </FadeIn>
         </div>
       </div>
