@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 
 export default function OurProjectsCard({
@@ -65,7 +67,6 @@ export default function OurProjectsCard({
                 : description}
             </p>
           </div>
-
         </div>
       </div>
     </>

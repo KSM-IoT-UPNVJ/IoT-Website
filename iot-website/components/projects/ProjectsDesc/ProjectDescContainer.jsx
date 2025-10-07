@@ -1,4 +1,4 @@
-import FadeIn from "/src/utils/fadeIn";
+import FadeIn from '../../../utils/fadeIn';
 
 export default function ProjectDescContainer({
   title,
@@ -12,7 +12,7 @@ export default function ProjectDescContainer({
     <>
       <div className="flex flex-col mx-8 md:mx-15 overflow-hidden select-none">
         <h1 className="font-optima font-extrabold text-center text-biru-tua text-4xl mx-auto mt-10 mb-5 select-none">
-          <FadeIn direction={"right"} delay={0.8}>
+          <FadeIn direction={'right'} delay={0.8}>
             {title}
           </FadeIn>
         </h1>
@@ -29,12 +29,8 @@ export default function ProjectDescContainer({
               )}
             </div>
             <div className="flex w-full flex-col justify-center">
-              <h3 className="text-biru-tua font-extrabold ml-5">
-                {division}
-              </h3>
-              <p className="text-biru-tua font-bold ml-5">
-                {date}
-              </p>
+              <h3 className="text-biru-tua font-extrabold ml-5">{division}</h3>
+              <p className="text-biru-tua font-bold ml-5">{date}</p>
             </div>
           </div>
           {image && (

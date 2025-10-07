@@ -1,5 +1,5 @@
-import Anggotakepengurusan from '../../../iotwebfrontend/src/components/kepengurusan/Anggotakepengurusan';
-import FadeIn from '../../../iotwebfrontend/src/utils/fadeIn';
+import Anggotakepengurusan from '../../components/kepengurusan/Anggotakepengurusan';
+import FadeIn from '../../utils/fadeIn';
 
 function Kepengurusan() {
   return (

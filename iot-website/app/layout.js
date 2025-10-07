@@ -2,6 +2,13 @@ import './globals.css';
 import Nav from '../components/shared/Nav';
 import Footer from '../components/shared/Footer';
 import Bg from '../utils/Bg';
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-poppins',
+});
 
 export const metadata = {
   title: 'KSM IoT UPNVJ',
@@ -11,7 +18,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="relative min-h-screen flex flex-col">
+      <body
+        className="relative min-h-screen flex flex-col"
+        style={{ fontFamily: 'var(--font-poppins)' }}
+      >
         <Nav />
         <Bg />
         {children}

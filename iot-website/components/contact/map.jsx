@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useRef, useState } from 'react';
 import RotatingIcons from '../../utils/RotatingIcons';
 import FadeIn from '../../utils/fadeIn';
@@ -27,7 +29,10 @@ export default function Map() {
 
   return (
     <div className="flex flex-col lg:flex-row bg-biru-tua rounded-xl overflow-hidden">
-      <div ref={mapContainerRef} className="aspect-video w-full flex-1 lg:flex-1/2 p-4 sm:p-6 md:p-8 lg:p-10">
+      <div
+        ref={mapContainerRef}
+        className="aspect-video w-full flex-1 lg:flex-1/2 p-4 sm:p-6 md:p-8 lg:p-10"
+      >
         <FadeIn direction={'left'} delay={0.2} className="w-full h-full">
           {shouldLoadMap ? (
             <iframe
@@ -44,7 +49,9 @@ export default function Map() {
             ></iframe>
           ) : (
             <div className="flex h-full w-full items-center justify-center rounded-xl bg-black/30 text-white">
-              <span className="text-sm font-medium">Map preview loads on scroll</span>
+              <span className="text-sm font-medium">
+                Map preview loads on scroll
+              </span>
             </div>
           )}
         </FadeIn>

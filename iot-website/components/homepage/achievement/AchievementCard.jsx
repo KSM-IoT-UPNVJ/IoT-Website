@@ -1,5 +1,8 @@
+'use client';
+
 import FadeIn from '../../../utils/fadeIn';
 import Card from '../../shared/Card';
+
 export default function AchievementCard({ item, onSelect }) {
   const handleClick = (event) => {
     const rect = event.currentTarget.getBoundingClientRect();
