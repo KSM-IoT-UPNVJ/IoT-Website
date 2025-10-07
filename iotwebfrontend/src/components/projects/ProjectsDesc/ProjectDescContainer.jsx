@@ -1,4 +1,7 @@
+import { useEffect, useState } from "react";
+
 import FadeIn from "/src/utils/fadeIn";
+import HakMilik from "/src/utils/hakMilik";
 
 export default function ProjectDescContainer({
   title,
@@ -7,7 +10,10 @@ export default function ProjectDescContainer({
   date,
   divisionImage,
   image,
+  hm,
 }) {
+  const [show, setShow] = useState(false);
+
   return (
     <>
       <div className="flex flex-col mx-8 md:mx-15 overflow-hidden select-none">
@@ -17,9 +23,9 @@ export default function ProjectDescContainer({
           </FadeIn>
         </h1>
         <FadeIn direction={"right"} delay={0.8}>
-          <div className="flex flex-col gap-8 items-center max-w-200 h-full mx-auto bg-black/20 backdrop-blur-2xl shadow-lg rounded-4xl p-6">
+          <div className="flex flex-col gap-2 items-center max-w-200 h-full mx-auto bg-black/20 backdrop-blur-2xl shadow-lg rounded-4xl p-6">
             <div className="flex flex-row items-center w-full">
-              <div>
+              <div className="mb-4">
                 {divisionImage && (
                   <img
                     src={divisionImage}
@@ -44,12 +50,30 @@ export default function ProjectDescContainer({
                 draggable="false"
               />
             )}
+            {hm && (
+              <button
+                onClick={() => setShow(true)}
+                className="text-biru-tua2 w-full hover:bg-white/40 hover:text-biru-tua2 hover:cursor-pointer"
+              >
+                Meet The Team
+              </button>
+            )}
+
             <div className="text-biru-tua text-base text-justify py-2 w-full whitespace-pre-line">
               <p>{description}</p>
             </div>
           </div>
         </FadeIn>
       </div>
+      {show && (
+        <HakMilik
+          people={hm}
+          title={title + " Team"}
+          height="auto"
+          width="100%"
+          onClose={() => setShow(false)}
+        />
+      )}
     </>
   );
 }

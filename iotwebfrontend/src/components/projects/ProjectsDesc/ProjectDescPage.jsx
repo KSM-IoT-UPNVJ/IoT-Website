@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import ProjectDescContainer from "./ProjectDescContainer";
-import projectsDescData from "./projectsDescData.json";
+import projectsDescData from "../projectsDescData.json";
 
 export default function ProjectDescPage() {
   const { i } = useParams();

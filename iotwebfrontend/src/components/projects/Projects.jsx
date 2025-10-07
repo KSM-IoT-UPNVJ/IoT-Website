@@ -1,49 +1,12 @@
-import { useEffect } from "react";
-
 import OurProjectsContainer from "./OurProjects/OurProjectsContainer";
 import FadeIn from "/src/utils/fadeIn";
 
-import HakMilik from "/src/utils/hakMilik";
-
 function Projects() {
   useEffect(() => {
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }, 100);
-    }, []);
-
-  const HMWeb = [
-    {
-      name: "NAUFALIS FEBRIAN WIBOWO",
-      title: "Head of Engineer Department",
-      image: "/aboutUs/bangFalis.webp",
-    },
-    {
-      name: "ZAHID FAQIH ALIM RABBANI",
-      title: "Head of Software Engineer Division",
-      image: "/aboutUs/bangZahid.webp",
-    },
-    {
-      name: "FAIZ DAFFA MAKARIM",
-      title: "Software Engineer Staff",
-      image: "/aboutUs/bangFaiz.webp",
-    },
-    {
-      name: "MOH GOESNY ISNADY",
-      title: "Software Engineer Staff",
-      image: "/aboutUs/bangGoesny.webp",
-    },
-    {
-      name: "KHALIF FAREL FAUZAN",
-      title: "Software Engineer Staff",
-      image: "/aboutUs/khalif.webp",
-    },
-    {
-      name: "RAMADHANI PUTRA YUDITAMA",
-      title: "Software Engineer Staff",
-      image: "/aboutUs/dhani.webp",
-    },
-  ];
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
+  }, []);
 
   return (
     <>
@@ -55,11 +18,6 @@ function Projects() {
 
       <FadeIn delay={1.2} direction={"down"}>
         <OurProjectsContainer />
-      </FadeIn>
-
-      <FadeIn delay={1.2} direction={"down"}>
-        <HakMilik people={HMWeb} title="Web Development Team" height = "auto" width = "100%"
-/>
       </FadeIn>
     </>
   );

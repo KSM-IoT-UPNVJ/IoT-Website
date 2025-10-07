@@ -5,7 +5,74 @@
     "division": "Software Division X UI/UX Division",
     "date": "XX XX 2025 - XX XX 2025",
     "divisionImage": "/projects/template-foto-OurProjects.jpg",
-    "image": "/projects/template-foto-OurProjects.jpg"
+    "image": "/projects/template-foto-OurProjects.jpg",
+    "hm": [
+      {
+        "name": "NAUFALIS FEBRIAN WIBOWO",
+        "title": "Head of Engineer Department",
+        "image": "/aboutUs/bangFalis.webp"
+      },
+      {
+        "name": "ZAHID FAQIH ALIM RABBANI",
+        "title": "Head of Software Engineer Division",
+        "image": "/aboutUs/bangZahid.webp"
+      },
+      {
+        "name": "FAIZ DAFFA MAKARIM",
+        "title": "Software Engineer Staff",
+        "image": "/aboutUs/bangFaiz.webp"
+      },
+      {
+        "name": "MOH GOESNY ISNADY",
+        "title": "Software Engineer Staff",
+        "image": "/aboutUs/bangGoesny.webp"
+      },
+      {
+        "name": "KHALIF FAREL FAUZAN",
+        "title": "Software Engineer Staff",
+        "image": "/aboutUs/khalif.webp"
+      },
+      {
+        "name": "RAMADHANI PUTRA YUDITAMA",
+        "title": "Software Engineer Staff",
+        "image": "/aboutUs/dhani.webp"
+      },
+      {
+        "name": "KUMARA HISYAM ACHMAD",
+        "title": "Head of UI/UX Engineer Division",
+        "image": "/aboutUs/bangKumkum.webp"
+      },
+      {
+        "name": "FAIRLY PRIMA WIJAYA",
+        "title": "UI/UX Engineer Staff",
+        "image": "/aboutUs/bangFairly.webp"
+      },
+      {
+        "name": "MALEAKHI ADRIEL",
+        "title": "UI/UX Engineer Staff",
+        "image": "/aboutUs/bangAzriel.webp"
+      },
+      {
+        "name": "TEUKU RIFATH ABIZAR",
+        "title": "Head of Network Engineer Division",
+        "image": "/aboutUs/bangRifat.webp"
+      },
+      {
+        "name": "NICO SETYO TRIWIBOWO",
+        "title": "Software Engineer Staff",
+        "image": "/aboutUs/bangNico.webp"
+      },
+      {
+        "name": "IRFAN MUZZAQI",
+        "title": "Software Engineer Staff",
+        "image": "/aboutUs/bangIrfan.webp"
+      },
+      {
+        "name": "GERARD DWI ANGGORO",
+        "title": "Software Engineer Staff",
+        "image": "/aboutUs/bangGerard.webp"
+      }
+    ]
   },
   {
     "title": "Smart Home Prototype",
@@ -14,7 +81,7 @@
     "date": "XX XX 2025 - XX XX 2025",
     "divisionImage": "/projects/smart-home.jpg",
     "image": "/projects/smart-home.jpg"
-  }, 
+  },
   {
     "title": "SiCegah",
     "description": "Sicegah adalah sebuah aplikasi inovatif yang mengintegrasikan tiga teknologi terdepan—Internet of Things (IoT), Artificial Intelligence (AI), dan pemetaan geospasial—untuk memberikan solusi deteksi dini dan pencegahan penyakit menular yang komprehensif. Melalui penggunaan wearable device dan input manual dari pengguna, Sicegah mampu mendeteksi potensi penyakit menular dengan memanfaatkan analisis AI, memberikan peringatan awal yang presisi. Pendekatan proaktif ini memungkinkan masyarakat untuk mengambil tindakan pencegahan lebih cepat, mengurangi risiko penyebaran, dan meningkatkan kesadaran akan kesehatan publik secara keseluruhan. \n \n Lebih dari sekadar deteksi, Sicegah juga berperan sebagai pusat informasi kesehatan yang terpercaya dan real-time. Dengan mengintegrasikan data resmi pemerintah, aplikasi ini mampu menampilkan peta zona wabah secara langsung, memberikan informasi yang akurat mengenai situasi kesehatan di lingkungan sekitar. Hal ini memungkinkan pengguna untuk memantau kondisi dan membuat keputusan yang lebih bijak terkait aktivitas sehari-hari. Fitur ini menjadikan Sicegah bukan hanya sebagai alat bantu individu, tetapi juga sebagai kontributor penting dalam upaya kolektif untuk menjaga keamanan dan kesehatan komunitas. \n \n Untuk melengkapi fungsinya, Sicegah dilengkapi dengan chatbot interaktif yang mempermudah akses ke layanan kesehatan. Pengguna dapat dengan mudah melakukan reservasi layanan medis, mengurangi waktu tunggu, dan memastikan mereka mendapatkan penanganan yang tepat dari para profesional. Fitur ini menjembatani kesenjangan antara masyarakat dan fasilitas kesehatan, menciptakan alur layanan yang lebih efisien dan terorganisir. Secara keseluruhan, Sicegah adalah ekosistem digital yang holistik, didesain untuk memberdayakan masyarakat dengan informasi, deteksi cerdas, dan akses layanan kesehatan yang lebih mudah, menjadikan langkah pencegahan dan penanganan penyakit menular menjadi lebih cepat dan efektif.",

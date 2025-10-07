@@ -1,12 +1,12 @@
 import OurProjectsCard from "./OurProjectsCard.jsx";
-import OurProjectsData from "./ourProjectsData";
+import projectsDescData from "../projectsDescData.json";
 
 import { useNavigate } from "react-router-dom";
 
 export default function OurProjectsContainer() {
   const navigate = useNavigate();
 
-  const realCards = OurProjectsData.map((card) => ({
+  const realCards = projectsDescData.map((card) => ({
     ...card,
     isPlaceholder: false,
   }));
@@ -19,8 +19,6 @@ const fillers = remainder === 0 ? 3 : 3 - remainder;
     image: "/projects/placeholder.jpg",
     isPlaceholder: true,
   }));
-
-  const displayCards = [...realCards, ...fillerCards];
 
   return (
     <div className={`flex flex-wrap justify-center gap-8 px-2`}>
