@@ -43,11 +43,6 @@ function Projects() {
       title: "Software Engineer Staff",
       image: "/aboutUs/dhani.webp",
     },
-    {
-      name: "RAMADHANI PUTRA YUDITAMA",
-      title: "Software Engineer Staff",
-      image: "/aboutUs/dhani.webp",
-    },
   ];
 
   return (
