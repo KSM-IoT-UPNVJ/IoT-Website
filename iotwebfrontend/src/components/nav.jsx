@@ -36,7 +36,7 @@ function Nav() {
   const mobileLinkClass =
     'block text-md px-4 py-2 hover:bg-abu-sedang rounded-xl transition';
   return (
-    <div className="sticky bg-gradient-to-r from-biru-muda to-white shadow-md py-6.5 px-7.5 w-full h-auto">
+    <div className="sticky top-0 z-10 bg-gradient-to-r from-biru-muda to-white shadow-md py-6.5 px-7.5 w-full h-auto">
       <div className="flex justify-between items-center">
         {/* logo */}
         <button

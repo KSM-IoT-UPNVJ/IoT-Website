@@ -18,8 +18,11 @@ export default function ProjectDescContainer({
     <>
       <div className="flex flex-col mx-8 md:mx-15 overflow-hidden select-none">
         <h1 className="font-optima font-extrabold text-center text-biru-tua text-4xl mx-auto mt-10 mb-5 select-none">
+          <FadeIn direction={"right"} delay={0.8}>
             {title}
+          </FadeIn>
         </h1>
+        <FadeIn direction={"right"} delay={0.8}>
           <div className="flex flex-col gap-2 items-center max-w-200 h-full mx-auto bg-black/20 backdrop-blur-2xl shadow-lg rounded-4xl p-6">
             <div className="flex flex-row items-center w-full">
               <div className="mb-4">
@@ -60,6 +63,7 @@ export default function ProjectDescContainer({
               <p>{description}</p>
             </div>
           </div>
+        </FadeIn>
       </div>
       {show && (
         <HakMilik

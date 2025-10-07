@@ -33,7 +33,7 @@ export default function Insight() {
     .map((key) => key.replace("-slide", ""));
 
   if (division && !validDivisions.includes(division)) {
-    return <Navigate to="/notfound" replace />;
+    return <Navigate to="/404" replace />;
   }
 
   return (
