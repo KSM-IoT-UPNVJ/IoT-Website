@@ -7,7 +7,7 @@ import DropdownAnimate from '../../utils/dropdownAnimate';
 import { useRouter } from 'next/navigation';
 
 function Nav() {
-  const navigate = useRouter();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -60,7 +60,7 @@ function Nav() {
         <div className="hidden md:flex justify-center items-center space-x-2">
           <button
             onClick={() => {
-              navigate(`/home`);
+              router.push(`/`);
             }}
             className={linkClass}
           >
@@ -81,14 +81,14 @@ function Nav() {
               <div className="absolute mt-3 shadow-xs rounded-xl border-2 border-biru-muda bg-transparent backdrop-blur-[10px] text-xs animate-fade-in duration-200 z-30">
                 <DropdownAnimate show={open}>
                   <a
-                    onClick={() => navigate(`/aboutus`)}
+                    onClick={() => router.push(`/aboutus`)}
                     className="block rounded-xl text-center text-md px-2 py-2 hover:-translate-y-0.5 transition transform duration-100 hover:bg-abu-sedang"
                   >
                     About Us
                   </a>
                   <button
                     onClick={() => {
-                      navigate(`/kepengurusan`);
+                      router.push(`/kepengurusan`);
                     }}
                     className="block text-md text-center rounded-xl px-2 py-2 hover:-translate-y-0.5 transition transform duration-100 hover:bg-abu-sedang"
                   >
@@ -98,12 +98,12 @@ function Nav() {
               </div>
             )}
           </div>
-          <button onClick={() => navigate(`/project`)} className={linkClass}>
+          <button onClick={() => router.push(`/project`)} className={linkClass}>
             <FadeIn delay={0.8} direction={'down'}>
               Projects
             </FadeIn>
           </button>
-          <button onClick={() => navigate(`/contact`)} className={linkClass}>
+          <button onClick={() => router.push(`/contact`)} className={linkClass}>
             <FadeIn delay={1.0} direction={'down'}>
               Contact
             </FadeIn>
@@ -125,7 +125,7 @@ function Nav() {
       {isMobileMenuOpen && (
         <div className="mt-4 md:hidden bg-white p-4 rounded-xl shadow border border-biru-muda space-y-2 animate-fade-in">
           <button
-            onClick={() => navigate(`/home`)}
+            onClick={() => router.push(`/home`)}
             href="home"
             className={mobileLinkClass}
           >
@@ -143,7 +143,7 @@ function Nav() {
                 <div className="px-5 border-1 border-biru-muda bg-white rounded-xl">
                   <button
                     onClick={() => {
-                      navigate(`/aboutus`);
+                      router.push(`/aboutus`);
                     }}
                     className={mobileLinkClass}
                   >
@@ -151,7 +151,7 @@ function Nav() {
                   </button>
                   <button
                     onClick={() => {
-                      navigate(`/kepengurusan`);
+                      router.push(`/kepengurusan`);
                     }}
                     href="kepengurusan"
                     className={mobileLinkClass}
@@ -164,7 +164,7 @@ function Nav() {
           </div>
           <button
             onClick={() => {
-              navigate(`/project`);
+              router.push(`/project`);
               handleToggleMobileMenu();
             }}
             className={mobileLinkClass}
@@ -173,7 +173,7 @@ function Nav() {
           </button>
           <button
             onClick={() => {
-              navigate(`/contact`);
+              router.push(`/contact`);
               handleToggleMobileMenu();
             }}
             className={mobileLinkClass}

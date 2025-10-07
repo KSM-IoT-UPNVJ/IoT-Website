@@ -1,3 +1,5 @@
+'use client';
+
 import FadeIn from '../../../utils/fadeIn';
 import { useContactForm } from './useContactForm';
 

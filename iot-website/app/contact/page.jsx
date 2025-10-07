@@ -1,7 +1,7 @@
-import Form from '../../../iotwebfrontend/src/components/contact/form/ContactForm';
-import Map from '../../../iotwebfrontend/src/components/contact/map';
-import FadeIn from '../../../iotwebfrontend/src/utils/fadeIn';
-import MediaCard from '../../../iotwebfrontend/src/components/contact/mediaCard';
+import Form from '../../components/contact/form/ContactForm';
+import Map from '../../components/contact/Map';
+import FadeIn from '../../utils/fadeIn';
+import MediaCard from '../../components/contact/MediaCard';
 
 export default function Contact() {
   return (

@@ -1,7 +1,15 @@
+'use client';
+
 import React, { useRef, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { ChevronLeft,ChevronRight } from 'lucide-react';
-import { EffectCoverflow, EffectCards, Navigation, Pagination, Mousewheel} from 'swiper/modules';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import {
+  EffectCoverflow,
+  EffectCards,
+  Navigation,
+  Pagination,
+  Mousewheel,
+} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
@@ -9,9 +17,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-cards';
 import './kepengurusan.css';
 
-
 const baseImages = [
- {
+  {
     src: '/kepengurusan/hrd.webp',
     href: 'https://www.instagram.com/p/DMNEqw_Rkwu/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
   },
@@ -20,7 +27,6 @@ const baseImages = [
     href: 'https://www.instagram.com/p/DMNEOzGxpno/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
   },
 ];
-
 
 const ImageSliderHRD = () => {
   const prevRef = useRef(null);
@@ -38,7 +44,9 @@ const ImageSliderHRD = () => {
   }, []);
 
   // choose images depending on screen size
-  const images = isSmallScreen ? baseImages : [...baseImages, ...baseImages, ...baseImages] ;
+  const images = isSmallScreen
+    ? baseImages
+    : [...baseImages, ...baseImages, ...baseImages];
 
   useEffect(() => {
     // Ensure refs are available before rendering Swiper
@@ -63,11 +71,15 @@ const ImageSliderHRD = () => {
 
   return (
     <div className="w-full flex relative h-auto justify-center items-center">
-      <div className='w-full h-auto'>
+      <div className="w-full h-auto">
         {swiperReady && (
           <Swiper
-            modules={isSmallScreen ? [EffectCards, Navigation, Pagination, Mousewheel] : [EffectCoverflow,Navigation,Mousewheel]}
-            mousewheel={{forceToAxis :true}}
+            modules={
+              isSmallScreen
+                ? [EffectCards, Navigation, Pagination, Mousewheel]
+                : [EffectCoverflow, Navigation, Mousewheel]
+            }
+            mousewheel={{ forceToAxis: true }}
             spaceBetween={0}
             slidesPerView={isSmallScreen ? 1.9 : 3}
             speed={800}
@@ -75,7 +87,7 @@ const ImageSliderHRD = () => {
             watchSlidesProgress={true}
             watchSlidesVisibility={true}
             centeredSlides={true}
-            effect={isSmallScreen ? "cards" : "coverflow"}
+            effect={isSmallScreen ? 'cards' : 'coverflow'}
             coverflowEffect={
               !isSmallScreen
                 ? {
@@ -86,30 +98,28 @@ const ImageSliderHRD = () => {
                     slideShadows: false,
                   }
                 : undefined
-              }
-            cardsEffect={isSmallScreen 
-              ? {slideShadows:false,
-              } : undefined}
+            }
+            cardsEffect={isSmallScreen ? { slideShadows: false } : undefined}
             navigation={{
               prevEl: prevRef.current,
-              nextEl: nextRef.current
+              nextEl: nextRef.current,
             }}
-            pagination={{clickable:true}}
+            pagination={{ clickable: true }}
             breakpoints={{
-              1024: { 
-                spaceBetween:55,
+              1024: {
+                spaceBetween: 55,
                 coverflowEffect: {
-                  stretch:-5,
-                  rotate:60
-                }
-               },
-               1280: { 
-                spaceBetween:110,
+                  stretch: -5,
+                  rotate: 60,
+                },
+              },
+              1280: {
+                spaceBetween: 110,
                 coverflowEffect: {
-                  stretch:0,
-                  rotate:55
-                }
-               },
+                  stretch: 0,
+                  rotate: 55,
+                },
+              },
             }}
             className=""
           >
@@ -117,7 +127,12 @@ const ImageSliderHRD = () => {
               <SwiperSlide key={idx}>
                 <div className="h-auto max-h-[515px] w-auto max-w-[412px] my-[50px] mx-[5px] rounded-[15px] overflow-hidden shadow-lg hover:scale-[1.05]  duration-[0.2s]">
                   <a href={img.href} target="_blank" rel="noopener noreferrer">
-                    <img src={img.src} alt={`slide-${idx}`} className="w-full h-full object-fill" onLoad={() => setImagesLoaded(prev => prev + 1)} />
+                    <img
+                      src={img.src}
+                      alt={`slide-${idx}`}
+                      className="w-full h-full object-fill"
+                      onLoad={() => setImagesLoaded((prev) => prev + 1)}
+                    />
                   </a>
                 </div>
               </SwiperSlide>
@@ -125,18 +140,27 @@ const ImageSliderHRD = () => {
           </Swiper>
         )}
       </div>
-      
 
       <div className="absolute h-[30%] px-[30px] top-1/2 left-0 right-0 flex justify-between items-center transform -translate-y-1/2 z-50 pointer-events-none ">
-        <div className='relative flex items-center justify-end h-full w-[200px] pointer-events-auto z-0 duration-[1s] translate-x-[-160px] group'>
-          <ChevronLeft size={128} className='chevron-left top-1/2 -translate-y-1/2 absolute translate-x-[45px] w-auto h-auto scale-[0.5] sm:scale-[0.8] md:scale-[1]'/>
-          <button ref={prevRef} className="chevron-left hover:cursor-pointer translate-x-[5px] scale-[0.6] sm:scale-[1] h-[80px] w-[50px] z-60 pointer-events-auto"> 
-          </button>
+        <div className="relative flex items-center justify-end h-full w-[200px] pointer-events-auto z-0 duration-[1s] translate-x-[-160px] group">
+          <ChevronLeft
+            size={128}
+            className="chevron-left top-1/2 -translate-y-1/2 absolute translate-x-[45px] w-auto h-auto scale-[0.5] sm:scale-[0.8] md:scale-[1]"
+          />
+          <button
+            ref={prevRef}
+            className="chevron-left hover:cursor-pointer translate-x-[5px] scale-[0.6] sm:scale-[1] h-[80px] w-[50px] z-60 pointer-events-auto"
+          ></button>
         </div>
-        <div className='relative flex items-center  h-full w-[200px] pointer-events-auto z-0 duration-[1s] translate-x-[160px] group'>
-          <ChevronRight size={128} className='chevron-right top-1/2 -translate-y-1/2 absolute translate-x-[-45px] w-auto h-auto scale-[0.5] sm:scale-[0.8] md:scale-[1]'/>
-          <button ref={nextRef} className="chevron-right hover:cursor-pointer translate-x-[-5px] scale-[0.6] sm:scale-[1] h-[80px] w-[50px] z-60 pointer-events-auto">
-          </button>
+        <div className="relative flex items-center  h-full w-[200px] pointer-events-auto z-0 duration-[1s] translate-x-[160px] group">
+          <ChevronRight
+            size={128}
+            className="chevron-right top-1/2 -translate-y-1/2 absolute translate-x-[-45px] w-auto h-auto scale-[0.5] sm:scale-[0.8] md:scale-[1]"
+          />
+          <button
+            ref={nextRef}
+            className="chevron-right hover:cursor-pointer translate-x-[-5px] scale-[0.6] sm:scale-[1] h-[80px] w-[50px] z-60 pointer-events-auto"
+          ></button>
         </div>
       </div>
     </div>

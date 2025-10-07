@@ -1,7 +1,9 @@
-import { useEffect, useRef } from "react";
-import { useParams } from "react-router-dom";
-import ProjectDescContainer from "./ProjectDescContainer";
-import projectsDescData from "./projectsDescData.json";
+'use client';
+
+import { useEffect, useRef } from 'react';
+import { useParams } from 'next/navigation';
+import ProjectDescContainer from './ProjectDescContainer';
+import projectsDescData from './projectsDescData.json';
 
 export default function ProjectDescPage() {
   const { i } = useParams();
@@ -13,8 +15,8 @@ export default function ProjectDescPage() {
   useEffect(() => {
     if (index !== null && projectRefs.current[index]) {
       projectRefs.current[index].scrollIntoView({
-        behavior: "smooth",
-        block: "center",
+        behavior: 'smooth',
+        block: 'center',
       });
     }
   }, [index]);
