@@ -7,7 +7,6 @@ import TeamGallery from '../../components/aboutus/TeamGallery';
 import Nav from '@/components/shared/Nav';
 import Footer from '@/components/shared/Footer';
 
-import '../globals.css';
 function AboutUs() {
   return (
     <>

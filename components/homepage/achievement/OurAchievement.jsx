@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import FadeIn from '../../../utils/fadeIn';
 import AchievementCard from './AchievementCard';
@@ -154,11 +156,13 @@ const OurAchievement = () => {
       </div>
 
       {/* pop up component */}
-      <AchievementPopup
-        item={selectedAchievement}
-        onClose={handleClosePopup}
-        clickedElementPosition={clickedElementPosition}
-      />
+      {selectedAchievement && (
+        <AchievementPopup
+          item={selectedAchievement}
+          onClose={handleClosePopup}
+          clickedElementPosition={clickedElementPosition}
+        />
+      )}
     </div>
   );
 };

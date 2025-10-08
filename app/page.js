@@ -12,7 +12,7 @@ import Footer from '@/components/shared/Footer';
 function Homepage() {
   useEffect(() => {
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }, 300);
   }, []);
 

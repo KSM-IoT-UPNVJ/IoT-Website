@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function IotInsightCard({ image, vol, title, link }) {
   function handleClick() {
@@ -12,9 +13,11 @@ export default function IotInsightCard({ image, vol, title, link }) {
     >
       <div className="flex items-center justify-center min-h-full group-hover:min-h-[365px] transition-all duration-300 ease-in-out">
         {image ? (
-          <img
+          <Image
             src={image}
             alt={title}
+            width={271}
+            height={339}
             className="object-fill text-[var(--color-biru-tua)] w-full group-hover:w-[271px] h-full group-hover:h-[339px] rounded-4xl transition-all duration-300 ease-in-out"
             draggable="false"
           />
