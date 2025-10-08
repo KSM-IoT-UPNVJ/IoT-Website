@@ -23,8 +23,19 @@ export default function MobileInsightCard({
   onSelect,
 }) {
   const navigate = useRouter();
+  const divisionSlug = division.name
+    .replace(/ Division$/i, '')
+    .trim()
+    .toLowerCase()
+    .replace(/\//g, '-')
+    .replace(/\s+/g, '-');
+
   const handleToggle = () => {
     onSelect(isActive ? null : index);
+  };
+  const handleLearnMore = (event) => {
+    event.stopPropagation();
+    navigate(`/insight?division=${encodeURIComponent(divisionSlug)}`);
   };
 
   return (
@@ -82,14 +93,7 @@ export default function MobileInsightCard({
           </h3>
           <motion.button
             type="button"
-            onClick={() =>
-              navigate(
-                `/insight/${division.name
-                  .replace(' Division', '')
-                  .toLowerCase()
-                  .replace('/', '-')}`,
-              )
-            }
+            onClick={handleLearnMore}
             className="rounded-full bg-blue-700 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white transition-colors duration-300 hover:bg-yellow-400 hover:text-black"
             variants={contentVariants}
             animate={isActive ? 'active' : 'inactive'}

@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useState } from "react";
 import FadeIn from "../../../utils/fadeIn";
 
@@ -12,13 +14,18 @@ const LayoutProgram = ({ program }) => {
   const sliderImages = program.data.fotoSlider || [];
 
   useEffect(() => {
+    if (sliderImages.length <= 1) {
+      return;
+    }
+
     const interval = setInterval(() => {
       setCurrentIndex((prev) =>
         prev === sliderImages.length - 1 ? 0 : prev + 1
       );
     }, 3000); // ganti foto tiap 3 detik
+
     return () => clearInterval(interval);
-  }, []);
+  }, [sliderImages.length]);
 
   return (
     <div className="min-h-screen relative pt-13 pb-28 px-6 md:px-12 bg-transparent select-none">

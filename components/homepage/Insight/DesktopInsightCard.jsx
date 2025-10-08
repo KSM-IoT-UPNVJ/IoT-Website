@@ -11,6 +11,13 @@ const DesktopInsightCard = ({
   onClear,
 }) => {
   const router = useRouter();
+  const divisionSlug = division.name
+    .replace(/ Division$/i, '')
+    .trim()
+    .toLowerCase()
+    .replace(/\//g, '-')
+    .replace(/\s+/g, '-');
+
   const handleMouseEnter = () => {
     if (typeof onSelect === 'function') {
       onSelect(index);
@@ -85,10 +92,7 @@ const DesktopInsightCard = ({
           className="bg-blue-800 hover:bg-yellow-400 text-white hover:text-black px-6 py-2 rounded-full transition-colors duration-300 text-sm"
           onClick={() =>
             router.push(
-              `/insight/${division.name
-                .replace(' Division', '')
-                .toLowerCase()
-                .replace('/', '-')}`,
+              `/insight?division=${encodeURIComponent(divisionSlug)}`,
             )
           }
         >

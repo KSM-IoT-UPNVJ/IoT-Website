@@ -1,14 +1,13 @@
-import { useParams } from 'react-router-dom';
+import FadeIn from '../../../utils/fadeIn';
 import LayoutProgram from './layoutProgram.jsx';
-import FadeIn from '/src/utils/fadeIn';
-import ourProgramData from './ourProgramData.json'; // adjust path and extension as needed
 
-export default function ProgramPage() {
-  const { programId } = useParams(); // ambil id dari URL
-  const program = ourProgramData[programId]; // ambil data dari JSON
-
+export default function ProgramPage({ program }) {
   if (!program) {
-    return <h2 className="text-center text-red-500">Program not found</h2>;
+    return (
+      <div className="py-24 text-center text-lg font-semibold text-red-500">
+        Program not found
+      </div>
+    );
   }
 
   return (
