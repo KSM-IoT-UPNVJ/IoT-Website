@@ -5,6 +5,8 @@ import { useSearchParams } from 'next/navigation';
 
 import FadeIn from '../../utils/fadeIn';
 import IotInsightSection from '../../components/insight/IotInsightSection';
+import Nav from '@/components/shared/Nav';
+import Footer from '@/components/shared/Footer';
 
 export default function Insight() {
   const searchParams = useSearchParams();
@@ -25,6 +27,7 @@ export default function Insight() {
 
   return (
     <>
+    <Nav />
       <FadeIn delay={0.8} direction={'down'}>
         <h1 className="flex items-center justify-center font-bold text-[50px] text-[var(--color-biru-tua)] text-center mx-5 mt-10 mb-5">
           IoT Insight
@@ -38,6 +41,7 @@ export default function Insight() {
         <IotInsightSection division={'ui/ux'} carouselReverse={false} />
         <IotInsightSection division={'network'} carouselReverse={true} />
       </FadeIn>
+      <Footer />
     </>
   );
 }

@@ -1,6 +1,4 @@
 import './globals.css';
-import Nav from '../components/shared/Nav';
-import Footer from '../components/shared/Footer';
 import Bg from '../utils/Bg';
 import { Poppins } from 'next/font/google';
 
@@ -22,10 +20,8 @@ export default function RootLayout({ children }) {
         className="relative min-h-screen flex flex-col"
         style={{ fontFamily: 'var(--font-poppins)' }}
       >
-        <Nav />
         <Bg />
         {children}
-        <Footer />
       </body>
     </html>
   );

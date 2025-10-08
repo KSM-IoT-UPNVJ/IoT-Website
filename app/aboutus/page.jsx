@@ -1,26 +1,22 @@
-'use client';
-
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import WhatIs from '../../components/AboutUs/WhatIs';
-import Slogan from '../../components/AboutUs/Slogan';
+import WhatIs from '../../components/aboutus/WhatIs';
+import Slogan from '../../components/aboutus/Slogan';
 import Goals from '../../components/aboutus/Goals';
-import TeamGallery from '../../components/AboutUs/TeamGallery';
-import '../globals.css';
-import { useEffect } from 'react';
-function AboutUs() {
-  useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'instant' });
-    }, 300);
-  }, []);
+import TeamGallery from '../../components/aboutus/TeamGallery';
+import Nav from '@/components/shared/Nav';
+import Footer from '@/components/shared/Footer';
 
+import '../globals.css';
+function AboutUs() {
   return (
     <>
+      <Nav />
       <WhatIs />
       <Slogan />
       <Goals />
       <TeamGallery />
+      <Footer />
     </>
   );
 }

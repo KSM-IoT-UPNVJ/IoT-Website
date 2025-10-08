@@ -2,9 +2,13 @@ import Form from '../../components/contact/form/ContactForm';
 import Map from '../../components/contact/Map';
 import FadeIn from '../../utils/fadeIn';
 import MediaCard from '../../components/contact/MediaCard';
+import Nav from '@/components/shared/Nav';
+import Footer from '@/components/shared/Footer';
 
 export default function Contact() {
   return (
+    <>
+    <Nav />
     <div className="mx-4 sm:mx-6 md:mx-8 lg:mx-15">
       <div className="text-center my-6 sm:my-8 md:my-10">
         <FadeIn delay={0.1} direction={'down'}>
@@ -32,5 +36,7 @@ export default function Contact() {
 
       <Map />
     </div>
+    <Footer />
+    </>
   );
 }
