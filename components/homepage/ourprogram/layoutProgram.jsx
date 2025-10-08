@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useEffect, useState } from "react";
-import FadeIn from "../../../utils/fadeIn";
+import React, { useEffect, useState } from 'react';
+import FadeIn from '../../../utils/fadeIn';
+import Image from 'next/image';
 
 const LayoutProgram = ({ program }) => {
   // Saat di klik our program, halaman akan muncul dari atas
@@ -20,7 +21,7 @@ const LayoutProgram = ({ program }) => {
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) =>
-        prev === sliderImages.length - 1 ? 0 : prev + 1
+        prev === sliderImages.length - 1 ? 0 : prev + 1,
       );
     }, 3000); // ganti foto tiap 3 detik
 
@@ -30,9 +31,8 @@ const LayoutProgram = ({ program }) => {
   return (
     <div className="min-h-screen relative pt-13 pb-28 px-6 md:px-12 bg-transparent select-none">
       <div className="w-[92%] max-w-[1300px] mx-auto">
-
         {/* Judul Halaman */}
-        <FadeIn direction={"left"} delay={0.5}>
+        <FadeIn direction={'left'} delay={0.5}>
           <h2 className="text-[60px] font-bold text-center text-gray-800 mb-8 font-optima">
             {program.data.title}
           </h2>
@@ -41,20 +41,21 @@ const LayoutProgram = ({ program }) => {
         {/* Card Utama */}
         <article className="relative z-8 rounded-3xl bg-white/30 backdrop-blur-md border border-white/20 shadow-2xl overflow-hidden">
           <div className="p-10 md:p-10">
-            
             {/* Header Author */}
-            <FadeIn direction={"up"} delay={0.3}>
+            <FadeIn direction={'up'} delay={0.3}>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-4 border-white shadow">
-                  <img
+                  <Image
                     src={program.data.headerAuthor}
+                    width={64}
+                    height={64}
                     alt="Nama Header Author"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">
-                    Written by{" "}
+                    Written by{' '}
                     <span className="font-extrabold text-gray-900">
                       {program.author.namaHeader}
                     </span>
@@ -67,7 +68,7 @@ const LayoutProgram = ({ program }) => {
             </FadeIn>
 
             {/* Kotak Foto Besar */}
-            <FadeIn direction={"right"} delay={0.5}>
+            <FadeIn direction={'right'} delay={0.5}>
               <div className="w-full rounded-md overflow-hidden mb-8">
                 <img
                   src={program.data.fotoHeader}
@@ -79,39 +80,40 @@ const LayoutProgram = ({ program }) => {
 
             {/* Konten Teks */}
             <div className="max-w-5xl mx-auto text-gray-800 text-justify">
-
               {/* Intro */}
-              <FadeIn direction={"left"} delay={0.6}>
+              <FadeIn direction={'left'} delay={0.6}>
                 <p className="mb-8 text-base md:text-lg leading-relaxed">
                   {program.data.deskripsi1}
                 </p>
               </FadeIn>
 
               {/* Paragraf */}
-              <FadeIn direction={"right"} delay={0.6}>
+              <FadeIn direction={'right'} delay={0.6}>
                 <p className="mb-8 text-base md:text-lg leading-relaxed">
                   {program.data.deskripsi2}
                 </p>
               </FadeIn>
-              
-              <FadeIn direction={"left"} delay={0.7}>
+
+              <FadeIn direction={'left'} delay={0.7}>
                 <p className="mb-8 text-base md:text-lg leading-relaxed">
                   {program.data.deskripsi3}
                 </p>
               </FadeIn>
 
               {/* Testimoni + Footer Author + Foto */}
-              <FadeIn direction={"left"} delay={0.9}>
+              <FadeIn direction={'left'} delay={0.9}>
                 <div className="flex flex-col md:flex-row items-start mt-8">
                   <div className="md:w-2/3 w-full pr-6 flex flex-col">
                     <p className="text-base md:text-lg leading-relaxed text-gray-800 mb-4">
                       &quot;{program.data.testimoni}&quot;
                     </p>
 
-                    <FadeIn direction={"up"} delay={0.6}>
+                    <FadeIn direction={'up'} delay={0.6}>
                       <div className="flex items-center gap-4 mb-6">
                         <div className="w-14 h-14 rounded-full overflow-hidden border-4 border-white shadow">
-                          <img
+                          <Image
+                            width={56}
+                            height={56}
                             src={program.data.footerAuthor}
                             alt="Nama Footer Author"
                             className="w-full h-full object-cover"
@@ -131,9 +133,11 @@ const LayoutProgram = ({ program }) => {
 
                   {/* Kolom kanan: Foto kolase */}
                   <div className="md:w-1/2 w-full flex items-center justify-center mt-6 md:mt-0">
-                    <img
+                    <Image
                       src={program.data.fotoKolase}
                       alt="Foto Kolase"
+                      width={367}
+                      height={367}
                       className="rounded-md w-full h-auto max-h-[367px] object-contain"
                     />
                   </div>

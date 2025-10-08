@@ -1,6 +1,6 @@
 import React from 'react';
 import FadeIn from '../../utils/fadeIn';
-
+import Image from 'next/image';
 const VisionMission = () => {
   return (
     <div className="w-full max-h-screen px-4 sm:px-8 md:px-20 py-12 sm:py-16 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10">
@@ -47,9 +47,11 @@ const VisionMission = () => {
       {/* Kanan: Gambar Logo */}
       <div className="md:w-1/2 hidden md:flex justify-center px-4 sm:px-0">
         <FadeIn direction="right" delay={0.6}>
-          <img
+          <Image
             src="/Logo_IoT.png"
             alt="Logo KSM IoT"
+            width={400}
+            height={400}
             className="w-[70%] sm:w-[60%] md:w-auto max-w-xs sm:max-w-sm md:max-w-md h-auto"
           />
         </FadeIn>

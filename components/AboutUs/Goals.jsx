@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import FadeIn from '../../utils/fadeIn';
+import Image from 'next/image';
 
 export default function VisiMisiSection() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -77,9 +78,12 @@ export default function VisiMisiSection() {
                 />
 
                 {/* ICON tetap ada, cuma dikasih fade, tapi tidak hidden */}
-                <img
+                <Image
+                  width={120}
+                  height={120}
                   src={box.icon}
-                  className={`w-30 h-30 sm:w-54 sm:h-45 mx-auto mb-3 sm:mb-4 transition-all duration-400 z-10 select-none
+                  alt="image"
+                  className={`sm:w-54 sm:h-45 mx-auto mb-3 sm:mb-4 transition-all duration-400 z-10 select-none
     ${
       isActive
         ? 'opacity-0 scale-90'

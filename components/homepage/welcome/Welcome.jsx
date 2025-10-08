@@ -6,32 +6,32 @@ import 'swiper/css';
 
 const Home = () => {
   const imagesRow1 = [
-    'homepage/foto1.webp',
-    'homepage/foto2.webp',
-    'homepage/foto3.webp',
-    'homepage/foto4.webp',
-    'homepage/foto5.webp',
+    '/homepage/foto1.webp',
+    '/homepage/foto2.webp',
+    '/homepage/foto3.webp',
+    '/homepage/foto4.webp',
+    '/homepage/foto5.webp',
   ];
   const imagesRow2 = [
-    'homepage/foto8.webp',
-    'homepage/foto9.webp',
-    'homepage/foto10.webp',
-    'homepage/foto11.webp',
-    'homepage/foto12.webp',
+    '/homepage/foto8.webp',
+    '/homepage/foto9.webp',
+    '/homepage/foto10.webp',
+    '/homepage/foto11.webp',
+    '/homepage/foto12.webp',
   ];
   const imagesRow3 = [
-    'homepage/foto15.webp',
-    'homepage/foto16.webp',
-    'homepage/foto17.webp',
-    'homepage/foto18.webp',
-    'homepage/foto19.webp',
+    '/homepage/foto15.webp',
+    '/homepage/foto16.webp',
+    '/homepage/foto17.webp',
+    '/homepage/foto18.webp',
+    '/homepage/foto19.webp',
   ];
   const imagesRow4 = [
-    'homepage/foto22.webp',
-    'homepage/foto23.webp',
-    'homepage/foto21.webp',
-    'homepage/foto14.webp',
-    'homepage/foto20.webp',
+    '/homepage/foto22.webp',
+    '/homepage/foto23.webp',
+    '/homepage/foto21.webp',
+    '/homepage/foto14.webp',
+    '/homepage/foto20.webp',
   ];
 
   return (

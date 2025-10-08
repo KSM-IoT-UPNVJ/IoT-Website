@@ -3,6 +3,7 @@ import FadeIn from '../../../utils/fadeIn';
 import Card from '../../shared/Card';
 import ourProgramData from './ourProgramData.json';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 const OurProgram = () => {
   const scrollRef = useRef(null);
@@ -82,7 +83,13 @@ const OurProgram = () => {
             transition: 'opacity 0.3s ease',
           }}
         >
-          <img src="/Chevron_left.png" alt="left" className="w-16 h-16" />
+          <Image
+            src="/Chevron_left.png"
+            width={64}
+            height={64}
+            alt="left"
+            className="w-16 h-16"
+          />
         </button>
 
         {/* Area Scroll kanan dan Kiri */}
@@ -113,7 +120,7 @@ const OurProgram = () => {
             transition: 'opacity 0.3s ease',
           }}
         >
-          <img src="/Chevron_right.png" alt="right" className="w-16 h-16" />
+          <Image src="/Chevron_right.png" width={64} height={64} alt="right" />
         </button>
       </div>
     </div>
