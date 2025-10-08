@@ -1,13 +1,14 @@
 import { useEffect, useRef } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import ProjectDescContainer from "./ProjectDescContainer";
-import projectsDescData from "./projectsDescData.json";
+import projectsDescData from "../projectsDescData";
 
 export default function ProjectDescPage() {
   const { i } = useParams();
   const index = i ? parseInt(i, 10) - 1 : null;
 
   const projectRefs = useRef([]);
+  const HEADER_HEIGHT = 0;
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -19,12 +20,19 @@ export default function ProjectDescPage() {
       !isNaN(index) &&
       projectRefs.current[index]
     ) {
-      projectRefs.current[index].scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
+      const el = projectRefs.current[index];
+
+      setTimeout(() => {
+        const elementTop =
+          el.getBoundingClientRect().top + window.pageYOffset - HEADER_HEIGHT;
+        window.scrollTo({ top: elementTop, behavior: "smooth" });
+      }, 50); 
     }
   }, [index]);
+
+  if (isNaN(index) || index < 0 || index >= projectsDescData.length) {
+    return <Navigate to="/404" replace />;
+  }
 
   return (
     <div className="flex flex-wrap justify-center gap-8 px-2">

@@ -1,17 +1,23 @@
 import FadeIn from "/src/utils/fadeIn";
 import IotInsightSection from "./IotInsightSection";
 
-import { useParams } from "react-router-dom";
+import { useParams, useNavigationType, Navigate } from "react-router-dom";
 import { useEffect } from "react";
+
+import iotInsightData from "./iotInsightData";
 
 export default function Insight() {
   const { division } = useParams();
 
+  const navigationType = useNavigationType();
+  
   useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 100);
-  }, []);
+    if (navigationType !== "POP") {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
+    }
+  }, [navigationType]);
 
   useEffect(() => {
     if (division) {
@@ -21,6 +27,14 @@ export default function Insight() {
       }
     }
   }, [division]);
+
+  const validDivisions = Object.keys(iotInsightData)
+    .filter((key) => key.endsWith("-slide"))
+    .map((key) => key.replace("-slide", ""));
+
+  if (division && !validDivisions.includes(division)) {
+    return <Navigate to="/404" replace />;
+  }
 
   return (
     <>
@@ -34,7 +48,7 @@ export default function Insight() {
         <IotInsightSection division={"firmware"} carouselReverse={true} />
         <IotInsightSection division={"hardware"} carouselReverse={false} />
         <IotInsightSection division={"software"} carouselReverse={true} />
-        <IotInsightSection division={"ui/ux"} carouselReverse={false} />
+        <IotInsightSection division={"uiux"} carouselReverse={false} />
         <IotInsightSection division={"network"} carouselReverse={true} />
       </FadeIn>
     </>

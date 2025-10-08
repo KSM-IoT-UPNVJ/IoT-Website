@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-
+import Button from './button.jsx';
 // Card component with hover effects and responsive design
 
 export default function Card({
@@ -65,6 +65,7 @@ export default function Card({
         <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
       )}
       {/* Title */}
+
       <motion.h3
         className={'font-bold font-poppins ' + titleColorClass + ' z-10'}
         animate={{
@@ -85,7 +86,7 @@ export default function Card({
       {/* Description + Button */}
       <motion.div
         initial={{ y: 50, opacity: 0 }}
-        className="absolute top-0 left-1/2 w-full h-full -translate-x-1/2 px-4 sm:px-6 md:px-9 flex flex-col justify-center items-center text-center"
+        className={`absolute top-0 left-1/2 w-full h-full -translate-x-1/2 px-4 sm:px-6 md:px-9 flex flex-col items-center text-center ${isMobile ? 'pt-16 pb-3' : 'pt-24 pb-4'} z-20`}
         animate={{
           opacity: isHovered ? 1 : 0,
           y: isHovered ? 0 : 50,
@@ -93,19 +94,13 @@ export default function Card({
         transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
         <motion.p
-          className={'mb-4 text-xs sm:text-sm mt-2 ' + descriptionColorClass}
+          className={'text-xs sm:text-sm mt-2 ' + descriptionColorClass}
         >
           {truncatedDescription}
         </motion.p>
-        <motion.button
-          onClick={onButtonClick}
-          className="absolute bottom-4 sm:bottom-5 bg-blue-700 hover:bg-yellow-400 text-white hover:text-black px-5 sm:px-6 py-2 rounded-full cursor-pointer text-sm"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-        >
-          Learn More
-        </motion.button>
+        <div className="mt-auto w-full flex justify-center pb-2 sm:pb-3 md:pb-4">
+          <Button onButtonClick={onButtonClick}>Learn More</Button>
+        </div>
       </motion.div>
     </motion.div>
   );
