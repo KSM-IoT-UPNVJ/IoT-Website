@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 const OurProgram = () => {
   const scrollRef = useRef(null);
-  const navigate = useRouter();
+  const router = useRouter();
 
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -60,7 +60,7 @@ const OurProgram = () => {
   );
 
   const handleProgramClick = (slug) => {
-    navigate('/program/' + slug);
+    router.push(`/program/${slug}`);
   };
 
   return (

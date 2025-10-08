@@ -1,5 +1,4 @@
 import OurProjectsContainer from '../../components/projects/OurProjects/OurProjectsContainer';
-import ProjectDescPage from '../../components/projects/ProjectsDesc/ProjectDescPage';
 import FadeIn from '../../utils/fadeIn';
 
 function Projects() {

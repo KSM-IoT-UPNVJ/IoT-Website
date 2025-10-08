@@ -85,7 +85,6 @@ const ImageSliderHRD = () => {
             speed={800}
             loop={isSmallScreen ? false : true}
             watchSlidesProgress={true}
-            watchSlidesVisibility={true}
             centeredSlides={true}
             effect={isSmallScreen ? 'cards' : 'coverflow'}
             coverflowEffect={

@@ -1,35 +1,76 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { useParams } from 'next/navigation';
 import ProjectDescContainer from './ProjectDescContainer';
 import projectsDescData from './projectsDescData.json';
 
-export default function ProjectDescPage() {
-  const { i } = useParams();
-  const index = i ? parseInt(i, 10) - 1 : null;
+const toSingleValue = (value) =>
+  Array.isArray(value) ? value[0] : value ?? undefined;
 
-  // Refs for each project
+export default function ProjectDescPage({ slug: slugProp }) {
+  const params = useParams();
+  const paramSlug = params ? toSingleValue(params.slug) : undefined;
+  const paramIndexRaw = params ? toSingleValue(params.i) : undefined;
+  const paramIndex = paramIndexRaw ? parseInt(paramIndexRaw, 10) - 1 : null;
+
+  const derivedSlugFromIndex =
+    paramIndex !== null && projectsDescData[paramIndex]
+      ? projectsDescData[paramIndex].slug
+      : undefined;
+
+  const slug = slugProp ?? paramSlug ?? derivedSlugFromIndex;
+
+  const selectedProject = slug
+    ? projectsDescData.find((project) => project.slug === slug)
+    : undefined;
+
+  const showAllProjects = !selectedProject;
+
   const projectRefs = useRef([]);
 
   useEffect(() => {
-    if (index !== null && projectRefs.current[index]) {
-      projectRefs.current[index].scrollIntoView({
+    if (!showAllProjects || paramIndex === null) {
+      return;
+    }
+
+    const target = projectRefs.current[paramIndex];
+    if (target) {
+      target.scrollIntoView({
         behavior: 'smooth',
         block: 'center',
       });
     }
-  }, [index]);
+  }, [showAllProjects, paramIndex]);
+
+  useEffect(() => {
+    if (!showAllProjects) {
+      projectRefs.current = [];
+    }
+  }, [showAllProjects]);
+
+  const cardsToRender = useMemo(() => {
+    if (selectedProject) {
+      return [selectedProject];
+    }
+    return projectsDescData;
+  }, [selectedProject]);
 
   return (
     <div className="flex flex-wrap justify-center gap-8 px-2">
-      {projectsDescData.map((card, idx) => (
+      {cardsToRender.map((card, idx) => (
         <div
-          key={idx}
-          ref={(el) => (projectRefs.current[idx] = el)}
+          key={card.slug ?? idx}
+          ref={
+            showAllProjects
+              ? (el) => {
+                  projectRefs.current[idx] = el;
+                }
+              : undefined
+          }
           className="w-full"
         >
-          <ProjectDescContainer id={idx + 1} {...card} />
+          <ProjectDescContainer {...card} />
         </div>
       ))}
     </div>

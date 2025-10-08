@@ -94,7 +94,6 @@ const ImageSliderBPH = () => {
             initialSlide={0}
             slidesPerView={isSmallScreen ? 1.9 : 3}
             watchSlidesProgress={true}
-            watchSlidesVisibility={true}
             effect={isSmallScreen ? 'cards' : 'coverflow'}
             coverflowEffect={
               !isSmallScreen
