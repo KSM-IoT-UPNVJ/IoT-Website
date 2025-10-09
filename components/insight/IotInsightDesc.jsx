@@ -79,7 +79,7 @@ export default function IotInsightDesc({division2}) {
         </div>
       )}
 
-      {division2 === "ui/ux" && (
+      {division2 === "uiux" && (
         <div className="space-y-4">
           <p className="text-xs md:text-sm lg:text-base xl:text-xl 2xl:text-2xl">
             Teknologi akan sia-sia tanpa pengalaman pengguna yang nyaman.

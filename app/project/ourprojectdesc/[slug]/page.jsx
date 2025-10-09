@@ -8,8 +8,8 @@ import Footer from '@/components/shared/Footer.jsx';
 
 const TITLE = 'Project Description';
 
-export default function ProjectDetailPage({ params }) {
-  const { slug } = params ?? {};
+export default async function ProjectDetailPage({ params }) {
+  const { slug } = await params;
   const normalizedSlug = Array.isArray(slug) ? slug[0] : slug;
   const projectExists = projectsDescData.some(
     (project) => project.slug === normalizedSlug,

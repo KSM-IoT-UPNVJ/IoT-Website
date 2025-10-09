@@ -1,17 +1,17 @@
-import iotInsightData from "./iotInsightData";
-import IotInsightCarousel from "./IotInsightCarousel";
-import IotInsightCard from "./IotInsightCard";
-import IotInsightDesc from "./IotInsightDesc";
+import iotInsightData from './iotInsightData';
+import IotInsightCarousel from './IotInsightCarousel';
+import IotInsightCard from './IotInsightCard';
+import IotInsightDesc from './IotInsightDesc';
 
 export default function IotInsightSection({ division, carouselReverse }) {
-  const divisionData = iotInsightData[division + "-slide"];
+  const divisionData = iotInsightData[division + '-slide'];
 
   return (
     <>
       <div
-      id={division.toLowerCase().replace('/', '-')}
+        id={division.toLowerCase().replace('/', '-')}
         className={`flex flex-col-reverse mx-8 md:mx-15 py-5 my-10 bg-black/10 backdrop-blur-2xl shadow-lg rounded-4xl overflow-hidden select-none ${
-          carouselReverse ? "md:flex-row-reverse" : "md:flex-row"
+          carouselReverse ? 'md:flex-row-reverse' : 'md:flex-row'
         }`}
       >
         <div className="flex flex-col w-auto md:max-w-[45%] mx-2 px-3 pt-2 pb-6">
@@ -22,15 +22,16 @@ export default function IotInsightSection({ division, carouselReverse }) {
             Division
           </h2>
 
-          <IotInsightDesc division2={division}/>
+          <IotInsightDesc division2={division} />
         </div>
 
         <div className="mx-2 overflow-hidden flex justify-center my-auto">
-            <IotInsightCarousel reverse={carouselReverse}>
-              {divisionData.map((card, i) => (
+          <IotInsightCarousel reverse={carouselReverse}>
+            {Array.isArray(divisionData) &&
+              divisionData.map((card, i) => (
                 <IotInsightCard key={i} {...card} />
               ))}
-            </IotInsightCarousel>
+          </IotInsightCarousel>
         </div>
       </div>
     </>

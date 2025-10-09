@@ -10,9 +10,7 @@ function ProjectsDesc() {
         </h1>
       </FadeIn>
 
-      <FadeIn delay={1.2} direction={"down"}>
         <ProjectDescPage />
-      </FadeIn>
     </>
   );
 }
