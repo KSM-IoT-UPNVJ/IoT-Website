@@ -1,5 +1,6 @@
 import FadeIn from '../../../utils/fadeIn';
 import Card from '../Card';
+import React, { useState } from 'react';
 export default function AchievementCard({ item, onSelect }) {
   const handleClick = (event) => {
     const rect = event.currentTarget.getBoundingClientRect();
@@ -11,13 +12,30 @@ export default function AchievementCard({ item, onSelect }) {
     };
     onSelect(item, elementPosition);
   };
+  const [isHovered, setIsHovered] = useState(false);
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+  const achievementcard = isHovered 
+    ? true
+    : undefined;
   return (
     <FadeIn direction={'right'} delay={0.6}>
-      <Card
-        onButtonClick={handleClick}
-        title={item.title}
-        description={item.description}
-      />
+      <div 
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className="h-full w-full">
+        <Card
+          onButtonClick={handleClick}
+          title={item.title}
+          description={item.description}
+          backgroundImage={item.image}
+          achievement={true}
+        />
+      </div>
     </FadeIn>
   );
 }

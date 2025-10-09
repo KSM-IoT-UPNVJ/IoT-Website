@@ -14,7 +14,7 @@ const OurAchievement = () => {
       award: 'Peringkat 12 Nasional Wilayah 1',
       description:
         'Robot Indonesia (KRI) adalah kegiatan kompetisi tahunan mahasiswa dalam bidang rancang bangun dan rekayasa robotika yang dapat diikuti oleh seluruh mahasiswa pada perguruan tinggi di  wilayah Republik Indonesia, dari berbagai K/L atau kedinasan, yang tercatat pada Pangkalan Data Pendidikan TInggi. KRI 2023 diselenggarakan oleh Balai Pengembangan Talenta Indonesia (BPTI) Pusat Prestasi Nasional (Puspresnas) Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi (Kemendikbudristek) Republik Indonesia. KRI  pertama kali diselenggarakan pada tahun 2003 di bawah Direktorat Jenderal Pendidikan Tinggi. Kontes Robot Indonesia tahun 2023 mempertandingkan 7 (tujuh) divisi, yaitu Kontes Robot ABU Indonesia (KRAI); Kontes Robot SAR Indonesia (KRSRI); Kontes Robot Sepak Bola Indonesia (KRSBI) Beroda; Kontes Robot Sepak Bola Indonesia (KRSBI) Humanoid; Kontes Robot Seni Tari Indonesia (KRSTI); Kontes Robot Tematik Indonesia (KRTMI); Kontes Robot Bawah Air Indonesia (KRBAI).',
-      image: '/homepage/achievement/krsti2023/krsti_2023_1.jpg',
+      image: '/homepage/achievement/krsti2023/krsti_2023_1.webp',
       images: [
         '/homepage/achievement/krsti2023/krsti_2023_1.webp',
         '/homepage/achievement/krsti2023/krsti_2023_2.webp',
@@ -57,10 +57,10 @@ const OurAchievement = () => {
       title: 'LKTI Gravitasi UHO 2023',
       award: 'Peringkat I',
       description: 'Gebyar Civitas Sains Fisika 2023 dengan Tema "Mewujudkan generasi muda untuk meningkatkan kreativitas sains dan teknologi yang mampu bersaing di era society 5.0"',
-      image: '/homepage/achievement/UHO 2023/UHO1.webp',
+      image: '/homepage/achievement/UHO2023/UHO1.webp',
       images: [
-              '/homepage/achievement/UHO 2023/UHO1.webp',
-              '/homepage/achievement/UHO 2023/UHO2.webp'],
+              '/homepage/achievement/UHO2023/UHO1.webp',
+              '/homepage/achievement/UHO2023/UHO2.webp'],
       time: '25/10/2023 - 28/10/2023',
       organizer: 'Himpunan Mahasiswa Jurusan Fisika FMIPA Universitas Halu Oleo',
       contributors: ['Naufal Firdaus','Sheva Nurhaliza','Heri Hardiyanto'],
@@ -70,8 +70,8 @@ const OurAchievement = () => {
       title: "Essay INFAIR 2023",
       award: 'Peringkat I',
       description: '"KOMPETISI essay INDUSTRIAL FAIR 2023""Optimalisasi Potensi Daerah Untuk Pengembangan Kawasan Industri Berbasis Digital"',
-      image: 'iotwebfrontend/public/homepage/achievement/infair 2023/infair1.webp',
-      images: ['iotwebfrontend/public/homepage/achievement/infair 2023/infair1.webp','/homepage/achievement/infair 2023/infair2.webp'],
+      image: '/homepage/achievement/infair2023/infair1.webp',
+      images: ['/homepage/achievement/infair2023/infair1.webp','/homepage/achievement/infair2023/infair2.webp'],
       time: '11/11/2023',
       organizer: 'Himpunan Mahasiswa Teknik Industri Universitas Pembangunan Nasional Veteran Jakarta',
       contributors: ['Naufal Firdaus','Farhan Aditya'],
@@ -169,6 +169,10 @@ const OurAchievement = () => {
     setClickedElementPosition(null);
   };
 
+  const sortedAchievements = achievements
+    .slice() 
+    .sort((a, b) => b.id - a.id); 
+
   return (
     <div className="py-24 px-8 flex flex-col items-center justify-center">
       <FadeIn direction={'left'} delay={0.3}>
@@ -179,7 +183,7 @@ const OurAchievement = () => {
 
       {/* card component */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-full">
-        {achievements.map((item) => (
+        {sortedAchievements.map((item) => (
           <AchievementCard
             key={item.id}
             item={item}

@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { div } from 'framer-motion/client';
 
 // Card component with hover effects and responsive design
 
 export default function Card({
-  title = 'Comming Soon',
-  description = 'Comming Soon',
+  title = 'Coming Soon',
+  description = 'Coming Soon',
   onButtonClick,
   className = '',
   backgroundImage = '',
+  achievement = '',
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(() => {
@@ -17,6 +19,7 @@ export default function Card({
   });
 
   const hasBackgroundImage = Boolean(backgroundImage);
+  const isAchievement = Boolean(achievement);
   const safeDescription = description ?? '';
   const truncatedDescription =
     safeDescription.length > 200
@@ -49,21 +52,31 @@ export default function Card({
     <motion.div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative w-full max-w-[320px] sm:max-w-[380px] md:max-w-[420px] h-[220px] sm:h-[260px] md:h-[300px] p-3 sm:p-4 bg-gray-300 rounded-2xl flex text-center items-center justify-center flex-shrink-0 shadow-xl overflow-hidden ${className}`}
-      style={
-        hasBackgroundImage
-          ? {
-              backgroundImage: 'url(' + backgroundImage + ')',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }
-          : undefined
-      }
+      className={`relative w-full max-w-[320px] sm:max-w-[380px] md:max-w-[420px] h-[220px] sm:h-[260px] md:h-[300px] p-3 sm:p-4 bg-gray-400 rounded-2xl flex text-center items-center justify-center flex-shrink-0 shadow-xl overflow-hidden ${className}`}
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
     >
       {hasBackgroundImage && (
-        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
+        <motion.div 
+        className="absolute inset-0 bg-black/40 bg-cover bg-center" aria-hidden="true" 
+        style={{
+          backgroundImage: 'url(' + backgroundImage + ')',
+          transform: 'scale(1.05)',
+        }}
+        animate={{
+            filter: isAchievement &&  'blur(5px)',
+          }}
+        />
       )}
+      {isAchievement ? (
+        <motion.div 
+          className={'absolute inset-0'} 
+          aria-hidden="true"
+          animate={{
+            backgroundColor: isHovered ? 'rgba(0, 0, 0, 0)' : 'rgba(156, 163, 175, 1)', 
+          }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }} 
+        />
+      ) : <div className="absolute inset-0 bg-black/40" aria-hidden="true" />}
       {/* Title */}
       <motion.h3
         className={'font-bold font-poppins ' + titleColorClass + ' z-10'}
