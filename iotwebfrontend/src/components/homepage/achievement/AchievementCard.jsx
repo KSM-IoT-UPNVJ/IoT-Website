@@ -19,9 +19,6 @@ export default function AchievementCard({ item, onSelect }) {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
-  const achievementcard = isHovered 
-    ? true
-    : undefined;
   return (
     <FadeIn direction={'right'} delay={0.6}>
       <div 
