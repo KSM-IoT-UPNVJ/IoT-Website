@@ -21,8 +21,8 @@ const WhatIs = () => {
       <FadeIn direction={'right'} delay={0.8}>
         <div className="flex flex-col xl:flex-row items-start justify-center gap-10 px-4 md:px-10">
           {/* Embed YouTube Video */}
-          <div className="w-full xl:w-3/5 mt-10 md:mt-23 flex justify-center select-none">
-            <div className="w-full max-w-[750px] aspect-video rounded-2xl overflow-hidden shadow-lg">
+          <div className="w-full xl:w-2/5 mt-10 md:mt-15 flex justify-center select-none">
+            <div className="w-full max-w-[600px] aspect-video rounded-2xl overflow-hidden shadow-lg">
               <iframe
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/mGKpeLC5oSk?si=6X69cpgPUfhUXgE4"
