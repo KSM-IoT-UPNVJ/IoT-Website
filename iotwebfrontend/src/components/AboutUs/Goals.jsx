@@ -91,7 +91,7 @@ export default function VisiMisiSection() {
     ${
       isActive
         ? "-translate-y-29 sm:-translate-y-53 text-sm sm:text-2xl md:text-2xl lg:text-2xl"
-        : "translate-y-0 text-sm sm:text-2xl md:text-2xl lg:text-4xl"
+        : "translate-y-0 text-[16px] sm:text-2xl md:text-2xl lg:text-4xl"
     }
     group-hover:-translate-y-53
   `}
