@@ -5,6 +5,9 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 import FadeIn from '../../utils/fadeIn';
 import DropdownAnimate from '../../utils/dropdownAnimate';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import logo from '@/public/Logo_IoT.png';
+import slogan from '@/public/slogan.png';
 
 function Nav() {
   const router = useRouter();
@@ -35,13 +38,24 @@ function Nav() {
   const mobileLinkClass =
     'block text-md px-4 py-2 hover:bg-abu-sedang rounded-xl transition';
   return (
-    <div className="sticky bg-gradient-to-r from-biru-muda to-white shadow-md py-6.5 px-7.5 w-full h-auto">
+    <div className="sticky z-10 bg-gradient-to-r from-biru-muda to-white shadow-md py-6.5 px-7.5 w-full h-auto">
       <div className="flex justify-between items-center">
         {/* logo */}
-        <div className="flex items-center space-x-2">
+        <button
+          onClick={() => {
+            router.push(`/`);
+          }}
+          className="flex items-center space-x-2 cursor-pointer"
+        >
           <div>
             <FadeIn delay={1.2} direction={'left'}>
-              <img src="Logo_IoT.png" alt="logo" className="w-auto h-10" />
+              <Image
+                src={logo}
+                alt="logo"
+                width={40}
+                height={40}
+                className="w-auto h-10"
+              />
             </FadeIn>
           </div>
           <div>
@@ -54,7 +68,7 @@ function Nav() {
               </p>
             </FadeIn>
           </div>
-        </div>
+        </button>
 
         {/* Navigation list */}
         <div className="hidden md:flex justify-center items-center space-x-2">
@@ -82,7 +96,7 @@ function Nav() {
                 <DropdownAnimate show={open}>
                   <a
                     onClick={() => router.push(`/aboutus`)}
-                    className="block rounded-xl text-center text-md px-2 py-2 hover:-translate-y-0.5 transition transform duration-100 hover:bg-abu-sedang"
+                    className="block cursor-pointer rounded-xl text-center text-md px-2 py-2 hover:-translate-y-0.5 transition transform duration-100 hover:bg-abu-sedang"
                   >
                     About Us
                   </a>
@@ -90,7 +104,7 @@ function Nav() {
                     onClick={() => {
                       router.push(`/kepengurusan`);
                     }}
-                    className="block text-md text-center rounded-xl px-2 py-2 hover:-translate-y-0.5 transition transform duration-100 hover:bg-abu-sedang"
+                    className="block text-md cursor-pointer text-center rounded-xl px-2 py-2 hover:-translate-y-0.5 transition transform duration-100 hover:bg-abu-sedang"
                   >
                     Kepengurusan
                   </button>
@@ -118,7 +132,18 @@ function Nav() {
 
         <div className="hidden md:block">
           <FadeIn delay={1.2} direction={'down'}>
-            <img src="slogan.png" alt="slogan" className="w-auto h-10" />
+            <button
+              onClick={() => router.push(`/aboutus`)}
+              className="flex items-center space-x-2 cursor-pointer"
+            >
+              <Image
+                src={slogan}
+                alt="slogan"
+                width={40}
+                height={40}
+                className="w-auto h-10"
+              />
+            </button>
           </FadeIn>
         </div>
       </div>
