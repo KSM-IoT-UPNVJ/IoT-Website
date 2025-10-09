@@ -2,14 +2,12 @@
 
 import RotatingIcons from '@/utils/RotatingIcons';
 import FadeIn from '@/utils/fadeIn'; // Import komponen FadeIn
-import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function Footer() {
   const linkClass =
     'inline-block font-optima font-[300] text-[20px] text-biru-tua hover:-translate-y-0.5 transition transform duration-100 hover:text-biru-sedang';
-
-  const navigate = useRouter();
 
   return (
     <div>
@@ -95,52 +93,42 @@ function Footer() {
               Quick Links
             </p>
             <div>
-              <button
-                onClick={() => {
-                  navigate.push(`/home`);
-                }}
-                className={`${linkClass} hover:cursor-pointer`}
-              >
+              <Link href={'/'} className={`${linkClass} hover:cursor-pointer`}>
                 Home
-              </button>
+              </Link>
             </div>
             <div>
-              <button
-                onClick={() => {
-                  navigate.push(`/aboutus`);
-                }}
+              <Link
+                href={'/aboutus'}
                 className={`${linkClass} hover:cursor-pointer`}
               >
                 About Us
-              </button>
+              </Link>
             </div>
             <div>
-              <button
-                onClick={() => {
-                  navigate.push(`/insight`);
-                }}
+              <Link
+                href={'/insight'}
                 className={`${linkClass} hover:cursor-pointer`}
               >
                 Iot Insight
-              </button>
+              </Link>
             </div>
             <div>
-              <button
-                onClick={() => {
-                  navigate.push(`/contact`);
-                }}
+              <Link
+                href={'/contact'}
                 className={`${linkClass} hover:cursor-pointer`}
               >
                 Contact Us
-              </button>
+              </Link>
             </div>
           </div>
         </FadeIn>
       </div>
 
-      <div className="bg-biru-tua text-white text-center text-base p-2">
-        Copyright © 2025 - Zahid, Faiz, Goesny, Khalif, Dani, and UI/UX KSM IoT
-        UPNVJ
+      <div className="bg-biru-tua w-full text-white text-center text-base p-2">
+        <Link href={'/aboutus'}>
+          Copyright © 2025 - KSM Internet of Things UPNVJ
+        </Link>
       </div>
     </div>
   );

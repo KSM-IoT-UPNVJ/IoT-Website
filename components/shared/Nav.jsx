@@ -4,13 +4,12 @@ import { useState, useEffect, useRef } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import FadeIn from '../../utils/fadeIn';
 import DropdownAnimate from '../../utils/dropdownAnimate';
-import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import logo from '@/public/Logo_IoT.png';
 import slogan from '@/public/slogan.png';
+import Link from 'next/link';
 
 function Nav() {
-  const router = useRouter();
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -41,12 +40,7 @@ function Nav() {
     <div className="sticky z-10 bg-gradient-to-r from-biru-muda to-white shadow-md py-6.5 px-7.5 w-full h-auto">
       <div className="flex justify-between items-center">
         {/* logo */}
-        <button
-          onClick={() => {
-            router.push(`/`);
-          }}
-          className="flex items-center space-x-2 cursor-pointer"
-        >
+        <Link href={'/'} className="flex items-center space-x-2 cursor-pointer">
           <div>
             <FadeIn delay={1.2} direction={'left'}>
               <Image
@@ -68,20 +62,15 @@ function Nav() {
               </p>
             </FadeIn>
           </div>
-        </button>
+        </Link>
 
         {/* Navigation list */}
         <div className="hidden md:flex justify-center items-center space-x-2">
-          <button
-            onClick={() => {
-              router.push(`/`);
-            }}
-            className={linkClass}
-          >
+          <Link href={'/'} className={linkClass}>
             <FadeIn delay={0.3} direction={'down'}>
               Home
             </FadeIn>
-          </button>
+          </Link>
           <div ref={dropdownRef}>
             <button onClick={handleToggle} className={linkClass}>
               <FadeIn delay={0.4} direction={'down'}>
@@ -94,34 +83,32 @@ function Nav() {
             {open && (
               <div className="absolute mt-3 shadow-xs rounded-xl border-2 border-biru-muda bg-transparent backdrop-blur-[10px] text-xs animate-fade-in duration-200 z-30">
                 <DropdownAnimate show={open}>
-                  <a
-                    onClick={() => router.push(`/aboutus`)}
+                  <Link
+                    href={'/aboutus'}
                     className="block cursor-pointer rounded-xl text-center text-md px-2 py-2 hover:-translate-y-0.5 transition transform duration-100 hover:bg-abu-sedang"
                   >
                     About Us
-                  </a>
-                  <button
-                    onClick={() => {
-                      router.push(`/kepengurusan`);
-                    }}
+                  </Link>
+                  <Link
+                    href={'/kepengurusan'}
                     className="block text-md cursor-pointer text-center rounded-xl px-2 py-2 hover:-translate-y-0.5 transition transform duration-100 hover:bg-abu-sedang"
                   >
                     Kepengurusan
-                  </button>
+                  </Link>
                 </DropdownAnimate>
               </div>
             )}
           </div>
-          <button onClick={() => router.push(`/project`)} className={linkClass}>
+          <Link href={'/project'} className={linkClass}>
             <FadeIn delay={0.8} direction={'down'}>
               Projects
             </FadeIn>
-          </button>
-          <button onClick={() => router.push(`/contact`)} className={linkClass}>
+          </Link>
+          <Link href={'/contact'} className={linkClass}>
             <FadeIn delay={1.0} direction={'down'}>
               Contact
             </FadeIn>
-          </button>
+          </Link>
         </div>
 
         <div className="md:hidden">
@@ -132,8 +119,8 @@ function Nav() {
 
         <div className="hidden md:block">
           <FadeIn delay={1.2} direction={'down'}>
-            <button
-              onClick={() => router.push(`/aboutus`)}
+            <Link
+              href={'aboutus'}
               className="flex items-center space-x-2 cursor-pointer"
             >
               <Image
@@ -143,19 +130,15 @@ function Nav() {
                 height={40}
                 className="w-auto h-10"
               />
-            </button>
+            </Link>
           </FadeIn>
         </div>
       </div>
       {isMobileMenuOpen && (
         <div className="mt-4 md:hidden bg-white p-4 rounded-xl shadow border border-biru-muda space-y-2 animate-fade-in">
-          <button
-            onClick={() => router.push(`/home`)}
-            href="home"
-            className={mobileLinkClass}
-          >
+          <Link href="/home" className={mobileLinkClass}>
             Home
-          </button>
+          </Link>
           <div ref={dropdownRef}>
             <button
               onClick={handleToggle}
@@ -166,45 +149,22 @@ function Nav() {
             {open && (
               <DropdownAnimate show={open} className="mt-2 space-y-1">
                 <div className="px-5 border-1 border-biru-muda bg-white rounded-xl">
-                  <button
-                    onClick={() => {
-                      router.push(`/aboutus`);
-                    }}
-                    className={mobileLinkClass}
-                  >
+                  <Link href={'/aboutus'} className={mobileLinkClass}>
                     About Us
-                  </button>
-                  <button
-                    onClick={() => {
-                      router.push(`/kepengurusan`);
-                    }}
-                    href="kepengurusan"
-                    className={mobileLinkClass}
-                  >
+                  </Link>
+                  <Link href={'/kepengurusan'} className={mobileLinkClass}>
                     Kepengurusan
-                  </button>
+                  </Link>
                 </div>
               </DropdownAnimate>
             )}
           </div>
-          <button
-            onClick={() => {
-              router.push(`/project`);
-              handleToggleMobileMenu();
-            }}
-            className={mobileLinkClass}
-          >
+          <Link href={'/project'} className={mobileLinkClass}>
             Projects
-          </button>
-          <button
-            onClick={() => {
-              router.push(`/contact`);
-              handleToggleMobileMenu();
-            }}
-            className={mobileLinkClass}
-          >
+          </Link>
+          <Link href={'/contact'} className={mobileLinkClass}>
             Contact
-          </button>
+          </Link>
         </div>
       )}
     </div>

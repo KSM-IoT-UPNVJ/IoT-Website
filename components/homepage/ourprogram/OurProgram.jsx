@@ -4,6 +4,7 @@ import Card from '../../shared/Card';
 import ourProgramData from './ourProgramData.json';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const OurProgram = () => {
   const scrollRef = useRef(null);
@@ -60,10 +61,6 @@ const OurProgram = () => {
     [],
   );
 
-  const handleProgramClick = (slug) => {
-    router.push(`/program/${slug}`);
-  };
-
   return (
     <div className=" pt-10 pb-24 sm:pb-28 md:pb-32 px-4 sm:px-8 md:px-12 lg:px-36 overflow-hidden bg-[#2E3A4B]">
       <FadeIn direction={'up'} delay={0.3}>
@@ -104,7 +101,7 @@ const OurProgram = () => {
                 title={program.title}
                 description={program.description}
                 backgroundImage={program.image}
-                onButtonClick={() => handleProgramClick(program.slug)}
+                href={`/program/${program.slug}`}
               />
             ))}
           </div>
