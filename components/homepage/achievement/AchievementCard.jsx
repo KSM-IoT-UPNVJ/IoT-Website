@@ -1,7 +1,5 @@
-'use client';
-
-import FadeIn from '../../../utils/fadeIn';
-import Card from '../../shared/Card';
+import FadeIn from '@/utils/fadeIn';
+import Card from '@/components/shared/Card';
 
 export default function AchievementCard({ item, onSelect }) {
   const handleClick = (event) => {

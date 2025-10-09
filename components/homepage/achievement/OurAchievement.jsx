@@ -34,49 +34,63 @@ const OurAchievement = () => {
     },
     {
       id: 2,
-      title: "Essay Education Fair 2023",
+      title: 'Essay Education Fair 2023',
       award: 'Peringkat I',
-      description: 'KOMPETISI essay Education Fair 2023 "Peran Mahasiswa Indonesia dalam Mewujudkan Visi Indonesia Emas 2045"',
+      description:
+        'KOMPETISI essay Education Fair 2023 "Peran Mahasiswa Indonesia dalam Mewujudkan Visi Indonesia Emas 2045"',
       image: '/homepage/achievement/edufair2023/edufair1.webp',
-      images: ['/homepage/achievement/edufair2023/edufair1.webp','/homepage/achievement/edufair2023/edufair2.webp'],
+      images: [
+        '/homepage/achievement/edufair2023/edufair1.webp',
+        '/homepage/achievement/edufair2023/edufair2.webp',
+      ],
       time: '23/09/2023',
       organizer: 'UKM Keilmiahan FKIP UNS',
-      contributors: ['Naufal Firdaus','Sheva Nurhaliza'],
+      contributors: ['Naufal Firdaus', 'Sheva Nurhaliza'],
     },
     {
       id: 3,
       title: "LKTI Ceer's Scientific Fair V 2023",
       award: 'Peringkat I',
-      description: "Kompetisi Karya Tulis Ilmiah Nasional Ceer's Scientific Fair 5 2023 dengan tema Kontribusi Mahasiswa Sebagai Agent Of Change yang Visioner, Inovatif, dan Dedikatif Guna Mewujudkan SDG's di Era Indonesia Emas 2045",
+      description:
+        "Kompetisi Karya Tulis Ilmiah Nasional Ceer's Scientific Fair 5 2023 dengan tema Kontribusi Mahasiswa Sebagai Agent Of Change yang Visioner, Inovatif, dan Dedikatif Guna Mewujudkan SDG's di Era Indonesia Emas 2045",
       image: '/homepage/achievement/csf2023/csf2023.webp',
       images: ['/homepage/achievement/csf2023/csf2023.webp'],
       time: '24/09/2023',
       organizer: 'Kelompok Studi Penelitian Ekonomi FEB Universitas Jember',
-      contributors: ['Naufal Firdaus','Sri Sakhinah','Fawaz Nawfal'],
+      contributors: ['Naufal Firdaus', 'Sri Sakhinah', 'Fawaz Nawfal'],
     },
     {
       id: 4,
       title: 'LKTI Gravitasi UHO 2023',
       award: 'Peringkat I',
-      description: 'Gebyar Civitas Sains Fisika 2023 dengan Tema "Mewujudkan generasi muda untuk meningkatkan kreativitas sains dan teknologi yang mampu bersaing di era society 5.0"',
+      description:
+        'Gebyar Civitas Sains Fisika 2023 dengan Tema "Mewujudkan generasi muda untuk meningkatkan kreativitas sains dan teknologi yang mampu bersaing di era society 5.0"',
       image: '/homepage/achievement/UHO 2023/UHO1.webp',
       images: [
-              '/homepage/achievement/UHO 2023/UHO1.webp',
-              '/homepage/achievement/UHO 2023/UHO2.webp'],
+        '/homepage/achievement/UHO 2023/UHO1.webp',
+        '/homepage/achievement/UHO 2023/UHO2.webp',
+      ],
       time: '25/10/2023 - 28/10/2023',
-      organizer: 'Himpunan Mahasiswa Jurusan Fisika FMIPA Universitas Halu Oleo',
-      contributors: ['Naufal Firdaus','Sheva Nurhaliza','Heri Hardiyanto'],
+      organizer:
+        'Himpunan Mahasiswa Jurusan Fisika FMIPA Universitas Halu Oleo',
+      contributors: ['Naufal Firdaus', 'Sheva Nurhaliza', 'Heri Hardiyanto'],
     },
     {
       id: 5,
-      title: "Essay INFAIR 2023",
+      title: 'Essay INFAIR 2023',
       award: 'Peringkat I',
-      description: '"KOMPETISI essay INDUSTRIAL FAIR 2023""Optimalisasi Potensi Daerah Untuk Pengembangan Kawasan Industri Berbasis Digital"',
-      image: 'iotwebfrontend/public/homepage/achievement/infair 2023/infair1.webp',
-      images: ['iotwebfrontend/public/homepage/achievement/infair 2023/infair1.webp','/homepage/achievement/infair 2023/infair2.webp'],
+      description:
+        '"KOMPETISI essay INDUSTRIAL FAIR 2023""Optimalisasi Potensi Daerah Untuk Pengembangan Kawasan Industri Berbasis Digital"',
+      image:
+        'iotwebfrontend/public/homepage/achievement/infair 2023/infair1.webp',
+      images: [
+        '/homepage/achievement/infair 2023/infair1.webp',
+        '/homepage/achievement/infair 2023/infair2.webp',
+      ],
       time: '11/11/2023',
-      organizer: 'Himpunan Mahasiswa Teknik Industri Universitas Pembangunan Nasional Veteran Jakarta',
-      contributors: ['Naufal Firdaus','Farhan Aditya'],
+      organizer:
+        'Himpunan Mahasiswa Teknik Industri Universitas Pembangunan Nasional Veteran Jakarta',
+      contributors: ['Naufal Firdaus', 'Farhan Aditya'],
     },
     {
       id: 6,

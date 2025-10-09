@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { useRouter } from 'next/navigation';
+import Button from '@/components/shared/button';
 
 const panelVariants = {
   inactive: { opacity: 0, x: 32, y: 24 },
@@ -22,7 +22,6 @@ export default function MobileInsightCard({
   isActive,
   onSelect,
 }) {
-  const navigate = useRouter();
   const divisionSlug = division.name
     .replace(/ Division$/i, '')
     .trim()
@@ -33,10 +32,10 @@ export default function MobileInsightCard({
   const handleToggle = () => {
     onSelect(isActive ? null : index);
   };
-  const handleLearnMore = (event) => {
-    event.stopPropagation();
-    navigate(`/insight?division=${encodeURIComponent(divisionSlug)}`);
-  };
+  // const handleLearnMore = (event) => {
+  //   event.stopPropagation();
+  //   navigate(`/insight?division=${encodeURIComponent(divisionSlug)}`);
+  // };
 
   return (
     <motion.div
@@ -91,17 +90,11 @@ export default function MobileInsightCard({
           <h3 className="text-lg font-semibold text-blue-900">
             {division.name}
           </h3>
-          <motion.button
-            type="button"
-            onClick={handleLearnMore}
-            className="rounded-full bg-blue-700 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white transition-colors duration-300 hover:bg-yellow-400 hover:text-black"
-            variants={contentVariants}
-            animate={isActive ? 'active' : 'inactive'}
-            initial={false}
-            transition={{ ...panelTransition, delay: isActive ? 0.05 : 0 }}
+          <Button
+            href={`/insight?division=${encodeURIComponent(divisionSlug)}`}
           >
             Learn More
-          </motion.button>
+          </Button>
         </motion.div>
         <motion.p
           className="text-sm leading-relaxed text-black sm:text-base"

@@ -1,5 +1,6 @@
 import React from 'react';
-import { useRouter } from 'next/navigation';
+import Button from '@/components/shared/button';
+
 
 const DesktopInsightCard = ({
   division,
@@ -10,7 +11,6 @@ const DesktopInsightCard = ({
   onSelect,
   onClear,
 }) => {
-  const router = useRouter();
   const divisionSlug = division.name
     .replace(/ Division$/i, '')
     .trim()
@@ -36,7 +36,7 @@ const DesktopInsightCard = ({
       onMouseLeave={handleMouseLeave}
       className={`relative flex flex-col justify-end rounded-2xl shadow-lg overflow-hidden transition-all duration-700 ease-in-out ${
         isActive ? 'w-[530px]' : 'w-[200px]'
-      } h-[600px] group cursor-pointer`}
+      } h-[600px]`}
     >
       <div
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center transition-transform duration-700 ease-in-out scale-100 group-hover:scale-110"
@@ -88,16 +88,14 @@ const DesktopInsightCard = ({
         }}
       >
         <p className="mb-4">{description}</p>
-        <button
-          className="bg-blue-800 hover:bg-yellow-400 text-white hover:text-black px-6 py-2 rounded-full transition-colors duration-300 text-sm"
-          onClick={() =>
-            router.push(
-              `/insight?division=${encodeURIComponent(divisionSlug)}`,
-            )
-          }
-        >
-          Learn More
-        </button>
+        <div className="w-full flex justify-start">
+          <Button
+            href={`/insight?division=${encodeURIComponent(divisionSlug)}`}
+            className="inline"
+          >
+            Learn More
+          </Button>
+        </div>
       </div>
     </div>
   );

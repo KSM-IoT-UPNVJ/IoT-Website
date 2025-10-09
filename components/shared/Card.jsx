@@ -1,11 +1,15 @@
+'use client';
+
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Button from './button.jsx';
-// Card component with hover effects and responsive design
+import Link from 'next/link.js';
+// Card component with hover effects and responsive design used by our program and our achievement
 
 export default function Card({
   title = 'Comming Soon',
   description = 'Comming Soon',
+  href = null,
   onButtonClick,
   className = '',
   backgroundImage = '',
@@ -101,7 +105,11 @@ export default function Card({
           {truncatedDescription}
         </motion.p>
         <div className="mt-auto w-full flex justify-center pb-2 sm:pb-3 md:pb-4">
-          <Button onButtonClick={onButtonClick}>Learn More</Button>
+          {href ? (
+            <Button href={href}>Learn More</Button>
+          ) : (
+            <Button onButtonClick={onButtonClick}>Learn More</Button>
+          )}
         </div>
       </motion.div>
     </motion.div>

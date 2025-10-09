@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { MoveLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 const InfoRow = ({ label, value }) => {
   const isArray = Array.isArray(value);
@@ -187,16 +188,23 @@ export default function AchievementPopup({
                       transition={{ duration: 0.6 }}
                     />
                   ) : (
-                    <motion.img
+                    <motion.div
                       key={currentMedia.src}
-                      src={currentMedia.src}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
+                      className="relative w-full h-full"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.6 }}
-                    />
+                    >
+                      <Image
+                        src={currentMedia.src}
+                        alt={item.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover"
+                        priority
+                      />
+                    </motion.div>
                   )}
                 </AnimatePresence>
               )}
