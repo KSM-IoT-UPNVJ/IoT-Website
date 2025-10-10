@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function OurProjectsCard({
@@ -27,13 +28,15 @@ export default function OurProjectsCard({
           )}
 
           {!isPlaceholder && (
-            <div className="flex items-center justify-center w-full h-full bg-[var(--color-abu-muda)] duration-300 overflow-hidden">
+            <div className="relative flex items-center justify-center w-full h-full bg-[var(--color-abu-muda)] duration-300 overflow-hidden">
               {image && !imgError ? (
-                <img
+                <Image
                   src={image}
                   alt={title}
-                  loading="lazy"
-                  className="object-cover w-full h-full text-[var(--color-biru-tua)] group-hover:scale-110 duration-300"
+                  fill
+                  sizes="(min-width: 1024px) 400px, 90vw"
+                  quality={80}
+                  className="object-cover text-[var(--color-biru-tua)] transition-transform duration-300 group-hover:scale-110"
                   onError={() => {
                     setImgError(true);
                   }}

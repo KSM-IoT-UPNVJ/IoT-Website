@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import OurProjectsCard from './OurProjectsCard.jsx';
 import OurProjectsData from './ourProjectsData';
+import Link from 'next/link.js';
 
 export default function OurProjectsContainer() {
   const router = useRouter();
@@ -24,13 +25,14 @@ export default function OurProjectsContainer() {
   return (
     <div className="flex flex-wrap justify-center gap-8 px-2">
       {realCards.map((card) => (
-        <button
+        <Link
           key={card.slug}
           className="h-min w-min"
-          onClick={() => router.push(`/project/ourprojectdesc/${card.slug}`)}
+          href={`/project/ourprojectdesc/${card.slug}`}
+          
         >
           <OurProjectsCard {...card} />
-        </button>
+        </Link>
       ))}
       {fillerCards.map((card, i) => (
         <OurProjectsCard key={`placeholder-${i}`} {...card} />

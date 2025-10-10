@@ -16,6 +16,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/effect-cards';
 import './kepengurusan.css';
+import Image from 'next/image';
 
 const images = [
   {
@@ -118,9 +119,13 @@ const ImageSlider = () => {
             <SwiperSlide key={idx}>
               <div className="h-auto max-h-[515px] w-auto max-w-[412px] my-[50px] mx-[5px] rounded-[15px] overflow-hidden shadow-lg hover:scale-[1.05] duration-200">
                 <a href={img.href} target="_blank" rel="noopener noreferrer">
-                  <img
+                  <Image
                     src={img.src}
                     alt={`slide-${idx}`}
+                    width={412}
+                    height={515}
+                    sizes="(min-width: 1024px) 30vw, 80vw"
+                    quality={75}
                     className="w-full h-full object-fill"
                   />
                 </a>

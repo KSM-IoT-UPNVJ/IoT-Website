@@ -136,7 +136,7 @@ function Nav() {
       </div>
       {isMobileMenuOpen && (
         <div className="mt-4 md:hidden bg-white p-4 rounded-xl shadow border border-biru-muda space-y-2 animate-fade-in">
-          <Link href="/home" className={mobileLinkClass}>
+          <Link href="/" className={mobileLinkClass}>
             Home
           </Link>
           <div ref={dropdownRef}>
