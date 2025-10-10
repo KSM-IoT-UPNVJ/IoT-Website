@@ -80,5 +80,19 @@
       "title": "SSH: Cara Aman Akses Perangkat Jaringan Dari Mana Saja",
       "link": "https://www.instagram.com/p/DNhmWKxR3UT"
     }
+  ],
+   "network-slide": [
+    {
+      "image": "/projects/cover-network1.webp",
+      "vol": 1,
+      "title": "VPN lebih dari sekedar nembus blokir",
+      "link": "https://www.instagram.com/p/DJ01PEBR7Ff"
+    },
+    {
+      "image": "/projects/cover-network2.webp",
+      "vol": 2,
+      "title": "SSH: Cara Aman Akses Perangkat Jaringan Dari Mana Saja",
+      "link": "https://www.instagram.com/p/DNhmWKxR3UT"
+    }
   ]
 }
