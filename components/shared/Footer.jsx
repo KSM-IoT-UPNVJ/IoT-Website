@@ -126,7 +126,9 @@ function Footer() {
       </div>
 
       <div className="bg-biru-tua w-full text-white text-center text-base p-2">
-        <Link href={'/aboutus'}>
+        <Link
+          href={'/project/ourprojectdesc/ksm-iot-upnvj-website-development'}
+        >
           Copyright © 2025 - KSM Internet of Things UPNVJ
         </Link>
       </div>

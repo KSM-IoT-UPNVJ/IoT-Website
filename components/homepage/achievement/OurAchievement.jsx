@@ -81,8 +81,7 @@ const OurAchievement = () => {
       award: 'Peringkat I',
       description:
         '"KOMPETISI essay INDUSTRIAL FAIR 2023""Optimalisasi Potensi Daerah Untuk Pengembangan Kawasan Industri Berbasis Digital"',
-      image:
-        'iotwebfrontend/public/homepage/achievement/infair 2023/infair1.webp',
+      image: '/homepage/achievement/infair 2023/infair1.webp',
       images: [
         '/homepage/achievement/infair 2023/infair1.webp',
         '/homepage/achievement/infair 2023/infair2.webp',

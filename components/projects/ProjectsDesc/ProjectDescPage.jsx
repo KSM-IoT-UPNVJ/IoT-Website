@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { useParams } from 'next/navigation';
 import ProjectDescContainer from './ProjectDescContainer';
-import projectsDescData from './projectsDescData.json';
+import projectsDescData from './projectsDescData.json' assert { type: 'json' };
 
 const toSingleValue = (value) =>
   Array.isArray(value) ? value[0] : value ?? undefined;
