@@ -5,7 +5,9 @@ import projectsDescData from "../projectsDescData";
 
 export default function ProjectDescPage() {
   const { i } = useParams();
-  const index = i ? parseInt(i, 10) - 1 : null;
+
+  const isValidFormat = /^[1-9]\d*$/.test(i); 
+  const index = isValidFormat ? parseInt(i, 10) - 1 : -1; 
 
   const projectRefs = useRef([]);
   const HEADER_HEIGHT = 0;
@@ -21,16 +23,20 @@ export default function ProjectDescPage() {
       projectRefs.current[index]
     ) {
       const el = projectRefs.current[index];
-
       setTimeout(() => {
         const elementTop =
           el.getBoundingClientRect().top + window.pageYOffset - HEADER_HEIGHT;
         window.scrollTo({ top: elementTop, behavior: "smooth" });
-      }, 50); 
+      }, 50);
     }
   }, [index]);
 
-  if (isNaN(index) || index < 0 || index >= projectsDescData.length) {
+  if (
+    !isValidFormat || 
+    index < 0 ||
+    index >= projectsDescData.length ||
+    !projectsDescData[index] 
+  ) {
     return <Navigate to="/404" replace />;
   }
 

@@ -45,14 +45,14 @@ export default function MediaCard() {
             <div>
               <p className="font-bold text-sm sm:text-base">Email</p>
               <p className="text-xs sm:text-sm break-all">
-                internetofthings.upnvj@gmail.com
+                humas@ksmiotupnvj.com
               </p>
             </div>
           </div>
         </FadeIn>
       </a>
 
-      <a href="https://ksmiotupnvj.my.id/" className={cardImage}>
+      <a href="https://ksmiotupnvj.com/" className={cardImage}>
         <FadeIn delay={1.0} direction={'right'} className="w-full h-full">
           <img
             src={imageSrc}
