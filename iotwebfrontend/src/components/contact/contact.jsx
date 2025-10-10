@@ -3,7 +3,20 @@ import Map from './map';
 import FadeIn from '../../utils/fadeIn';
 import MediaCard from './mediaCard';
 
+import { useEffect } from "react";
+import { useNavigationType } from 'react-router-dom';
+
 export default function Contact() {
+  const navigationType = useNavigationType();
+  
+  useEffect(() => {
+    if (navigationType !== "POP") {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
+    }
+  }, [navigationType]);
+
   return (
     <div className="mx-4 sm:mx-6 md:mx-8 lg:mx-15">
       <div className="text-center my-6 sm:my-8 md:my-10">

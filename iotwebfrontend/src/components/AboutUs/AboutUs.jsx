@@ -6,12 +6,18 @@ import Goals from "./Goals";
 import TeamGallery from "./TeamGallery";
 import "../../index.css";
 import { useEffect } from "react";
+import { useNavigationType } from "react-router-dom";
+
 function AboutUs() {
+  const navigationType = useNavigationType();
+  
   useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "instant" });
-    }, 300);
-  }, []);
+    if (navigationType !== "POP") {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
+    }
+  }, [navigationType]);
 
   return (
     <>

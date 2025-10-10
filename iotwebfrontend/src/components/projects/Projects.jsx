@@ -1,17 +1,29 @@
-import OurProjectsContainer from "./OurProjects/OurProjectsContainer";
-import ProjectDescPage from "./ProjectsDesc/ProjectDescPage";
-import FadeIn from "/src/utils/fadeIn";
+import { useEffect } from 'react';
+import { useNavigationType } from 'react-router-dom';
+
+import OurProjectsContainer from './OurProjects/OurProjectsContainer';
+import FadeIn from '/src/utils/fadeIn';
 
 function Projects() {
+  const navigationType = useNavigationType();
+
+  useEffect(() => {
+    if (navigationType !== 'POP') {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    }
+  }, [navigationType]);
+
   return (
     <>
-      <FadeIn delay={0.8} direction={"down"}>
+      <FadeIn delay={0.8} direction={'down'}>
         <h1 className="flex items-center justify-center font-bold text-[50px] text-[var(--color-biru-tua)] text-center mx-5 mt-10 mb-5 select-none">
           Our Projects
         </h1>
       </FadeIn>
 
-      <FadeIn delay={1.2} direction={"down"}>
+      <FadeIn delay={1.2} direction={'down'}>
         <OurProjectsContainer />
       </FadeIn>
     </>
