@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import Welcome from '@/components/homepage/welcome/Welcome';
 import VisiMisi from '@/components/homepage/VisiMisi';
 import OurProgram from '@/components/homepage/ourprogram/OurProgram';
@@ -10,12 +10,6 @@ import Nav from '@/components/shared/Nav';
 import Footer from '@/components/shared/Footer';
 
 function Homepage() {
-  useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 300);
-  }, []);
-
   return (
     <>
       <Nav />
