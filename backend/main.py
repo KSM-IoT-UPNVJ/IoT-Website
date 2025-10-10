@@ -12,6 +12,7 @@ app = FastAPI()
 origins = [
     "http://localhost:3000",   # React dev server
     "http://localhost:5173",   # Vite dev server
+    "http://103.197.188.140:8000"
 ]
 # Allow CORS (supaya bisa diakses dari React)
 app.add_middleware(

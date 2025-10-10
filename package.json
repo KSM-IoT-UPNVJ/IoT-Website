@@ -1,16 +1,31 @@
 {
-  "name": "iotweb",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "iot-website",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "eslint"
   },
-  "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.22",
+    "lucide-react": "^0.545.0",
+    "next": "15.5.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "slick": "^1.12.2",
+    "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.25.1",
+    "sweetalert2-react-content": "^5.1.0",
+    "swiper": "^12.0.2"
+  },
   "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.11"
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.4",
+    "tailwindcss": "^4"
   }
 }
