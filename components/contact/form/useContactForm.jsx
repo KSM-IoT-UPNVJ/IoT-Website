@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { sendContact } from '../../../services/ContactApi';
+import Swal from 'sweetalert2';
 
 export function useContactForm() {
   const [formData, setFormData] = useState({
@@ -44,11 +45,11 @@ export function useContactForm() {
 
     try {
       await sendContact(formData);
-      alert('Pesan berhasil dikirim!');
+      successAlert();
       setFormData({ name: '', email: '', phone: '', message: '' });
     } catch (err) {
       console.error('Error dari backend:', err);
-      alert('Gagal mengirim pesan: ' + err.message);
+      failAlert(err.message);
     }
   };
 
@@ -66,3 +67,20 @@ export function useContactForm() {
 
   return { formData, handleChange, handleSubmit, getInputStyle };
 }
+
+const successAlert = () => {
+  Swal.fire({
+    title: 'Berhasil!',
+    text: 'Data berhasil dikirim',
+    icon: 'success',
+    confirmButtonText: 'OK',
+  });
+};
+
+const failAlert = (err) => {
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'Something went wrong!' + err,
+  });
+};

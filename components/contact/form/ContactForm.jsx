@@ -26,7 +26,6 @@ export default function ContactForm() {
             className={getInputStyle('name')}
           />
         </FadeIn>
-
         <FadeIn delay={0.6} direction={'left'}>
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
             <input

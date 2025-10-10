@@ -1,8 +1,9 @@
+import Image from 'next/image';
 import { Phone, Mail, Globe } from 'lucide-react';
 import FadeIn from '../../utils/fadeIn';
 
 export default function MediaCard() {
-  const imageSrc = 'foto_upn.jpg';
+  const imageSrc = '/foto_upn.jpg';
   const cardImage =
     'relative h-16 sm:h-18 md:h-20 lg:h-21 rounded-xl sm:rounded-2xl overflow-hidden group hover:-translate-y-1 hover:scale-105 duration-150';
 
@@ -10,9 +11,12 @@ export default function MediaCard() {
     <div className="flex flex-col gap-3 sm:gap-4 flex-1 lg:flex-2/7 p-4 sm:p-6 md:p-8 lg:p-10">
       <a href="tel:+62 813-1522-6318" className={cardImage}>
         <FadeIn delay={0.4} direction={'right'} className="w-full h-full">
-          <img
+          <Image
             src={imageSrc}
             alt="Top"
+            fill
+            sizes="(min-width: 1024px) 20vw, 90vw"
+            quality={80}
             className="w-full h-full object-cover object-top"
           />
           <div className="absolute inset-0 text-white backdrop-blur-[5px] bg-black/25 flex items-center px-3 sm:px-4 gap-2 sm:gap-3 md:gap-4 group-hover:bg-black/50 duration-150">
@@ -33,9 +37,12 @@ export default function MediaCard() {
 
       <a href="mailto: internetofthings.upnvj@gmail.com" className={cardImage}>
         <FadeIn delay={0.7} direction={'right'} className="w-full h-full">
-          <img
+          <Image
             src={imageSrc}
             alt="Middle"
+            fill
+            sizes="(min-width: 1024px) 20vw, 90vw"
+            quality={80}
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 text-white bg-black/25 flex backdrop-blur-[5px] items-center px-3 sm:px-4 gap-2 sm:gap-3 md:gap-4 group-hover:bg-black/50 duration-150">
@@ -54,9 +61,12 @@ export default function MediaCard() {
 
       <a href="https://ksmiotupnvj.my.id/" className={cardImage}>
         <FadeIn delay={1.0} direction={'right'} className="w-full h-full">
-          <img
+          <Image
             src={imageSrc}
             alt="Bottom"
+            fill
+            sizes="(min-width: 1024px) 20vw, 90vw"
+            quality={80}
             className="w-full h-full object-cover object-bottom"
           />
           <div className="absolute inset-0 text-white bg-black/25 backdrop-blur-[5px] flex items-center px-3 sm:px-4 gap-2 sm:gap-3 md:gap-4 group-hover:bg-black/50 duration-150">

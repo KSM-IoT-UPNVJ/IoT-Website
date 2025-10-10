@@ -3,7 +3,7 @@ const API_BASE_URL = (process.env.VITE_API_BASE_URL ?? '').replace(/\/$/, '');
 export async function sendContact(formData) {
   const endpoint = API_BASE_URL
     ? `${API_BASE_URL}/api/contact`
-    : '/api/contact';
+    : 'http://localhost:8000/api/contact';
 
   const res = await fetch(endpoint, {
     method: 'POST',
