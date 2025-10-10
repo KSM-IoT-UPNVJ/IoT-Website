@@ -1,0 +1,61 @@
+.swiper-pagination {
+  display: flex;
+  transform: translateY(50px);
+  border-radius: 12px;
+  justify-content: center;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #33455b;
+  opacity: 0.5;
+  transition: all 1s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #8ccfe4;
+  opacity: 1;
+  width: 30px;
+  border-radius: 12px;
+}
+
+.swiper {
+  perspective: 1200px;
+}
+
+.swiper-slide {
+  transform-style: preserve-3d;
+}
+
+@keyframes bgKepengurusan {
+  0% {
+    transform: rotate(0deg) translateX(0) scale(1) translateY(0);
+  }
+  25% {
+    transform: rotate(180deg) translateX(-150px) scale(1.5) translateY(-200px);
+  }
+  50% {
+    transform: rotate(360deg) translateX(-150px) scale(2) translateY(0);
+  }
+  75% {
+    transform: rotate(540deg) translateX(300px) scale(1.5) translateY(200px);
+  }
+  100% {
+    transform: rotate(720deg) translateX(0px) scale(1) translateY(0);
+  }
+}
+
+.animate-bgKepengurusan {
+  animation: bgKepengurusan 40s ease infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-bgKepengurusan {
+    animation: none;
+  }
+}
+
+.hover-trigger:hover + .left-button-kepengurusan {
+  transform: translateX(100px);
+}
