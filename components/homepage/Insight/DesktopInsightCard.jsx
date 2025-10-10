@@ -1,6 +1,6 @@
 import React from 'react';
+import Image from 'next/image';
 import Button from '@/components/shared/button';
-
 
 const DesktopInsightCard = ({
   division,
@@ -38,12 +38,17 @@ const DesktopInsightCard = ({
         isActive ? 'w-[530px]' : 'w-[200px]'
       } h-[600px]`}
     >
-      <div
-        className="absolute top-0 left-0 w-full h-full bg-cover bg-center transition-transform duration-700 ease-in-out scale-100 group-hover:scale-110"
-        style={{
-          backgroundImage: `url(${division.image})`,
-        }}
-      />
+      <div className="absolute inset-0">
+        <Image
+          src={division.image}
+          alt={`${division.name} background`}
+          fill
+          className="object-cover transition-transform duration-700 ease-in-out scale-100 group-hover:scale-110"
+          quality={60}
+          sizes="(min-width: 1280px) 530px, (min-width: 1024px) 430px, 80vw"
+          priority={index === 0}
+        />
+      </div>
 
       <div
         className={`absolute z-30 font-extrabold text-black transition-all duration-700 ease-in-out ${

@@ -6,7 +6,7 @@ import FadeIn from '../../utils/fadeIn';
 import DropdownAnimate from '../../utils/dropdownAnimate';
 import Image from 'next/image';
 import logo from '@/public/Logo_IoT.png';
-import slogan from '@/public/slogan.png';
+import slogan from '/slogan.png';
 import Link from 'next/link';
 
 function Nav() {
