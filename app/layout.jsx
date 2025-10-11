@@ -12,11 +12,16 @@ const poppins = Poppins({
 export const metadata = {
   title: 'KSM IoT UPNVJ',
   description: 'Website resmi KSM IoT UPNVJ',
+  icons: {
+    Icon: '@/public/Logo_IoT.png',
+    shortcut: '/Logo_IoT.png',
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head></head>
       <body
         className="relative min-h-screen flex flex-col"
         style={{ fontFamily: 'var(--font-poppins)' }}

@@ -1,11 +1,22 @@
 'use client';
 
-import RotatingIcons from '@/utils/RotatingIcons';
-import FadeIn from '@/utils/fadeIn'; // Import komponen FadeIn
 import Image from 'next/image';
 import Link from 'next/link';
+import HakMilik from '@/utils/hakMilik';
+import { useState } from 'react';
+
+import RotatingIcons from '@/utils/RotatingIcons';
+import FadeIn from '@/utils/fadeIn'; // Import komponen FadeIn
+import projectsDescData from '@/components/projects/ProjectsDesc/projectsDescData.json' assert { type: 'json' };
 
 function Footer() {
+  const [show, setShow] = useState(false);
+  const projectWithTeam = projectsDescData.find(
+    (project) => Array.isArray(project.hm) && project.hm.length > 0,
+  );
+  const hmList = projectWithTeam?.hm ?? [];
+  const hmTitle = projectWithTeam?.title ?? 'KSM Internet Of Things';
+
   const linkClass =
     'inline-block font-optima font-[300] text-[20px] text-biru-tua hover:-translate-y-0.5 transition transform duration-100 hover:text-biru-sedang';
 
@@ -126,12 +137,23 @@ function Footer() {
       </div>
 
       <div className="bg-biru-tua w-full text-white text-center text-base p-2">
-        <Link
-          href={'/project/ourprojectdesc/ksm-iot-upnvj-website-development'}
+        <button
+          type="button"
+          onClick={() => hmList.length > 0 && setShow(true)}
+          className="cursor-pointer"
         >
           Copyright © 2025 - KSM Internet of Things UPNVJ
-        </Link>
+        </button>
       </div>
+      {show && hmList.length > 0 && (
+        <HakMilik
+          people={hmList}
+          title={`${hmTitle} Team`}
+          height="auto"
+          width="100%"
+          onClose={() => setShow(false)}
+        />
+      )}
     </div>
   );
 }
