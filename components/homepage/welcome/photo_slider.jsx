@@ -2,10 +2,7 @@ import { memo, useMemo } from 'react';
 import Image from 'next/image';
 
 function PhotoSlider({ images, direction }) {
-  const duplicatedImages = useMemo(
-    () => images.concat(images),
-    [images],
-  );
+  const duplicatedImages = useMemo(() => images.concat(images), [images]);
 
   return (
     <div

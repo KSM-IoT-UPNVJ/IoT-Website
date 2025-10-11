@@ -5,8 +5,6 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 import FadeIn from '../../utils/fadeIn';
 import DropdownAnimate from '../../utils/dropdownAnimate';
 import Image from 'next/image';
-import logo from '@/public/Logo_IoT.png';
-import slogan from '/slogan.png';
 import Link from 'next/link';
 
 function Nav() {
@@ -37,14 +35,14 @@ function Nav() {
   const mobileLinkClass =
     'block text-md px-4 py-2 hover:bg-abu-sedang rounded-xl transition';
   return (
-    <div className="sticky z-10 bg-gradient-to-r from-biru-muda to-white shadow-md py-6.5 px-7.5 w-full h-auto">
-      <div className="flex justify-between items-center">
+    <div className="sticky z-10 bg-gradient-to-r from-biru-muda to-white shadow-md w-full h-auto px-4 py-3 sm:px-6 md:px-7.5 md:py-5 lg:py-6 min-h-[56px] md:min-h-[72px]">
+      <div className="flex h-14 justify-between items-center">
         {/* logo */}
         <Link href={'/'} className="flex items-center space-x-2 cursor-pointer">
           <div>
             <FadeIn delay={1.2} direction={'left'}>
               <Image
-                src={logo}
+                src={'/Logo_IoT.png'}
                 alt="logo"
                 width={40}
                 height={40}
@@ -124,11 +122,12 @@ function Nav() {
               className="flex items-center space-x-2 cursor-pointer"
             >
               <Image
-                src={slogan}
+                src={'/slogan.png'}
                 alt="slogan"
-                width={40}
-                height={40}
-                className="w-auto h-10"
+                width={368}
+                height={77}
+                priority
+                className="h-auto w-28 md:w-36"
               />
             </Link>
           </FadeIn>
