@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Button from '@/components/shared/button';
 
 const panelVariants = {
@@ -52,10 +53,17 @@ export default function MobileInsightCard({
         }
       }}
     >
-      <div
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
-        style={{ backgroundImage: `url(${division.image})` }}
-      />
+      <div className="absolute inset-0">
+        <Image
+          src={division.image}
+          alt={`${division.name} background`}
+          fill
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          quality={60}
+          sizes="(min-width: 640px) 600px, 100vw"
+          priority={index === 0}
+        />
+      </div>
 
       <div
         className={`absolute inset-0 z-10 pointer-events-none ${gradient} transition-opacity duration-500 ease-out ${
