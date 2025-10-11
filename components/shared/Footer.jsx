@@ -62,15 +62,15 @@ function Footer() {
             <p className="font-titillium text-[24px] font-[700]">
               KSM Internet Of Things
             </p>
-            <p className="font-titillium text-[16px] font-[400] mb-5">
+            <p className="font-titillium text-[16px] font-[400] mb-4">
               UPN "Veteran" Jakarta
             </p>
             <Image
-              src="/slogan.png"
+              src="/sloganBiru.png"
               alt="Slogan"
-              width={368.5}
+              width={368}
               height={77}
-              className="w-[368.5px] h-[77px] saturate-[450%] mb-3"
+              className="h-auto w-56 md:w-72 lg:w-[368px] mb-4"
               draggable="false"
             />
             <div className="flex w-[400px] h-[100px] justify-center gap-[40px]">
