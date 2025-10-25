@@ -18,6 +18,7 @@ export default function AchievementCard({ item, onSelect }) {
         onButtonClick={handleClick}
         title={item.title}
         description={item.description}
+        backgroundImage={item.image}
       />
     </FadeIn>
   );
