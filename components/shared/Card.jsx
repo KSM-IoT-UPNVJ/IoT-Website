@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Button from './button.jsx';
 import Link from 'next/link.js';
-// Card component with hover effects and responsive design used by our program and our achievement
 
 export default function Card({
   title = 'Comming Soon',
@@ -15,10 +14,8 @@ export default function Card({
   backgroundImage = '',
 }) {
   const [isHovered, setIsHovered] = useState(false);
-  const [isMobile, setIsMobile] = useState(() => {
-    if (typeof window === 'undefined') return false;
-    return window.innerWidth < 640;
-  });
+  const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const hasBackgroundImage = Boolean(backgroundImage);
   const safeDescription = description ?? '';
@@ -32,22 +29,28 @@ export default function Card({
     : 'text-gray-700';
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    setMounted(true);
     const handleResize = () => {
       setIsMobile(window.innerWidth < 640);
     };
-
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
+
+  // SSR fallback biar server & client sama → no mismatch
+  if (!mounted) {
+    return (
+      <div
+        className={`relative w-full max-w-[320px] sm:max-w-[380px] md:max-w-[420px] h-[220px] sm:h-[260px] md:h-[300px] p-3 sm:p-4 bg-gray-300 rounded-2xl flex text-center items-center justify-center flex-shrink-0 shadow-xl overflow-hidden ${className}`}
+      >
+        <h3 className="font-bold font-poppins text-black">Loading...</h3>
+      </div>
+    );
+  }
 
   return (
     <motion.div
@@ -57,7 +60,7 @@ export default function Card({
       style={
         hasBackgroundImage
           ? {
-              backgroundImage: 'url(' + backgroundImage + ')',
+              backgroundImage: `url(${backgroundImage})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }
@@ -68,10 +71,10 @@ export default function Card({
       {hasBackgroundImage && (
         <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
       )}
-      {/* Title */}
 
+      {/* Title */}
       <motion.h3
-        className={'font-bold font-poppins ' + titleColorClass + ' z-10'}
+        className={`font-bold font-poppins ${titleColorClass} z-10`}
         animate={{
           fontSize: isHovered
             ? isMobile
@@ -89,18 +92,18 @@ export default function Card({
 
       {/* Description + Button */}
       <motion.div
-        initial={{ y: 50, opacity: 0 }}
-        className={`absolute top-0 left-1/2 w-full h-full -translate-x-1/2 px-4 sm:px-6 md:px-9 flex flex-col items-center text-center ${
-          isMobile ? 'pt-16 pb-3' : 'pt-24 pb-4'
-        } z-20`}
+        initial={false} // <- biar server & client render sama
         animate={{
           opacity: isHovered ? 1 : 0,
           y: isHovered ? 0 : 50,
         }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
+        className={`absolute top-0 left-1/2 w-full h-full -translate-x-1/2 px-4 sm:px-6 md:px-9 flex flex-col items-center text-center ${
+          isMobile ? 'pt-16 pb-3' : 'pt-24 pb-4'
+        } z-20`}
       >
         <motion.p
-          className={'text-xs sm:text-sm mt-2 ' + descriptionColorClass}
+          className={`text-xs sm:text-sm mt-2 ${descriptionColorClass}`}
         >
           {truncatedDescription}
         </motion.p>
