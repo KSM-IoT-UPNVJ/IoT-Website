@@ -5,6 +5,7 @@ import ourProgramData from './ourProgramData.json';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const OurProgram = () => {
   const scrollRef = useRef(null);
@@ -80,20 +81,14 @@ const OurProgram = () => {
             transition: 'opacity 0.3s ease',
           }}
         >
-          <Image
-            src="/Chevron_left.png"
-            width={64}
-            height={64}
-            alt="left"
-            className="w-16 h-16"
-          />
+          <ChevronLeft className="w-24 h-24" />
         </button>
 
         {/* Area Scroll kanan dan Kiri */}
         <FadeIn direction={'up'} delay={0.6}>
           <div
             ref={scrollRef}
-            className="flex space-x-5 sm:space-x-10 md:space-x-14 overflow-x-auto scroll-smooth px-4 sm:px-10 md:px-20 scrollbar-hide"
+            className="flex space-x-5 sm:space-x-10 md:space-x-14 overflow-x-auto scroll-smooth px-4 sm:px-10 md:px-20 md:border-4 md:border-biru-muda md:rounded-2xl scrollbar-hide mx-14 "
           >
             {programs.map((program) => (
               <Card
@@ -117,7 +112,7 @@ const OurProgram = () => {
             transition: 'opacity 0.3s ease',
           }}
         >
-          <Image src="/Chevron_right.png" width={64} height={64} alt="right" />
+          <ChevronRight className="w-24 h-24" />
         </button>
       </div>
     </div>

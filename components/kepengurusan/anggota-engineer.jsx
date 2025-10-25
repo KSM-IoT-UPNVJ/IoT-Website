@@ -18,7 +18,7 @@ import 'swiper/css/effect-cards';
 import './kepengurusan.css';
 import Image from 'next/image';
 
-const images = [
+const baseImages = [
   {
     src: '/kepengurusan/engineer.webp',
     href: 'https://www.instagram.com/p/DMNDqnqR9Ca/',
@@ -48,8 +48,9 @@ const images = [
 const ImageSlider = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-
+  const swiperRef = useRef(null);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const images = isSmallScreen ? baseImages : [...baseImages, ...baseImages];
 
   useEffect(() => {
     const checkScreen = () => setIsSmallScreen(window.innerWidth < 1024);
@@ -58,16 +59,35 @@ const ImageSlider = () => {
     return () => window.removeEventListener('resize', checkScreen);
   }, []);
 
+  // 👈 FIX: Use a separate useEffect to set the navigation after mounting
+  useEffect(() => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      const swiper = swiperRef.current.swiper;
+
+      // Manually set the navigation elements
+      swiper.params.navigation.prevEl = prevRef.current;
+      swiper.params.navigation.nextEl = nextRef.current;
+
+      // Update the swiper instance to apply the new settings
+      swiper.navigation.destroy(); // Destroy previous navigation
+      swiper.navigation.init();    // Initialize new navigation
+      swiper.navigation.update();  // Update for current state
+    }
+  }, [isSmallScreen]); // Run when component mounts or screen size changes
+
+  if (isSmallScreen === null) return null; // wait for screen detection
+
   return (
     <div className="w-full flex relative h-auto justify-center items-center">
       <div className="w-full h-auto">
         <Swiper
-          modules={[
-            Navigation,
-            Pagination,
-            Mousewheel,
-            isSmallScreen ? EffectCards : EffectCoverflow,
-          ]}
+          key={isSmallScreen ? 'mobile' : 'desktop'}
+          ref={swiperRef} 
+          modules={
+                    isSmallScreen
+                    ? [EffectCards, Navigation, Pagination, Mousewheel]
+                    : [EffectCoverflow, Navigation,Pagination, Mousewheel]
+                  }
           spaceBetween={0}
           slidesPerView={isSmallScreen ? 1.9 : 3}
           mousewheel={{ forceToAxis: true }}
@@ -136,26 +156,26 @@ const ImageSlider = () => {
       </div>
 
       {/* Custom Prev/Next */}
-      <div className="absolute h-[30%] px-[30px] top-1/2 left-0 right-0 flex justify-between items-center transform -translate-y-1/2 z-50 pointer-events-none">
-        <div className="relative flex items-center justify-end h-full w-[200px] pointer-events-auto translate-x-[-160px]">
+      <div className="absolute h-[30%] px-[30px] top-1/2 left-0 right-0 flex justify-between items-center transform -translate-y-1/2 z-50 pointer-events-none ">
+        <div className="relative flex items-center justify-end h-full w-[200px] pointer-events-auto z-0 duration-[1s] translate-x-[-160px] group">
           <ChevronLeft
             size={128}
-            className="absolute left-0 top-1/2 -translate-y-1/2 w-auto h-auto scale-[0.6] sm:scale-[0.8] md:scale-[1]"
-          />
-          <button
+            className="chevron-left top-1/2 -translate-y-1/2 absolute translate-x-[45px] w-auto h-auto scale-[0.5] sm:scale-[0.8] md:scale-[1]"
+           />
+           <button
             ref={prevRef}
-            className="h-[80px] w-[50px] z-60 pointer-events-auto"
-          />
+            className="chevron-left hover:cursor-pointer translate-x-[5px] scale-[0.6] sm:scale-[1] h-[80px] w-[50px] z-60 pointer-events-auto"
+          ></button>
         </div>
-        <div className="relative flex items-center h-full w-[200px] pointer-events-auto translate-x-[160px]">
+        <div className="relative flex items-center  h-full w-[200px] pointer-events-auto z-0 duration-[1s] translate-x-[160px] group">
           <ChevronRight
             size={128}
-            className="absolute right-0 top-1/2 -translate-y-1/2 w-auto h-auto scale-[0.6] sm:scale-[0.8] md:scale-[1]"
+            className="chevron-right top-1/2 -translate-y-1/2 absolute translate-x-[-45px] w-auto h-auto scale-[0.5] sm:scale-[0.8] md:scale-[1]"
           />
           <button
             ref={nextRef}
-            className="h-[80px] w-[50px] z-60 pointer-events-auto"
-          />
+            className="chevron-right hover:cursor-pointer translate-x-[-5px] scale-[0.6] sm:scale-[1] h-[80px] w-[50px] z-60 pointer-events-auto"
+          ></button>
         </div>
       </div>
     </div>
