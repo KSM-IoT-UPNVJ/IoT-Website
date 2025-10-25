@@ -80,15 +80,15 @@ export default function Map() {
             <div className="flex gap-3 sm:gap-4 mb-0">
               <RotatingIcons
                 link="https://www.instagram.com/iot.upnvj/"
-                icon1="/footer/ig_footer1.png"
-                icon2="/footer/ig_footer2.png"
+                icon1="/footer/ig_footer1.webp"
+                icon2="/footer/ig_footer2.webp"
                 alt="iot.upnvj"
                 className="bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045] hover:bg-none"
               />
               <RotatingIcons
                 link="https://www.linkedin.com/company/ksmiotupnvj"
-                icon1="/footer/linkedin_footer1.png"
-                icon2="/footer/linkedin_footer2.png"
+                icon1="/footer/linkedin_footer1.webp"
+                icon2="/footer/linkedin_footer2.webp"
                 alt="ksmiotupnvj"
                 className="bg-biru-sedang"
               />

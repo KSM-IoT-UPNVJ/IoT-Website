@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "ksm-iot-upnvj-website-development",
+    "title": "KSM IoT UPNVJ Website Development",
+    "description": "This project focuses on the development of an official website for KSM IoT UPNVJ, aiming to serve as an informative and interactive platform for students, members, and the public. The website includes features such as organizational profiles, division overviews, event updates, and contact information.",
+    "image": "/projects/template-foto-OurProjects.jpg"
+  },
+  {
+    "slug": "smart-home-prototype",
+    "title": "Smart Home Prototype",
+    "description": "Project ini merupakan prototype Smart Home yang dirancang untuk menghadirkan kenyamanan & efisiensi di lingkungan rumah melalui pemanfaatan teknologi IoT (Internet of Things). Dalam prototype ini, beberapa perangkat rumah dapat dikendalikan secara otomatis maupun manual melalui aplikasi berbasis web/mobile. Sistem dilengkapi dengan sensor (misalnya sensor gerak, suhu, dan cahaya) yang memungkinkan perangkat bekerja secara adaptif sesuai kondisi lingkungan.",
+    "image": "/projects/smart-home.jpg"
+  },
+  {
+    "slug": "sicegah",
+    "title": "SiCegah",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+    "image": "/projects/template-foto-OurProjects.jpg"
+  }
+]
