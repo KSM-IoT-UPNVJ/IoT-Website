@@ -14,7 +14,7 @@ export default function Button({
     className;
   if (href) {
     return (
-      <Link href={href}>
+      <Link href={href} target="_blank" rel="noopener noreferrer">
         <motion.div
           className={baseClass}
           whileHover={{ scale: 1.05 }}
