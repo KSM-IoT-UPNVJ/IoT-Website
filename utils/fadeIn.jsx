@@ -26,7 +26,7 @@ function FadeIn({ children, delay = 0, direction, className = '' }) {
       case 'down':
         return { opacity: 0, y: -30 };
       default:
-        return { opacity: 0 };
+        return { opacity: 0, y: 0, x: 0 };
     }
   };
 
@@ -44,16 +44,15 @@ function FadeIn({ children, delay = 0, direction, className = '' }) {
   };
 
   return (
-    <div className={`overflow-hidden ${className}`} ref={ref}>
-      <motion.div
-        initial="hidden"
-        animate={controls}
-        variants={variants}
-        className="inline-block w-full"
-      >
-        {children}
-      </motion.div>
-    </div>
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={variants}
+      className={className}
+    >
+      {children}
+    </motion.div>
   );
 }
 
