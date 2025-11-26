@@ -78,19 +78,74 @@
   {
     "slug": "smart-home-prototype",
     "title": "Smart Home Prototype",
-    "description": "The Smart Home Prototype is an IoT-based system designed to enhance comfort, efficiency, and sustainability in everyday living. It utilizes sensors to detect occupancy within a home and automatically adjusts the fan speed according to the number of people present. This adaptive approach ensures that energy is used more effectively, reducing unnecessary power consumption while maintaining a pleasant indoor environment. By integrating automation with real-time data, the system demonstrates how technology can transform traditional households into intelligent living spaces.\n\nBeyond occupancy detection, the prototype also incorporates environmental monitoring through temperature and humidity sensors. These sensors control the automatic opening and closing of windows, ensuring optimal airflow and indoor air quality. As a result, the system not only improves comfort but also contributes to healthier living conditions. With its combination of smart energy management and environmental responsiveness, this prototype represents an innovative step toward creating homes that are both user-friendly and eco-friendly.",
-    "division": "Gemastik Smart City Team",
+    "description": "Smart Home Prototype adalah sistem berbasis IoT yang dirancang untuk meningkatkan kenyamanan, efisiensi, dan keberlanjutan dalam kehidupan sehari-hari. Sistem ini menggunakan sensor untuk mendeteksi keberadaan orang di dalam rumah dan secara otomatis menyesuaikan kecepatan kipas berdasarkan jumlah orang yang terdeteksi. Pendekatan adaptif ini memastikan energi digunakan secara lebih efektif, mengurangi konsumsi daya yang tidak perlu, sekaligus tetap menjaga kenyamanan ruangan. Dengan mengintegrasikan otomatisasi dan data real-time, sistem ini menunjukkan bagaimana teknologi dapat mengubah rumah tradisional menjadi ruang hunian yang cerdas.\n\nSelain deteksi keberadaan, prototipe ini juga dilengkapi pemantauan lingkungan melalui sensor suhu dan kelembapan. Sensor-sensor tersebut mengontrol pembukaan dan penutupan jendela secara otomatis untuk memastikan aliran udara dan kualitas udara dalam ruangan tetap optimal. Hasilnya, sistem ini tidak hanya meningkatkan kenyamanan tetapi juga mendukung kondisi hidup yang lebih sehat. Dengan kombinasi manajemen energi cerdas dan responsivitas lingkungan, prototipe ini menjadi langkah inovatif dalam menciptakan rumah yang ramah pengguna sekaligus ramah lingkungan.",
+    "division": "Hardware Division x Firmware Division",
     "date": "17 Juli 2025 - 27 September 2025",
     "divisionImage": "/",
-    "image": "/projects/smart-home.jpg"
+    "image": "/projects/smarthomegabung.jpeg",
+    "hm": [
+      {
+        "name": "NAUFALIS FEBRIAN WIBOWO",
+        "title": "Head of Engineer Department",
+        "image": "/aboutUs/bangFalis.webp"
+      },
+      {
+        "name": "MUSFA FADILLAH",
+        "title": "Head of Hardware Engineer Division",
+        "image": "/aboutUs/bangMusfa.webp"
+      },
+      {
+        "name": "MUHAMMAD FARHAN",
+        "title": "Hardware Engineer Staff",
+        "image": "/aboutUs/bangFarhan.webp"
+      },
+      {
+        "name": "IMMANUEL PRIHANDOKO",
+        "title": "Hardware Engineer Staff",
+        "image": "/aboutUs/bangImmanuel.webp"
+      },
+      {
+        "name": "SADDAM AL GHOZALI JIBRIL",
+        "title": "Hardware Engineer Staff",
+        "image": "/aboutUs/bangSaddam.webp"
+      },
+      {
+        "name": "MUHAMAD NABHAN AZMI",
+        "title": "Hardware Engineer Staff",
+        "image": "/aboutUs/nabhan.webp"
+      },
+      {
+        "name": "MUHFAIQ ABDULLAH TRIANTO",
+        "title": "Head of Firmware Engineer Division",
+        "image": "/aboutUs/bangFaiq.webp"
+      },
+      {
+        "name": "MARSELINUS ALLEN NUGRAHA",
+        "title": "Firmware Engineer Staff",
+        "image": "/aboutUs/bangMarsel.webp"
+      },
+      {
+        "name": "JOHN CHRISTIAN MAXWELL SIBARANI",
+        "title": "Firmware Engineer Staff",
+        "image": "/aboutUs/bangJohn.webp"
+      },
+      {
+        "name": "ILHAM SURYA RIZQULLAH",
+        "title": "Firmware Engineer Staff",
+        "image": "/aboutUs/ilham.webp"
+      }
+    ],
+    "image2": "/projects/skematik-smarthome.webp",
+    "subtitle2": "Komponen :",
+    "description2": "1. ESP32 = Mikrokontroler utama untuk pemrosesan data dan kontrol sistem.\n2. Sensor PIR = Mendeteksi pergerakan atau keberadaan manusia.\n3. Sensor DHT11 = Mengukur suhu dalam ruangan.\n4. Kipas DC = Mengalirkan udara untuk ventilasi/pendinginan.\n5. Lampu Bohlam = Output indikator atau penerangan ruangan.\n6. Motor Driver L298N = Mengendalikan kecepatan Kipas DC.\n7. Power Supply 12V = Menyediakan sumber daya utama untuk rangkaian.\n8. Modul Step Down LM2596 = Menurunkan tegangan.\n9. Motor Servo (PDI-6221MG) = Aktuator untuk mekanisme buka tutup jendela."
   },
   {
     "slug": "sicegah",
     "title": "SiCegah",
-    "description": "Sicegah is a smart health application developed to support early detection and prevention of infectious diseases. By integrating Internet of Things (IoT), Artificial Intelligence (AI), and geospatial mapping technologies, the application provides real-time monitoring of outbreaks and helps users stay informed about potential health risks in their area. Its AI-powered symptom detection allows individuals to assess their health conditions quickly, while the system simultaneously collects and analyzes data to provide more accurate insights into disease patterns.\n\nIn addition to monitoring and detection, Sicegah also focuses on accessibility and user engagement. Through its interactive chatbot, users can easily access health services, make reservations, and receive relevant health recommendations. This feature simplifies communication between the public and healthcare providers, ensuring faster responses and better prevention strategies. With its holistic design, Sicegah not only empowers individuals to manage their health proactively but also supports policymakers in improving public health management through reliable, data-driven insights.",
+    "description": "Sicegah adalah aplikasi inovatif yang menggabungkan teknologi Internet of Things (IoT), Artificial Intelligence (AI), dan pemetaan geospasial untuk memberikan solusi deteksi dini dan pencegahan penyakit menular. Dengan memanfaatkan wearable device serta input manual, aplikasi ini menganalisis potensi penyakit menggunakan AI dan memberikan peringatan dini yang akurat. Pendekatan proaktif ini membantu masyarakat melakukan tindakan pencegahan lebih cepat, sekaligus meningkatkan kesadaran akan kesehatan publik.\n\nSelain deteksi, Sicegah menyediakan informasi kesehatan real-time melalui integrasi data resmi pemerintah, termasuk peta zona wabah yang memperlihatkan kondisi lingkungan sekitar secara akurat. Aplikasi ini juga dilengkapi chatbot interaktif untuk mempermudah akses layanan kesehatan, seperti reservasi layanan medis, sehingga alur pelayanan menjadi lebih efisien. Dengan fitur-fitur tersebut, Sicegah menjadi ekosistem digital holistik yang mendukung pencegahan, pemantauan, dan peningkatan kualitas layanan kesehatan masyarakat.\n\nDari sisi teknologi, Sicegah dibangun menggunakan pendekatan komprehensif yang mengintegrasikan berbagai komponen cerdas. Sistem pemetaan memanfaatkan GIS dengan React Leaflet untuk menampilkan zona risiko secara real-time, sementara deteksi gejala memanfaatkan AI berbasis BioBERT yang telah di-fine-tune untuk memahami deskripsi gejala pengguna. Chatbot layanan kesehatan dikembangkan menggunakan arsitektur RAG dan dihubungkan dengan workflow automation n8n untuk mendukung reservasi kesehatan yang mulus dan terintegrasi. Keseluruhan platform Sicegah dikembangkan menggunakan React Vite, memastikan performa aplikasi yang cepat, efisien, dan responsif bagi pengguna.",
     "division": "Gemastik Smart City Team",
-    "date": "XX XX 2025 - XX XX 2025",
+    "date": "15 Juli 2025 - 15 September 2025",
     "divisionImage": "/",
-    "image": "/projects/gemastik-smart-city.jpg"
+    "image": "/projects/sicegah.png"
   }
 ]

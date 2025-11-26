@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+import { useEffect } from "react";
 
 export default function HakMilik({
   people = [],
@@ -7,6 +9,12 @@ export default function HakMilik({
   width,
   onClose,
 }) {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center backdrop-blur-md bg-black/30 overflow-hidden">
       <section
@@ -52,12 +60,19 @@ export default function HakMilik({
                 ) : (
                   <>
                     {/* image */}
-                    <img
-                      src={p.image}
-                      alt={p.name}
-                      draggable="false"
-                      className="w-28 h-28 md:w-36 md:h-36 object-cover rounded-lg shadow-sm"
-                    />
+                    <div className="w-28 h-28 md:w-36 md:h-36 overflow-hidden rounded-lg shadow-sm relative">
+                      <Image
+                        src={p.image}
+                        alt={p.name}
+                        draggable="false"
+                        fill
+                        className="object-cover rounded-lg"
+                        priority={false}             // keep lazy loading
+                        quality={45}                 // great for small photos
+                        sizes="(max-width: 768px) 112px, 144px" 
+                      />
+                    </div>
+
 
                     {/* text */}
                     <div
