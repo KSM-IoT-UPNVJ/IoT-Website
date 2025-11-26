@@ -47,7 +47,7 @@
 }
 
 .animate-bgKepengurusan {
-  animation: bgKepengurusan 40s ease infinite;
+  animation: bgKepengurusan 40s ease infinite !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

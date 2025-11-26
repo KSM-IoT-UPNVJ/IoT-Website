@@ -51,7 +51,7 @@ const Home = () => {
               </h1>
             </FadeIn>
             <FadeIn direction="up" delay={0.4}>
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mt-4 font-optima">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mt-4 font-optima py-2">
                 KSM Internet Of Things
               </h2>
             </FadeIn>
