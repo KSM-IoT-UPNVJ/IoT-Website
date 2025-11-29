@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# IoT Website
 
-## Getting Started
+Proyek ini berfokus pada pengembangan situs web resmi KSM IoT UPNVJ, yang dirancang sebagai platform informatif dan interaktif. Situs web ini akan menyediakan informasi komprehensif tentang organisasi, termasuk visi, misi, sejarah, dan pencapaiannya. Dengan memberikan wawasan yang jelas tentang struktur organisasi dan ikhtisar divisi, situs web ini akan membantu mahasiswa dan calon anggota memahami cakupan kegiatan KSM IoT. Lebih lanjut, platform ini akan berfungsi sebagai pusat digital yang menyoroti acara mendatang, proyek yang sedang berjalan, dan inisiatif komunitas, memastikan informasi mudah diakses oleh audiens internal dan eksternal. 
 
-First, run the development server:
+Selain peran informatifnya, situs web ini juga bertujuan untuk meningkatkan keterlibatan dan komunikasi. Fitur-fitur interaktif seperti formulir kontak, pendaftaran acara, dan saluran pertanyaan akan memungkinkan pengunjung untuk terhubung langsung dengan organisasi. Hal ini memastikan bahwa mahasiswa, anggota, dan publik dapat berpartisipasi lebih aktif dalam acara dan kolaborasi. Dengan desain modern dan navigasi yang ramah pengguna, situs web ini tidak hanya bertujuan untuk mewakili identitas KSM IoT UPNVJ tetapi juga untuk memperkuat visibilitas dan dampaknya sebagai organisasi mahasiswa di bidang Internet of Things
+## Teknologi
+1. Frontend = next.js, ReactJS, Tailwind
+2. Backend = Fast API
+3. Database = PostgreSQL
+4. Hosting = Biznet GIO
+5. Domain = Rumahweb & cloudflare
+6. Version Control = GitHub
+7. Design = Figma
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Usage
+Buka link berikut : [ksmiotupnvj.com](https://www.ksmiotupnvj.com/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build by software division, ui/ux division, and network division ksm iot upnvj 2025
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## License
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[MIT](https://choosealicense.com/licenses/mit/)
