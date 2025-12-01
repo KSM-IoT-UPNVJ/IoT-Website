@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Button from './button.jsx';
-import Link from 'next/link.js';
 
 export default function Card({
   title = 'Comming Soon',
