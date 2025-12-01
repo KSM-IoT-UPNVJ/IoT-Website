@@ -1,18 +1,49 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
-export default function Loading() {
+export default function LaunchOpening() {
+  const router = useRouter();
+  const [countdown, setCountdown] = useState(null);
+
+  // Countdown 5 detik
+  useEffect(() => {
+    if (countdown === null) return;
+    if (countdown === 0) {
+      router.push('/'); // GANTI halaman tujuan
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setCountdown(countdown - 1);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [countdown, router]);
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <main
       aria-busy="true"
       aria-describedby="app-loading-description"
-      className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#050816] via-[#0b1d3b] to-[#120c3c] text-white"
+      onClick={() => {
+        if (countdown === null) setCountdown(5);
+      }}
+      className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#050816] via-[#0b1d3b] to-[#120c3c] text-white cursor-pointer"
     >
       <span id="app-loading-description" className="sr-only">
-        Content is loading.
+        Opening Website KSM IoT UPNVJ
       </span>
 
+      {/* =======================
+          CSS ANIMATION BLOCK
+      ======================== */}
       <style jsx>{`
         @keyframes launch {
           0% {
@@ -198,20 +229,28 @@ export default function Loading() {
         }
       `}</style>
 
-      <div className="starfield">
-        {[...Array(24)].map((_, index) => (
-          <span
-            key={index}
-            className="star"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 2}s`,
-            }}
-          />
-        ))}
-      </div>
+      {/* =======================
+          BACKGROUND STARS
+      ======================== */}
+      {mounted && (
+        <div className="starfield">
+          {Array.from({ length: 24 }).map((_, index) => (
+            <span
+              key={index}
+              className="star"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 2}s`,
+              }}
+            />
+          ))}
+        </div>
+      )}
 
+      {/* =======================
+          ROCKET + TEXT
+      ======================== */}
       <div className="relative flex flex-col items-center gap-40 px-6 text-center">
         <div className="relative flex items-center justify-center w-full">
           <div className="rocket">
@@ -230,16 +269,24 @@ export default function Loading() {
           <div className="absolute bottom-[-90px] h-2 w-48 rounded-full bg-gradient-to-r from-transparent via-white/30 to-transparent blur-sm" />
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-3 text-center">
           <h2 className="text-3xl font-semibold tracking-wide sm:text-4xl">
-            Launching your experience
+            KSM IoT UPNVJ Launching Website
           </h2>
-          <p className="max-w-lg text-base text-slate-200 sm:text-lg">
-            Igniting thrusters and charting a course to the right page. Hold
-            tight, we&apos;ll arrive in just a moment.
+          <p className="text-base text-slate-200 sm:text-lg text-center">
+            Tap anywhere to launch
           </p>
         </div>
       </div>
+
+      {/* =======================
+          COUNTDOWN OVERLAY
+      ======================== */}
+      {countdown !== null && (
+        <div className="absolute inset-0 bg-black/70 flex items-center justify-center text-6xl font-bold">
+          {countdown}
+        </div>
+      )}
     </main>
   );
 }

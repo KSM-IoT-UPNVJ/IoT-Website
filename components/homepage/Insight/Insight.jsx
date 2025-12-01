@@ -40,7 +40,7 @@ const divisions = [
     name: 'Network Division',
     image: '/network.jpg',
     description:
-      'Fokus pada perancangan, konfigurasi, dan pengelolaan jaringan komunikasi data sebagai tulang punggung konektivitas IoT.',
+      'Fokus pada perancangan, konfigurasi, dan pengelolaan jaringan komunikasi data sebagai tulang punggung konektivitas IoT.',
     gradient:
       'bg-gradient-to-b from-emerald-200/70 via-emerald-400/40 to-emerald-700/80',
   },
@@ -106,7 +106,7 @@ const InsightSection = () => {
         </div>
       </FadeIn>
 
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 md:flex-row md:items-stretch md:justify-center md:gap-4">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 lg:flex-row lg:items-stretch lg:justify-center lg:gap-4">
         {divisions.map((division, index) => (
           <FadeIn key={division.name} direction="up" delay={0.2 + index * 0.1}>
             <InsightCard

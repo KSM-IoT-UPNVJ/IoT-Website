@@ -6,8 +6,16 @@ import Button from '@/components/shared/button';
 import Image from 'next/image';
 
 export default function ProjectDescContainer(props) {
-  const { title, description, division, date, divisionImage, image, hm, githubLink } =
-    props;
+  const {
+    title,
+    description,
+    division,
+    date,
+    divisionImage,
+    image,
+    hm,
+    githubLink,
+  } = props;
 
   const [show, setShow] = useState(false);
 
@@ -32,7 +40,7 @@ export default function ProjectDescContainer(props) {
           </FadeIn>
         </h1>
         <FadeIn direction={'right'} delay={0.8}>
-          <div className="flex flex-col gap-2 items-center max-w-200 h-full mx-auto bg-radial-[at_50%_10%] from-biru-sedang to-biru-sedang2 backdrop-blur-2xl shadow-lg rounded-4xl p-6">
+          <div className="flex flex-col gap-2 items-center max-w-200 h-full mx-auto bg-black/50 backdrop-blur-2xl shadow-lg rounded-4xl p-6">
             <div className="flex flex-row items-center w-full">
               <div className="flex w-full flex-col justify-center">
                 <h3 className="text-white font-extrabold ml-5">{division}</h3>
@@ -55,9 +63,7 @@ export default function ProjectDescContainer(props) {
                   Meet the Teams
                 </Button>
               )}
-              <Button href={githubLink}>
-                Learn More
-              </Button>
+              <Button href={githubLink}>Learn More</Button>
             </div>
 
             <div className="text-white text-base text-justify py-2 w-full whitespace-pre-line">

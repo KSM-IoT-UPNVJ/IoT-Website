@@ -18,7 +18,7 @@ function Footer() {
   const hmTitle = projectWithTeam?.title ?? 'KSM Internet Of Things';
 
   const linkClass =
-    'inline-block font-optima font-[300] text-[20px] text-biru-tua hover:-translate-y-0.5 transition transform duration-100 hover:text-biru-sedang';
+    'block font-optima font-[300] text-[20px] text-biru-tua hover:-translate-y-0.5 transition transform duration-100 hover:text-biru-sedang';
 
   return (
     <div>
@@ -29,28 +29,28 @@ function Footer() {
               Contact Info
             </p>
             <div>
-              <a
+              <Link
                 href="mailto:internetofthings.upnvj@gmail.com"
                 className={linkClass}
               >
                 humas@ksmiotupnvj.com
-              </a>
+              </Link>
             </div>
             <div>
-              <a href="tel:+62 831-4043-4826" className={linkClass}>
+              <Link href="tel:+62 831-4043-4826" className={linkClass}>
                 +62 831-4043-4826
-              </a>
+              </Link>
             </div>
             <div>
-              <a href="ksmiotupnvj.com" className={linkClass}>
+              <Link href="ksmiotupnvj.com" className={linkClass}>
                 www.ksmiotupnvj.com
-              </a>
+              </Link>
             </div>
           </div>
         </FadeIn>
 
         <FadeIn direction="up" delay={0.4}>
-          <div className="flex flex-col w-[96vw] md:w-[400px] h-[400px] items-center select-none">
+          <div className="flex flex-col w-[96vw] sm:w-[200px] md:w-[400px] h-[400px] items-center select-none">
             <Image
               src="/Logo_IoT.png"
               alt="Logo_IoT"
