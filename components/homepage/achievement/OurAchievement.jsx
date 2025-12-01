@@ -184,9 +184,7 @@ const OurAchievement = () => {
     setClickedElementPosition(null);
   };
 
-  const sortedAchievements = achievements
-    .slice() 
-    .sort((a, b) => b.id - a.id); 
+  const sortedAchievements = achievements.slice().sort((a, b) => b.id - a.id);
 
   return (
     <div className="py-24 px-8 flex flex-col items-center justify-center">
