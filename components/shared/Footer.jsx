@@ -88,7 +88,7 @@ function Footer() {
                   alt="ksmiotupnvj"
                 />
                 <RotatingIcons
-                  link="https://github.com/IoTUPNVJ"
+                  link="https://github.com/KSM-IoT-UPNVJ"
                   icon1="/footer/github_footer1.webp"
                   icon2="/footer/github_footer2.webp"
                   alt="IoTUPNVJ"
