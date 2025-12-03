@@ -96,8 +96,8 @@ export default function VisiMisiSection() {
                   className={`absolute left-4 right-4 mx-auto text-center font-extrabold transition-transform duration-500 z-20 select-none
     ${
       isActive
-        ? "-translate-y-29 sm:-translate-y-53 text-sm sm:text-2xl md:text-2xl lg:text-2xl"
-        : "translate-y-0 text-[16px] sm:text-2xl md:text-2xl lg:text-4xl"
+        ? '-translate-y-29 sm:-translate-y-53 text-sm sm:text-2xl md:text-2xl lg:text-2xl'
+        : 'translate-y-0 text-[16px] sm:text-2xl md:text-2xl lg:text-4xl'
     }
     group-hover:-translate-y-53
   `}
@@ -118,7 +118,7 @@ export default function VisiMisiSection() {
                     }
                   `}
                 >
-                  <p className="text-xs sm:text-sm lg:text-xl leading-relaxed text-[#1f2937] select-none">
+                  <p className="text-xs sm:text-sm lg:text-xl leading-relaxed text-white select-none">
                     {box.content}
                   </p>
                 </div>
