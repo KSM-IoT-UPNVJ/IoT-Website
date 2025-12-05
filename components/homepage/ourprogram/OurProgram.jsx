@@ -1,16 +1,38 @@
-import React, { useRef, useState, useEffect, useMemo } from 'react';
-import FadeIn from '../../../utils/fadeIn';
-import Card from '../../shared/Card';
-import ourProgramData from './ourProgramData.json';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+"use client";
+
+import React, { useRef, useState, useEffect, useMemo } from "react";
+import FadeIn from "../../../utils/fadeIn";
+import Card from "../../shared/Card";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const OurProgram = () => {
   const scrollRef = useRef(null);
+  const router = useRouter();
 
+  const [ourProgramData, setOurProgramData] = useState({});
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const [isFadingLeft, setIsFadingLeft] = useState(false);
   const [isFadingRight, setIsFadingRight] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch("http://localhost:8000/api/our-program", {
+          method: "GET",
+        });
+        const result = await res.json();
+        setOurProgramData(result);
+      } catch (error) {
+        console.error("Error fetching our program data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const checkScroll = () => {
     const el = scrollRef.current;
@@ -42,21 +64,21 @@ const OurProgram = () => {
     return () => el.removeEventListener('scroll', checkScroll);
   }, []);
 
-  const programs = useMemo(
-    () =>
-      Object.entries(ourProgramData).map(([slug, program]) => {
-        const data = program?.data ?? {};
-        const title = data.title ?? slug;
-        return {
-          id: slug,
-          slug,
-          title: title.toUpperCase(),
-          description: data.frontText ?? '',
-          image: data.fotoHeader ?? data.fotoKolase ?? '',
-        };
-      }),
-    [],
-  );
+const programs = useMemo(
+  () =>
+    Object.entries(ourProgramData).map(([slug, program]) => {
+      const data = program?.data ?? {};
+      const title = data.title ?? slug;
+      return {
+        id: slug,
+        slug,
+        title: title.toUpperCase(),
+        description: data.frontText ?? "",
+        image: data.fotoHeader ?? data.fotoKolase ?? "",
+      };
+    }),
+  [ourProgramData]  // ← Wajib!
+);
 
   return (
     <div className=" pt-10 pb-24 sm:pb-28 md:pb-32 px-4 sm:px-8 md:px-12 lg:px-36 overflow-hidden bg-[#2E3A4B]">

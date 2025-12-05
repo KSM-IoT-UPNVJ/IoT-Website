@@ -1,4 +1,8 @@
-[
+from fastapi import APIRouter, HTTPException
+
+router = APIRouter()
+
+projects = [
   {
     "slug": "ksm-iot-upnvj-website-development",
     "title": "KSM IoT UPNVJ Website Development",
@@ -156,3 +160,15 @@
     "image": "/projects/sicegah.png"
   }
 ]
+
+@router.get("/projects")
+def get_projects():
+    return projects
+
+
+@router.get("/projects/{slug}")
+def get_project_detail(slug: str):
+    for item in projects:
+        if item["slug"] == slug:
+            return item
+    raise HTTPException(status_code=404, detail="Project not found")

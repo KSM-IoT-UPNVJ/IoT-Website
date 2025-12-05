@@ -1,6 +1,10 @@
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
+from backend.routers.our_program import router as ourprogram_router
+from backend.routers.achievement import router as achievement_router
+from backend.routers.projects import router as projects_router
+from backend.routers.insight import router as insight_router
 
 from . import models, schemas
 from .database import engine, SessionLocal, Base
@@ -43,3 +47,9 @@ def create_contact(contact: schemas.ContactCreate, db: Session = Depends(get_db)
     db.commit()
     db.refresh(new_contact)
     return {"message": "Contact saved!", "id": new_contact.id}
+
+
+app.include_router(ourprogram_router)
+app.include_router(achievement_router)
+app.include_router(projects_router)
+app.include_router(insight_router)

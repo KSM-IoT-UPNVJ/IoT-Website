@@ -1,4 +1,8 @@
-{
+from fastapi import APIRouter
+
+router = APIRouter()
+
+data_program = {
   "studi-banding": {
     "data": {
       "fotoHeader": "/OurProgram/foto_stuban1.webp",
@@ -144,3 +148,7 @@
     }
   }
 }
+
+@router.get("/api/our-program")
+def get_our_program():
+    return data_program

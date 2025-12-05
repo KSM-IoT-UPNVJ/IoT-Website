@@ -2,16 +2,43 @@
 
 import { useRouter } from 'next/navigation';
 import OurProjectsCard from './OurProjectsCard.jsx';
-import OurProjectsData from './ourProjectsData';
 import Link from 'next/link.js';
+import { useEffect, useState } from 'react';
 
 export default function OurProjectsContainer() {
   const router = useRouter();
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const realCards = OurProjectsData.map((card) => ({
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const res = await fetch("http://127.0.0.1:8000/projects");
+        const data = await res.json();
+        setProjects(data);
+      } catch (err) {
+        console.error("Error fetching projects:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="text-center text-white py-10">
+        Loading projects...
+      </div>
+    );
+  }
+
+  const realCards = projects.map((card) => ({
     ...card,
     isPlaceholder: false,
   }));
+
   const remainder = realCards.length % 3;
   const fillers = remainder === 0 ? 3 : 3 - remainder;
 
@@ -29,7 +56,6 @@ export default function OurProjectsContainer() {
           key={card.slug}
           className="h-min w-min"
           href={`/project/ourprojectdesc/${card.slug}`}
-          
         >
           <OurProjectsCard {...card} />
         </Link>
