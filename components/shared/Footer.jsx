@@ -17,7 +17,7 @@ function Footer() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch("http://127.0.0.1:8000/projects/");
+        const res = await fetch("http://127.0.0.1:8000/admin/projects/");
         const data = await res.json();
 
         // Cari project yang punya HM

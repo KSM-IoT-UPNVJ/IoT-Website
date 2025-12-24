@@ -1,55 +1,34 @@
-from fastapi import FastAPI, Depends
-from sqlalchemy.orm import Session
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.routers.our_program import router as ourprogram_router
-from backend.routers.achievement import router as achievement_router
-from backend.routers.projects import router as projects_router
-from backend.routers.insight import router as insight_router
 
-from . import models, schemas
-from .database import engine, SessionLocal, Base
-
-# buat tabel di database
-Base.metadata.create_all(bind=engine)
+from backend.db.database import Base, engine
+from backend.api.admin.iot_insight import router as admin_router_insight
+from backend.api.admin.our_program import router as admin_router_our_program
+from backend.api.admin.projects import router as admin_router_projects
+from backend.api.admin.achievement import router as admin_router_achievement
 
 app = FastAPI()
+
+# ====== CORS CONFIG ======
 origins = [
-    "http://localhost:3000",   # React dev server
-    "http://localhost:5173",   # Vite dev server
-    "http://103.197.188.140:8000"
+    "http://localhost:3000",   # React / Next.js
+    "http://127.0.0.1:3000",
+    # tambahkan domain production jika ada
 ]
-# Allow CORS (supaya bisa diakses dari React)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  # bisa dibatasi sesuai domain React
+    allow_origins=origins,      # atau ["*"] untuk semua origin (dev only)
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Dependency database session
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+# ====== DATABASE ======
+Base.metadata.create_all(bind=engine)
 
-@app.post("/api/contact")
-def create_contact(contact: schemas.ContactCreate, db: Session = Depends(get_db)):
-    new_contact = models.Contact(
-        name=contact.name,
-        email=contact.email,
-        phone=contact.phone,
-        message=contact.message
-    )
-    db.add(new_contact)
-    db.commit()
-    db.refresh(new_contact)
-    return {"message": "Contact saved!", "id": new_contact.id}
-
-
-app.include_router(ourprogram_router)
-app.include_router(achievement_router)
-app.include_router(projects_router)
-app.include_router(insight_router)
+# ====== ROUTERS ======
+app.include_router(admin_router_insight)
+app.include_router(admin_router_our_program)
+app.include_router(admin_router_projects)
+app.include_router(admin_router_achievement)

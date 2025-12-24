@@ -13,7 +13,7 @@ export default function OurProjectsContainer() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch("http://127.0.0.1:8000/projects");
+        const res = await fetch("http://127.0.0.1:8000/admin/projects/");
         const data = await res.json();
         setProjects(data);
       } catch (err) {

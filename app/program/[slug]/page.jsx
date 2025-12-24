@@ -8,7 +8,7 @@ export default async function ProgramDetailsPage({ params }) {
   const { slug } = params ?? {};
 
   // --- FETCH DATA FROM FASTAPI ---
-  const res = await fetch("http://localhost:8000/api/our-program", {
+  const res = await fetch("http://127.0.0.1:8000/admin/our-program/", {
     cache: "no-store", // biar selalu data terbaru
   });
 
