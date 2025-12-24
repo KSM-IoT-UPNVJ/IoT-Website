@@ -14,7 +14,7 @@ const OurAchievement = () => {
   useEffect(() => {
     const fetchAchievements = async () => {
       try {
-        const res = await fetch("http://127.0.0.1:8000/achievements/");
+        const res = await fetch("http://127.0.0.1:8000/admin/achievement/");
         const data = await res.json();
         setAchievements(data);
       } catch (error) {

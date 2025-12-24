@@ -7,21 +7,25 @@ import Image from 'next/image';
 
 const InfoRow = ({ label, value }) => {
   const isArray = Array.isArray(value);
+
   return (
     <div className="flex flex-col gap-1 rounded-lg bg-white/10 px-4 py-3 text-left sm:flex-row sm:items-center sm:justify-between">
       <div className="flex gap-8 justify-between w-full">
         <div className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-200 sm:text-sm">
           {label}
         </div>
+
         {isArray ? (
           <ul className="text-sm text-gray-100 sm:text-base text-end">
             {value.map((val, index) => (
-              <li key={index}>{val}</li>
+              <li key={val.id ?? index}>
+                {typeof val === 'object' ? val.name : val}
+              </li>
             ))}
           </ul>
         ) : (
           <div className="text-sm text-gray-100 sm:text-base text-end">
-            {value}
+            {typeof value === 'object' ? value.name : value}
           </div>
         )}
       </div>
@@ -43,19 +47,33 @@ export default function AchievementPopup({
   const mediaSources = useMemo(() => {
     if (!item) return [];
 
-    const addSource = (source) => {
-      if (!source) return undefined;
+const addSource = (source) => {
+  if (!source) return undefined;
 
-      if (typeof source === 'string') {
-        const trimmed = source.trim();
-        if (!trimmed) return undefined;
-        const extension = trimmed.split('?')[0].split('.').pop()?.toLowerCase();
-        const isVideo = ['mp4', 'webm', 'ogg'].includes(extension);
-        return { src: trimmed, type: isVideo ? 'video' : 'image' };
-      }
+  // CASE 1: string langsung
+  if (typeof source === 'string') {
+    const trimmed = source.trim();
+    if (!trimmed) return undefined;
 
-      return undefined;
-    };
+    const extension = trimmed.split('?')[0].split('.').pop()?.toLowerCase();
+    const isVideo = ['mp4', 'webm', 'ogg'].includes(extension);
+
+    return { src: trimmed, type: isVideo ? 'video' : 'image' };
+  }
+
+  // ✅ CASE 2: object dari database
+  if (typeof source === 'object' && source.image_url) {
+    const trimmed = source.image_url.trim();
+    if (!trimmed) return undefined;
+
+    const extension = trimmed.split('?')[0].split('.').pop()?.toLowerCase();
+    const isVideo = ['mp4', 'webm', 'ogg'].includes(extension);
+
+    return { src: trimmed, type: isVideo ? 'video' : 'image' };
+  }
+
+  return undefined;
+};
 
     const collected = [];
 
