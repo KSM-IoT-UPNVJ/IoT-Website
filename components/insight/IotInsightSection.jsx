@@ -1,10 +1,33 @@
-import iotInsightData from './iotInsightData';
+'use client';
+
+import { useEffect, useState } from 'react';
 import IotInsightCarousel from './IotInsightCarousel';
 import IotInsightCard from './IotInsightCard';
 import IotInsightDesc from './IotInsightDesc';
 
 export default function IotInsightSection({ division, carouselReverse }) {
-  const divisionData = iotInsightData[division + '-slide'];
+  const [slides, setSlides] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchSlides() {
+      try {
+        const res = await fetch(
+          `http://127.0.0.1:8000/admin/insight/category/${division}`
+        );
+        const data = await res.json();
+        setSlides(data);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchSlides();
+  }, [division]);
+
+  if (loading) return null;
 
   return (
     <>
@@ -26,12 +49,17 @@ export default function IotInsightSection({ division, carouselReverse }) {
         </div>
 
         <div className="mx-2 overflow-hidden flex justify-center my-auto">
-          <IotInsightCarousel reverse={carouselReverse}>
-            {Array.isArray(divisionData) &&
-              divisionData.map((card, i) => (
-                <IotInsightCard key={i} {...card} />
-              ))}
-          </IotInsightCarousel>
+      <IotInsightCarousel reverse={carouselReverse}>
+        {slides.map((item) => (
+          <IotInsightCard
+            key={item.id}
+            image={item.image}
+            vol={item.vol}
+            title={item.title}
+            link={item.link}
+          />
+        ))}
+      </IotInsightCarousel>
         </div>
       </div>
     </>
