@@ -100,49 +100,67 @@ const LayoutProgram = ({ program }) => {
                 </p>
               </FadeIn>
 
+              {program.data.tombolLink && (
+                <FadeIn direction={'up'} delay={0.75}>
+                  <a
+                    href={program.data.tombolLink.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-6 py-3 mb-9 rounded-3xl 
+                              bg-biru-sedang text-white font-semibold 
+                              hover:bg-kuning-tua hover:text-black hover:scale-110 active:scale-95 transition"
+                  >
+                    {program.data.tombolLink.label}
+                  </a>
+                </FadeIn>
+              )}
+
+
               {/* Testimoni + Footer Author + Foto */}
-              <FadeIn direction={'left'} delay={0.9}>
-                <div className="flex flex-col md:flex-row items-start mt-8">
-                  <div className="md:w-2/3 w-full pr-6 flex flex-col">
-                    <p className="text-base md:text-lg leading-relaxed text-gray-800 mb-4">
-                      &quot;{program.data.testimoni}&quot;
-                    </p>
+              {program.data.testimoni && (
+                <FadeIn direction={'left'} delay={0.9}>
+                  <div className="flex flex-col md:flex-row items-start mt-8">
+                    <div className="md:w-2/3 w-full pr-6 flex flex-col">
+                      <p className="text-base md:text-lg leading-relaxed text-gray-800 mb-4">
+                        &quot;{program.data.testimoni}&quot;
+                      </p>
 
-                    <FadeIn direction={'up'} delay={0.6}>
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="w-14 h-14 rounded-full overflow-hidden border-4 border-white shadow">
-                          <Image
-                            width={56}
-                            height={56}
-                            src={program.data.footerAuthor}
-                            alt="Nama Footer Author"
-                            className="w-full h-full object-cover"
-                          />
+                      <FadeIn direction={'up'} delay={0.6}>
+                        <div className="flex items-center gap-4 mb-6">
+                          <div className="w-14 h-14 rounded-full overflow-hidden border-4 border-white shadow">
+                            <Image
+                              width={56}
+                              height={56}
+                              src={program.data.footerAuthor}
+                              alt="Nama Footer Author"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div>
+                            <p className="font-semibold text-gray-900 text-lg">
+                              {program.author.namaFooter}
+                            </p>
+                            <p className="text-sm text-gray-500">
+                              {program.author.jabatanFooter}
+                            </p>
+                          </div>
                         </div>
-                        <div>
-                          <p className="font-semibold text-gray-900 text-lg">
-                            {program.author.namaFooter}
-                          </p>
-                          <p className="text-sm text-gray-500">
-                            {program.author.jabatanFooter}
-                          </p>
-                        </div>
-                      </div>
-                    </FadeIn>
-                  </div>
+                      </FadeIn>
+                    </div>
 
-                  {/* Kolom kanan: Foto kolase */}
-                  <div className="md:w-1/2 w-full flex items-center justify-center mt-6 md:mt-0">
-                    <Image
-                      src={program.data.fotoKolase}
-                      alt="Foto Kolase"
-                      width={367}
-                      height={367}
-                      className="rounded-md w-full h-auto max-h-[367px] object-contain"
-                    />
+                    {/* Kolom kanan: Foto kolase */}
+                    <div className="md:w-1/2 w-full flex items-center justify-center mt-6 md:mt-0">
+                      <Image
+                        src={program.data.fotoKolase}
+                        alt="Foto Kolase"
+                        width={367}
+                        height={367}
+                        className="rounded-md w-full h-auto max-h-[367px] object-contain"
+                      />
+                    </div>
                   </div>
-                </div>
-              </FadeIn>
+                </FadeIn>
+                )}
             </div>
 
             {/* Slider Foto Otomatis */}
