@@ -1,23 +1,4 @@
 {
-  "Oprec-IOT-2026": {
-    "data": {
-      "fotoHeader": "/OurProgram/oprec.png",
-      "headerAuthor": "/aboutUs/bangMarsel.webp",
-      "frontText": "KSM Internet Of Things UPNVJ resmi membuka pendaftaran anggota baru bagi mahasiswa teknik UPNVJ yang ingin belajar dan mengembangkan minat dalam teknologi berbasis IoT.",
-      "deskripsi1": "KSM Internet Of Things UPNVJ resmi membuka pendaftaran anggota baru bagi mahasiswa teknik UPNVJ yang ingin belajar dan mengembangkan minat dalam teknologi berbasis IoT.",
-      "deskripsi2": "Pada Open Recruitment ini, tersedia berbagai posisi yang dapat dipilih sesuai minat dan potensi calon anggota, meliputi Academic, Public Relations, Creative Media, Hardware Engineer, Software Engineer, Network Engineer, UI/UX Engineer, Firmware Engineer, dan Electrical Engineer. Setiap divisi memiliki peran dan tanggung jawab yang saling terintegrasi dalam mendukung kegiatan organisasi, pengembangan proyek, serta peningkatan kompetensi anggota di bidang teknologi, komunikasi, dan kreativitas.",
-      "deskripsi3": "Open Recruitment KSM Internet of Things UPNVJ 2026 dibuka pada tanggal 15–25 Januari 2026, dengan pengumuman lolos seleksi berkas pada 26 Januari 2026. Calon pendaftar diwajibkan menyiapkan Curriculum Vitae (CV), Kartu Tanda Mahasiswa (KTM), Kartu Hasil Studi (KHS) atau Kartu Studi Tetap (KST), pas foto ukuran 4x6, serta portofolio (opsional). Proses pendaftaran dilakukan secara daring melalui Google Form yang dapat diakses pada tombol dibawah.",
-      "tombolLink": {
-        "url": "https://forms.gle/e8kjk1cqv5W4dHP18",
-        "label": "Daftar Sekarang" 
-      },
-      "title": "Open Recruitment KSM IoT UPNVJ 2026"
-    },
-    "author": {
-      "namaHeader": "Marselinus Allen Nugraha",
-      "jabatanHeader": "2026 Chairman"
-    }
-  },
   "studi-banding": {
     "data": {
       "fotoHeader": "/OurProgram/foto_stuban1.webp",
