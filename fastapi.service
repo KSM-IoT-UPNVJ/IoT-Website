@@ -1,0 +1,14 @@
+[Unit]
+Description=FastAPI app
+After=network.target postgresql.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/var/www/backend/api
+ExecStart=/var/www/backend/api/.venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app --bind 127.0.0.1:8000
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
