@@ -18,20 +18,28 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: "npm"
 
       - name: Build Next.js
         run: |
-          npm install
+          npm ci
           npm run build
+      
+      - name: Prepare Standalone Assets
+        run: |
+          cp -r public/ .next/standalone/
+          cp -r .next/static/ .next/standalone/.next/
 
-      - name: Upload Frontend
+      - name: Upload Frontend Standalone
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
-          source: ".next/,public/,package.json,package-lock.json,next.config.mjs"
+          source: ".next/standalone/*"
           target: "/var/www/frontend/app"
+          strip_components: 2
+          rm: true
 
       # ===== BACKEND =====
       - name: Upload Backend
@@ -49,8 +57,26 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
+
+      # ===== RESTART SERVICES =====
+      - name: Restart Services
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
+            # Restart frontend
+            cd /var/www/frontend/app
+            pm2 restart iotweb-frontend || pm2 start npm --name "iotweb-frontend" -- server.js
+
+            # Restart backend
             cd /var/www/backend/api
-            source .venv/bin/activate
-            pip install -r requirements.txt
+            if [ -d ".venv" ]; then
+              source .venv/bin/activate
+              pip install -r requirements.txt
+            fi
             sudo systemctl restart fastapi
+
+            pm2 save
+
