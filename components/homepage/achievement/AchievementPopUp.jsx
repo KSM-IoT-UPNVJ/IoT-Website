@@ -7,21 +7,25 @@ import Image from 'next/image';
 
 const InfoRow = ({ label, value }) => {
   const isArray = Array.isArray(value);
+
   return (
     <div className="flex flex-col gap-1 rounded-lg bg-white/10 px-4 py-3 text-left sm:flex-row sm:items-center sm:justify-between">
       <div className="flex gap-8 justify-between w-full">
         <div className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-200 sm:text-sm">
           {label}
         </div>
+
         {isArray ? (
           <ul className="text-sm text-gray-100 sm:text-base text-end">
             {value.map((val, index) => (
-              <li key={index}>{val}</li>
+              <li key={val.id ?? index}>
+                {typeof val === 'object' ? val.name : val}
+              </li>
             ))}
           </ul>
         ) : (
           <div className="text-sm text-gray-100 sm:text-base text-end">
-            {value}
+            {typeof value === 'object' ? value.name : value}
           </div>
         )}
       </div>
@@ -32,43 +36,47 @@ const InfoRow = ({ label, value }) => {
 export default function AchievementPopup({
   item,
   onClose,
-  clickedElementPosition,
+  clickedElementPosition
 }) {
-  if (!item) return null; // Jangan render apapun jika tidak ada item yang dipilih
+  if (!item) return null;
 
   const showExtraInfo = Boolean(
-    item.time || item.organizer || item.contributors,
+    item.time || item.organizer || item.contributors
   );
+
   const mediaSources = useMemo(() => {
     if (!item) return [];
 
-    const addSource = (source) => {
-      if (!source) return undefined;
+const addSource = (source) => {
+  if (!source) return undefined;
 
-      if (typeof source === 'string') {
-        const trimmed = source.trim();
-        if (!trimmed) return undefined;
-        const extension = trimmed.split('?')[0].split('.').pop()?.toLowerCase();
-        const isVideo = extension && ['mp4', 'webm', 'ogg'].includes(extension);
-        return { src: trimmed, type: isVideo ? 'video' : 'image' };
-      }
+  // CASE 1: string langsung
+  if (typeof source === 'string') {
+    const trimmed = source.trim();
+    if (!trimmed) return undefined;
 
-      if (typeof source === 'object' && source.src) {
-        const trimmed = source.src.trim();
-        if (!trimmed) return undefined;
-        const extension = trimmed.split('?')[0].split('.').pop()?.toLowerCase();
-        const inferredVideo =
-          extension && ['mp4', 'webm', 'ogg'].includes(extension);
-        return {
-          src: trimmed,
-          type: source.type ?? (inferredVideo ? 'video' : 'image'),
-        };
-      }
+    const extension = trimmed.split('?')[0].split('.').pop()?.toLowerCase();
+    const isVideo = ['mp4', 'webm', 'ogg'].includes(extension);
 
-      return undefined;
-    };
+    return { src: trimmed, type: isVideo ? 'video' : 'image' };
+  }
+
+  // ✅ CASE 2: object dari database
+  if (typeof source === 'object' && source.image_url) {
+    const trimmed = source.image_url.trim();
+    if (!trimmed) return undefined;
+
+    const extension = trimmed.split('?')[0].split('.').pop()?.toLowerCase();
+    const isVideo = ['mp4', 'webm', 'ogg'].includes(extension);
+
+    return { src: trimmed, type: isVideo ? 'video' : 'image' };
+  }
+
+  return undefined;
+};
 
     const collected = [];
+
     if (Array.isArray(item.images) && item.images.length > 0) {
       item.images.forEach((media) => {
         const parsed = addSource(media);
@@ -81,6 +89,7 @@ export default function AchievementPopup({
 
     return collected;
   }, [item]);
+
   const mediaCount = mediaSources.length;
   const hasMedia = mediaCount > 0;
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
@@ -91,26 +100,21 @@ export default function AchievementPopup({
 
   const advanceMedia = useCallback(() => {
     if (mediaCount <= 1) return;
-    setCurrentMediaIndex((prev) => {
-      const nextIndex = (prev + 1) % mediaCount;
-      return nextIndex;
-    });
+    setCurrentMediaIndex((prev) => (prev + 1) % mediaCount);
   }, [mediaCount]);
 
-  const currentMedia = hasMedia
-    ? mediaSources[currentMediaIndex] ?? mediaSources[0]
-    : null;
+  const currentMedia =
+    hasMedia ? mediaSources[currentMediaIndex] ?? mediaSources[0] : null;
 
   useEffect(() => {
     if (!currentMedia || currentMedia.type === 'video' || mediaCount <= 1) {
-      return undefined;
+      return;
     }
-
     const timeoutId = setTimeout(advanceMedia, 3000);
     return () => clearTimeout(timeoutId);
   }, [advanceMedia, currentMedia, mediaCount]);
 
-  // Calculate initial position for animation
+  // Animation start from card position
   const getInitialPosition = () => {
     if (!clickedElementPosition) {
       return { scale: 0, opacity: 0 };
@@ -127,14 +131,12 @@ export default function AchievementPopup({
     };
   };
 
-  const getFinalPosition = () => {
-    return {
-      x: 0,
-      y: 0,
-      scale: 1,
-      opacity: 1,
-    };
-  };
+  const getFinalPosition = () => ({
+    x: 0,
+    y: 0,
+    scale: 1,
+    opacity: 1
+  });
 
   return (
     <AnimatePresence>
@@ -155,15 +157,15 @@ export default function AchievementPopup({
             type: 'spring',
             stiffness: 300,
             damping: 30,
-            duration: 0.6,
+            duration: 0.6
           }}
         >
-          {/* Lapisan background dengan efek glassmorphism */}
+
           <div className="absolute inset-0 bg-white/10 backdrop-blur-xl rounded-2xl -z-10"></div>
 
-          {/* Lapisan konten (teks & gambar) */}
           <div className="relative z-10 w-full h-full flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8">
-            {/* Bagian Kiri (Gambar) */}
+
+            {/* Bagian kiri media */}
             <motion.div
               className="relative w-full md:w-1/2 h-1/2 md:h-full rounded-lg overflow-hidden"
               initial={{ opacity: 0, x: -50 }}
@@ -182,27 +184,14 @@ export default function AchievementPopup({
                       muted
                       playsInline
                       onEnded={advanceMedia}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.6 }}
                     />
                   ) : (
-                    <motion.div
-                      key={currentMedia.src}
-                      className="relative w-full h-full"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.6 }}
-                    >
+                    <motion.div key={currentMedia.src} className="relative w-full h-full">
                       <Image
                         src={currentMedia.src}
                         alt={item.title}
                         fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover"
-                        priority
                       />
                     </motion.div>
                   )}
@@ -210,40 +199,23 @@ export default function AchievementPopup({
               )}
             </motion.div>
 
-            {/* Bagian Kanan (Konten Teks) */}
-            <motion.div
-              className="w-full md:w-1/2 flex flex-col justify-between p-2 sm:p-4 text-white overflow-y-scroll"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-            >
-              <div className="self-start">
-                <motion.button
-                  className="cursor-pointer"
-                  onClick={onClose}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-                >
-                  <MoveLeft size={36} className="sm:size-[48px]" />
-                </motion.button>
-              </div>
+            {/* Bagian kanan teks */}
+            <div className="w-full md:w-1/2 flex flex-col justify-between p-2 sm:p-4 text-white overflow-y-scroll">
+              <button className="self-start mb-4" onClick={onClose}>
+                <MoveLeft size={36} />
+              </button>
 
-              <motion.div
-                className="text-center flex-grow flex flex-col justify-center"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.6 }}
-              >
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">
+              <div className="text-center flex-grow flex flex-col justify-center">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
                   {item.title}
                 </h2>
-                <h5 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 md:mb-8">
+                <h5 className="text-lg sm:text-xl md:text-2xl font-semibold mb-6">
                   {item.award}
                 </h5>
-                <p className="text-sm sm:text-base md:text-lg text-gray-200 mb-2 sm:mb-4">
+                <p className="text-sm sm:text-base md:text-lg text-gray-200 mb-4">
                   {item.description}
                 </p>
+
                 {showExtraInfo && (
                   <div className="mt-4 w-full max-w-xl space-y-3 text-left md:mx-auto">
                     {item.time && <InfoRow label="Waktu" value={item.time} />}
@@ -255,8 +227,9 @@ export default function AchievementPopup({
                     )}
                   </div>
                 )}
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
+
           </div>
         </motion.div>
       </motion.div>

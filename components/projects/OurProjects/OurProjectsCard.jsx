@@ -64,11 +64,13 @@ export default function OurProjectsCard({
               {title}
             </h3>
 
-            <p className="font-normal text-[18px] my-2  text-[var(--color-biru-tua)] transition-opacity duration-300">
-              {description.length > 210
-                ? description.slice(0, 210).replace(/[\s.,:;!?]+$/, '') + '...'
-                : description}
-            </p>
+<p className="font-normal text-[18px] my-2  text-[var(--color-biru-tua)] transition-opacity duration-300">
+  {description
+    ? description.length > 210
+      ? description.slice(0, 210).replace(/[\s.,:;!?]+$/, '') + '...'
+      : description
+    : "No description available"}
+</p>
           </div>
         </div>
       </div>

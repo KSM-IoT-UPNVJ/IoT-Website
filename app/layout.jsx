@@ -23,6 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head></head>
       <body
+        suppressHydrationWarning
         className="relative min-h-screen flex flex-col"
         style={{ fontFamily: 'var(--font-poppins)' }}
       >
