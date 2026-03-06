@@ -14,14 +14,22 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # 1. Login ke Docker Hub (Agar bisa simpan Image di sana)
+        # 1. Security Check: Pastikan tidak ada library berbahaya
+      - name: Security Audit & Cleanup
+        run: |
+          # Hapus cache npm untuk memastikan installasi bersih
+          npm cache clean --force
+          # Audit keamanan (proses akan GAGAL jika ada celah keamanan level 'critical')
+          npm audit --audit-level=critical
+
+      # 2. Login ke Docker Hub (Agar bisa simpan Image di sana)
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      # 2. Build & Push Image Frontend
+      # 3. Build & Push Image Frontend
       - name: Build and Push Frontend
         uses: docker/build-push-action@v5
         with:
@@ -31,7 +39,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/ksmiot-frontend:latest
           platforms: linux/amd64
 
-      # 3. Deploy ke Server via SSH
+      # 4. Deploy ke Server via SSH
       - name: SSH Remote Deployment
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -57,4 +65,4 @@ jobs:
               ${{ secrets.DOCKER_USERNAME }}/ksmiot-frontend:latest
 
             # Bersihkan image lama yang sudah tidak terpakai (hemat disk)
-            sudo docker image prune -f
+            sudo docker image prune -a -f

@@ -12,11 +12,10 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.22",
     "lucide-react": "^0.545.0",
-    "next": "15.5.4",
+    "next": "^16.1.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "sharp": "^0.34.5",
-    "slick": "^1.12.2",
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.25.1",
     "sweetalert2-react-content": "^5.1.0",
@@ -25,7 +24,6 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "baseline-browser-mapping": "^2.10.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
     "tailwindcss": "^4"
