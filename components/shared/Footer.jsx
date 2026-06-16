@@ -66,7 +66,7 @@ function Footer() {
               UPN "Veteran" Jakarta
             </p>
             <Image
-              src="/sloganBiru.png"
+              src="/slogan.png"
               alt="Slogan"
               width={368}
               height={77}
