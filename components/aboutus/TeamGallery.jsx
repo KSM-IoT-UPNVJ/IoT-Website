@@ -46,141 +46,168 @@ const TEAM_COLUMNS = [
   {
     type: 'tall',
     images: [
-      { src: '/aboutUs/bangRifqi.webp' },
-      { src: '/aboutUs/bangDimas.webp' },
+      { src: '/aboutUs/Chairman.webp' },
+      { src: '/aboutUs/Vice_Chairman.webp' },
     ],
     className: '',
   },
   {
     type: 'medium',
     images: [
-      { src: '/aboutUs/kakBella.webp' },
-      { src: '/aboutUs/kakNaira.webp' },
+      { src: '/aboutUs/Bendahara.webp' },
+      { src: '/aboutUs/Sekretaris.webp' },
     ],
     className: 'pt-10',
   },
   {
     type: 'short',
     images: [
-      { src: '/aboutUs/bangFalis.webp' },
-      { src: '/aboutUs/bangOctogius.webp' },
-      { src: '/aboutUs/bangNaufal.webp' },
+      { src: '/aboutUs/HRD.webp' },
+      { src: '/aboutUs/Academic_Ketua.webp' },
+      { src: '/aboutUs/Academic_Staff_2.webp' },
     ],
     className: '',
   },
   {
     type: 'tall',
     images: [
-      { src: '/aboutUs/bangKumkum.webp' },
-      { src: '/aboutUs/bangRifat.webp' },
+      { src: '/aboutUs/Academic_Staff_1.webp' },
+      { src: '/aboutUs/Academic_Staff_3revisi.webp' },
     ],
     className: '',
   },
   {
     type: 'medium',
     images: [
-      { src: '/aboutUs/bangZahid.webp' },
-      { src: '/aboutUs/bangRakka.webp' },
+      { src: '/aboutUs/Head_Medfo.webp' },
+      { src: '/aboutUs/Anggota_Medfo.webp' },
     ],
     className: 'pt-10',
   },
   {
     type: 'short',
     images: [
-      { src: '/aboutUs/bangReby.webp' },
-      { src: '/aboutUs/bangMusfa.webp' },
-      { src: '/aboutUs/bangFaiq.webp' },
+      { src: '/aboutUs/Humas_Ketua.webp' },
+      { src: '/aboutUs/Humas_Staff.webp' },
+      { src: '/aboutUs/Humas.webp' },
     ],
     className: '',
   },
   {
     type: 'tall',
     images: [
-      { src: '/aboutUs/bangLucky.webp' },
-      { src: '/aboutUs/Shauqi.webp' },
+      { src: '/aboutUs/Editor_Ketua.webp' },
+      { src: '/aboutUs/Editor_Berkelas.webp' },
     ],
     className: '',
   },
   {
     type: 'medium',
     images: [
-      { src: '/aboutUs/bangRiza.webp' },
-      { src: '/aboutUs/kakAmelia.webp' },
+      { src: '/aboutUs/Editor_Staff_1.webp' },
+      { src: '/aboutUs/Editor_Staff_2.webp' },
     ],
     className: 'pt-10',
   },
   {
     type: 'short',
     images: [
-      { src: '/aboutUs/bangMauli.webp' },
-      { src: '/aboutUs/bangRakka2.webp' },
-      { src: '/aboutUs/azam.webp' },
-    ],
-    className: '',
-  },
-  {
-    type: 'tall',
-    images: [{ src: '/aboutUs/bangRafif.webp' }, { src: '/aboutUs/nada.webp' }],
-    className: '',
-  },
-  {
-    type: 'medium',
-    images: [
-      { src: '/aboutUs/ilham.webp' },
-      { src: '/aboutUs/bangDhoni.webp' },
-    ],
-    className: 'pt-10',
-  },
-  {
-    type: 'short',
-    images: [
-      { src: '/aboutUs/bangJohn.webp' },
-      { src: '/aboutUs/bangMarsel.webp' },
-      { src: '/aboutUs/bangIrfan.webp' },
+      { src: '/aboutUs/Head_Engineer.webp' },
+      { src: '/aboutUs/Kadip.webp' },
+      { src: '/aboutUs/Engineer.webp' },
     ],
     className: '',
   },
   {
     type: 'tall',
     images: [
-      { src: '/aboutUs/bangNico.webp' },
-      { src: '/aboutUs/bangGerard.webp' },
+      { src: '/aboutUs/Firmware_Ketua.webp' }, 
+      { src: '/aboutUs/Firmware_Staff_1.webp' }
     ],
     className: '',
   },
   {
     type: 'medium',
     images: [
-      { src: '/aboutUs/bangFairly.webp' },
-      { src: '/aboutUs/bangAzriel.webp' },
+      { src: '/aboutUs/Firmware_Staff_2.webp' },
+      { src: '/aboutUs/Firmware_Staff_3.webp' },
     ],
     className: 'pt-10',
   },
   {
     type: 'short',
     images: [
-      { src: '/aboutUs/bangFarhan.webp' },
-      { src: '/aboutUs/nabhan.webp' },
-      { src: '/aboutUs/bangSaddam.webp' },
+      { src: '/aboutUs/Hardware_Ketua.webp' },
+      { src: '/aboutUs/Hardware_Staff_1.webp' },
+      { src: '/aboutUs/Hardware_Staff_2.webp' },
+    ],
+    className: '',
+  },
+  {
+    type: 'tall',
+    images: [
+      { src: '/aboutUs/Hardware_Staff_3.webp' },
+      { src: '/aboutUs/Hardware_Staff_4.webp' },
     ],
     className: '',
   },
   {
     type: 'medium',
     images: [
-      { src: '/aboutUs/bangImmanuel.webp' },
-      { src: '/aboutUs/bangGoesny.webp' },
+      { src: '/aboutUs/Software_Ketua.webp' },
+      { src: '/aboutUs/Software_Staff_1.webp' },
     ],
     className: 'pt-10',
   },
   {
     type: 'short',
     images: [
-      { src: '/aboutUs/bangFaiz.webp' },
-      { src: '/aboutUs/dhani.webp' },
-      { src: '/aboutUs/khalif.webp' },
+      { src: '/aboutUs/Software_Staff_2.webp' },
+      { src: '/aboutUs/Software_Staff_3.webp' },
+      { src: '/aboutUs/Software_Staff_4.webp' },
     ],
     className: '',
+  },
+  {
+    type: 'tall',
+    images: [
+      { src: '/aboutUs/Electrical_Ketua.webp' },
+      { src: '/aboutUs/Electrical_Staff_2.webp' },
+    ],
+    className: '',
+  },
+  {
+    type: 'medium',
+    images: [
+      { src: '/aboutUs/Electrical_Staff_3.webp' },
+      { src: '/aboutUs/Electrical_Staff_4.webp' },
+    ],
+    className: 'pt-10',
+  },
+  {
+    type: 'short',
+    images: [
+      { src: '/aboutUs/Electrical_Staff_1.webp' },
+      { src: '/aboutUs/UiUx_Ketua.webp' },
+      { src: '/aboutUs/UiUx_Staff_1.webp' },
+    ],
+    className: '',
+  },
+  {
+    type: 'tall',
+    images: [
+      { src: '/aboutUs/UiUx_Staff_2.webp' },
+      { src: '/aboutUs/Network_Ketua.webp' },
+    ],
+    className: '',
+  },
+  {
+    type: 'medium',
+    images: [
+      { src: '/aboutUs/Network_Staff_1.webp' },
+      { src: '/aboutUs/Network_Staff_2.webp' },
+    ],
+    className: 'pt-10',
   },
 ];
 

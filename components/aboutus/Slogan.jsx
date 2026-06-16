@@ -21,8 +21,8 @@ const Slogan = () => {
         <FadeIn direction={'right'} delay={0.8}>
           <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
             <p className="text-xs md:text-lg text-center max-w-3xl select-none">
-              Slogan ini menjadi fondasi utama dan cerminan semangat KSM IoT
-              tahun 2025 yang memiliki dua pilar utama:
+              Koneksi bukan hanya tentang teknologi, tetapi juga tentang bagaimana 
+              setiap individu dapat saling terhubung, berkembang, dan bertumbuh bersama.
             </p>
           </div>
         </FadeIn>
@@ -34,16 +34,15 @@ const Slogan = () => {
                 className="text-2xl md:text-4xl font-bold mb-2 select-none"
                 style={{ color: 'var(--color-biru-tua)' }}
               >
-                Innovating Today
+                Stay Connected
               </h3>
             </div>
           </FadeIn>
           <FadeIn direction={'right'} delay={1.6}>
             <div className="max-w-5xl mx-auto flex flex-col items-center text-center space-y-8">
               <p className="text-xs md:text-lg text-center max-w-3xl select-none">
-                Menanamkan keberanian untuk bermimpi besar, berani mencoba, dan
-                tak henti menciptakan solusi cerdas di bidang teknologi Internet
-                of Things.
+                Menjadi pengingat bahwa kolaborasi, relasi, dan semangat belajar adalah fondasi 
+                dalam membangun lingkungan yang suportif dan inovatif
               </p>
             </div>
           </FadeIn>
@@ -55,17 +54,15 @@ const Slogan = () => {
                   className="text-2xl md:text-4xl font-bold mb-6 mt-4 select-none"
                   style={{ color: 'var(--color-biru-tua)' }}
                 >
-                  Champion Tomorrow
+                  Make Difference
                 </h3>
               </div>
             </FadeIn>
             <FadeIn direction={'right'} delay={2.4}>
               <div className="max-w-5xl mx-auto flex flex-col items-center text-center space-y-8">
                 <p className="text-xs md:text-lg text-center max-w-3xl select-none">
-                  Menegaskan tujuan besar untuk melahirkan individu yang menjadi
-                  juara, baik dalam kompetisi teknologi maupun sebagai pribadi
-                  yang bermanfaat dan menjadi penggerak perubahan di era
-                  teknologi.
+                  Merepresentasikan komitmen kami untuk terus menciptakan dampak melalui karya, 
+                  teknologi, serta kontribusi nyata bagi lingkungan sekitar.
                 </p>
               </div>
             </FadeIn>
