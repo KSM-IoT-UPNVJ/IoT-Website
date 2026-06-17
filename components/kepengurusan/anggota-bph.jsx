@@ -21,19 +21,23 @@ import './kepengurusan.css';
 const baseImages = [
   {
     src: '/kepengurusan/chairman.webp',
-    href: 'https://www.instagram.com/p/DMNGCGvx6oq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+    href: 'https://www.instagram.com/iot.upnvj/p/DZPgBH8E8Qz/',
   },
   {
     src: '/kepengurusan/vice chairman.webp',
-    href: 'https://www.instagram.com/p/DMNFizGxH8n/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+    href: 'https://www.instagram.com/iot.upnvj/p/DZPXes1kURX/',
   },
   {
-    src: '/kepengurusan/sekbend.webp',
-    href: 'https://www.instagram.com/p/DMNFS6TRCaG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+    src: '/kepengurusan/secretary.webp',
+    href: 'https://www.instagram.com/iot.upnvj/p/DZPXEh7kf9s/',
+  },
+  {
+    src: '/kepengurusan/treasurer.webp',
+    href: 'https://www.instagram.com/iot.upnvj/p/DZPV_H7kWvI/',
   },
   {
     src: '/kepengurusan/academic advisor.webp',
-    href: 'https://www.instagram.com/p/DMNFxi8RXV2/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+    href: 'https://www.instagram.com/iot.upnvj/p/DZPf5bbkxpR/',
   },
 ];
 
