@@ -9,7 +9,7 @@ export default function MediaCard() {
 
   return (
     <div className="flex flex-col gap-3 sm:gap-4 flex-1 lg:flex-2/7 p-4 sm:p-6 md:p-8 lg:p-10">
-      <a href="tel:+62 813-1522-6318" className={cardImage}>
+      <a href="tel:+62 812-8388-5734" className={cardImage}>
         <FadeIn delay={0.4} direction={'right'} className="w-full h-full">
           <Image
             src={imageSrc}
@@ -28,7 +28,7 @@ export default function MediaCard() {
                 Phone
               </p>
               <p className="text-xs sm:text-sm duration-150">
-                +62 813-1552-6318
+                +62 812-8388-5734
               </p>
             </div>
           </div>
@@ -52,7 +52,7 @@ export default function MediaCard() {
             <div>
               <p className="font-bold text-sm sm:text-base">Email</p>
               <p className="text-xs sm:text-sm break-all">
-                humas@ksmiotupnvj.com
+                internetofthings.upnvj@gmail.com
               </p>
             </div>
           </div>

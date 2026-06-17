@@ -33,16 +33,16 @@ function Footer() {
                 href="mailto:internetofthings.upnvj@gmail.com"
                 className={linkClass}
               >
-                humas@ksmiotupnvj.com
+                internetofthings.upnvj@gmail.com
               </Link>
             </div>
             <div>
-              <Link href="tel:+62 831-4043-4826" className={linkClass}>
-                +62 831-4043-4826
+              <Link href="tel:+62 812-8388-5734" className={linkClass}>
+                +62 812-8388-5734
               </Link>
             </div>
             <div>
-              <Link href="ksmiotupnvj.com" className={linkClass}>
+              <Link href="https://ksmiotupnvj.com/" className={linkClass}>
                 www.ksmiotupnvj.com
               </Link>
             </div>
