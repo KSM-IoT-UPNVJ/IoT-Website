@@ -21,15 +21,15 @@ import Image from 'next/image';
 const baseImages = [
   {
     src: '/kepengurusan/medfo.webp',
-    href: 'https://www.instagram.com/p/DMNAZGpxtCN/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+    href: 'https://www.instagram.com/iot.upnvj/p/DZPP38OEeha/',
   },
   {
     src: '/kepengurusan/humas.webp',
-    href: 'https://www.instagram.com/p/DMM_1IpxBPU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+    href: 'https://www.instagram.com/iot.upnvj/p/DZPQlzYEVGV/',
   },
   {
     src: '/kepengurusan/Medkraf.webp',
-    href: 'https://www.instagram.com/p/DMNB-72R3MD/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+    href: 'https://www.instagram.com/iot.upnvj/p/DZPOGeqkWZR/',
   },
 ];
 

@@ -21,27 +21,31 @@ import Image from 'next/image';
 const baseImages = [
   {
     src: '/kepengurusan/engineer.webp',
-    href: 'https://www.instagram.com/p/DMNDqnqR9Ca/',
+    href: 'https://www.instagram.com/iot.upnvj/p/DZPUxLUkQgd/',
   },
   {
     src: '/kepengurusan/Firmware.webp',
-    href: 'https://www.instagram.com/p/DMNDGnBx7J8/',
+    href: 'https://www.instagram.com/iot.upnvj/p/DZPTV_AkY7t/',
   },
   {
-    src: '/kepengurusan/hardware.webp',
-    href: 'https://www.instagram.com/p/DMND9y7xSG8/',
+    src: '/kepengurusan/hardware26.webp',
+    href: 'https://www.instagram.com/iot.upnvj/p/DZPUTwfEeY3/',
   },
   {
     src: '/kepengurusan/network.webp',
-    href: 'https://www.instagram.com/p/DMNCVUMRsUZ/',
+    href: 'https://www.instagram.com/iot.upnvj/p/DZPSXToEZR6/',
   },
   {
-    src: '/kepengurusan/Software.webp',
-    href: 'https://www.instagram.com/p/DMNDV7ZRhBy/',
+    src: '/kepengurusan/Software26.webp',
+    href: 'https://www.instagram.com/iot.upnvj/p/DZPTwaekajy/',
   },
   {
-    src: '/kepengurusan/UX.webp',
-    href: 'https://www.instagram.com/p/DMNCzpNxAZn/',
+    src: '/kepengurusan/UX26.webp',
+    href: 'https://www.instagram.com/iot.upnvj/p/DZPSvJukS8B/',
+  },
+  {
+    src: '/kepengurusan/electrical.webp',
+    href: 'https://www.instagram.com/iot.upnvj/p/DZPRz7BEW08/',
   },
 ];
 

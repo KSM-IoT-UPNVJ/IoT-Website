@@ -20,12 +20,12 @@ import Image from 'next/image';
 
 const baseImages = [
   {
-    src: '/kepengurusan/hrd.webp',
-    href: 'https://www.instagram.com/p/DMNEqw_Rkwu/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+    src: '/kepengurusan/hrd26.webp',
+    href: 'https://www.instagram.com/iot.upnvj/p/DZPVmUPkRch/',
   },
   {
     src: '/kepengurusan/akademik.webp',
-    href: 'https://www.instagram.com/p/DMNEOzGxpno/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+    href: 'https://www.instagram.com/iot.upnvj/p/DZPVFENkZlC/',
   },
 ];
 
