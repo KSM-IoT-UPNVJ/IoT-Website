@@ -61,18 +61,14 @@ const Home = () => {
               </h3>
             </FadeIn>
             <FadeIn direction="left" delay={1.0}>
-              <p className="mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-left sm:text-justify font-optima">
-                KSM Internet of Things (IoT) UPN Veteran Jakarta adalah wadah
-                bagi mahasiswa Fakultas Teknik yang berfokus mengembangkan
-                teknologi IoT melalui riset, implementasi, dan kompetisi
-                nasional maupun internasional. Bergabunglah untuk mengasah
-                kemampuan dan siap menghadapi revolusi industri 4.0 dengan
-                semangat
+              <p className="mt-6 text-sm sm:text-base md:text-sm leading-relaxed text-left sm:text-justify font-optima">
+                KSM Internet of Things (IoT) UPN Veteran Jakarta adalah wadah bagi mahasiswa Fakultas Teknik yang memiliki minat dan bakat dalam pengembangan teknologi IoT. Kami berfokus pada riset, implementasi ilmu, dan partisipasi aktif dalam kompetisi IoT nasional maupun internasional.
+
               </p>
             </FadeIn>
             <FadeIn direction="up" delay={0.9}>
-              <p className="mt-1 text-lg sm:text-xl font-bold font-optima">
-                "Innovating Today, Champion Tomorrow"!
+              <p className="text-sm sm:text-base md:text-sm leading-relaxed text-left sm:text-justify font-optima">
+                <strong>"Stay Connected, Make Differences"</strong> menjadi prinsip utama KSM Internet of Things UPNVJ tahun 2026, dengan tujuan untuk menghubungkan & melatih anggota menjadi individu yang kolaboratif, inovatif, dan siap menciptakan perubahan di masa depan.
               </p>
             </FadeIn>
           </div>

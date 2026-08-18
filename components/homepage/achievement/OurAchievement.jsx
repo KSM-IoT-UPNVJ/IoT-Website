@@ -34,33 +34,6 @@ const OurAchievement = () => {
     },
     {
       id: 2,
-      title: 'Essay Education Fair 2023',
-      award: 'Peringkat I',
-      description:
-        'KOMPETISI essay Education Fair 2023 "Peran Mahasiswa Indonesia dalam Mewujudkan Visi Indonesia Emas 2045"',
-      image: '/homepage/achievement/edufair2023/edufair1.webp',
-      images: [
-        '/homepage/achievement/edufair2023/edufair1.webp',
-        '/homepage/achievement/edufair2023/edufair2.webp',
-      ],
-      time: '23/09/2023',
-      organizer: 'UKM Keilmiahan FKIP UNS',
-      contributors: ['Naufal Firdaus', 'Sheva Nurhaliza'],
-    },
-    {
-      id: 3,
-      title: "LKTI Ceer's Scientific Fair V 2023",
-      award: 'Peringkat I',
-      description:
-        "Kompetisi Karya Tulis Ilmiah Nasional Ceer's Scientific Fair 5 2023 dengan tema Kontribusi Mahasiswa Sebagai Agent Of Change yang Visioner, Inovatif, dan Dedikatif Guna Mewujudkan SDG's di Era Indonesia Emas 2045",
-      image: '/homepage/achievement/csf2023/csf2023.webp',
-      images: ['/homepage/achievement/csf2023/csf2023.webp'],
-      time: '24/09/2023',
-      organizer: 'Kelompok Studi Penelitian Ekonomi FEB Universitas Jember',
-      contributors: ['Naufal Firdaus', 'Sri Sakhinah', 'Fawaz Nawfal'],
-    },
-    {
-      id: 4,
       title: 'LKTI Gravitasi UHO 2023',
       award: 'Peringkat I',
       description:
@@ -76,7 +49,7 @@ const OurAchievement = () => {
       contributors: ['Naufal Firdaus', 'Sheva Nurhaliza', 'Heri Hardiyanto'],
     },
     {
-      id: 5,
+      id: 3,
       title: 'Essay INFAIR 2023',
       award: 'Peringkat I',
       description:
@@ -92,7 +65,7 @@ const OurAchievement = () => {
       contributors: ['Naufal Firdaus', 'Farhan Aditya'],
     },
     {
-      id: 6,
+      id: 4,
       title: 'KRI 2024 cabang KRSTI',
       award: 'Peringkat 13 Nasional Wilayah 1',
       description:
@@ -114,7 +87,7 @@ const OurAchievement = () => {
       ],
     },
     {
-      id: 7,
+      id: 5,
       title: 'Poster Design Competition I-Nanotech 2024',
       award: 'Peringkat II',
       description:
@@ -126,7 +99,7 @@ const OurAchievement = () => {
       contributors: ['Jati Kinsela'],
     },
     {
-      id: 8,
+      id: 6,
       title: 'KKI 2024 kategori ASV',
       award: 'Finalis',
       description:
@@ -152,7 +125,7 @@ const OurAchievement = () => {
       ],
     },
     {
-      id: 9,
+      id: 7,
       title: 'Sumo Bot FIK Fair',
       award: '4th Place',
       description:
@@ -172,6 +145,52 @@ const OurAchievement = () => {
         'Ramadhani Putra Yuditama',
       ],
     },
+    {
+    id: 8,
+    title: 'Fun and Challenge Robotic & Coding Competition (FNC) 2026',
+    award: 'Finalis',
+    description:
+      'Fun and Challenge Robotic & Coding Competition (FNC) 2026 diselenggarakan dengan tujuan untuk mengembangkan kemampuan peserta dalam bidang teknologi, robotika, dan pemrograman, sekaligus mendorong lahirnya inovasi di era digital. Selain itu, kegiatan ini juga menjadi sarana untuk mempererat relasi serta bertukar pengalaman dan ide antar peserta dari berbagai wilayah di Indonesia.',
+    image: '/homepage/achievement/fnc2026/fnc1.webp',
+    images: [
+      '/homepage/achievement/fnc2026/fnc1.webp',
+      '/homepage/achievement/fnc2026/fnc2.webp',
+    ],
+    time: '26/04/2026',
+    organizer: 'Robotika Nusantara',
+    contributors: [
+      'Arif Amarudin',
+      'Rifky Aditya Rachman',
+      'Muhamad Fahrez Bukhori',
+      'Muhammad Fajar Sodik',
+    ],
+  },
+  {
+    id: 9,
+    title: 'Astra Honda SDGs Future Leader 2026',
+    award: 'Juara 1 Regional',
+    description:
+      'Astra Honda SDGs Future Leaders 2026 merupakan kompetisi inovasi sosial yang diselenggarakan oleh Yayasan PT Astra Honda Motor untuk mendorong mahasiswa menghadirkan solusi inovatif yang memberikan dampak nyata bagi masyarakat sesuai dengan tujuan Sustainable Development Goals (SDGs).',
+    image: '/homepage/achievement/astrahonda2026/astrahonda1.png',
+    images: [
+      '/homepage/achievement/astrahonda2026/astrahonda1.png',
+      '/homepage/achievement/astrahonda2026/astrahonda2.png',
+    ],
+    time: '2026',
+    organizer: 'Yayasan Astra Honda Motor',
+    contributors: [
+      'Subekti Ari Santoso, S.T., M.Eng.',
+      'Muhamad Nabhan Azmi',
+      'Ilham Surya Rizqullah',
+      'Jeremia Boy Hasiholan Simanjuntak',
+      'Muhammad Fajar Sodik',
+      'Muhammad Ashlan Ali',
+      'Arfandi Putra Ramadhan',
+      'Nada Fitria Berliana',
+      'Aura Adillah',
+      'Rifky Aditya Rachman',
+    ],
+  },
   ];
 
   const handleOpenPopup = (achievement, elementPosition) => {
