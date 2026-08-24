@@ -35,7 +35,7 @@ const DesktopInsightCard = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={`relative flex flex-col justify-end rounded-2xl shadow-lg overflow-hidden transition-all duration-700 ease-in-out ${
-        isActive ? 'w-[530px]' : 'w-[200px]'
+        isActive ? 'w-[525px]' : 'w-[183px]'
       } h-[600px]`}
     >
       <div className="absolute inset-0">
@@ -45,7 +45,7 @@ const DesktopInsightCard = ({
           fill
           className="object-cover transition-transform duration-700 ease-in-out scale-100 group-hover:scale-110"
           quality={60}
-          sizes="(min-width: 1280px) 530px, (min-width: 1024px) 430px, 80vw"
+          sizes="(min-width: 1280px) 525px, (min-width: 1024px) 430px, 80vw"
           priority={index === 0}
         />
       </div>

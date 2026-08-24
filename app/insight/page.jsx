@@ -40,6 +40,7 @@ export default function Insight() {
         <IotInsightSection division={'software'} carouselReverse={true} />
         <IotInsightSection division={'uiux'} carouselReverse={false} />
         <IotInsightSection division={'network'} carouselReverse={true} />
+        <IotInsightSection division={'electrical'} carouselReverse={false} />
       </FadeIn>
       <Footer />
     </>

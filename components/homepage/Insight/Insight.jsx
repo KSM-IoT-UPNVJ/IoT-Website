@@ -44,6 +44,14 @@ const divisions = [
     gradient:
       'bg-gradient-to-b from-emerald-200/70 via-emerald-400/40 to-emerald-700/80',
   },
+  {
+    name: 'Electrical Division',
+    image: '/electrical.png',
+    description:
+      'Divisi Electrical merancang, menguji, dan memastikan keandalan sistem elektronika IoT agar beroperasi stabil dan aman.',
+    gradient:
+      'bg-gradient-to-b from-yellow-200/70 via-orange-400/40 to-orange-700/80',
+},
 ];
 
 const defaultDescription =
