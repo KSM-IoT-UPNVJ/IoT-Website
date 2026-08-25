@@ -35,7 +35,7 @@ const DesktopInsightCard = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={`relative flex flex-col justify-end rounded-2xl shadow-lg overflow-hidden transition-all duration-700 ease-in-out ${
-        isActive ? 'w-[525px]' : 'w-[183px]'
+        isActive ? 'w-[450px]' : 'w-[160px]'
       } h-[600px]`}
     >
       <div className="absolute inset-0">
@@ -45,7 +45,7 @@ const DesktopInsightCard = ({
           fill
           className="object-cover transition-transform duration-700 ease-in-out scale-100 group-hover:scale-110"
           quality={60}
-          sizes="(min-width: 1280px) 525px, (min-width: 1024px) 430px, 80vw"
+          sizes="(min-width: 1280px) 450px, (min-width: 1024px) 430px, 80vw"
           priority={index === 0}
         />
       </div>
@@ -85,7 +85,7 @@ const DesktopInsightCard = ({
       )}
 
       <div
-        className={`absolute bottom-0 left-0 w-full z-30 p-6 text-black text-base font-bold leading-relaxed transform transition-all duration-500 ease-in-out ${
+        className={`absolute bottom-0 left-0 w-full z-30 p-6 text-black text-sm font-bold leading-relaxed transform transition-all duration-500 ease-in-out ${
           isActive ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-300'
         }`}
         style={{
