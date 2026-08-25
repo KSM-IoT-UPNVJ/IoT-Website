@@ -114,57 +114,22 @@ const InsightSection = () => {
         </div>
       </FadeIn>
 
-<div className="mx-auto flex w-full max-w-6xl flex-col gap-6">
-
-  {/* BARIS 1 — DIVISI 1-3 */}
-  <div className="flex w-full flex-col gap-6 lg:flex-row lg:items-stretch lg:justify-center lg:gap-4">
-    {divisions.slice(0, 4).map((division, index) => (
-      <FadeIn
-        key={division.name}
-        direction="up"
-        delay={0.2 + index * 0.1}
-      >
-        <InsightCard
-          division={division}
-          description={division.description || defaultDescription}
-          gradient={division.gradient}
-          index={index}
-          isActive={activeIndex === index}
-          isTouch={isTouch}
-          onSelect={handleSelect}
-          onClear={handleClear}
-        />
-      </FadeIn>
-    ))}
-  </div>
-
-  {/* BARIS 2 — DIVISI 4-6 */}
-  <div className="flex w-full flex-col gap-6 lg:flex-row lg:items-stretch lg:justify-center lg:gap-4">
-    {divisions.slice(4, 6).map((division, index) => {
-      const actualIndex = index + 3;
-
-      return (
-        <FadeIn
-          key={division.name}
-          direction="up"
-          delay={0.5 + index * 0.1}
-        >
-          <InsightCard
-            division={division}
-            description={division.description || defaultDescription}
-            gradient={division.gradient}
-            index={actualIndex}
-            isActive={activeIndex === actualIndex}
-            isTouch={isTouch}
-            onSelect={handleSelect}
-            onClear={handleClear}
-          />
-        </FadeIn>
-      );
-    })}
-  </div>
-
-</div>
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 lg:flex-row lg:items-stretch lg:justify-center lg:gap-4">
+        {divisions.map((division, index) => (
+          <FadeIn key={division.name} direction="up" delay={0.2 + index * 0.1}>
+            <InsightCard
+              division={division}
+              description={division.description || defaultDescription}
+              gradient={division.gradient}
+              index={index}
+              isActive={activeIndex === index}
+              isTouch={isTouch}
+              onSelect={handleSelect}
+              onClear={handleClear}
+            />
+          </FadeIn>
+        ))}
+      </div>
     </section>
   );
 };
