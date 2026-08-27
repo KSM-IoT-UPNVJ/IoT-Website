@@ -125,6 +125,28 @@ export default function IotInsightDesc({division2}) {
           </p>
         </div>
       )}
+
+      {division2 === "electrical" && (
+        <div className="space-y-4">
+          <p className="text-xs md:text-sm lg:text-base xl:text-xl 2xl:text-2xl">
+            <b>
+              Divisi <i>Electrical</i>
+            </b>{" "}
+            berdedikasi dalam merancang, membangun, dan memvalidasi keandalan sistem elektronika pada setiap integrasi IoT. Melalui pengembangan sistem kontrol perangkat keras secara komprehensif yang meliputi sirkuit digital, transistor logic, dan manajemen daya.
+            <b> Divisi <i>electrical</i></b> berfokus pada pengujian, troubleshooting, serta optimalisasi embedded system guna memastikan seluruh infrastruktur beroperasi secara stabil, aman, dan efisien.
+          </p>
+          <p className="text-xs md:text-sm lg:text-base xl:text-xl 2xl:text-2xl">
+            Pelajari lebih lanjut tentang dunia{" "}
+            <b>
+              <i>Electrical</i>
+            </b>{" "}
+            di{" "}
+            <b>
+              <i>IoT Insight</i>!
+            </b>
+          </p>
+        </div>
+      )}
     </>
   );
 }
