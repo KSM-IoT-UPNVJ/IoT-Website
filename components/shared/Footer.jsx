@@ -142,7 +142,7 @@ function Footer() {
           onClick={() => hmList.length > 0 && setShow(true)}
           className="cursor-pointer"
         >
-          Copyright © 2025 - KSM Internet of Things UPNVJ
+          Copyright © 2026 - KSM Internet of Things UPNVJ
         </button>
       </div>
       {show && hmList.length > 0 && (
