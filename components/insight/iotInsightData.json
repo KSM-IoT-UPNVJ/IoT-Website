@@ -1,13 +1,13 @@
 {
   "firmware-slide": [
     {
-      "image": "/projects/COVER-Firmware1.webp",
+      "image": "/projects/cover-firmware1.webp",
       "vol": 1,
       "title": "Wi-Fi Provisioning",
       "link": "https://www.instagram.com/p/DVDRsqSAHTa"
     },
     {
-      "image": "/projects/COVER-Firmware2.webp",
+      "image": "/projects/cover-firmware2.webp",
       "vol": 7,
       "title": "Manajemen Memori pada IoT",
       "link": "https://www.instagram.com/p/DYtk48mkfNn"
@@ -15,13 +15,13 @@
   ],
   "hardware-slide": [
     {
-      "image": "/projects/COVER-Hardware1.webp",
+      "image": "/projects/cover-hardware1.webp",
       "vol": 5,
       "title": "PCB Design",
       "link": "https://www.instagram.com/p/DXlsJ0REcNH"
     },
     {
-      "image": "/projects/COVER-Hardware2.webp",
+      "image": "/projects/cover-hardware2.webp",
       "vol": 10,
       "title": "Filamen 3D Printing",
       "link": "https://www.instagram.com/p/DbSACNEkdfc"
@@ -29,13 +29,13 @@
   ],
   "software-slide": [
     {
-      "image": "/projects/COVER-Software1.webp",
+      "image": "/projects/cover-software1.webp",
       "vol": 6,
       "title": "Debugging Mindset",
       "link": "https://www.instagram.com/p/DYJ2v2KEQZT"
     },
     {
-      "image": "/projects/COVER-Software2.webp",
+      "image": "/projects/cover-software2.webp",
       "vol": 11,
       "title": "Database",
       "link": "https://www.instagram.com/p/Db4g9fjk6jt"
@@ -43,13 +43,13 @@
   ],
   "uiux-slide": [
     {
-      "image": "/projects/COVER-Uiux1.webp",
+      "image": "/projects/cover-uiux1.webp",
       "vol": 2,
       "title": "Psikologi Dibalik UI/UX",
       "link": "https://www.instagram.com/p/DV54Y4EEXif"
     },
     {
-      "image": "/projects/COVER-Uiux2.webp",
+      "image": "/projects/cover-uiux2.webp",
       "vol": 8,
       "title": "UI/UX Writing",
       "link": "https://www.instagram.com/p/DZwyWVFEXAI"
@@ -57,13 +57,13 @@
   ],
   "network-slide": [
     {
-      "image": "/projects/COVER-Network1.webp",
+      "image": "/projects/cover-network1.webp",
       "vol": 4,
       "title": "Cloud Storage",
       "link": "https://www.instagram.com/p/DXBzb6hkWmb"
     },
     {
-      "image": "/projects/COVER-Network2.webp",
+      "image": "/projects/cover-network2.webp",
       "vol": 9,
       "title": "Routing Table",
       "link": "https://www.instagram.com/p/DaH2jr8keE3"
@@ -71,13 +71,13 @@
   ],
   "electrical-slide": [
     {
-      "image": "/projects/COVER-Electrical1.webp",
+      "image": "/projects/cover-electrical1.webp",
       "vol": 3,
       "title": "Electrical System",
       "link": "https://www.instagram.com/p/DWbTU7TkWeW"
     },
     {
-      "image": "/projects/COVER-Electrical1.webp",
+      "image": "/projects/cover-electrical1.webp",
       "vol": 3,
       "title": "Electrical System",
       "link": "https://www.instagram.com/p/DWbTU7TkWeW"
