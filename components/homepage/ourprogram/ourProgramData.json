@@ -1,4 +1,27 @@
 {
+  "youthiot2026": {
+    "data": {
+      "fotoHeader": "/ComingSoon.webp",
+      "headerAuthor": "/Logo_IoT.png",
+      "footerAuthor": "/Logo_IoT.png",
+      "fotoSlider": [
+        "/ComingSoon.webp",
+        "/ComingSoon.webp"
+      ],
+      "fotoKolase": "/ComingSoon.webp",
+      "frontText": "Youth IoT adalah program pengenalan dan pelatihan singkat yang diselenggarakan oleh KSM IoT untuk memberikan wawasan awal tentang dunia Internet of Things sekaligus memperkenalkan visi, budaya, dan kegiatan KSM IoT.",
+      "deskripsi1": "Youth IoT adalah sebuah program pengenalan sekaligus pelatihan singkat yang diselenggarakan oleh Kelompok Studi Mahasiswa Internet of Things (KSM IoT) sebagai langkah awal untuk memperkenalkan dunia Internet of Things kepada mahasiswa baru maupun peserta yang tertarik dengan perkembangan teknologi. Program ini dirancang tidak hanya untuk memberikan pemahaman dasar mengenai konsep dan penerapan IoT, tetapi juga untuk memperkenalkan visi, budaya, serta berbagai kegiatan yang dijalankan oleh KSM IoT. Dengan demikian, Youth IoT berperan sebagai pintu masuk yang mempermudah peserta mengenal lebih jauh ruang lingkup kegiatan akademik dan organisasi yang ada di dalam KSM IoT.",
+      "deskripsi2": "Kegiatan ini membantu peserta memahami konsep dasar tentang Internet of Things (IoT), mengetahui bagian-bagian yang digunakan, dan mengetahui bagaimana perangkat dapat saling terhubung melalui jaringan untuk membuat sistem yang cerdas dan efektif. Youth IoT bukan hanya teori; itu juga memberi peserta kesempatan praktik langsung untuk merancang dan menguji proyek sederhana berbasis IoT. Pendekatan praktik ini bertujuan untuk menumbuhkan rasa ingin tahu, mendorong kreativitas, dan memberikan gambaran awal tentang potensi besar IoT dalam kehidupan sehari-hari dan di masa depan.",
+      "testimoni": "Selain aspek teknis, Youth IoT juga berfungsi sebagai media untuk membangun kedekatan antara peserta dengan KSM IoT. Melalui interaksi selama kegiatan, peserta diperkenalkan pada budaya organisasi yang menjunjung tinggi kolaborasi, inovasi, dan semangat belajar bersama. Peserta diharapkan tidak hanya mendapatkan wawasan baru, tetapi juga terinspirasi untuk bergabung serta berkontribusi aktif dalam berbagai program dan kegiatan KSM IoT ke depannya. Dengan cara ini, Youth IoT tidak hanya berfungsi sebagai program pembelajaran, tetapi juga sebagai ajang regenerasi yang memperkuat komunitas KSM IoT sebagai wadah pengembangan diri dan teknologi mahasiswa.",
+      "title": "Youth IoT 2026"
+    },
+    "author": {
+      "namaHeader": "ksm IoT upnvj 2026",
+      "jabatanHeader": "Ksm IoT upnvj 2026",
+      "namaFooter": "Ksm IoT upnvj 2026",
+      "jabatanFooter": "Ksm IoT upnvj 2026"
+    }
+  },
   "studi-banding": {
     "data": {
       "fotoHeader": "/OurProgram/foto_stuban1.webp",
