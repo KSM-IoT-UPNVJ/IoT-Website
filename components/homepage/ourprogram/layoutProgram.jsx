@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import FadeIn from '../../../utils/fadeIn';
 import Image from 'next/image';
-import YouthIotRegistrationForm from './YouthIotRegistrationForm.jsx';
 
 const LayoutProgram = ({ program }) => {
   // Saat di klik our program, halaman akan muncul dari atas
@@ -167,8 +166,6 @@ const LayoutProgram = ({ program }) => {
             </div>
           </div>
         </article>
-
-        {program.data.title === 'Youth IoT 2026' && <YouthIotRegistrationForm />}
 
         {/* Spacer Bawah */}
         <div className="h-28" />
