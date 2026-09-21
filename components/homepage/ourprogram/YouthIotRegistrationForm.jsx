@@ -48,7 +48,7 @@ const FILE_RULES = {
     types: 'PDF / DOC / DOCX',
   },
   portfolio: {
-    label: 'Portofolio (Opsional)',
+    label: 'Portofolio (media creative wajib)',
     required: false,
     accept: 'image/jpeg,image/png,application/pdf,.doc,.docx',
     types: 'JPG / PNG / PDF / DOC / DOCX',
