@@ -3,20 +3,15 @@
 import React, { useEffect, useState } from 'react';
 import FadeIn from '../../../utils/fadeIn';
 import Image from 'next/image';
-import YouthIotLayout from './YouthIotLayout';
+import YouthIotRegistrationForm from './YouthIotRegistrationForm.jsx';
 
-const LayoutProgram = ({ program }) => {
-  // Khusus Youth IoT pakai layout sendiri
-  if (program.data.title === 'Youth IoT 2026') {
-    return <YouthIotLayout program={program} />;
-  }
-
+const YouthIotLayout = ({ program }) => {
   // Saat di klik Our Program, halaman akan muncul dari atas
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Slider foto
+  // Untuk slider foto
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderImages = program.data.fotoSlider || [];
 
@@ -39,7 +34,7 @@ const LayoutProgram = ({ program }) => {
       <div className="w-[92%] max-w-[1300px] mx-auto">
 
         {/* Judul Halaman */}
-        <FadeIn direction="left" delay={0.5}>
+        <FadeIn direction={'left'} delay={0.5}>
           <h2 className="text-[60px] font-bold text-center text-gray-800 mb-8 font-optima">
             {program.data.title}
           </h2>
@@ -50,7 +45,7 @@ const LayoutProgram = ({ program }) => {
           <div className="p-10 md:p-10">
 
             {/* Header Author */}
-            <FadeIn direction="up" delay={0.3}>
+            <FadeIn direction={'up'} delay={0.3}>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-4 border-white shadow">
                   <Image
@@ -77,8 +72,8 @@ const LayoutProgram = ({ program }) => {
               </div>
             </FadeIn>
 
-            {/* Foto Header */}
-            <FadeIn direction="right" delay={0.5}>
+            {/* Kotak Foto Besar */}
+            <FadeIn direction={'right'} delay={0.5}>
               <div className="w-full rounded-md overflow-hidden mb-8">
                 <img
                   src={program.data.fotoHeader}
@@ -88,38 +83,42 @@ const LayoutProgram = ({ program }) => {
               </div>
             </FadeIn>
 
-            {/* Konten */}
+            {/* Konten Teks */}
             <div className="max-w-5xl mx-auto text-gray-800 text-justify">
 
-              <FadeIn direction="left" delay={0.6}>
+              {/* Intro */}
+              <FadeIn direction={'left'} delay={0.6}>
                 <p className="mb-8 text-base md:text-lg leading-relaxed">
                   {program.data.deskripsi1}
                 </p>
               </FadeIn>
 
-              <FadeIn direction="right" delay={0.6}>
+              {/* Paragraf */}
+              <FadeIn direction={'right'} delay={0.6}>
                 <p className="mb-8 text-base md:text-lg leading-relaxed">
                   {program.data.deskripsi2}
                 </p>
               </FadeIn>
 
-              <FadeIn direction="left" delay={0.7}>
+              <FadeIn direction={'left'} delay={0.7}>
                 <p className="mb-8 text-base md:text-lg leading-relaxed">
                   {program.data.deskripsi3}
                 </p>
               </FadeIn>
 
-              {/* Testimoni */}
-              <FadeIn direction="left" delay={0.9}>
+              {/* Testimoni + Footer Author + Foto */}
+              <FadeIn direction={'left'} delay={0.9}>
                 <div className="flex flex-col md:flex-row items-start mt-8">
 
                   <div className="md:w-2/3 w-full pr-6 flex flex-col">
+
                     <p className="text-base md:text-lg leading-relaxed text-gray-800 mb-4">
-                      &quot;{program.data.testimoni}&quot;
+                      {program.data.testimoni}
                     </p>
 
-                    <FadeIn direction="up" delay={0.6}>
+                    <FadeIn direction={'up'} delay={0.6}>
                       <div className="flex items-center gap-4 mb-6">
+
                         <div className="w-14 h-14 rounded-full overflow-hidden border-4 border-white shadow">
                           <Image
                             width={56}
@@ -139,11 +138,13 @@ const LayoutProgram = ({ program }) => {
                             {program.author.jabatanFooter}
                           </p>
                         </div>
+
                       </div>
                     </FadeIn>
+
                   </div>
 
-                  {/* Foto Kolase */}
+                  {/* Kolom kanan: Foto kolase */}
                   <div className="md:w-1/2 w-full flex items-center justify-center mt-6 md:mt-0">
                     <Image
                       src={program.data.fotoKolase}
@@ -159,29 +160,13 @@ const LayoutProgram = ({ program }) => {
 
             </div>
 
-            {/* Slider */}
-            <div className="relative w-[calc(100%+5rem)] -ml-10 overflow-hidden -mb-10 rounded-b-none flex justify-center items-center">
-              <div
-                className="flex transition-transform duration-700 ease-in-out"
-                style={{
-                  transform: `translateX(-${currentIndex * 100}%)`,
-                  width: `${sliderImages.length * 100}%`,
-                }}
-              >
-                {sliderImages.map((src, i) => (
-                  <img
-                    key={i}
-                    src={src}
-                    alt={`Slide ${i}`}
-                    className="max-w-full max-h-full object-contain flex-shrink-0"
-                  />
-                ))}
-              </div>
-            </div>
-
           </div>
         </article>
 
+        {/* Form Pendaftaran Youth IoT */}
+        <YouthIotRegistrationForm />
+
+        {/* Spacer Bawah */}
         <div className="h-28" />
 
       </div>
@@ -189,4 +174,4 @@ const LayoutProgram = ({ program }) => {
   );
 };
 
-export default LayoutProgram;
+export default YouthIotLayout;
