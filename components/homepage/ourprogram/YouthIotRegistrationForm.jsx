@@ -48,7 +48,7 @@ const FILE_RULES = {
     types: 'PDF / DOC / DOCX',
   },
   portfolio: {
-    label: 'Portofolio (Media Creative Wajib)',
+    label: 'Portofolio (Creative Media Wajib)',
     required: false,
     accept: 'image/jpeg,image/png,application/pdf,.doc,.docx',
     types: 'JPG / PNG / PDF / DOC / DOCX',
@@ -136,6 +136,9 @@ function FileUploadField({ id, name, rule, file, onChange, error }) {
 const GOOGLE_APPS_SCRIPT_URL =
   'https://script.google.com/macros/s/AKfycbyC02e5In_6OX7PsicfFnlUW5FJ9zJvYwW6WJtpIvp6f5SWWd0pA6ECksENOvx7nGYe/exec';
 
+const WHATSAPP_GROUP_URL =
+  'https://chat.whatsapp.com/B7pabSWfbZ10qFAKHgWhNB';
+  
 const inputClassName =
   'w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-[#1b96fc] focus:ring-4 focus:ring-[#1b96fc]/10';
 
@@ -264,11 +267,12 @@ export default function YouthIotRegistrationForm() {
         portfolio: null,
       });
       setFileErrors({});
-      setStatus({
-        type: 'success',
-        message:
-          'Pendaftaran berhasil dikirim.',
-      });
+setStatus({
+  type: 'success',
+  message: 'Pendaftaran berhasil dikirim. Mengarahkan ke grup WhatsApp...',
+});
+
+window.location.href = WHATSAPP_GROUP_URL;
     } catch (error) {
       setStatus({
         type: 'error',
