@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import FadeIn from '../../../utils/fadeIn';
 import Image from 'next/image';
 import YouthIotRegistrationForm from './YouthIotRegistrationForm.jsx';
+import RegistrationCountdown from './RegistrationCountdown.jsx';
 
 const YouthIotLayout = ({ program }) => {
   // Saat di klik Our Program, halaman akan muncul dari atas
@@ -29,6 +30,24 @@ const YouthIotLayout = ({ program }) => {
     return () => clearInterval(interval);
   }, [sliderImages.length]);
 
+  // Deadline: 6 Oktober 2026, 17:00 WIB
+  const [isRegistrationClosed, setIsRegistrationClosed] = useState(
+    () => new Date() >= new Date('2026-10-06T17:00:00+07:00'),
+  );
+
+  // Pantau perubahan status saat countdown habis di client
+  useEffect(() => {
+    if (isRegistrationClosed) return;
+    const deadline = new Date('2026-10-06T17:00:00+07:00');
+    const msLeft = deadline - new Date();
+    if (msLeft <= 0) {
+      setIsRegistrationClosed(true);
+      return;
+    }
+    const timeout = setTimeout(() => setIsRegistrationClosed(true), msLeft);
+    return () => clearTimeout(timeout);
+  }, [isRegistrationClosed]);
+
   return (
     <div className="min-h-screen relative pt-13 pb-28 px-6 md:px-12 bg-transparent select-none">
       <div className="w-[92%] max-w-[1300px] mx-auto">
@@ -39,6 +58,9 @@ const YouthIotLayout = ({ program }) => {
             {program.data.title}
           </h2>
         </FadeIn>
+
+        {/* Countdown / Registration Closed */}
+        <RegistrationCountdown />
 
         {/* Card Utama */}
         <article className="relative z-8 rounded-3xl bg-white/30 backdrop-blur-md border border-white/20 shadow-2xl overflow-hidden">
@@ -163,8 +185,8 @@ const YouthIotLayout = ({ program }) => {
           </div>
         </article>
 
-        {/* Form Pendaftaran Youth IoT */}
-        <YouthIotRegistrationForm />
+        {/* Form Pendaftaran Youth IoT — hilang setelah deadline */}
+        {!isRegistrationClosed && <YouthIotRegistrationForm />}
 
         {/* Spacer Bawah */}
         <div className="h-28" />
